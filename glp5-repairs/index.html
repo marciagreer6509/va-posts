@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>GLP5 GLT – VA task list</title>
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--ink:#1c1b18;--mute:#6b675e;--line:#e4e0d6;--red:#b91c1c;--red-bg:#fdecec;--amb:#92400e;--amb-bg:#fff4e0;--blu:#1d4ed8;--blu-bg:#eaf0ff;--grn:#166534;--grn-bg:#eaf7ee;--code:#12150f;--code-ink:#dff3cf}
+@media (prefers-color-scheme:dark){:root{--bg:#121410;--card:#1a1d17;--ink:#ecebe5;--mute:#9d9a90;--line:#2c3027;--red:#f87171;--red-bg:#2a1414;--amb:#fbbf24;--amb-bg:#2a2210;--blu:#93b4ff;--blu-bg:#131c33;--grn:#4ade80;--grn-bg:#112418;--code:#0b0d09}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.w{max-width:1400px;margin:0 auto;padding:26px clamp(16px,3vw,40px) 70px}
+h1{font-size:clamp(24px,3vw,32px);margin:0 0 4px}.sub{color:var(--mute);margin:0 0 14px}
+.prog{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:8px;font-weight:600}
+.bar{height:6px;background:var(--line);border-radius:9px;margin-top:6px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--grn);transition:width .3s}
+h2{margin:30px 0 10px;font-size:19px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tag{font-size:12px;font-weight:700;padding:2px 9px;border-radius:99px}.r{background:var(--red-bg);color:var(--red)}.a{background:var(--amb-bg);color:var(--amb)}.b{background:var(--blu-bg);color:var(--blu)}.g{background:var(--grn-bg);color:var(--grn)}
+.t{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px 14px;margin:10px 0;display:grid;grid-template-columns:28px 1fr;gap:4px 10px}
+.t input{width:20px;height:20px;margin-top:2px;accent-color:var(--grn)}.t.done{opacity:.55}.t.done .h{text-decoration:line-through}
+.h{font-weight:650}.n{font-weight:700;color:var(--mute);margin-right:4px}
+.d{grid-column:2;color:var(--ink);min-width:0}.t>*{min-width:0}.d p{margin:6px 0}.d ul{margin:6px 0;padding-left:20px}.d li{margin:3px 0}
+.lbl{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mute)}
+code{font:12.5px ui-monospace,Menlo,monospace;background:rgba(127,127,127,.13);padding:1px 5px;border-radius:5px;word-break:break-word}
+.pre{position:relative;background:var(--code);color:var(--code-ink);border-radius:10px;padding:14px;margin:8px 0;overflow-x:auto}
+.pre pre{margin:0;font:12.5px/1.5 ui-monospace,Menlo,monospace;white-space:pre}
+.cp{position:absolute;top:8px;right:8px;background:#2d3a22;color:#e6f5d6;border:0;border-radius:7px;padding:5px 11px;font-weight:600;cursor:pointer}
+.tw{overflow-x:auto;margin:8px 0}table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}th{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.04em}
+.ok{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;color:var(--mute)}
+.st{display:inline-block;font-size:11.5px;font-weight:700;padding:1px 8px;border-radius:99px;margin-left:8px;vertical-align:2px}.st.d{background:var(--grn-bg);color:var(--grn)}.st.p{background:var(--amb-bg);color:var(--amb)}.st.n{background:var(--red-bg);color:var(--red)}.sn{display:block;font-size:13px;color:var(--mute);font-weight:500;margin-top:2px}</style></head><body><div class="w">
+<h1>GLP5 GLT — task list for the VA</h1>
+<p class="sub"><b>Re-checked 8 Oct 2026, 17:00 UTC</b> — status shown on each task. Site: <b>glp5-glt.store</b> · do the tasks in order · tick each box when done (ticks are saved in this browser) · after Part A, ask Claude to re-check the site.</p>
+<div class="ok" style="border-color:#c8102e;color:inherit;margin-bottom:12px"><b>VA — important:</b> Claude deployed fixes straight to the live site on 8 Oct 16:58 UTC (10 files, incl. countries/index.html icon fix 9 Oct). <b>Copy these 10 files into your own site folder before your next upload</b>, or your next upload will undo them: <a href="glp5-fixes-08oct.zip">glp5-fixes-08oct.zip</a> (index.html · de/ · de/kaufen/ · de/serioes/ · de/erfahrungen/ · de/die-hoehle-der-loewen/ · fr/arnaque/ · uk/buy/ · uk/dragons-den/).</div>
+<div class="prog"><span id="pc">0</span> of <span id="pt">0</span> done<div class="bar"><i id="pb"></i></div></div>
+
+<h2>Part A · Google must be able to index the site <span class="tag r">do first — today</span></h2>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">A1</span>Allow Google to index the content pages<span class="st d">DONE</span></div><div class="d">
+<p><span class="lbl">Where</span> the <code>&lt;head&gt;</code> of all 38 content pages (root, /countries/, every country home page and every subpage).</p>
+<p><span class="lbl">Find</span> <code>&lt;meta name="robots" content="noindex, follow, max-image-preview:large"&gt;</code></p>
+<p><span class="lbl">Replace with</span> <code>&lt;meta name="robots" content="index, follow, max-image-preview:large"&gt;</code></p>
+<p><span class="lbl">Keep noindex</span> only on privacy, terms, disclaimer (and Impressum / contact when you add them).</p></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">A2</span>Star ratings: keep them for readers, hide them from Google<span class="st p">PARTLY</span><span class="sn">Only /countries/ still shows stars without data-nosnippet</span></div><div class="d">
+<p>The visible stars ("★★★★★ 4,8 Sterne – 50.000 Kunden", "4,8/5 · 5.000+ Bewertungen") <b>stay on the page</b> for readers. Google must not use them as search-result stars.</p>
+<ul><li><b>In the Product JSON-LD</b> (every page): delete only this part, including the comma before it — keep the rest of the Product + Offer code:
+<div class="pre"><button class="cp">Copy</button><pre>,"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"5000"}</pre></div></li>
+<li><b>On the visible star elements</b> add the attribute <code>data-nosnippet</code> so Google does not quote them in the search snippet, e.g.
+<div class="pre"><button class="cp">Copy</button><pre>&lt;div class="rating" data-nosnippet&gt;★★★★★ 4,8/5 · 5.000+ verifizierte Bewertungen&lt;/div&gt;</pre></div></li></ul></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">A3</span>Make www work<span class="st d">DONE</span></div><div class="d">
+<p>www.glp5-glt.store shows Cloudflare error 522. In Cloudflare (zone glp5-glt.store):</p>
+<ul><li>DNS → Add record: type <code>AAAA</code>, name <code>www</code>, IPv6 <code>100::</code>, Proxied (orange cloud) ON.</li>
+<li>Rules → Redirect Rules → Create: <i>Hostname equals</i> <code>www.glp5-glt.store</code> → Dynamic redirect to <code>concat("https://glp5-glt.store", http.request.uri.path)</code>, status 301, preserve query string ON.</li>
+<li>Check: open <code>https://www.glp5-glt.store/de/</code> → it must land on <code>https://glp5-glt.store/de/</code>.</li></ul></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">A4</span>Clean the sitemap<span class="st d">DONE</span></div><div class="d">
+<p>Remove the 3 legal URLs (<code>privacy.html</code>, <code>terms.html</code>, <code>disclaimer.html</code>) from <code>sitemap.xml</code>. Every other URL stays. When you add new pages (Part C), add them to the sitemap.</p></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">A5</span>New titles and descriptions for the 7 country home pages<span class="st d">DONE</span></div><div class="d">
+<p>Current hub titles are 87–96 characters (Google cuts at ~60) and steal the "reviews / buy" words from the subpages. Replace the <code>&lt;title&gt;</code>, the <code>meta description</code> and the <code>og:title</code>/<code>og:description</code> with:</p>
+<div class="tw"><table><tr><th>Page</th><th>New title (≤61)</th><th>New meta description (140–155)</th></tr>
+<tr><td>/de/</td><td>GLP5 GLT Deutschland: Kapseln, Preis &amp; Inhaltsstoffe 2026</td><td>GLP5 GLT in Deutschland: was in den Kapseln steckt, wie man sie einnimmt und was die 1-, 2- und 3-Monats-Packs kosten – ab 54,90 € inkl. Versand.</td></tr>
+<tr><td>/uk/</td><td>GLP5 GLT UK: Capsules, Price &amp; Ingredients 2026</td><td>GLP5 GLT in the UK: what is in the capsules, how to take them and what the 1-, 2- and 3-month packs cost at the official shop – from £59.95 delivered.</td></tr>
+<tr><td>/fr/</td><td>GLP5 GLT France : gélules, prix et composition 2026</td><td>GLP5 GLT en France : composition des gélules, mode d'emploi et prix des packs 1, 2 et 3 mois sur la boutique officielle – à partir de 54,90 € livré.</td></tr>
+<tr><td>/se/</td><td>GLP5 GLT Sverige: kapslar, pris och innehåll 2026</td><td>GLP5 GLT i Sverige: vad kapslarna innehåller, hur du tar dem och vad 1-, 2- och 3-månaderspaketen kostar i den officiella butiken – från 595,99 kr.</td></tr>
+<tr><td>/dk/</td><td>GLP5 GLT Danmark: kapsler, pris og indhold 2026</td><td>GLP5 GLT i Danmark: hvad kapslerne indeholder, hvordan du tager dem, og hvad pakkerne til 1, 2 og 3 måneder koster i den officielle butik – fra 519,95 kr.</td></tr>
+<tr><td>/fi/</td><td>GLP5 GLT Suomi: kapselit, hinta ja ainesosat 2026</td><td>GLP5 GLT Suomessa: mitä kapselit sisältävät, miten niitä otetaan ja mitä 1, 2 ja 3 kuukauden paketit maksavat virallisessa kaupassa – alkaen 59,95 €.</td></tr>
+<tr><td>/pl/</td><td>GLP5 GLT Polska: kapsułki, cena i skład 2026</td><td>GLP5 GLT w Polsce: co zawierają kapsułki, jak je stosować i ile kosztują pakiety na 1, 2 i 3 miesiące w oficjalnym sklepie – od 177,50 zł z dostawą.</td></tr></table></div>
+<p>Subpage titles are already fine — do not change them.</p></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">A6</span>Fix the hreflang (country) links<span class="st d">DONE</span></div><div class="d">
+<p>Every subpage points <code>x-default</code> and <code>en</code> to the root page — wrong, the root is not the same page.</p>
+<ul><li><b>On every SUBPAGE</b>: delete the line <code>hreflang="en" href="https://glp5-glt.store/"</code>; change <code>x-default</code> to the UK version of the same page; add <code>de-AT</code> and <code>de-CH</code> pointing to the German version. Example for <b>/de/kaufen/</b> (the same block goes on all 7 buy pages):
+<div class="pre"><button class="cp">Copy</button><pre>&lt;link rel="alternate" hreflang="x-default" href="https://glp5-glt.store/uk/buy/"&gt;
+&lt;link rel="alternate" hreflang="en-GB" href="https://glp5-glt.store/uk/buy/"&gt;
+&lt;link rel="alternate" hreflang="fr" href="https://glp5-glt.store/fr/acheter/"&gt;
+&lt;link rel="alternate" hreflang="de" href="https://glp5-glt.store/de/kaufen/"&gt;
+&lt;link rel="alternate" hreflang="de-AT" href="https://glp5-glt.store/de/kaufen/"&gt;
+&lt;link rel="alternate" hreflang="de-CH" href="https://glp5-glt.store/de/kaufen/"&gt;
+&lt;link rel="alternate" hreflang="sv" href="https://glp5-glt.store/se/kopa/"&gt;
+&lt;link rel="alternate" hreflang="da" href="https://glp5-glt.store/dk/kob/"&gt;
+&lt;link rel="alternate" hreflang="fi" href="https://glp5-glt.store/fi/osta/"&gt;
+&lt;link rel="alternate" hreflang="pl" href="https://glp5-glt.store/pl/kup/"&gt;</pre></div>
+Groups that belong together: <b>buy</b> (kaufen · buy · acheter · kopa · kob · osta · kup) · <b>reviews</b> (erfahrungen · reviews · avis · omdomen · anmeldelser · kokemuksia · opinie) · <b>legit/scam</b> (serioes · legit · arnaque · bluff · svindel · huijaus · czy-to-oszustwo) · <b>TV</b> (die-hoehle-der-loewen · dragons-den · qui-veut-etre-mon-associe · draknastet · loevens-hule · leijonan-luola · shark-tank).</li>
+<li><b>On the 7 country home pages and the root</b>: keep the block as it is, only add <code>de-AT</code> and <code>de-CH</code> → <code>/de/</code>.</li>
+<li><b>On /countries/</b>: delete the whole hreflang block.</li></ul></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">A7</span>Add FAQ code for Google on every page with a FAQ<span class="st d">DONE</span></div><div class="d">
+<p>Every page shows questions in <code>&lt;details&gt;&lt;summary&gt;</code>. Add one FAQPage block in the <code>&lt;head&gt;</code> with <b>the exact same questions and answers</b> as on that page (word for word, same order):</p>
+<div class="pre"><button class="cp">Copy</button><pre>&lt;script type="application/ld+json"&gt;
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+ {"@type":"Question","name":"Wie viele Kapseln nehme ich pro Tag?","acceptedAnswer":{"@type":"Answer","text":"…the answer text from the page…"}},
+ {"@type":"Question","name":"Wann nehme ich die Kapsel am besten ein?","acceptedAnswer":{"@type":"Answer","text":"…"}}
+]}
+&lt;/script&gt;</pre></div></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">A8</span>Turn off Cloudflare Email Obfuscation<span class="st d">DONE</span><span class="sn">No broken link left on any page</span></div><div class="d"><p>Cloudflare → glp5-glt.store → Scrape Shield → <b>Email Address Obfuscation: Off</b>. It adds a broken link (<code>/cdn-cgi/l/email-protection</code>, 404) to every page.</p></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">A9</span>Submit to Search Console<span class="st p">PARTLY</span><span class="sn">Our Search Console reader can't see the site yet — add gsc-reader@coolizi-gsc.iam.gserviceaccount.com as Full user</span></div><div class="d"><p>After A1–A8 are live: add the domain property <code>glp5-glt.store</code> in Search Console, submit <code>https://glp5-glt.store/sitemap.xml</code>, then use URL Inspection → Request indexing on the root and the 7 country home pages. Add <code>gsc-reader@coolizi-gsc.iam.gserviceaccount.com</code> as a Full user so it shows on FleetView.</p></div></div>
+
+<h2>Part B · Stop the pages competing with each other <span class="tag a">this week</span></h2>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">B1</span>Country home pages: remove the subpage words<span class="st n">NOT DONE</span><span class="sn">FR "Avis…", DK "Anmeldelse…" and other hub H1s still carry the subpage word</span></div><div class="d"><p>Done by A5 for the title. Also change the H1 on each home page so it does not contain the reviews/buy word (Erfahrungen, Avis, Reviews, Recension, Anmeldelse, Kokemuksia, Opinie, Kaufen, Where to buy, Gdzie kupić). Example DE: <code>GLP5 GLT: natürliche Abnehmkapseln – Inhaltsstoffe, Einnahme, Preise</code>.</p></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">B2</span>Fix the "ingredients" heading on every subpage<span class="st n">NOT DONE</span><span class="sn">12 subpages still have pack text under the ingredients heading</span></div><div class="d"><p>Under the H2 "Inhaltsstoffe im Detail" / "ingredienser" / "Formuła — fakty" / "Ingredients" the text is about choosing a pack. Either put the ingredient text from the official site there, or rename the heading to "Welches Paket?" / "Which pack?" etc.</p></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">B3</span>Make each subpage different<span class="st n">NOT DONE</span><span class="sn">subpages still share up to 52% (median 42%)</span></div><div class="d"><p>Subpages share 25–48% of the same text (pack cards, ingredients block, CTA). Keep the pack cards; shorten the repeated ingredient/how-it-works block to 2–3 lines + a link to the home page; write at least 600 own words per subpage that answer that page's question (reviews page = what buyers report; legit page = who sells it, where you pay, guarantee; buy page = packs, delivery, payment; TV page = was it on the show).</p></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">B4</span>Heading order on the home pages<span class="st n">NOT DONE</span><span class="sn">6 hubs still H3 before H2</span></div><div class="d"><p>Pack cards use H3 before any H2. Put an H2 above the pack cards: "Preise" / "Prices" / "Prix" / "Priser" / "Hinnat" / "Ceny".</p></div></div>
+
+<h2>Part C · Pages to add <span class="tag b">more traffic</span></h2>
+<div class="t"><input type="checkbox"><div class="h"><span class="n">C1</span>Build these pages (same template as the subpages)<span class="st n">NOT DONE</span><span class="sn">none of the 7 pages exist yet (404)</span></div><div class="d">
+<p>Copy all product facts (ingredients, mg, how to take) from the <b>official GLP5 GLT site / checkout</b> — never write your own. Each page: one H1, own FAQ (+ FAQ code from A7), pack cards, order button at the top, index, add to sitemap and hreflang.</p>
+<div class="tw"><table><tr><th>URL</th><th>Search it targets</th><th>Title (≤61)</th></tr>
+<tr><td>/de/dosierung/</td><td>glp5 dosierung · einnahme</td><td>GLP5 GLT Dosierung: Einnahme pro Tag &amp; Anwendung 2026</td></tr>
+<tr><td>/de/nebenwirkungen/</td><td>glp5 nebenwirkungen · side effects</td><td>GLP5 GLT Nebenwirkungen: was bekannt ist (2026)</td></tr>
+<tr><td>/de/inhaltsstoffe/</td><td>glp5 inhaltsstoffe</td><td>GLP5 GLT Inhaltsstoffe: alle Zutaten im Überblick 2026</td></tr>
+<tr><td>/fr/effets-secondaires/</td><td>glp5 effets secondaires</td><td>GLP5 GLT effets secondaires : ce que l'on sait (2026)</td></tr>
+<tr><td>/fr/composition/</td><td>glp5 composition</td><td>GLP5 GLT composition : tous les ingrédients (2026)</td></tr>
+<tr><td>/uk/side-effects/</td><td>glp 5 side effects</td><td>GLP5 GLT Side Effects: What Is Known (2026)</td></tr>
+<tr><td>/uk/ingredients/</td><td>glp5 glt ingredients</td><td>GLP5 GLT Ingredients: Full List &amp; How to Take (2026)</td></tr></table></div>
+<p>Later (when Google starts suggesting it): <code>/de/apotheke/</code> and <code>/fr/pharmacie/</code> — these earn the most on GLP3-B.</p></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">C2</span>Legal pages in the reader's language<span class="st n">NOT DONE</span><span class="sn">no Impressum / mentions légales / contact; legal pages English only</span></div><div class="d"><ul>
+<li>Add <code>/impressum/</code> (German) and <code>/fr/mentions-legales/</code> (French), and a contact page. All noindex, not in the sitemap.</li>
+<li>Translate privacy / terms / disclaimer for DE and FR — the German footer says "Datenschutzerklärung" and "AGB" but opens English pages.</li>
+<li>Footer links in each country → that country's legal pages.</li></ul></div></div>
+
+<h2>Part D · Mobile, speed, buttons <span class="tag a">more sales</span></h2>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">D1</span>Order button + product photo on the first mobile screen<span class="st n">NOT DONE</span><span class="sn">no Order button on first phone screen on /, /countries/, de, fr, se, dk, fi, pl, dk/loevens-hule (uk OK)</span></div><div class="d"><p>Missing on: <code>/</code>, <code>/countries/</code>, all 7 country home pages, <code>/dk/loevens-hule/</code>. In the hero, directly under the H1: the product photo (<code>/assets/img/glp5-pack-3.webp</code>) and one big order button with that country's link. Check on a phone: the button must be visible without scrolling.</p></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">D2</span>Add the exit popup (all pages)<span class="st n">NOT DONE</span><span class="sn">no exit popup</span></div><div class="d">
+<p>Paste before <code>&lt;/body&gt;</code> on every page. Change the two texts per language. It uses the page's own order link and adds <code>sub3=xp</code>; opens once per visit — desktop when the mouse leaves through the top, phone on the first "back"; Esc / × / outside click closes.</p>
+<div class="pre"><button class="cp">Copy</button><pre>&lt;div id="xp" hidden role="dialog" aria-modal="true" aria-label="Offer"&gt;&lt;div class="xp-box"&gt;
+&lt;button class="xp-x" aria-label="Close"&gt;×&lt;/button&gt;
+&lt;p class="xp-h"&gt;Wait! Your GLP5 GLT price is still reserved&lt;/p&gt;
+&lt;a class="xp-cta" rel="sponsored nofollow" href="#"&gt;Go to the official shop&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;style&gt;#xp{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px}
+#xp[hidden]{display:none}.xp-box{background:#c8102e;color:#fff;border-radius:16px;max-width:420px;width:100%;padding:30px 24px 24px;text-align:center;position:relative}
+.xp-h{font-size:22px;font-weight:800;margin:0 0 18px;line-height:1.25}.xp-cta{display:block;background:#fff;color:#c8102e;font-weight:800;padding:14px;border-radius:10px;text-decoration:none}
+.xp-x{position:absolute;top:6px;right:12px;background:none;border:0;color:#fff;font-size:30px;cursor:pointer}&lt;/style&gt;
+&lt;script&gt;(function(){var x=document.getElementById('xp'),a=document.querySelector('a[href*="slmw4qtrk.com"]');if(!x||!a)return;
+x.querySelector('.xp-cta').href=a.href+'&amp;sub3=xp';var K='xp_seen';
+function seen(){try{return sessionStorage.getItem(K)}catch(e){return 1}}
+function show(){if(seen())return;try{sessionStorage.setItem(K,1)}catch(e){}x.hidden=false}
+function hide(){x.hidden=true}
+x.addEventListener('click',function(e){if(e.target===x||e.target.className==='xp-x')hide()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')hide()});
+document.addEventListener('mouseout',function(e){if(!e.relatedTarget&amp;&amp;e.clientY&lt;=0)show()});
+if(matchMedia('(pointer:coarse)').matches&amp;&amp;!seen()){history.pushState({xp:1},'');
+addEventListener('popstate',function(){if(!seen())show();else history.back()},{once:true})}})();&lt;/script&gt;</pre></div></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">D3</span>Self-host the fonts (stops the page jumping)<span class="st n">NOT DONE</span><span class="sn">Google Fonts still on 40 pages</span></div><div class="d">
+<p>Pages jump while loading (layout shift 0.21; Google wants under 0.1) and load fonts from Google (legal risk in Germany).</p><ul>
+<li>Download <b>Fraunces</b> (600, 700, 900) and <b>Alata</b> (400) as <code>.woff2</code> from <code>gwfh.mranftl.com/fonts</code> → put them in <code>/assets/fonts/</code>.</li>
+<li>Delete the <code>fonts.googleapis.com</code> and <code>fonts.gstatic.com</code> lines from every page.</li>
+<li>Add to the CSS (one block per file), and preload the two most used files in the <code>&lt;head&gt;</code>:</li></ul>
+<div class="pre"><button class="cp">Copy</button><pre>@font-face{font-family:"Fraunces";src:url(/assets/fonts/fraunces-700.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Alata";src:url(/assets/fonts/alata-400.woff2) format("woff2");font-weight:400;font-display:swap}
+/* head: */
+&lt;link rel="preload" href="/assets/fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin&gt;
+&lt;link rel="preload" href="/assets/fonts/alata-400.woff2" as="font" type="font/woff2" crossorigin&gt;</pre></div></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">D4</span>Small broken things<span class="st n">NOT DONE</span><span class="sn">countries icons, root buttons → UK offer, #packs anchor, footer home links, uk lang — all still open</span></div><div class="d"><ul>
+<li><b>/countries/ icons</b>: change <code>href="favicon.svg"</code>, <code>favicon.ico</code>, <code>apple-touch-icon.png</code> to <code>/favicon.svg</code>, <code>/favicon.ico</code>, <code>/apple-touch-icon.png</code> (leading slash).</li>
+<li><b>Root page buttons</b>: all 3 go to the UK offer (<code>sub1=glp5uk</code>) — point them to <code>/countries/</code>.</li>
+<li><b>Menu jumps to the wrong section</b> on the home pages: <code>id="packs"</code> sits on "how it works" — move it to the price cards section. Root: "More on how it works →" and "All questions →" link to their own section — point them to <code>/countries/</code>.</li>
+<li><b>Footer</b>: "Startsida" / "Forside" / "Etusivu" / "Strona główna" go to the English root — point to <code>/se/</code>, <code>/dk/</code>, <code>/fi/</code>, <code>/pl/</code>. Empty <code>&lt;li&gt;&lt;/li&gt;</code> in the DE/FR/UK footer "Seiten / Pages" list → put the home-page link there.</li>
+<li><b>/countries/</b>: logo is not a link — make it link to <code>/</code>.</li>
+<li><b>uk pages</b>: <code>&lt;html lang="en"&gt;</code> → <code>&lt;html lang="en-GB"&gt;</code>.</li></ul></div></div>
+
+<h2>Part E · Text errors (fix exactly as written) <span class="tag a">quality</span></h2>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">E1</span>Shipping is counted twice<span class="st d">DONE</span><span class="sn">Fixed by Claude 8 Oct 16:58 UTC (8 places on 7 pages) — copy the changed files into your source, see the top of this page</span></div><div class="d">
+<p>54,90 € / £59.95 / 59,95 € already <b>include</b> the 4,95 delivery. On <code>/de/kaufen/</code>, <code>/de/die-hoehle-der-loewen/</code>, <code>/fr/acheter/</code>, <code>/fr/arnaque/</code>, <code>/fr/qui-veut-etre-mon-associe/</code>, <code>/uk/buy/</code>, <code>/uk/dragons-den/</code>, <code>/</code>:</p><ul>
+<li>"Der Gesamtpreis beträgt 54,90 €, dazu kommen 4,95 € Versand" → "Der Gesamtpreis beträgt 54,90 € inklusive 4,95 € Versand"</li>
+<li>"gesamt 54,90 € + 4,95 € Versand" → "gesamt 54,90 € inkl. 4,95 € Versand"</li>
+<li>FR "54,90 € plus 4,95 €" → "54,90 € dont 4,95 € de livraison" · UK "£59.95 total plus £4.95 shipping" → "£59.95 total including £4.95 delivery"</li></ul></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">E2</span>Nordic / Polish delivery: one rule per country<span class="st d">DONE</span><span class="sn">SE/DK/PL now consistent</span></div><div class="d"><p>The checkout says: <b>SE, DK, PL — free delivery on all packs</b> · <b>FI — 4,95 € on 1 pack, free on 2 and 3</b>. Today the text says "free from 2 packs" in SE/DK/PL and "free delivery to Finland" on the FI hero. Make every sentence match the checkout rule for that country.</p></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">E3</span>German pages: no "Test" wording<span class="st d">DONE</span><span class="sn">Fixed by Claude 8 Oct 16:58 UTC on all 5 DE pages (footer, "Sie zahlen", meta keywords, Seriositäts)</span></div><div class="d"><ul>
+<li>/de/ title: done by A5. Meta "GLP5 GLT im Test (Deutschland)": done by A5.</li>
+<li>Footer on all DE pages "Unabhängige Test- und Informationsseite" → "Unabhängige Informationsseite".</li>
+<li>Use "Sie" everywhere: "Du zahlst im offiziellen Shop" → "Sie zahlen im offiziellen Shop" (search all DE pages for "du ", "dein", "dir").</li>
+<li>/de/serioes/: "Seriösitäts-Check" → "Seriositäts-Check".</li></ul></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">E4</span>Remove sentences that are not on the official site<span class="st n">NOT DONE</span><span class="sn">all 7 items still on the pages</span></div><div class="d"><p>Checked 8 Oct against each official checkout: the items below are <b>not</b> on the official site. Anything that IS on the official checkout ("24/7 Kundenservice", its own customer reviews, "50.000 Kunden", the discount %) stays as it is.</p><ul>
+<li>/dk/anmeldelser/: the quotes "Mette H. fra København … 'Jeg tabte 5 kilo på min første måned'" and "Lars P. … '8 kilo nede'" — these names are not on the official DK checkout. Replace them with the reviews from the official DK checkout (word for word).</li>
+<li>/pl/opinie/: "Typowe relacje mówią o 2–5 kg w pierwszym miesiącu" (also in its FAQ "zwykle 2–5 kg w miesiąc").</li>
+<li>/pl/: both mentions of Ozempic (sentence "…takich jak Ozempic" and the FAQ "Czy GLP5 GLT to to samo co Ozempic?").</li>
+<li>/dk/, /fi/, /fi/leijonan-luola/: FAQ "Kan jeg åbne kapslen?" / "voiko kapselin avata" — delete the question.</li>
+<li>/se/draknastet/: delete "inga sprutor".</li>
+<li>/uk/dragons-den/: "Here is what was actually on the show" → "Here is what we know about any TV link".</li></ul></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">E5</span>Reviews pages promise reviews they don't show<span class="st n">NOT DONE</span><span class="sn">reviews pages still show no reviews</span></div><div class="d"><p>/de/erfahrungen/, /fr/avis/, /uk/reviews/, /se/omdomen/, /fi/kokemuksia/, /dk/anmeldelser/ say "here are real customer experiences" but show none. Add the 6 customer reviews from the official checkout page of that country (copy word for word, with first name + country as shown there), or change the sentence to "Here is what buyers report on the official shop".</p></div></div>
+
+<div class="t"><input type="checkbox"><div class="h"><span class="n">E6</span>Language fixes<span class="st n">NOT DONE</span><span class="sn">DK Jura, PL grammar, PL double price table, DE English alt, PL Title Case</span></div><div class="d"><ul>
+<li>Image alt text on DE/FR pages is English ("GLP5 GLT 3 packs") → "GLP5 GLT 3 Packungen" / "GLP5 GLT 3 boîtes".</li>
+<li>PL/DK/FI titles and H1s use English Title Case ("Które Pomagają Hamować Apetyt") → normal sentence case.</li>
+<li>PL: "obejmuje 60-dniowa gwarancję" → "obejmuje 60-dniową gwarancję". FI /fi/osta/ H1 "Mistä ostaa GLP5 GLT" → "Mistä ostaa GLP5 GLT:tä".</li>
+<li>/pl/: the price table appears twice — delete the second one. /se/: steps 2 and 3 say the same — merge them. /se/omdomen/: one sentence repeated — delete the second.</li>
+<li>DK footer heading "Jura" → "Juridisk". FR footer heading "Mentions légales" must open the new mentions-légales page (C2).</li>
+<li>/pl/shark-tank/: check the name of the Polish show before keeping this page (ask Claude).</li></ul></div></div>
+
+<h2>Checked and fine — do not touch <span class="tag g">OK</span></h2>
+<div class="ok">All order links (DE/AT/CH · FR · UK · SE · DK · FI · PL) open the right official checkout · prices on the site match each checkout · pack cards, discount % and the "free &amp; secure delivery" trust bar are the official shop's own copy — leave them · every internal link works · no broken images · one H1 per page · canonicals correct · no duplicate titles · no console errors · no sideways scrolling on phones · pages load fast · http → https works · 404 page, robots.txt and llms.txt are fine · subpage titles fine.</div>
+</div>
+<script>
+(function(){var K='glp5va:';var boxes=[].slice.call(document.querySelectorAll('.t input'));
+function upd(){var d=boxes.filter(function(b){return b.checked}).length;document.getElementById('pc').textContent=d;document.getElementById('pt').textContent=boxes.length;document.getElementById('pb').style.width=(100*d/boxes.length)+'%'}
+boxes.forEach(function(b,i){var id=K+b.parentNode.querySelector('.n').textContent;try{b.checked=localStorage.getItem(id)==='1'}catch(e){}
+b.parentNode.classList.toggle('done',b.checked);b.addEventListener('change',function(){try{localStorage.setItem(id,b.checked?'1':'0')}catch(e){}b.parentNode.classList.toggle('done',b.checked);upd()})});upd();
+document.querySelectorAll('.cp').forEach(function(btn){btn.addEventListener('click',function(){var t=btn.parentNode.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy'},1500)})})});})();
+</script>
+</body></html>
