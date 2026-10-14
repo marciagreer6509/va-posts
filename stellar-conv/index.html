@@ -4,34 +4,45 @@
 <meta name="robots" content="noindex"><title>STELLAR — conversion upload</title>
 <style>
 :root{color-scheme:light}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#f4f1ea;color:#1d1d1b;line-height:1.5}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#f4f1ea;color:#1d1d1b;line-height:1.55}
 .wrap{max-width:900px;margin:0 auto;padding:28px 18px 60px}
 h1{font-size:1.5rem;margin:0 0 4px}h2{font-size:1.05rem;margin:0 0 10px}
-.sub{color:#6b655c;margin:0 0 24px}
-.card{background:#fff;border:1px solid #e7e0d4;border-radius:14px;padding:18px;margin:0 0 20px;box-shadow:0 6px 20px rgba(29,29,27,.06)}
+.sub{color:#6b655c;margin:0 0 20px}
+.card{background:#fff;border:1px solid #e7e0d4;border-radius:14px;padding:18px;margin:0 0 18px;box-shadow:0 6px 20px rgba(29,29,27,.06)}
+.fix{background:#fff7ec;border:1px solid #f0c98a}
 .dl{display:flex;flex-wrap:wrap;gap:12px;margin:2px 0}
 .btn{display:inline-flex;align-items:center;gap:8px;background:#1a7f37;color:#fff;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:10px}
-.btn.alt{background:#1d1d1b}
+.btn.alt{background:#4b463e;font-weight:600;padding:10px 14px;font-size:.92rem}
 .hint{font-size:.9rem;color:#6b655c;margin:.5rem 0 0}.scroll{overflow-x:auto}
-table{border-collapse:collapse;width:100%;font-size:.82rem}
-th,td{border:1px solid #e0d8c9;padding:8px 10px;text-align:left;white-space:nowrap}
+table{border-collapse:collapse;width:100%;font-size:.8rem}
+th,td{border:1px solid #e0d8c9;padding:7px 9px;text-align:left;white-space:nowrap}
 th{background:#faf7f0;font-weight:700}.mono{font-family:ui-monospace,Menlo,Consolas,monospace}
+code{background:#f0ebe1;padding:1px 5px;border-radius:4px;font-size:.85em}
 ol{padding-left:20px}ol li{margin:.35rem 0}b.k{color:#b42318}
 </style></head><body><div class="wrap">
 <h1>STELLAR — Google Ads conversion upload</h1>
-<p class="sub">One ad sale (13 Oct 2026), formatted to the <b>Data Manager</b> schema (ISO-8601 time, GBRAID field). Values copied from the live feed.</p>
-<div class="card"><div class="dl">
-<a class="btn" href="stellar-conv.csv" download>⬇ Download CSV</a>
-<a class="btn alt" href="stellar-conv.xlsx" download>⬇ Download Excel (.xlsx)</a>
-</div><p class="hint">Upload either in Data Manager → it accepts both.</p></div>
-<div class="card"><h2>The data</h2><div class="scroll"><table>
-<tr><th>Conversion action</th><th>GBRAID</th><th>Conversion date and time</th><th>Conversion value</th><th>Conversion currency</th><th>Order ID</th><th>Conversion source</th></tr>
-<tr><td>STELLAR</td><td class="mono">0AAAABDksRKwW_rAu0pt2xHebbnJ4X4yux</td><td>2026-10-13T07:16:38-04:00</td><td>80.00</td><td>USD</td><td class="mono">187a50bc86824d0eb76824dd5cf3df7d</td><td>Web</td></tr>
+<p class="sub">One ad sale (13 Oct 2026), formatted for Data Manager. Values from the live feed.</p>
+<div class="card fix"><h2>Why the earlier file failed</h2>
+<p>The headers had <b>spaces</b> ("Conversion action", "Conversion date and time"…). Data Manager requires headers to be identifiers — letters, numbers, underscores only. That fails at the parse step and returns the generic <i>"Failed to upload file"</i> before you reach mapping. Headers below are now <code>snake_case</code> and the file is verified clean.</p></div>
+<div class="card"><h2>Corrected file — use this</h2><div class="dl">
+<a class="btn" href="stellar-conv.csv" download>⬇ Download corrected CSV</a>
+</div>
+<div class="scroll" style="margin-top:14px"><table>
+<tr><th>conversion_action</th><th>gbraid</th><th>conversion_date_time</th><th>conversion_value</th><th>conversion_currency</th><th>order_id</th></tr>
+<tr><td>STELLAR</td><td class="mono">0AAAABDksRKwW_rAu0pt2xHebbnJ4X4yux</td><td>2026-10-13T07:16:38-04:00</td><td>80.00</td><td>USD</td><td class="mono">187a50bc86824d0eb76824dd5cf3df7d</td></tr>
 </table></div></div>
-<div class="card"><h2>Upload in Data Manager</h2><ol>
-<li>Google Ads → Tools → <b>Data Manager</b> → Add data / Upload a file.</li>
-<li>Pick the file above. Headers already match Google's field names, so it should auto-map.</li>
-<li>Confirm the id column maps to <b class="k">GBRAID</b> (iPhone click) — not GCLID. Conversion action → STELLAR.</li>
-<li>Review → Upload.</li>
-</ol><p class="hint">Time is ISO-8601 with the <b>T</b> separator and a <b>-04:00 (ET)</b> offset, per Google's supported timestamp format.</p></div>
+<div class="card"><h2>Upload (Data Manager)</h2><ol>
+<li>Data Manager → Add data / Upload a file → pick <b>stellar-conv.csv</b> (save a fresh local copy; don't point it at this URL).</li>
+<li>Map columns: <code>gbraid</code> → <b class="k">GBRAID</b> (not Gclid), <code>conversion_action</code> → <b>STELLAR</b> (or pick STELLAR in the wizard), the rest one-to-one.</li>
+<li>Timezone: the time carries <code>-04:00</code>, so leave the import timezone alone.</li>
+<li>Preview → Apply. STELLAR dedupes on Order ID, so it won't double-count against the API push.</li>
+</ol></div>
+<div class="card"><h2>If it still fails</h2>
+<p>That error string is also Google's generic transient one. If the corrected file still fails in a <b>clean incognito window</b> (one Google login, no ad-blocker), it's browser/server-side — retry or contact support, don't keep reformatting. Try these only if the main CSV is rejected <i>at mapping</i>:</p>
+<div class="dl">
+<a class="btn alt" href="stellar-conv.tsv" download>TSV</a>
+<a class="btn alt" href="stellar-conv-min.csv" download>Minimal CSV</a>
+<a class="btn alt" href="stellar-conv-utc.csv" download>UTC-time CSV (set tz = UTC)</a>
+</div>
+<p class="hint">Note: this exact conversion is already being <b>accepted</b> into STELLAR by the hourly API push. The manual upload is about making it <i>show</i> / confirming in the UI — not whether it exists.</p></div>
 </div></body></html>
