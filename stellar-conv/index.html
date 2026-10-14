@@ -1,40 +1,37 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex">
-<title>STELLAR — conversion upload</title>
+<meta name="robots" content="noindex"><title>STELLAR — conversion upload</title>
 <style>
 :root{color-scheme:light}
 body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#f4f1ea;color:#1d1d1b;line-height:1.5}
-.wrap{max-width:860px;margin:0 auto;padding:28px 18px 60px}
+.wrap{max-width:900px;margin:0 auto;padding:28px 18px 60px}
 h1{font-size:1.5rem;margin:0 0 4px}h2{font-size:1.05rem;margin:0 0 10px}
 .sub{color:#6b655c;margin:0 0 24px}
 .card{background:#fff;border:1px solid #e7e0d4;border-radius:14px;padding:18px;margin:0 0 20px;box-shadow:0 6px 20px rgba(29,29,27,.06)}
 .dl{display:flex;flex-wrap:wrap;gap:12px;margin:2px 0}
 .btn{display:inline-flex;align-items:center;gap:8px;background:#1a7f37;color:#fff;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:10px}
 .btn.alt{background:#1d1d1b}
-.hint{font-size:.9rem;color:#6b655c;margin:.5rem 0 0}
-.scroll{overflow-x:auto}
-table{border-collapse:collapse;width:100%;font-size:.86rem}
+.hint{font-size:.9rem;color:#6b655c;margin:.5rem 0 0}.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.82rem}
 th,td{border:1px solid #e0d8c9;padding:8px 10px;text-align:left;white-space:nowrap}
 th{background:#faf7f0;font-weight:700}.mono{font-family:ui-monospace,Menlo,Consolas,monospace}
 ol{padding-left:20px}ol li{margin:.35rem 0}b.k{color:#b42318}
 </style></head><body><div class="wrap">
 <h1>STELLAR — Google Ads conversion upload</h1>
-<p class="sub">The one ad sale from 13 Oct 2026, ready to upload manually. Values copied from the live Everflow feed — nothing computed.</p>
+<p class="sub">One ad sale (13 Oct 2026), formatted to the <b>Data Manager</b> schema (ISO-8601 time, GBRAID field). Values copied from the live feed.</p>
 <div class="card"><div class="dl">
-<a class="btn" href="stellar-conv.csv" download>⬇ Download CSV (for upload)</a>
+<a class="btn" href="stellar-conv.csv" download>⬇ Download CSV</a>
 <a class="btn alt" href="stellar-conv.xlsx" download>⬇ Download Excel (.xlsx)</a>
-</div><p class="hint">Google Ads accepts either file for an offline-conversion upload.</p></div>
-<div class="card"><h2>How it looks</h2><div class="scroll"><table>
-<tr><th>Gbraid</th><th>Conversion Name</th><th>Conversion Time</th><th>Conversion Value</th><th>Conversion Currency</th><th>Order ID</th></tr>
-<tr><td class="mono">0AAAABDksRKwW_rAu0pt2xHebbnJ4X4yux</td><td>STELLAR</td><td>2026-10-13 07:16:38-04:00</td><td>80.00</td><td>USD</td><td class="mono">187a50bc86824d0eb76824dd5cf3df7d</td></tr>
+</div><p class="hint">Upload either in Data Manager → it accepts both.</p></div>
+<div class="card"><h2>The data</h2><div class="scroll"><table>
+<tr><th>Conversion action</th><th>GBRAID</th><th>Conversion date and time</th><th>Conversion value</th><th>Conversion currency</th><th>Order ID</th><th>Conversion source</th></tr>
+<tr><td>STELLAR</td><td class="mono">0AAAABDksRKwW_rAu0pt2xHebbnJ4X4yux</td><td>2026-10-13T07:16:38-04:00</td><td>80.00</td><td>USD</td><td class="mono">187a50bc86824d0eb76824dd5cf3df7d</td><td>Web</td></tr>
 </table></div></div>
-<div class="card"><h2>Upload steps</h2><ol>
-<li>Google Ads → <b>Tools → Data Manager → Upload</b> (or Goals → Conversions → Uploads).</li>
-<li>Upload the file above.</li>
-<li>Map the first column to <b class="k">Gbraid</b> — NOT "Google Click ID / gclid". This is an iPhone click, so the id is a gbraid; mapping it as a gclid is what failed before.</li>
-<li>Map the rest one-to-one (Conversion Name, Time, Value, Currency, Order ID).</li>
-<li>Submit. STELLAR already counts <b>Every</b>, so the gbraid is accepted. The time carries <b>-04:00 (ET)</b>, so no timezone step is needed.</li>
-</ol><p class="hint">Note: the API already got this same row <b>accepted</b> — the hold-up has been Google <i>attributing</i> the gbraid, not the upload. If it uploads clean but doesn't show within a day, that's the attribution lag, not the file.</p></div>
+<div class="card"><h2>Upload in Data Manager</h2><ol>
+<li>Google Ads → Tools → <b>Data Manager</b> → Add data / Upload a file.</li>
+<li>Pick the file above. Headers already match Google's field names, so it should auto-map.</li>
+<li>Confirm the id column maps to <b class="k">GBRAID</b> (iPhone click) — not GCLID. Conversion action → STELLAR.</li>
+<li>Review → Upload.</li>
+</ol><p class="hint">Time is ISO-8601 with the <b>T</b> separator and a <b>-04:00 (ET)</b> offset, per Google's supported timestamp format.</p></div>
 </div></body></html>
