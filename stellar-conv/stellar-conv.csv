@@ -1,2 +1,2 @@
-Conversion action,GBRAID,Conversion date and time,Conversion value,Conversion currency,Order ID,Conversion source
-STELLAR,0AAAABDksRKwW_rAu0pt2xHebbnJ4X4yux,2026-10-13T07:16:38-04:00,80.00,USD,187a50bc86824d0eb76824dd5cf3df7d,Web
+conversion_action,gbraid,conversion_date_time,conversion_value,conversion_currency,order_id
+STELLAR,0AAAABDksRKwW_rAu0pt2xHebbnJ4X4yux,2026-10-13T07:16:38-04:00,80.00,USD,187a50bc86824d0eb76824dd5cf3df7d
