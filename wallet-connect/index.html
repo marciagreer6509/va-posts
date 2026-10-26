@@ -5,121 +5,195 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Connect Wallet Test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="wallets.js"></script>
 <style>
-:root{--bg:#0b0e14;--card:#151a24;--line:#252c3a;--text:#e8ecf3;--mute:#8a93a6;--acc:#4f7cff;--ok:#2fbf71;--err:#ff5d5d}
+:root{--bg:#07090f;--card:#10141d;--card2:#161b27;--line:#222939;--text:#eef1f7;--mute:#8790a5;--acc:#5b7cff;--acc2:#9b5bff;--ok:#2fd27a;--err:#ff6370}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
-header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid var(--line)}
-.logo{font-weight:700;letter-spacing:.3px}
-.btn{background:var(--acc);color:#fff;border:0;border-radius:12px;padding:11px 20px;font-weight:600;font-size:15px;cursor:pointer}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,sans-serif;min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:-30% -10% auto;height:70vh;background:radial-gradient(closest-side,rgba(91,124,255,.22),transparent),radial-gradient(closest-side at 70% 40%,rgba(155,91,255,.18),transparent);pointer-events:none;z-index:-1}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;max-width:1200px;margin:0 auto}
+.logo{font-weight:700;font-size:17px;display:flex;align-items:center;gap:10px}
+.logo i{width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:inline-block}
+.hbtns{display:flex;gap:10px}
+.btn{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;border:0;border-radius:14px;padding:11px 20px;font:600 15px Inter,sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(91,124,255,.3)}
 .btn:hover{filter:brightness(1.1)}
-.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
-main{max-width:720px;margin:48px auto;padding:0 16px}
-h1{font-size:28px;margin:0 0 8px}
-p.mute{color:var(--mute);margin:0 0 24px}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
-.row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);word-break:break-all}
+.btn.ghost{background:var(--card2);border:1px solid var(--line);box-shadow:none}
+.btn img{width:20px;height:20px;border-radius:6px}
+main{max-width:760px;margin:56px auto;padding:0 16px;text-align:center}
+h1{font-size:clamp(30px,6vw,46px);line-height:1.1;margin:0 0 14px;letter-spacing:-1px}
+h1 span{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mute);max-width:560px;margin:0 auto 32px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:8px 20px;text-align:left}
+.row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);word-break:break-all}
 .row:last-child{border:0}.row b{color:var(--mute);font-weight:500;white-space:nowrap}
-#log{font:12px/1.5 ui-monospace,monospace;color:var(--mute);white-space:pre-wrap;margin-top:16px;max-height:220px;overflow:auto}
+#log{font:12px/1.6 ui-monospace,monospace;color:var(--mute);white-space:pre-wrap;margin-top:18px;max-height:180px;overflow:auto;text-align:left}
 /* modal */
-.ov{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:16px;z-index:10}
+.ov{position:fixed;inset:0;background:rgba(3,5,10,.7);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:16px;z-index:10}
 .ov.open{display:flex}
-.modal{width:100%;max-width:400px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;animation:pop .18s ease-out}
-@keyframes pop{from{transform:scale(.95);opacity:0}}
-.mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-.mh h2{font-size:18px;margin:0}
-.x{background:none;border:0;color:var(--mute);font-size:22px;cursor:pointer}
-.sec{font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--mute);margin:14px 0 8px}
-.w{display:flex;align-items:center;gap:12px;width:100%;padding:12px;border:1px solid var(--line);border-radius:14px;background:#1b2130;color:var(--text);font-size:15px;font-weight:600;cursor:pointer;margin-bottom:8px;text-align:left;text-decoration:none}
-.w:hover{border-color:var(--acc)}
-.w img,.w .ph{width:36px;height:36px;border-radius:10px;flex:none;background:#2a3142;display:flex;align-items:center;justify-content:center}
-.w .tag{margin-left:auto;font-size:11px;font-weight:600;padding:3px 8px;border-radius:99px;background:rgba(47,191,113,.15);color:var(--ok)}
-.w .tag.get{background:rgba(79,124,255,.15);color:var(--acc)}
-.w[disabled]{opacity:.6;cursor:wait}
-.empty{color:var(--mute);font-size:14px;padding:4px 2px 8px}
-.err{color:var(--err);font-size:13px;min-height:18px;margin-top:6px}
+.modal{width:100%;max-width:440px;max-height:min(680px,92vh);display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:26px;box-shadow:0 30px 80px rgba(0,0,0,.6);animation:pop .2s ease-out;overflow:hidden}
+@keyframes pop{from{transform:translateY(12px) scale(.97);opacity:0}}
+.mh{display:flex;align-items:center;gap:8px;padding:18px 18px 12px}
+.mh h2{font-size:17px;margin:0;flex:1;text-align:center}
+.ic{width:36px;height:36px;border-radius:12px;border:0;background:var(--card2);color:var(--mute);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none}
+.ic:hover{color:var(--text)}.ic.hide{visibility:hidden}
+.body{overflow:auto;padding:0 18px 18px}
+.search{width:100%;padding:12px 14px 12px 38px;border-radius:14px;border:1px solid var(--line);background:var(--card2) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="%238790a5" stroke-width="2"><circle cx="7" cy="7" r="5"/><path d="m11 11 3.5 3.5"/></svg>') 13px center no-repeat;color:var(--text);font:15px Inter,sans-serif;outline:none;margin-bottom:12px}
+.search:focus{border-color:var(--acc)}
+.sec{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.9px;color:var(--mute);margin:6px 2px 10px}
+.list{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.w{display:flex;align-items:center;gap:12px;width:100%;padding:10px 12px;border:1px solid transparent;border-radius:16px;background:var(--card2);color:var(--text);font:600 15px Inter,sans-serif;cursor:pointer;text-align:left}
+.w:hover{border-color:var(--acc);background:#1a2030}
+.w img{width:40px;height:40px;border-radius:12px;flex:none}
+.w .nm{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tag{font-size:11px;font-weight:600;padding:4px 9px;border-radius:99px;background:rgba(47,210,122,.14);color:var(--ok);white-space:nowrap}
+.tag.app{background:rgba(91,124,255,.14);color:#93a8ff}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.g{min-width:0;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 4px;border-radius:16px;background:var(--card2);border:1px solid transparent;color:var(--text);font:500 12px Inter,sans-serif;cursor:pointer}
+.g:hover{border-color:var(--acc)}
+.g img{width:48px;height:48px;border-radius:14px}
+.g span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 2px}
+.empty{color:var(--mute);font-size:14px;padding:6px 2px}
+.err{color:var(--err);font-size:13px;min-height:18px;text-align:center}
+/* detail view */
+.det{text-align:center;padding:4px 0 6px}
+.qr{background:#fff;border-radius:20px;padding:14px;display:inline-block;position:relative;margin:4px 0 14px}
+.qr svg{display:block;width:240px;height:240px}
+.qr img.mid{position:absolute;left:50%;top:50%;width:54px;height:54px;transform:translate(-50%,-50%);border-radius:14px;border:5px solid #fff;background:#fff}
+.det h3{margin:0 0 6px;font-size:18px}
+.det p{color:var(--mute);margin:0 auto 16px;max-width:320px;font-size:14px}
+.big{width:96px;height:96px;border-radius:26px;margin:10px 0 14px}
+.spin{width:110px;height:110px;margin:0 auto 14px;position:relative}
+.spin img{width:96px;height:96px;border-radius:26px;position:absolute;inset:7px}
+.spin:after{content:"";position:absolute;inset:0;border-radius:32px;border:3px solid transparent;border-top-color:var(--acc);animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.acts{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chip{padding:9px 14px;border-radius:12px;background:var(--card2);border:1px solid var(--line);color:var(--text);font:600 13px Inter,sans-serif;cursor:pointer;text-decoration:none}
+.chip:hover{border-color:var(--acc)}
+.foot{border-top:1px solid var(--line);padding:12px 18px;color:var(--mute);font-size:12px;text-align:center}
+@media (max-width:520px){
+  .ov{align-items:flex-end;padding:0}
+  .modal{max-width:none;border-radius:26px 26px 0 0;max-height:88vh}
+  header{padding:14px 16px}.hbtns .ghost{display:none}
+}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">◆ Wallet Test</div>
-  <button class="btn" id="connectBtn">Connect Wallet</button>
+  <div class="logo"><i></i>Wallet Test</div>
+  <div class="hbtns">
+    <button class="btn ghost" id="phoneBtn">📱 Open on phone</button>
+    <button class="btn" id="connectBtn">Connect Wallet</button>
+  </div>
 </header>
 
 <main>
-  <h1>Connect Wallet — test page</h1>
-  <p class="mute">Click <b>Connect Wallet</b>. Every browser wallet extension you have installed announces itself (EIP-6963); pick one and that extension opens its own connect prompt. Nothing is signed or sent — it only reads your address.</p>
+  <h1>Connect <span>any wallet</span></h1>
+  <p class="lead">Top 50 wallets from the WalletConnect registry. Browser extensions are detected automatically. On a computer, pick a mobile wallet to get a QR code. Scan it with your phone camera and this page opens inside that wallet's app.</p>
   <div class="panel">
     <div class="row"><b>Status</b><span id="st">Not connected</span></div>
     <div class="row"><b>Wallet</b><span id="wn">—</span></div>
     <div class="row"><b>Address</b><span id="ad">—</span></div>
     <div class="row"><b>Network</b><span id="ch">—</span></div>
-    <div id="log"></div>
   </div>
+  <div id="log"></div>
 </main>
 
 <div class="ov" id="ov">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
-    <div class="mh"><h2 id="mt">Connect a wallet</h2><button class="x" id="close" aria-label="Close">×</button></div>
-    <div class="sec">Installed</div>
-    <div id="installed"></div>
-    <div class="sec">Get a wallet</div>
-    <div id="others"></div>
-    <div class="err" id="err"></div>
+    <div class="mh"><button class="ic hide" id="back" aria-label="Back">←</button><h2 id="mt">Connect wallet</h2><button class="ic" id="close" aria-label="Close">✕</button></div>
+    <div class="body" id="body"></div>
+    <div class="foot">Read-only connection. Nothing is signed or sent.</div>
   </div>
 </div>
 
 <script>
+const PAGE=location.href.split('#')[0];
 const CHAINS={1:'Ethereum',10:'Optimism',56:'BNB Chain',137:'Polygon',8453:'Base',42161:'Arbitrum',43114:'Avalanche',11155111:'Sepolia'};
-const KNOWN=[
-  {name:'MetaMask',rdns:'io.metamask',url:'https://metamask.io/download/'},
-  {name:'Coinbase Wallet',rdns:'com.coinbase.wallet',url:'https://www.coinbase.com/wallet/downloads'},
-  {name:'Rabby',rdns:'io.rabby',url:'https://rabby.io/'},
-  {name:'Trust Wallet',rdns:'com.trustwallet.app',url:'https://trustwallet.com/browser-extension'},
-  {name:'Phantom',rdns:'app.phantom',url:'https://phantom.com/download'},
-  {name:'OKX Wallet',rdns:'com.okex.wallet',url:'https://www.okx.com/web3'}
-];
+const IS_MOBILE=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+const E=encodeURIComponent, HOSTPATH=PAGE.replace(/^https?:\/\//,'');
+// Links that open THIS page inside the wallet app's own browser
+const DAPP={
+  'metamask':()=>'https://metamask.app.link/dapp/'+HOSTPATH,
+  'trust-wallet':()=>'https://link.trustwallet.com/open_url?coin_id=60&url='+E(PAGE),
+  'coinbase-wallet':()=>'https://go.cb-w.com/dapp?cb_url='+E(PAGE),
+  'phantom':()=>'https://phantom.app/ul/browse/'+E(PAGE)+'?ref='+E(location.origin),
+  'okx-wallet':()=>'okx://wallet/dapp/url?dappUrl='+E(PAGE),
+  'bitget-wallet':()=>'https://bkcode.vip?action=dapp&url='+E(PAGE),
+  'tokenpocket':()=>'tpdapp://open?params='+E(JSON.stringify({url:PAGE})),
+  'imtoken':()=>'imtokenv2://navigate/DappView?url='+E(PAGE)
+};
 const $=id=>document.getElementById(id);
-const providers=new Map(); // rdns -> {info, provider}
-let current=null;
-
+const injected=new Map(); // rdns -> {info, provider}
+let current=null, view='list', q='';
 const log=m=>{$('log').textContent=new Date().toLocaleTimeString()+'  '+m+'\n'+$('log').textContent};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';');
 
-// EIP-6963: wallets announce themselves
 window.addEventListener('eip6963:announceProvider',e=>{
-  const {info,provider}=e.detail; if(!info?.rdns||providers.has(info.rdns))return;
-  providers.set(info.rdns,{info,provider}); log('found '+info.name+' ('+info.rdns+')'); render();
+  const {info,provider}=e.detail; if(!info?.rdns||injected.has(info.rdns))return;
+  injected.set(info.rdns,{info,provider}); log('detected '+info.name);
+  if($('ov').classList.contains('open')&&view==='list')renderList();
 });
 window.dispatchEvent(new Event('eip6963:requestProvider'));
-
-// Legacy fallback for wallets that only inject window.ethereum
 function legacy(){
-  if(providers.size||!window.ethereum)return;
-  const p=window.ethereum;
-  const name=p.isMetaMask?'MetaMask':p.isCoinbaseWallet?'Coinbase Wallet':p.isRabby?'Rabby':p.isTrust?'Trust Wallet':'Browser Wallet';
-  providers.set('legacy',{info:{name,rdns:'legacy',icon:''},provider:p}); log('found legacy window.ethereum ('+name+')'); render();
+  if(injected.size||!window.ethereum)return;
+  const p=window.ethereum, name=p.isMetaMask?'MetaMask':p.isCoinbaseWallet?'Coinbase Wallet':p.isTrust?'Trust Wallet':p.isBitKeep?'Bitget Wallet':p.isOkxWallet?'OKX Wallet':'Browser Wallet';
+  const w=WALLETS.find(x=>x.name===name);
+  injected.set(w?.rdns||'legacy',{info:{name,rdns:w?.rdns||'legacy',icon:w?.icon||''},provider:p}); log('detected '+name+' (window.ethereum)');
 }
 
-function item(label,icon,tag,cls){
-  const b=document.createElement(cls==='get'?'a':'button'); b.className='w';
-  b.innerHTML=(icon?`<img alt="" src="${icon}">`:`<span class="ph">◆</span>`)+`<span></span><span class="tag ${cls||''}">${tag}</span>`;
-  b.children[1].textContent=label; return b;
+function qrSvg(text){const qr=qrcode(0,'M');qr.addData(text);qr.make();return qr.createSvgTag({cellSize:6,margin:0,scalable:true});}
+function setHead(title,back){$('mt').textContent=title;$('back').classList.toggle('hide',!back);}
+
+function renderList(){
+  view='list'; setHead('Connect wallet',false);
+  const inst=[...injected.values()];
+  const match=n=>n.toLowerCase().includes(q.toLowerCase());
+  const rest=WALLETS.filter(w=>!injected.has(w.rdns)&&match(w.name));
+  $('body').innerHTML=`<input class="search" id="q" placeholder="Search ${WALLETS.length} wallets" value="${esc(q)}" autocomplete="off">
+   ${inst.length?`<div class="sec">Detected in this browser</div><div class="list">${inst.filter(i=>match(i.info.name)).map(i=>`<button class="w" data-inj="${esc(i.info.rdns)}">${i.info.icon?`<img src="${esc(i.info.icon)}" alt="">`:''}<span class="nm">${esc(i.info.name)}</span><span class="tag">Installed</span></button>`).join('')}</div>`:''}
+   <div class="sec">${inst.length?'More wallets':'Popular wallets'}</div>
+   ${rest.length?`<div class="grid">${rest.map(w=>`<button class="g" data-w="${w.id}" title="${esc(w.name)}"><img src="${w.icon}" alt="" loading="lazy"><span>${esc(w.name.length>9&&/ Wallet$/.test(w.name)?w.name.replace(/ Wallet$/,''):w.name)}</span></button>`).join('')}</div>`:'<div class="empty">No wallet matches that name.</div>'}
+   <div class="err" id="err"></div>`;
+  const qi=$('q'); qi.oninput=()=>{q=qi.value;renderList();const n=$('q');n.focus();n.setSelectionRange(q.length,q.length);};
+  $('body').querySelectorAll('[data-inj]').forEach(b=>b.onclick=()=>connect(b.dataset.inj));
+  $('body').querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>pick(WALLETS.find(w=>w.id===b.dataset.w)));
 }
 
-function render(){
-  const ins=$('installed'),oth=$('others'); ins.innerHTML='';oth.innerHTML='';
-  if(!providers.size) ins.innerHTML='<div class="empty">No wallet extension detected in this browser.</div>';
-  for(const [rdns,{info}] of providers){
-    const b=item(info.name,info.icon,'Detected'); b.onclick=()=>connect(rdns,b); ins.appendChild(b);
+function pick(w){
+  const link=DAPP[w.id]?.();
+  if(IS_MOBILE){ // phone: jump straight into the app
+    log('opening '+w.name+' app');
+    location.href=link||w.mobile||w.ios||w.android||w.home; return;
   }
-  for(const k of KNOWN){
-    if(providers.has(k.rdns))continue;
-    const a=item(k.name,'','Install','get'); a.href=k.url; a.target='_blank'; a.rel='noopener'; oth.appendChild(a);
-  }
+  view='detail'; setHead(w.name,true);
+  const target=link||PAGE;
+  $('body').innerHTML=`<div class="det">
+    <div class="qr">${qrSvg(target)}<img class="mid" src="${w.icon}" alt=""></div>
+    <h3>Scan with your phone camera</h3>
+    <p>${link?`Opens this page inside <b>${esc(w.name)}</b> on your phone. Approve the connection there.`:`Opens this page on your phone. ${esc(w.name)} has no direct link into its app browser, so open the page from inside the app.`}</p>
+    <div class="acts">
+      ${w.chrome?`<a class="chip" href="${esc(w.chrome)}" target="_blank" rel="noopener">Get the Chrome extension</a>`:''}
+      ${w.ios?`<a class="chip" href="${esc(w.ios)}" target="_blank" rel="noopener">App Store</a>`:''}
+      ${w.android?`<a class="chip" href="${esc(w.android)}" target="_blank" rel="noopener">Google Play</a>`:''}
+      <button class="chip" id="cp">Copy link</button>
+    </div></div>`;
+  $('cp').onclick=()=>{navigator.clipboard.writeText(target);$('cp').textContent='Copied ✓';};
 }
 
-async function connect(rdns,btn){
-  const {info,provider}=providers.get(rdns); $('err').textContent=''; btn.disabled=true; btn.querySelector('.tag').textContent='Check wallet…';
+function phoneView(){
+  open(); view='detail'; setHead('Open on your phone',true);
+  $('body').innerHTML=`<div class="det"><div class="qr">${qrSvg(PAGE)}</div>
+    <h3>Scan to open this page on your phone</h3><p>Then tap Connect Wallet and pick your wallet. It opens in the wallet's app.</p></div>`;
+}
+
+async function connect(rdns){
+  const {info,provider}=injected.get(rdns);
+  view='wait'; setHead(info.name,true);
+  $('body').innerHTML=`<div class="det"><div class="spin">${info.icon?`<img src="${esc(info.icon)}" alt="">`:''}</div><h3>Continue in ${esc(info.name)}</h3><p>Approve the connection in the extension window.</p><div class="err" id="err"></div></div>`;
   try{
     log('requesting accounts from '+info.name);
     const accts=await provider.request({method:'eth_requestAccounts'});
@@ -129,30 +203,33 @@ async function connect(rdns,btn){
     provider.on?.('chainChanged',c=>show(null,parseInt(c,16)));
     close();
   }catch(e){
-    $('err').textContent=e.code===4001?'Request rejected in '+info.name+'.':e.code===-32002?'A request is already open — check the '+info.name+' window.':(e.message||'Connection failed.');
+    if(view!=='wait')return;
+    $('err').innerHTML=(e.code===4001?'You rejected the request.':e.code===-32002?'A request is already open. Check the '+esc(info.name)+' window.':esc(e.message||'Connection failed.'))+' <button class="chip" id="retry" style="margin-top:12px">Try again</button>';
+    $('retry').onclick=()=>connect(rdns);
     log('error '+(e.code??'')+' '+(e.message||e));
-  }finally{btn.disabled=false; btn.querySelector('.tag').textContent='Detected';}
+  }
 }
 
-function short(a){return a.slice(0,6)+'…'+a.slice(-4)}
+const short=a=>a.slice(0,6)+'…'+a.slice(-4);
 function show(addr,chainId){
-  if(addr){$('ad').textContent=addr; $('connectBtn').textContent=short(addr);}
+  if(addr){$('ad').textContent=addr;$('connectBtn').innerHTML=(current.info.icon?`<img src="${esc(current.info.icon)}" alt="">`:'')+short(addr);}
   if(chainId!=null)$('ch').textContent=(CHAINS[chainId]||'Chain')+' ('+chainId+')';
-  $('st').textContent='Connected'; $('st').style.color='var(--ok)'; $('wn').textContent=current.info.name;
-  log('connected '+(addr||'')+' chain '+(chainId??''));
+  $('st').textContent='Connected';$('st').style.color='var(--ok)';$('wn').textContent=current.info.name;
+  log('connected '+(addr||'')+(chainId!=null?' chain '+chainId:''));
 }
 function disconnect(){
-  current=null; $('connectBtn').textContent='Connect Wallet'; $('st').textContent='Not connected'; $('st').style.color='';
-  ['wn','ad','ch'].forEach(i=>$(i).textContent='—'); log('disconnected');
+  current=null;$('connectBtn').textContent='Connect Wallet';$('st').textContent='Not connected';$('st').style.color='';
+  ['wn','ad','ch'].forEach(i=>$(i).textContent='—');log('disconnected');
 }
-
-function open(){ window.dispatchEvent(new Event('eip6963:requestProvider')); legacy(); render(); $('ov').classList.add('open'); }
-function close(){ $('ov').classList.remove('open'); $('err').textContent=''; }
-$('connectBtn').onclick=()=>{ if(current&&confirm('Disconnect '+current.info.name+'?')){disconnect();return;} if(!current)open(); };
+function open(){window.dispatchEvent(new Event('eip6963:requestProvider'));legacy();$('ov').classList.add('open');}
+function close(){$('ov').classList.remove('open');view='list';}
+$('connectBtn').onclick=()=>{if(current){if(confirm('Disconnect '+current.info.name+'?'))disconnect();return;}open();renderList();};
+$('phoneBtn').onclick=phoneView;
+$('back').onclick=renderList;
 $('close').onclick=close;
 $('ov').onclick=e=>{if(e.target.id==='ov')close()};
 document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
-setTimeout(legacy,400); render();
+setTimeout(legacy,400);
 </script>
 </body>
 </html>
