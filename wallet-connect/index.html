@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Connect Wallet Test</title>
+<style>
+:root{--bg:#0b0e14;--card:#151a24;--line:#252c3a;--text:#e8ecf3;--mute:#8a93a6;--acc:#4f7cff;--ok:#2fbf71;--err:#ff5d5d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid var(--line)}
+.logo{font-weight:700;letter-spacing:.3px}
+.btn{background:var(--acc);color:#fff;border:0;border-radius:12px;padding:11px 20px;font-weight:600;font-size:15px;cursor:pointer}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+main{max-width:720px;margin:48px auto;padding:0 16px}
+h1{font-size:28px;margin:0 0 8px}
+p.mute{color:var(--mute);margin:0 0 24px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);word-break:break-all}
+.row:last-child{border:0}.row b{color:var(--mute);font-weight:500;white-space:nowrap}
+#log{font:12px/1.5 ui-monospace,monospace;color:var(--mute);white-space:pre-wrap;margin-top:16px;max-height:220px;overflow:auto}
+/* modal */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:16px;z-index:10}
+.ov.open{display:flex}
+.modal{width:100%;max-width:400px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;animation:pop .18s ease-out}
+@keyframes pop{from{transform:scale(.95);opacity:0}}
+.mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.mh h2{font-size:18px;margin:0}
+.x{background:none;border:0;color:var(--mute);font-size:22px;cursor:pointer}
+.sec{font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--mute);margin:14px 0 8px}
+.w{display:flex;align-items:center;gap:12px;width:100%;padding:12px;border:1px solid var(--line);border-radius:14px;background:#1b2130;color:var(--text);font-size:15px;font-weight:600;cursor:pointer;margin-bottom:8px;text-align:left;text-decoration:none}
+.w:hover{border-color:var(--acc)}
+.w img,.w .ph{width:36px;height:36px;border-radius:10px;flex:none;background:#2a3142;display:flex;align-items:center;justify-content:center}
+.w .tag{margin-left:auto;font-size:11px;font-weight:600;padding:3px 8px;border-radius:99px;background:rgba(47,191,113,.15);color:var(--ok)}
+.w .tag.get{background:rgba(79,124,255,.15);color:var(--acc)}
+.w[disabled]{opacity:.6;cursor:wait}
+.empty{color:var(--mute);font-size:14px;padding:4px 2px 8px}
+.err{color:var(--err);font-size:13px;min-height:18px;margin-top:6px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">◆ Wallet Test</div>
+  <button class="btn" id="connectBtn">Connect Wallet</button>
+</header>
+
+<main>
+  <h1>Connect Wallet — test page</h1>
+  <p class="mute">Click <b>Connect Wallet</b>. Every browser wallet extension you have installed announces itself (EIP-6963); pick one and that extension opens its own connect prompt. Nothing is signed or sent — it only reads your address.</p>
+  <div class="panel">
+    <div class="row"><b>Status</b><span id="st">Not connected</span></div>
+    <div class="row"><b>Wallet</b><span id="wn">—</span></div>
+    <div class="row"><b>Address</b><span id="ad">—</span></div>
+    <div class="row"><b>Network</b><span id="ch">—</span></div>
+    <div id="log"></div>
+  </div>
+</main>
+
+<div class="ov" id="ov">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
+    <div class="mh"><h2 id="mt">Connect a wallet</h2><button class="x" id="close" aria-label="Close">×</button></div>
+    <div class="sec">Installed</div>
+    <div id="installed"></div>
+    <div class="sec">Get a wallet</div>
+    <div id="others"></div>
+    <div class="err" id="err"></div>
+  </div>
+</div>
+
+<script>
+const CHAINS={1:'Ethereum',10:'Optimism',56:'BNB Chain',137:'Polygon',8453:'Base',42161:'Arbitrum',43114:'Avalanche',11155111:'Sepolia'};
+const KNOWN=[
+  {name:'MetaMask',rdns:'io.metamask',url:'https://metamask.io/download/'},
+  {name:'Coinbase Wallet',rdns:'com.coinbase.wallet',url:'https://www.coinbase.com/wallet/downloads'},
+  {name:'Rabby',rdns:'io.rabby',url:'https://rabby.io/'},
+  {name:'Trust Wallet',rdns:'com.trustwallet.app',url:'https://trustwallet.com/browser-extension'},
+  {name:'Phantom',rdns:'app.phantom',url:'https://phantom.com/download'},
+  {name:'OKX Wallet',rdns:'com.okex.wallet',url:'https://www.okx.com/web3'}
+];
+const $=id=>document.getElementById(id);
+const providers=new Map(); // rdns -> {info, provider}
+let current=null;
+
+const log=m=>{$('log').textContent=new Date().toLocaleTimeString()+'  '+m+'\n'+$('log').textContent};
+
+// EIP-6963: wallets announce themselves
+window.addEventListener('eip6963:announceProvider',e=>{
+  const {info,provider}=e.detail; if(!info?.rdns||providers.has(info.rdns))return;
+  providers.set(info.rdns,{info,provider}); log('found '+info.name+' ('+info.rdns+')'); render();
+});
+window.dispatchEvent(new Event('eip6963:requestProvider'));
+
+// Legacy fallback for wallets that only inject window.ethereum
+function legacy(){
+  if(providers.size||!window.ethereum)return;
+  const p=window.ethereum;
+  const name=p.isMetaMask?'MetaMask':p.isCoinbaseWallet?'Coinbase Wallet':p.isRabby?'Rabby':p.isTrust?'Trust Wallet':'Browser Wallet';
+  providers.set('legacy',{info:{name,rdns:'legacy',icon:''},provider:p}); log('found legacy window.ethereum ('+name+')'); render();
+}
+
+function item(label,icon,tag,cls){
+  const b=document.createElement(cls==='get'?'a':'button'); b.className='w';
+  b.innerHTML=(icon?`<img alt="" src="${icon}">`:`<span class="ph">◆</span>`)+`<span></span><span class="tag ${cls||''}">${tag}</span>`;
+  b.children[1].textContent=label; return b;
+}
+
+function render(){
+  const ins=$('installed'),oth=$('others'); ins.innerHTML='';oth.innerHTML='';
+  if(!providers.size) ins.innerHTML='<div class="empty">No wallet extension detected in this browser.</div>';
+  for(const [rdns,{info}] of providers){
+    const b=item(info.name,info.icon,'Detected'); b.onclick=()=>connect(rdns,b); ins.appendChild(b);
+  }
+  for(const k of KNOWN){
+    if(providers.has(k.rdns))continue;
+    const a=item(k.name,'','Install','get'); a.href=k.url; a.target='_blank'; a.rel='noopener'; oth.appendChild(a);
+  }
+}
+
+async function connect(rdns,btn){
+  const {info,provider}=providers.get(rdns); $('err').textContent=''; btn.disabled=true; btn.querySelector('.tag').textContent='Check wallet…';
+  try{
+    log('requesting accounts from '+info.name);
+    const accts=await provider.request({method:'eth_requestAccounts'});
+    const chainId=parseInt(await provider.request({method:'eth_chainId'}),16);
+    current={info,provider}; show(accts[0],chainId);
+    provider.on?.('accountsChanged',a=>a.length?show(a[0]):disconnect());
+    provider.on?.('chainChanged',c=>show(null,parseInt(c,16)));
+    close();
+  }catch(e){
+    $('err').textContent=e.code===4001?'Request rejected in '+info.name+'.':e.code===-32002?'A request is already open — check the '+info.name+' window.':(e.message||'Connection failed.');
+    log('error '+(e.code??'')+' '+(e.message||e));
+  }finally{btn.disabled=false; btn.querySelector('.tag').textContent='Detected';}
+}
+
+function short(a){return a.slice(0,6)+'…'+a.slice(-4)}
+function show(addr,chainId){
+  if(addr){$('ad').textContent=addr; $('connectBtn').textContent=short(addr);}
+  if(chainId!=null)$('ch').textContent=(CHAINS[chainId]||'Chain')+' ('+chainId+')';
+  $('st').textContent='Connected'; $('st').style.color='var(--ok)'; $('wn').textContent=current.info.name;
+  log('connected '+(addr||'')+' chain '+(chainId??''));
+}
+function disconnect(){
+  current=null; $('connectBtn').textContent='Connect Wallet'; $('st').textContent='Not connected'; $('st').style.color='';
+  ['wn','ad','ch'].forEach(i=>$(i).textContent='—'); log('disconnected');
+}
+
+function open(){ window.dispatchEvent(new Event('eip6963:requestProvider')); legacy(); render(); $('ov').classList.add('open'); }
+function close(){ $('ov').classList.remove('open'); $('err').textContent=''; }
+$('connectBtn').onclick=()=>{ if(current&&confirm('Disconnect '+current.info.name+'?')){disconnect();return;} if(!current)open(); };
+$('close').onclick=close;
+$('ov').onclick=e=>{if(e.target.id==='ov')close()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+setTimeout(legacy,400); render();
+</script>
+</body>
+</html>
