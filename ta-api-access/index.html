@@ -1,0 +1,94 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Google Ads API Application</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#14213d;--mut:#5b6474;--line:#e3e6eb;--brand:#2f5fd0;--ok:#167a3e;--bad:#b42318;--warn:#a15c00;--warnbg:#fff4e0;--code:#f0f2f6}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1218;--card:#171b23;--ink:#e8ebf1;--mut:#9aa3b2;--line:#2a303b;--brand:#7aa2ff;--ok:#5fd38d;--bad:#ff8a80;--warn:#ffb54d;--warnbg:#2b2112;--code:#11151c}}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:28px 16px 60px}h1{font-size:28px;margin:0 0 4px}h2{font-size:21px;margin:0 0 8px;display:flex;gap:10px;align-items:center}
+.n{flex:none;width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;display:inline-grid;place-items:center;font-size:16px}
+.lead{color:var(--mut);margin:0 0 20px}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:0 0 16px}
+ol{margin:4px 0 0;padding-left:22px}li{margin:5px 0}
+b.ui{background:var(--code);border:1px solid var(--line);border-radius:5px;padding:0 6px;font-weight:600}
+code{background:var(--code);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:15px;word-break:break-all}
+.who{font-size:13px;font-weight:700;padding:2px 10px;border-radius:99px;border:1px solid var(--line);color:var(--mut)}
+.warn{background:var(--warnbg);border-color:var(--warn)}
+table{width:100%;border-collapse:collapse;font-size:16px}td,th{border-bottom:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}th{color:var(--mut);font-weight:600}
+.done{color:var(--ok);font-weight:700}.todo{color:var(--bad);font-weight:700}
+details{margin-top:10px}summary{cursor:pointer;color:var(--brand);font-weight:600}
+.paste{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px;margin:8px 0;white-space:pre-wrap;font-size:15px}
+.paste button{float:right;margin:0 0 6px 10px;border:0;background:var(--brand);color:#fff;border-radius:6px;padding:4px 12px;font-weight:700;cursor:pointer}
+.wrap{overflow-x:auto}
+</style></head><body><main>
+
+<h1>Trusted Access: apply for Google Ads API access</h1>
+<p class="lead">6 steps. Do them in order. Each step says who does it.</p>
+
+<div class="card"><h2>How this is different from Jetterix</h2>
+<div class="wrap"><table>
+<tr><th></th><th>Jetterix (July)</th><th>Trusted Access (now)</th></tr>
+<tr><td>Where you apply</td><td>Google Ads MCC → API Center</td><td><b>Google Cloud Console</b>. API Center is closed since 9 Sep 2026.</td></tr>
+<tr><td>Owner</td><td>Personal Gmail (lesliejones)</td><td><b>Company account</b></td></tr>
+<tr><td>Who uses it</td><td>Only us, reading keywords</td><td><b>Clients</b>, and it changes their campaigns</td></tr>
+<tr><td>Website</td><td>One hidden page on tryjetterix.com</td><td><b>Own domain</b> with homepage, privacy and terms pages</td></tr>
+<tr><td>"Unverified app" warning</td><td>OK, only we saw it</td><td><b>Must go away</b>, because clients see it. Needs a demo video.</td></tr>
+<tr><td>Limit</td><td>Basic: 15,000 a day, approved in ~2 days</td><td><b>Standard: unlimited</b>. Google checks the tool by hand, ~10 business days.</td></tr>
+</table></div></div>
+
+<div class="card"><h2><span class="n">1</span>Buy the domain <span class="who">YOU</span></h2>
+<ol>
+<li>Buy <code>trusted-access.org</code> and add it to Cloudflare.</li>
+<li>With the <b>company account</b>, open Search Console → <b class="ui">Add property</b> → <b class="ui">Domain</b> → <code>trusted-access.org</code>.</li>
+<li>Send me the TXT code it shows. I add it, you click <b class="ui">Verify</b>.</li>
+</ol></div>
+
+<div class="card"><h2><span class="n">2</span>Website + missing features <span class="who">ME</span></h2>
+<ol>
+<li>I build the homepage, privacy, terms and contact pages. <b>I need:</b> company legal name, address and support email.</li>
+<li>I add what Google checks before Standard: create conversion tracking, account callouts, remove campaigns/ads/keywords, bidding strategy report.</li>
+<li>I make a test login for Google's reviewer.</li>
+</ol></div>
+
+<div class="card"><h2><span class="n">3</span>Google Cloud project <span class="who">YOU</span></h2>
+<ol>
+<li>Open <code>console.cloud.google.com</code> with the <b>company account</b>.</li>
+<li><b>Best:</b> move the current project into the company: open the current project → <b class="ui">IAM &amp; Admin</b> → <b class="ui">Settings</b> → <b class="ui">Migrate</b>. It keeps Basic access and all client connections.<br>
+If Migrate isn't allowed: <b class="ui">New project</b> "Trusted Access" → <b class="ui">APIs &amp; Services</b> → <b class="ui">Library</b> → "Google Ads API" → <b class="ui">Enable</b>. Clients then reconnect once.</li>
+<li><b class="ui">Billing</b>: link a <b>paid</b> card. Google refuses projects on the free trial.</li>
+<li><b class="ui">IAM</b> → <b class="ui">Grant access</b>: add <b>2 more people as Owner</b>, so one lockout can't kill it.</li>
+</ol></div>
+
+<div class="card"><h2><span class="n">4</span>Consent screen <span class="who">YOU</span></h2>
+<p><b class="ui">APIs &amp; Services</b> → <b class="ui">OAuth consent screen</b>, then these tabs:</p>
+<ol>
+<li><b class="ui">Branding</b>: name <code>Trusted Access</code>, logo (square PNG 120×120 px), homepage <code>https://trusted-access.org</code>, privacy <code>https://trusted-access.org/privacy</code>, terms <code>https://trusted-access.org/terms</code>, authorized domain <code>trusted-access.org</code> → <b class="ui">Save</b>.</li>
+<li><b class="ui">Audience</b>: <b>External</b> + <b class="ui">Publish app</b> (In production).</li>
+<li><b class="ui">Data Access</b> → <b class="ui">Add or remove scopes</b> → paste <code>https://www.googleapis.com/auth/adwords</code> → <b class="ui">Update</b> → <b class="ui">Save</b>.</li>
+<li><b class="ui">Clients</b> (only for a new project): <b class="ui">Create client</b> → Web application → redirect <code>https://trusted-access.org/connect/cb</code> → send me the JSON.</li>
+</ol></div>
+
+<div class="card"><h2><span class="n">5</span>Verify, then Basic <span class="who">YOU + ME</span></h2>
+<ol>
+<li><b class="ui">Branding</b> → <b class="ui">Verify branding</b> (minutes) → <b class="ui">Publish branding</b>. Send me any error it shows.</li>
+<li><b class="ui">APIs &amp; Services</b> → <b class="ui">Google Ads API</b> → Overview → <b class="ui">Upgrade access level</b> → <b class="ui">Apply for access</b>. New project: Explorer first, then Basic. Usually minutes.</li>
+<li>I record the demo video. You upload it to YouTube as <b>Unlisted</b>.</li>
+<li><b class="ui">Verification Center</b> → <b class="ui">Submit for verification</b>: video link + the text below. This removes the red warning clients see.</li>
+</ol>
+<details><summary>Text to paste: why we need the permission</summary>
+<div class="paste"><button onclick="cp(this)">Copy</button><span>Trusted Access is a campaign management tool for advertising agencies and their clients. The client signs in with Google and grants the Google Ads permission so the agency can see the client's Google Ads accounts and reports, and create, edit, pause and remove campaigns, ad groups, keywords, ads, budgets and targeting. The Google Ads API offers only this one permission; there is no narrower one. Data is used only to show users their own accounts and to make the changes they ask for. It is never sold, used for advertising or shared.</span></div></details></div>
+
+<div class="card"><h2><span class="n">6</span>Apply for Standard <span class="who">YOU, after I say go</span></h2>
+<ol>
+<li>Google Ads API → Overview → <b class="ui">Upgrade access level</b> → <b class="ui">Start application</b>.</li>
+<li>Choose: <b>external users / full-service</b> · use = <b>Ad creation / management</b>.</li>
+<li>Paste the text below. Give the <b>reviewer login</b> from step 2, never your own.</li>
+<li>Google emails the company account with questions. <b>Answer the same day.</b></li>
+</ol>
+<details><summary>Text to paste: what the tool does</summary>
+<div class="paste"><button onclick="cp(this)">Copy</button><span>Trusted Access (https://trusted-access.org) is a web-based Google Ads management tool run by [COMPANY NAME] for our agency team and our advertiser clients. Each client connects their own Google Ads account through Google sign-in. Our team uses it to create and launch Search and Display campaigns (budgets, Target CPA / Target ROAS / Maximize Conversions bidding, location and language targeting, ad groups, keywords with match types, negative keywords, ads, placement exclusions), to pause, enable, edit and remove them, and to report on accounts, campaigns, ad groups, ads, keywords, search terms and bidding strategies (clicks, impressions, cost, conversions). Every change can first be checked with validate-only. Users: about [N] staff managing about [N] client accounts.</span></div></details></div>
+
+<div class="card warn"><b>Status today</b><br>
+<span class="done">Ready:</span> campaigns, ad groups, keywords, negatives, budgets, targeting, bidding, reports.<br>
+<span class="todo">Missing (me, before step 6):</span> website, conversion tracking setup, account callouts, remove, bidding strategy report, reviewer login, demo video.</div>
+</main>
+<script>function cp(b){navigator.clipboard.writeText(b.nextElementSibling.textContent).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1500)})}</script>
+</body></html>
