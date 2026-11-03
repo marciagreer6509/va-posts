@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Index API Setup</title>
+<style>:root{--bg:#fff;--fg:#111;--mut:#555;--line:#ddd;--a:#0b57d0;--warn:#fff4e5}@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#eee;--mut:#aaa;--line:#333;--a:#8ab4f8;--warn:#332616}}
+body{font:17px/1.5 system-ui;margin:0 auto;max-width:720px;padding:16px;background:var(--bg);color:var(--fg)}h1{font-size:26px;margin:8px 0 4px}p{margin:6px 0}a{color:var(--a);word-break:break-all}.sub{color:var(--mut)}ol{list-style:none;padding:0;counter-reset:s}li{counter-increment:s;border-top:1px solid var(--line);padding:14px 0 14px 44px;position:relative}li:before{content:counter(s);position:absolute;left:0;top:14px;width:30px;height:30px;line-height:30px;text-align:center;border-radius:50%;background:var(--a);color:var(--bg);font-weight:700}code{font-weight:700}.w{background:var(--warn);padding:12px;border-radius:8px;margin-top:8px}</style></head><body>
+<h1>Index API Setup</h1><p class="sub">Do this on ONE backup Gmail. No credit card needed.</p>
+<ol>
+<li>Log in to the backup Gmail, then open:<br><a href="https://console.cloud.google.com/" target="_blank" rel="noopener">https://console.cloud.google.com/</a><br>If asked, tick "I agree" and continue.</li>
+<li>At the top left, click the project box &gt; <b>New Project</b>.<br>Name: <code>index-2</code>. Click <b>Create</b>.<br>Check that the top bar now says <code>index-2</code>.</li>
+<li>Open this link and click <b>Enable</b>:<br><a href="https://console.cloud.google.com/apis/library/indexing.googleapis.com" target="_blank" rel="noopener">https://console.cloud.google.com/apis/library/indexing.googleapis.com</a><br>If it says "API Enabled" or shows "Manage", it's already on.</li>
+<li>Open this link:<br><a href="https://console.cloud.google.com/iam-admin/serviceaccounts" target="_blank" rel="noopener">https://console.cloud.google.com/iam-admin/serviceaccounts</a><br>Click <b>Create Service Account</b>. Name: <code>index-2</code>. Click <b>Done</b>.<br>Skip anything optional. Do not add roles.</li>
+<li>In the list, click the new account (<code>index-2@...</code>).<br>Open the <b>Keys</b> tab &gt; <b>Add key</b> &gt; <b>Create new key</b> &gt; <b>JSON</b> &gt; <b>Create</b>.<br>A file downloads. Do NOT open or edit it.</li>
+<li>Upload that file to Google Drive.<br>Rename it to the backup Gmail's name, for example: <code>john.smith.json</code></li>
+<li>Right-click the file &gt; <b>Share</b>.<br>Under General access, choose <b>Anyone with the link</b> (Viewer).<br>Click <b>Copy link</b>, then <b>Done</b>.</li>
+<li>Done. You need two things: the <b>Drive link</b> and the <b>backup Gmail address</b>.</li>
+</ol>
+<p class="w">Keep the link private. Don't delete the file until you're told to. If a step shows an error or looks different, take a screenshot.</p>
+</body></html>
