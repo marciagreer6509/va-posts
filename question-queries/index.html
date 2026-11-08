@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Question Queries by Geo</title>
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--ink:#1d2330;--mut:#616a7a;--line:#e1ddd3;--acc:#1f5fbf;--g:#1d8a52;--a:#b7791f;--r:#b9443c;--bar:#dfe7f5}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--card:#1c2029;--ink:#e8eaee;--mut:#9aa3b2;--line:#2c3240;--acc:#7aa7f0;--g:#4cc488;--a:#e0a84a;--r:#e57a70;--bar:#24324a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{padding:22px 16px 10px;max-width:1300px;margin:auto}h1{margin:0 0 4px;font-size:24px}.sub{color:var(--mut);font-size:13.5px}
+.dl{display:inline-block;margin-top:10px;background:var(--acc);color:#fff;padding:8px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}nav div{max-width:1300px;margin:auto;padding:0 12px;display:flex;gap:4px;overflow-x:auto}
+nav button{border:0;background:none;color:var(--mut);padding:12px 12px;font:inherit;font-weight:600;cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent}nav button.on{color:var(--ink);border-color:var(--acc)}
+main{max-width:1300px;margin:auto;padding:14px 16px 60px}.tab{display:none}.tab.on{display:block}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 14px}.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:20px;padding:5px 11px;cursor:pointer;font:inherit;font-size:13.5px}.chip.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:10px;display:grid;grid-template-columns:34px 1fr 190px;gap:10px}
+.n{font-weight:800;font-size:20px;color:var(--mut)}.nat{font-weight:700;font-size:16px}.en{color:var(--mut)}.ex{margin-top:6px;font-size:13px;color:var(--mut)}.ex b{color:var(--ink);font-weight:600}
+.meter{height:8px;background:var(--bar);border-radius:4px;overflow:hidden;margin:4px 0}.meter i{display:block;height:100%;background:var(--acc)}.st{font-size:13px}
+.pill{display:inline-block;font-size:12px;padding:1px 7px;border-radius:10px;border:1px solid currentColor;font-weight:600}.t3{color:var(--g)}.p1{color:var(--acc)}.p2{color:var(--a)}.p3{color:var(--r)}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}.bar input,.bar select{font:inherit;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}.bar input{flex:1;min-width:200px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}table{border-collapse:collapse;width:100%;font-size:13.5px}th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}th{position:sticky;top:0;background:var(--card);font-size:12.5px;color:var(--mut)}
+td.w{min-width:280px;color:var(--mut);font-size:12.5px}td a{color:var(--acc);word-break:break-all}.num{text-align:right;white-space:nowrap}
+.more{margin:12px 0;font:inherit;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.rx{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px}.rx code{display:block;white-space:pre-wrap;word-break:break-all;font-size:12px;background:var(--bg);padding:8px;border-radius:6px;max-height:110px;overflow:auto;margin:6px 0}
+.rx button{font:inherit;font-size:13px;padding:5px 10px;border-radius:6px;border:1px solid var(--acc);background:none;color:var(--acc);cursor:pointer;margin-right:6px}
+.note{background:var(--card);border-left:4px solid var(--a);padding:10px 12px;border-radius:6px;font-size:13.5px;margin-bottom:12px}
+@media (max-width:700px){.q{grid-template-columns:26px 1fr}.q .s{grid-column:2}}
+</style></head><body>
+<header><h1>What people ask: questions per offer &amp; geo</h1>
+<div class="sub" id="sub"></div><a class="dl" href="question-queries.xlsx" download>⬇ Download the Excel sheet</a></header>
+<nav><div><button data-t="common" class="on">Common questions per geo</button><button data-t="best">Where we rank best</button><button data-t="all">All question queries</button><button data-t="summ">Offer × geo</button><button data-t="regex">Regex per geo</button></div></nav>
+<main>
+<section class="tab on" id="common"><div class="chips" id="gc"></div><div id="cl"></div></section>
+<section class="tab" id="best"><div class="note">Every question query where our page sits on <b>page 1 (position ≤ 10)</b>, best position first. "Why we appear" = the page Google chose and what in its title/URL matches the question.</div><div class="bar"><select id="bg"></select><select id="bo"></select><input id="bs" placeholder="Search query or English…"></div><div class="tw"><table id="bt"></table></div><button class="more" id="bm">Show more</button></section>
+<section class="tab" id="all"><div class="bar"><select id="ag"></select><select id="ao"></select><select id="ai"></select><select id="ab"></select><input id="as" placeholder="Search query or English…"></div><div class="sub" id="ac"></div><div class="tw"><table id="at"></table></div><button class="more" id="am">Show more</button></section>
+<section class="tab" id="summ"><div class="bar"><select id="sg"></select></div><div class="tw"><table id="stb"></table></div></section>
+<section class="tab" id="regex"><div class="note">Paste into Search Console → Performance → <b>+ Add filter → Query → Custom (regex)</b>. "Question words" = typed questions only (your regex, extended to the geo's languages, question word anywhere). "Full" = also the implied questions (erfahrungen, avis, kokemuksia, dm, Höhle der Löwen…).</div><div id="rl"></div></section>
+</main>
+<script>
+const E=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const B=p=>p<=3?'t3':p<=10?'p1':p<=20?'p2':'p3';
+fetch('data.json').then(r=>r.json()).then(D=>{
+document.getElementById('sub').textContent=`Google Search Console, ${D.start} → ${D.end} (90 days, fresh data included) · ${D.rows.length.toLocaleString()} question rows · ${new Set(D.rows.map(r=>r.q)).size.toLocaleString()} distinct questions · ${new Set(D.rows.map(r=>r.offer)).size} offers · ${new Set(D.rows.map(r=>r.geo)).size} geos. Google hides rare queries, so clicks here are lower than true site totals.`;
+const geos=[...new Set(D.common.map(c=>c.geo))];
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('nav button,.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on')});
+// common
+let cg=geos[0];const gc=document.getElementById('gc');
+gc.innerHTML=geos.map(g=>`<button class="chip" data-g="${E(g)}">${E(g)}</button>`).join('');
+function drawC(){gc.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c.dataset.g===cg));
+document.getElementById('cl').innerHTML=D.common.filter(c=>c.geo===cg).map(c=>`<div class="q"><div class="n">${c.rank}</div><div><div class="nat">${E(c.native)}</div><div class="en">🇬🇧 ${E(c.english)}</div><div class="ex">${c.examples.map(x=>{const[a,b]=x.split('  →  ');return `<b>${E(a)}</b> → ${E(b)}`}).join('<br>')}</div><div class="ex">Offers: ${E(c.offers)} · ${c.nq} real queries</div></div><div class="s st"><div>${c.share}% of question impressions</div><div class="meter"><i style="width:${Math.min(100,c.share)}%"></i></div><div>${c.impr.toLocaleString()} impr · ${c.clicks} clicks</div><div>Our avg position <span class="pill ${B(c.pos)}">${c.pos}</span></div></div></div>`).join('')}
+gc.onclick=e=>{if(e.target.dataset.g){cg=e.target.dataset.g;drawC()}};drawC();
+// helpers
+const opt=(el,lab,vals)=>{el.innerHTML=`<option value="">${lab}</option>`+vals.map(v=>`<option>${E(v)}</option>`).join('')};
+const offers=[...new Set(D.rows.map(r=>r.offer))].sort(),types=D.intents.map(i=>i[1]).concat(['Other question']),brands=[...new Set(D.rows.map(r=>r.branded))];
+const head=`<tr><th>Geo</th><th>Offer</th><th>Query (as typed)</th><th>English</th><th>Type</th><th class="num">Pos</th><th class="num">Impr</th><th class="num">Clicks</th><th>Our page</th><th>Why we appear</th></tr>`;
+const row=r=>`<tr><td>${E(r.geo)}</td><td>${E(r.offer)}</td><td><b>${E(r.q)}</b><div class="sub">${E(r.lang)} · ${E(r.explicit)} · ${E(r.branded)}</div></td><td>${E(r.en)}</td><td>${E(r.type)}</td><td class="num"><span class="pill ${B(r.pos)}">${r.pos}</span></td><td class="num">${r.impr}</td><td class="num">${r.clicks}</td><td><a href="${E(r.page)}" rel="noreferrer nofollow" target="_blank">${E(r.page.replace(/^https?:\/\//,''))}</a><div class="sub">${E(r.title)}</div></td><td class="w">${E(r.why)}</td></tr>`;
+function table(ids,base,sorter){const[g,o,s,t,m,x,y]=ids.map(i=>i&&document.getElementById(i));let lim=100;
+ const go=()=>{const q=s.value.toLowerCase();let rs=base.filter(r=>(!g.value||r.geo===g.value)&&(!o.value||r.offer===o.value)&&(!x||!x.value||r.types.includes(x.value))&&(!y||!y.value||r.branded===y.value)&&(!q||r.q.includes(q)||r.en.toLowerCase().includes(q)));rs.sort(sorter);
+ if(ids[7])document.getElementById(ids[7]).textContent=rs.length.toLocaleString()+' rows';t.innerHTML=head+rs.slice(0,lim).map(row).join('');m.style.display=rs.length>lim?'':'none'};
+ [g,o,x,y].forEach(e=>e&&(e.onchange=()=>{lim=100;go()}));s.oninput=()=>{lim=100;go()};m.onclick=()=>{lim+=200;go()};go()}
+['bg','ag','sg'].forEach(i=>opt(document.getElementById(i),'All geos',geos));['bo','ao'].forEach(i=>opt(document.getElementById(i),'All offers',offers));
+opt(document.getElementById('ai'),'All question types',types);opt(document.getElementById('ab'),'Brand typed or not',brands);
+table(['bg','bo','bs','bt','bm'],D.rows.filter(r=>r.pos<=10),(a,b)=>a.pos-b.pos||b.impr-a.impr);
+table(['ag','ao','as','at','am','ai','ab','ac'],D.rows,(a,b)=>b.impr-a.impr);
+// summary
+const sg=document.getElementById('sg');const ds=()=>{document.getElementById('stb').innerHTML=`<tr><th>Geo</th><th>Offer</th><th class="num">Questions</th><th class="num">Impr</th><th class="num">Clicks</th><th class="num">Avg pos</th><th class="num">Top 3</th><th class="num">Page 1</th><th>Best-ranked question</th></tr>`+D.summ.filter(r=>!sg.value||r.geo===sg.value).sort((a,b)=>a.geo.localeCompare(b.geo)||b.impr-a.impr).map(r=>`<tr><td>${E(r.geo)}</td><td>${E(r.offer)}</td><td class="num">${r.nq}</td><td class="num">${r.impr}</td><td class="num">${r.clicks}</td><td class="num"><span class="pill ${B(r.pos)}">${r.pos}</span></td><td class="num">${r.top3}</td><td class="num">${r.p1}</td><td>${E(r.best)}</td></tr>`).join('')};sg.onchange=ds;ds();
+// regex
+document.getElementById('rl').innerHTML=D.regex.map((r,i)=>`<div class="rx"><b>${E(r.geo)}</b> <span class="sub">${E(r.langs)}</span><div class="sub" style="margin-top:6px">Question words</div><code id="s${i}">${E(r.strict)}</code><button data-c="s${i}">Copy question-words regex</button><div class="sub" style="margin-top:8px">Full (question words + implied questions)</div><code id="f${i}">${E(r.full)}</code><button data-c="f${i}">Copy full regex</button></div>`).join('');
+document.getElementById('rl').onclick=e=>{const c=e.target.dataset.c;if(c){navigator.clipboard.writeText(document.getElementById(c).textContent);e.target.textContent='Copied ✓'}};
+});
+</script></body></html>
