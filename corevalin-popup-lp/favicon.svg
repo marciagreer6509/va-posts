@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Corevalin">
-<rect width="48" height="48" rx="11" fill="#15293f"/>
-<rect x="3.2" y="3.2" width="41.6" height="41.6" rx="8.4" fill="none" stroke="#c0512f" stroke-width="2.2"/>
-<path d="M6 25.5h7.6l3.1-9.2 4.7 17.4 4.2-12.1 2.5 6.1 2.1-2.2H42" fill="none" stroke="#f4ede1" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"/>
-<circle cx="24" cy="24" r="0" fill="none"/>
-</svg>
