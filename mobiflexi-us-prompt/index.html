@@ -1,0 +1,152 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Mobiflexi US Prompt</title>
+<style>:root{--bg:#f6f7f9;--fg:#111;--card:#fff;--b:#d6d9de;--a:#0a7d4f}@media(prefers-color-scheme:dark){:root{--bg:#111418;--fg:#e8eaed;--card:#1a1e24;--b:#2c323a;--a:#3ecf8e}}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif}.w{max-width:980px;margin:0 auto;padding:16px}
+.bar{position:sticky;top:0;background:var(--bg);padding:12px 0;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+button{background:var(--a);color:#fff;border:0;border-radius:8px;padding:12px 22px;font-size:16px;font-weight:700;cursor:pointer}
+pre{background:var(--card);border:1px solid var(--b);border-radius:8px;padding:16px;white-space:pre-wrap;word-wrap:break-word;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace}</style></head>
+<body><div class="w"><h1 style="margin:8px 0">Mobiflexi: US page set (/us/) for mobiflexi-official.shop</h1>
+<div class="bar"><button id="c">Copy prompt</button><span id="s">1859 words, paste the whole thing into the tool</span></div>
+<pre id="p">TASK: Add a US page set at /us/ to mobiflexi-official.shop (your Worker &quot;mobiflexi-shop-official&quot;, Cloudflare fleet-10). Build it exactly like the existing /gb/ set (same HTML, CSS, components, layout, images), with NEW American-English text and US facts. Deploy, purge cache, report back in the format at the bottom.
+
+======================================================================
+A. DO NOT TOUCH (anything not listed in section E is frozen)
+======================================================================
+1. Do not change the text, prices, links, reviews, FAQs, or JSON-LD of any existing page (/, /gb/, /de/, /fr/, /nl/, /es/, /se/, /fi/ and their subpages).
+2. Do not change the design, CSS, fonts, favicon files, /media/ images, robots.txt, or the exit-popup logic.
+3. Do NOT add history.pushState, replaceState or popstate anywhere (Google spam policy; that kills the site).
+4. Do NOT remove the DNS TXT records, Email Routing, or any Cloudflare setting.
+5. Do NOT submit the sitemap to Search Console and do NOT push to the Indexing API or IndexNow. We do that.
+6. NEVER open, curl, fetch or click any trk2success.com link while testing (every hit is a billed click). Check links by reading the HTML only.
+7. Do not copy any text from mobiflexi.store/us/ (our other site) or from your own /gb/ pages. Section F explains.
+
+======================================================================
+B. PAGES TO CREATE (16 indexable + 1 noindex)
+======================================================================
+Each page uses the SAME template as its /gb/ twin. Where there is no twin, use the /gb/ subpage template (e.g. /gb/legit/).
+
+URL                 template twin       what the page answers (US searcher)
+/us/                /gb/                hub: what Mobiflexi is, formula, who it suits, prices, reviews, FAQ (1,800-2,600 words)
+/us/buy/            /gb/buy/            how to order in the US, bundles, shipping, guarantee
+/us/reviews/        /gb/reviews/        the 5 US customer reviews (section C4) + what people report
+/us/legit/          /gb/legit/          is Mobiflexi legit: who makes it, guarantee, checkout, label
+/us/trustpilot/     /gb/trustpilot/     &quot;mobiflexi trustpilot&quot;: what reviews exist; never invent a Trustpilot score or count
+/us/ingredients/    /gb/ingredients/    full label table (section C3)
+/us/side-effects/   /gb/side-effects/   tolerability; medication/pregnancy → &quot;ask your doctor or pharmacist&quot;. NO drug-interaction safety answers (no ibuprofen/paracetamol/acetaminophen/Tylenol/Advil/blood-thinner Q&amp;A)
+/us/price/          /gb/price/          US prices in USD (section C2)
+/us/comparison/     /gb/comparison/     1 vs 2 vs 3 bottles (same structure as gb)
+/us/how-to-use/     /gb/how-to-use/     two capsules a day with water and a meal
+/us/coupon/         /gb/coupon/         &quot;mobiflexi coupon code&quot;: the lower price is the 2- and 3-bottle bundle price. NEVER print a code
+/us/shark-tank/     /gb/dragons-den/    &quot;mobiflexi shark tank&quot;: Mobiflexi has not been pitched on Shark Tank. No celebrities, no TV claims
+/us/amazon/         /gb/boots/          &quot;mobiflexi amazon&quot;: we link only to the official order page; its bundles and 30-day guarantee apply there. No claims about other sellers
+/us/where-to-buy/   /gb/pharmacy/       &quot;walmart / cvs / walgreens / gnc&quot;: answer all four on this ONE page; order through the official page
+/us/does-it-work/   /gb/does-it-work/   what it is built to do, what it is not (food supplement, not a medicine)
+/us/complaints/     /gb/legit/          &quot;mobiflexi reviews and complaints&quot;: how to contact, return, and use the 30-day money-back guarantee. NO invented complaints, NO &quot;most people say&quot;, NO quotes that are not in C4
+/us/legal/          /gb/legal/          same legal page as /gb/legal/, US wording, meta robots noindex + X-Robots-Tag noindex, NOT in sitemap
+
+======================================================================
+C. FACTS: use these EXACTLY. Nothing else is a fact.
+======================================================================
+C1. ORDER LINK (every order button on every /us/ page, incl. hero, mid, bundle1/2/3, sticky, exit popup):
+https://trk2success.com/?a=2397&amp;c=11544&amp;s1=mobiflexiusshop&amp;s2=&lt;page&gt;&amp;s3=mobiflexi-official.shop&amp;s4=&lt;position&gt;
+- &lt;page&gt; = home, buy, reviews, legit, trustpilot, ingredients, side-effects, price, comparison, how-to-use, coupon, shark-tank, amazon, where-to-buy, does-it-work, complaints
+- &lt;position&gt; = the same values /gb/ uses (hero, mid, bundle1, bundle2, bundle3, sticky, exit)
+- rel=&quot;nofollow sponsored noopener&quot;, same target as /gb/
+- c=11544 ONLY. Never use 11385 (the UK one) on /us/.
+
+C2. PRICES (from the official US checkout, verbatim; USD, &quot;$&quot; before the number):
+- 1 bottle (30-day supply, &quot;Starter pack&quot;): $59.95, struck price $89.95, shipping $5.95
+- 2 bottles (60-day supply): $46.97 per bottle, struck price $89.95, $1.57 per day, free shipping
+- 3 bottles (90-day supply, &quot;Best seller&quot;, &quot;7 out of 10 people choose this&quot;): $42.65 per bottle, struck price $89.95, $1.42 per day, free shipping, &quot;You save: $141.90&quot;
+- Headline discount: &quot;Save 53%&quot; (use this in the hero and exit popup instead of the 47% /gb/ uses)
+- Show prices in the same per-bottle format /gb/ uses. Do NOT calculate any other totals or savings.
+- 30-day money-back guarantee. Rating: 4.8 stars, 5,000+ customers (print &quot;5K+&quot; or &quot;5,000+&quot;, never an exact made-up count)
+
+C3. PRODUCT (same as every geo):
+- 60 vegan capsules per bottle = 30 days; take 2 capsules daily with a glass of water, ideally with a meal; do not exceed the daily dose
+- Label per 2 capsules: Glucosamine 1500 mg · Chondroitin 800 mg · MSM 1000 mg · Hyaluronic acid 100 mg · Meriva® Curcumin (with BioPerine®) 200 mg · UC-II® collagen (native type II) 40 mg · plus vitamin D3, vitamin K2 and manganese (NO doses published for D3/K2/manganese: never invent them)
+- Vegan capsule, gluten-free, non-GMO, no stimulants
+- US: &quot;made in GMP-certified facilities&quot;. NEVER say &quot;made in the EU&quot; on /us/.
+- Allowed benefit sentences, ONLY these three: &quot;Manganese contributes to the normal formation of connective tissue.&quot; &quot;Vitamin D contributes to normal muscle function.&quot; &quot;Vitamin K contributes to the maintenance of normal bones.&quot;
+- Disclaimer: &quot;Mobiflexi is a food supplement, not a medicine. It is not intended to diagnose, treat, cure or prevent any disease, including arthritis or any joint condition. Individual experiences may vary.&quot;
+
+C4. REVIEWS: exactly these 5, body text verbatim, US name/age/city, photo file as listed (gender matches):
+1. Barbara, 67 · New York · /media/mf-rev-w1.webp: &quot;3am wakings every night for two years. Three weeks on Mobiflexi — sleeping through. Everything changed.&quot;
+2. Richard, 71 · Los Angeles · /media/mf-rev-m2.webp: &quot;Stopped going to grandson&#x27;s football — stairs. Last weekend: whole match, standing.&quot;
+3. James, 69 · Houston · /media/mf-rev-m3.webp: &quot;Gave up the garden. Back in it every day. Small to others, everything to me.&quot;
+4. Linda, 72 · Phoenix · /media/mf-rev-w2.webp: &quot;Hadn&#x27;t seen my daughter in 8 months. Week 6: Sunday lunch, on the floor with grandchildren. Happy tears.&quot;
+5. Michael, 66 · Dallas · /media/mf-rev-m1.webp: &quot;Life radius: 200 metres. Now: 45-minute walk every morning. I feel like myself again.&quot;
+(Same card component, stars and &quot;Verified purchase&quot; line as /gb/. No 6th review. The Patricia/ibuprofen review is banned.)
+
+======================================================================
+D. BANNED on every /us/ page (text AND JSON-LD)
+======================================================================
+- clinically proven / clinically tested / clinically validated / &quot;8 clinical trials&quot; / &quot;29x better absorbed&quot;
+- FDA, cure, treat, heal, arthritis relief, pain relief, anti-inflammatory, reduces inflammation, repairs cartilage, &quot;joint disease&quot;
+- weight loss (the merchant page has template junk saying &quot;weight loss journey&quot;: never copy it)
+- the merchant footer junk: &quot;1234 Market Street, San Francisco&quot;, &quot;+1 (484) 263-5085&quot;, &quot;not a pharmacy&quot;, &quot;licensed pharmacies&quot;, &quot;prescriptions&quot;
+- Glumentrol, Nutrical.ai, hypnotherapy
+- any coupon code, any Trustpilot score/count, any invented complaint or quote, any celebrity or TV appearance
+- UK words: £, GP, NHS, Boots, Holland &amp; Barrett, ASA, &quot;high street&quot;, &quot;postage&quot;, &quot;chemist&quot;
+- attribution lines: &quot;as shown at the checkout&quot;, &quot;according to the manufacturer&quot;, &quot;as published by&quot;
+- &quot;go to / check the official site / check price&quot; wording (the page IS the official shop)
+- seller/company name anywhere except /us/legal/
+
+======================================================================
+E. THE ONLY CHANGES ALLOWED OUTSIDE /us/
+======================================================================
+1. hreflang: add &lt;link rel=&quot;alternate&quot; hreflang=&quot;en-US&quot; href=&quot;https://mobiflexi-official.shop/us/&quot;&gt; (and the matching en-US subpage URL where a twin exists) to EVERY page of EVERY geo, so all sets list each other. Keep x-default and &quot;en&quot; → &quot;/&quot; as now.
+2. Country switcher: add a US flag/entry linking /us/ on every page, same style as the others.
+3. sitemap.xml: add the 16 indexable /us/ URLs (not /us/legal/). Keep everything else.
+Nothing else on existing pages changes. Byte-diff the old pages before vs after: the ONLY differences may be these 3 items.
+
+======================================================================
+F. COPY RULES
+======================================================================
+- American English: color, center, favorite, doctor (not GP), pharmacist, drugstore, &quot;ship&quot;/&quot;shipping&quot;, dates &quot;November 12, 2026&quot;.
+- NEW text. No run of 9 or more identical words may appear on /us/ AND on any /gb/ page or the root &quot;/&quot;. The same goes for mobiflexi.store/us/. Exempt: the review bodies (C4), the label table (C3), the disclaimer and the 3 benefit sentences.
+- Title: &quot;Mobiflexi USA ✓ Official Shop&quot; for the hub; subpages &quot;Mobiflexi &lt;Topic&gt; USA ✓ Official Shop&quot; (e.g. &quot;Mobiflexi Reviews USA ✓ Official Shop&quot;). Max 60 characters, exactly one ✓, no dates, no &quot;go to&quot;.
+- Meta description 120-158 characters, unique per page, mentions the USD price only where the page is about price/buy.
+- One h1 per page. Hub first screen at 390px: h1 → price → order button, visible without scrolling.
+- Hub 1,800-2,600 words; subpages at least 700 words each (same as the /gb/ twins).
+- Each subpage links back to /us/ and to 3-5 other /us/ pages in the same &quot;Read next&quot; block /gb/ uses. No /us/ page links to a /gb/ page in body text.
+
+======================================================================
+G. HEAD + JSON-LD on every /us/ page
+======================================================================
+- &lt;html lang=&quot;en-US&quot;&gt;, canonical = its own https://mobiflexi-official.shop/us/... URL (trailing slash)
+- Exactly ONE Product per page: name &quot;Mobiflexi&quot;, brand Mobiflexi, image = the same product image /gb/ uses
+  - offers: AggregateOffer priceCurrency &quot;USD&quot;, lowPrice &quot;42.65&quot;, highPrice &quot;59.95&quot;, offerCount 3, each Offer with price, priceCurrency &quot;USD&quot;, availability InStock, url = the C1 link, priceValidUntil &quot;2027-12-31&quot;
+  - shippingDetails: OfferShippingDetails with shippingRate MonetaryAmount {value 5.95 (1 bottle) / 0 (2 and 3 bottles), currency &quot;USD&quot;}, shippingDestination DefinedRegion addressCountry &quot;US&quot;
+  - hasMerchantReturnPolicy: 30 days, applicableCountry &quot;US&quot;
+  - aggregateRating: ratingValue 4.8, reviewCount 5000, bestRating 5
+  - review: the 5 C4 reviews as Review with author Person name; NO &quot;about&quot; property on any Review
+- NO &quot;isRelatedTo&quot;, NO &quot;currency&quot; property on Product, NO second/nested Product anywhere
+- FAQPage = exactly the FAQ shown on that page; BreadcrumbList Home &gt; USA &gt; page; WebPage inLanguage &quot;en-US&quot;
+- Every JSON-LD block must parse (JSON.parse) without error.
+
+======================================================================
+H. DEPLOY + CHECK (do all, then report)
+======================================================================
+1. Deploy the Worker, then purge the Cloudflare cache for the zone.
+2. curl every /us/ URL as a stranger (no cookies) AND with a Googlebot user agent: all 16 → 200, /us/legal/ → 200 + noindex; http:// → 301 https; www → 301 apex.
+3. Grep the live HTML of all 16 pages:
+   - every trk2success href contains c=11544 and s1=mobiflexiusshop (count them), zero contain c=11385
+   - 0 hits for every banned term in D (case-insensitive) and 0 for pushState/popstate
+   - exactly 1 &quot;@type&quot;:&quot;Product&quot; per page, 0 &quot;isRelatedTo&quot;, JSON-LD parses
+   - &quot;$59.95&quot;, &quot;$46.97&quot;, &quot;$42.65&quot; appear on hub, price, buy, comparison
+4. Byte-diff all existing (non-/us/) pages before vs after: the only differences are the E1-E3 items.
+5. 9-word duplicate check: /us/ vs /gb/ + &quot;/&quot; (and mobiflexi.store/us/), with the exemptions from F. Must be 0.
+6. Screenshot /us/ at 390x844 and 1366x768: h1, price and order button visible on the first screen, no horizontal scroll, 5 review photos load.
+
+REPORT FORMAT (nothing else):
+DONE / NOT DONE
+- Worker version + deploy time (UTC)
+- 16 URLs + status codes
+- link count per page (all c=11544)
+- banned-term hits: 0 (or list)
+- Product count per page, JSON-LD errors
+- diff of existing pages: list of what changed
+- 9-word dup result
+- 2 screenshot links
+</pre></div>
+<script>document.getElementById('c').onclick=async()=>{const t=document.getElementById('p').innerText;try{await navigator.clipboard.writeText(t)}catch(e){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove()}document.getElementById('s').textContent='Copied ✓';}</script></body></html>
