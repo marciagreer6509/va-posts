@@ -1,16 +1,141 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Dragon Ad</title>
-<style>:root{--bg:#0f0d0c;--fg:#f4efe9;--mut:#b9b0a6;--acc:#ff8a00;--card:#1b1714}@media(prefers-color-scheme:light){:root:not([data-theme=dark]){--bg:#faf7f3;--fg:#1b1714;--mut:#5d544c;--card:#fff}}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,sans-serif}main{max-width:1000px;margin:auto;padding:24px 16px}h1{margin:0 0 4px;font-size:28px}p.s{color:var(--mut);margin:0 0 24px}
-.v{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:32px}.v figure{margin:0;background:var(--card);padding:12px;border-radius:10px}video{width:100%;border-radius:6px;background:#000}
-figcaption{margin-top:8px;font-size:14px;color:var(--mut)}a.dl{display:inline-block;margin-top:8px;padding:10px 14px;background:var(--acc);color:#111;border-radius:6px;font-weight:700;text-decoration:none}
-.c{background:var(--card);border-radius:8px;padding:10px 12px;margin-bottom:10px}.l{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14px}pre{white-space:pre-wrap;margin:6px 0 0;font:15px/1.45 system-ui,sans-serif}
-button{background:transparent;color:var(--fg);border:1px solid var(--mut);border-radius:6px;padding:8px 12px;min-height:40px;cursor:pointer}</style></head><body><main>
-<h1>Solar Dragon Ad</h1><p class="s">27.9 s · 30 fps · AAC, -15 LUFS · CTA leads to the DragonFlame landing page.</p>
-<div class="v"><figure><video controls playsinline preload="metadata" poster="poster_v916.jpg" src="dragon_ad_v916.mp4"></video><figcaption><b>9:16 · 1080×1920</b>: YouTube Shorts, FB/IG Reels and Stories (the main ad)</figcaption><a class="dl" href="dragon_ad_v916.mp4" download>Download 9:16</a></figure>
-<figure><video controls playsinline preload="metadata" poster="poster_sq.jpg" src="dragon_ad_sq.mp4"></video><figcaption><b>1:1 · 1080×1080</b>: Facebook / Instagram Feed</figcaption><a class="dl" href="dragon_ad_sq.mp4" download>Download 1:1</a></figure></div>
-<h2>Ad copy</h2><div class="c"><div class="l">FB primary text A <button onclick="cp(this)">Copy</button></div><pre>Your neighbours will think your garden is on fire 🔥
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Dragon Ad Kit</title>
+<style>:root{--bg:#0f0d0c;--fg:#f4efe9;--mut:#b9b0a6;--acc:#ff8a00;--card:#1b1714;--line:#3a322c;--ok:#4cc38a;--bad:#ff6b5b}
+@media(prefers-color-scheme:light){:root:not([data-theme=dark]){--bg:#faf7f3;--fg:#1b1714;--mut:#5d544c;--card:#fff;--line:#e3dbd2;--ok:#147a4b;--bad:#b3261e}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}main{max-width:1000px;margin:auto;padding:24px 16px 80px}
+h1{margin:0 0 4px;font-size:30px}h2{margin:44px 0 12px;font-size:24px;border-top:1px solid var(--line);padding-top:24px}h3{margin:22px 0 8px;font-size:18px}p.s{color:var(--mut);margin:0 0 16px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}nav a{color:var(--fg);background:var(--card);border:1px solid var(--line);padding:6px 10px;border-radius:20px;text-decoration:none;font-size:14px}
+.v,.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}figure{margin:0;background:var(--card);padding:12px;border-radius:10px}video,img{width:100%;border-radius:6px;background:#000;display:block}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start}figcaption{margin-top:8px;font-size:14px;color:var(--mut)}
+a.dl{display:inline-block;margin-top:8px;padding:8px 12px;background:var(--acc);color:#111;border-radius:6px;font-weight:700;text-decoration:none;font-size:14px}
+.slot{border:2px dashed var(--line);border-radius:10px;padding:16px;color:var(--mut)}.slot b{color:var(--fg)}
+.c{background:var(--card);border-radius:8px;padding:10px 12px;margin-bottom:10px}.l{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14px;gap:8px}pre{white-space:pre-wrap;margin:6px 0 0;font:15px/1.45 system-ui,sans-serif;word-break:break-word}
+button{background:transparent;color:var(--fg);border:1px solid var(--mut);border-radius:6px;padding:8px 12px;min-height:40px;cursor:pointer;flex:none}
+.anat{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:20px;align-items:start}@media(max-width:720px){.anat{grid-template-columns:1fr}}
+.mock{background:#fff;color:#1c1e21;border-radius:10px;overflow:hidden;font:14px/1.4 Helvetica,Arial,sans-serif;border:1px solid var(--line)}.mock .hd{display:flex;gap:8px;align-items:center;padding:10px}.mock .av{width:36px;height:36px;border-radius:50%;background:#ff8a00}
+.mock .pt{padding:0 10px 10px}.mock img{border-radius:0}.mock .ft{display:flex;justify-content:space-between;align-items:center;background:#f0f2f5;padding:10px;gap:8px}.mock .cta{background:#e4e6eb;padding:8px 12px;border-radius:6px;font-weight:700;white-space:nowrap}
+.n{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--acc);color:#111;font-weight:800;font-size:12px;margin-right:6px;flex:none}
+ol.parts{list-style:none;padding:0;margin:0}ol.parts li{display:flex;gap:6px;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;font-size:15px}td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}th{color:var(--mut);font-weight:600}
+.step{background:var(--card);border-left:4px solid var(--acc);border-radius:8px;padding:12px 14px;margin-bottom:12px}.step h3{margin:0 0 6px}.step ul{margin:6px 0 0;padding-left:20px}
+.warn{border-left-color:var(--bad)}.good{border-left-color:var(--ok)}code{background:var(--card);border:1px solid var(--line);padding:1px 5px;border-radius:4px;font-size:14px;word-break:break-all}
+.calc{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}.calc input{width:110px;padding:8px;border-radius:6px;border:1px solid var(--mut);background:var(--bg);color:var(--fg);font-size:16px}
+</style></head><body><main>
+<h1>Solar Dragon: Facebook Ad Kit</h1>
+<p class="s">Shirem DragonFlame · Blitz advertorial · $59.99 (50% OFF) · Everything you need to launch, in launch order.</p>
+<nav><a href="#parts">1 · Ad parts</a><a href="#videos">2 · Videos</a><a href="#images">3 · Images</a><a href="#copy">4 · Text</a><a href="#link">5 · Link</a><a href="#buyers">6 · Best buyers</a><a href="#launch">7 · Launch steps</a><a href="#rules">8 · Kill / scale</a></nav>
+
+<h2 id="parts">1 · What goes into ONE Facebook ad</h2>
+<div class="anat"><div class="mock"><div class="hd"><div class="av"></div><div><b>Your Page name</b><br><span style="color:#65676b;font-size:12px">Sponsored</span></div></div>
+<div class="pt"><span class="n">1</span>Wait for the sunset… 🔥🐉 This solar dragon breathes fire every night. 50% OFF right now 👇</div>
+<img src="img1_fire_1x1.jpg" alt="ad picture"><div class="ft"><div><span style="color:#65676b;font-size:12px">GET.SHIREM.COM</span><br><b><span class="n">3</span>The Dragon That Breathes Fire 🔥</b><br><span style="color:#65676b;font-size:12px"><span class="n">4</span>Solar · Auto-on at dusk · No wires</span></div><div class="cta"><span class="n">5</span>Shop Now</div></div></div>
+<ol class="parts">
+<li><span class="n">1</span><div><b>Primary text</b>: the words ABOVE the picture. Pick one from section 4.</div></li>
+<li><span class="n">2</span><div><b>Media</b>: ONE video OR ONE image (sections 2 and 3). Upload the 9:16 video for Reels/Stories and the 1:1 or 4:5 for Feed. Facebook asks for both when you edit by placement.</div></li>
+<li><span class="n">3</span><div><b>Headline</b>: bold line under the picture (section 4).</div></li>
+<li><span class="n">4</span><div><b>Description</b>: small grey line, often hidden on mobile. Optional.</div></li>
+<li><span class="n">5</span><div><b>Call-to-action button</b>: choose <b>Shop Now</b> from the list.</div></li>
+<li><span class="n">6</span><div><b>Website URL</b>: your Blitz tracking link (not shown to people). <b>URL parameters</b> go in their own box (section 5).</div></li>
+<li><span class="n">7</span><div><b>Identity</b>: your Facebook Page + Instagram account. Use a neutral page name like "Garden Glow Finds", never "Shirem".</div></li>
+</ol></div>
+
+<h2 id="videos">2 · Videos</h2>
+<p class="s">27.9 s · made on H3 from the merchant's own product photos.</p>
+<div class="v"><figure><video controls playsinline preload="metadata" poster="poster_v916.jpg" src="dragon_ad_v916.mp4"></video><figcaption><b>V1 · 9:16</b>: Reels + Stories</figcaption><a class="dl" href="dragon_ad_v916.mp4" download>Download 9:16</a></figure>
+<figure><video controls playsinline preload="metadata" poster="poster_sq.jpg" src="dragon_ad_sq.mp4"></video><figcaption><b>V1 · 1:1</b>: FB + IG Feed</figcaption><a class="dl" href="dragon_ad_sq.mp4" download>Download 1:1</a></figure></div>
+<h3>Coming next (rendered on H3 once the 5090 is free; you approve each one first)</h3>
+<div class="g"><div class="slot"><b>V2 · Night reveal first</b><br>Opens on the fire in the dark (0–2 s), then "…and it's solar".</div><div class="slot"><b>V3 · Day → Night</b><br>Same lawn, day turns to night, ignition flash lands at 2 s.</div><div class="slot"><b>V4 · "What's that in their garden?"</b><br>Passer-by stops and walks over to look.</div></div>
+
+<h2 id="images">3 · Image ads (10 files)</h2>
+<p class="s">Merchant's own photos. Left = 4:5 (1080×1350, best for Feed), right = 1:1 (1080×1080). Tap to open full size.</p>
+<div class="g"><figure><div class="pair"><a href="img1_fire_4x5.jpg" target="_blank"><img loading="lazy" src="img1_fire_4x5.jpg" alt="1 · IT BREATHES FIRE: night close-up 4:5"></a><a href="img1_fire_1x1.jpg" target="_blank"><img loading="lazy" src="img1_fire_1x1.jpg" alt="1 · IT BREATHES FIRE: night close-up 1:1"></a></div><figcaption>1 · IT BREATHES FIRE: night close-up</figcaption><a class="dl" href="img1_fire_4x5.jpg" download>4:5 (Feed)</a> <a class="dl" href="img1_fire_1x1.jpg" download>1:1</a></figure><figure><div class="pair"><a href="img2_daynight_4x5.jpg" target="_blank"><img loading="lazy" src="img2_daynight_4x5.jpg" alt="2 · BY DAY… BY NIGHT: same lawn, before/after 4:5"></a><a href="img2_daynight_1x1.jpg" target="_blank"><img loading="lazy" src="img2_daynight_1x1.jpg" alt="2 · BY DAY… BY NIGHT: same lawn, before/after 1:1"></a></div><figcaption>2 · BY DAY… BY NIGHT: same lawn, before/after</figcaption><a class="dl" href="img2_daynight_4x5.jpg" download>4:5 (Feed)</a> <a class="dl" href="img2_daynight_1x1.jpg" download>1:1</a></figure><figure><div class="pair"><a href="img3_neighbours_4x5.jpg" target="_blank"><img loading="lazy" src="img3_neighbours_4x5.jpg" alt="3 · WAIT TILL THE NEIGHBOURS SEE: patio 4:5"></a><a href="img3_neighbours_1x1.jpg" target="_blank"><img loading="lazy" src="img3_neighbours_1x1.jpg" alt="3 · WAIT TILL THE NEIGHBOURS SEE: patio 1:1"></a></div><figcaption>3 · WAIT TILL THE NEIGHBOURS SEE: patio</figcaption><a class="dl" href="img3_neighbours_4x5.jpg" download>4:5 (Feed)</a> <a class="dl" href="img3_neighbours_1x1.jpg" download>1:1</a></figure><figure><div class="pair"><a href="img4_price_4x5.jpg" target="_blank"><img loading="lazy" src="img4_price_4x5.jpg" alt="4 · 50% OFF / NOW $59.99: price ad 4:5"></a><a href="img4_price_1x1.jpg" target="_blank"><img loading="lazy" src="img4_price_1x1.jpg" alt="4 · 50% OFF / NOW $59.99: price ad 1:1"></a></div><figcaption>4 · 50% OFF / NOW $59.99: price ad</figcaption><a class="dl" href="img4_price_4x5.jpg" download>4:5 (Feed)</a> <a class="dl" href="img4_price_1x1.jpg" download>1:1</a></figure><figure><div class="pair"><a href="img5_gift_4x5.jpg" target="_blank"><img loading="lazy" src="img5_gift_4x5.jpg" alt="5 · GIFT FOR DRAGON LOVERS: man for scale 4:5"></a><a href="img5_gift_1x1.jpg" target="_blank"><img loading="lazy" src="img5_gift_1x1.jpg" alt="5 · GIFT FOR DRAGON LOVERS: man for scale 1:1"></a></div><figcaption>5 · GIFT FOR DRAGON LOVERS: man for scale</figcaption><a class="dl" href="img5_gift_4x5.jpg" download>4:5 (Feed)</a> <a class="dl" href="img5_gift_1x1.jpg" download>1:1</a></figure></div>
+
+<h2 id="copy">4 · Ad text</h2>
+<p class="s">Every claim comes from the advertorial: solar, turns on by itself at dusk, no wires or plugs, fibre-optic "fire", 50% OFF, $59.99. No fake reviews, no "only 3 left".</p>
+<div class="c"><div class="l">Primary text A: hype (long) <button onclick="cp(this)">Copy</button></div><pre>Your neighbours will think your garden is on fire 🔥
 By day it&#x27;s a dragon statue. The second the sun goes down, it lights up and &quot;breathes&quot; glowing sparks all night.
 ☀️ Solar, no wires, no plugs, no switches
 🔥 Switches on by itself at dusk
-💥 50% OFF for a limited time 👇</pre></div><div class="c"><div class="l">FB primary text B <button onclick="cp(this)">Copy</button></div><pre>Wait for the sunset… 🔥🐉 This solar dragon breathes fire every night. 50% OFF right now 👇</pre></div><div class="c"><div class="l">FB primary text C <button onclick="cp(this)">Copy</button></div><pre>Everyone who walks past stops to ask how it&#x27;s done 👀🔥 Tap to see it after dark.</pre></div><div class="c"><div class="l">FB headline <button onclick="cp(this)">Copy</button></div><pre>The Dragon That Breathes Fire 🔥</pre></div><div class="c"><div class="l">FB headline alt <button onclick="cp(this)">Copy</button></div><pre>50% OFF Solar Fire Dragon</pre></div><div class="c"><div class="l">FB description <button onclick="cp(this)">Copy</button></div><pre>Solar · Auto-on at dusk · No wires</pre></div><div class="c"><div class="l">YouTube headline (≤40) <button onclick="cp(this)">Copy</button></div><pre>This Dragon Breathes Fire 🔥 50% OFF</pre></div><div class="c"><div class="l">YouTube long headline (≤90) <button onclick="cp(this)">Copy</button></div><pre>The solar dragon that lights up and &quot;breathes&quot; glowing sparks every night. No wires.</pre></div><div class="c"><div class="l">YouTube description (≤90) <button onclick="cp(this)">Copy</button></div><pre>Solar powered, switches on at dusk, stakes into any garden. 50% off for a limited time.</pre></div><div class="c"><div class="l">YouTube video title <button onclick="cp(this)">Copy</button></div><pre>This Garden Dragon Breathes FIRE Every Night 🔥 #shorts</pre></div></main>
-<script>function cp(b){const t=b.closest('.c').querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1200)})}</script></body></html>
+💥 50% OFF for a limited time 👇</pre></div><div class="c"><div class="l">Primary text B: short <button onclick="cp(this)">Copy</button></div><pre>Wait for the sunset… 🔥🐉 This solar dragon breathes fire every night. 50% OFF right now 👇</pre></div><div class="c"><div class="l">Primary text C: curiosity <button onclick="cp(this)">Copy</button></div><pre>Everyone who walks past stops to ask how it&#x27;s done 👀🔥 Tap to see it after dark.</pre></div><div class="c"><div class="l">Primary text D: gift (Nov–Dec) <button onclick="cp(this)">Copy</button></div><pre>Know someone who loves dragons? 🐉
+This solar garden dragon &quot;breathes&quot; glowing sparks every night. No wires, it switches on by itself at dusk.
+🎁 50% OFF right now, now $59.99 👇</pre></div>
+<div class="c"><div class="l">Headline 1 <button onclick="cp(this)">Copy</button></div><pre>The Dragon That Breathes Fire 🔥</pre></div><div class="c"><div class="l">Headline 2 <button onclick="cp(this)">Copy</button></div><pre>50% OFF Solar Fire Dragon</pre></div><div class="c"><div class="l">Headline 3 <button onclick="cp(this)">Copy</button></div><pre>See It After Dark →</pre></div><div class="c"><div class="l">Headline 4 (gift) <button onclick="cp(this)">Copy</button></div><pre>The Gift For Dragon Lovers 🐉</pre></div><div class="c"><div class="l">Description <button onclick="cp(this)">Copy</button></div><pre>Solar · Auto-on at dusk · No wires</pre></div>
+<div class="c"><div class="l">Call-to-action button <button onclick="cp(this)">Copy</button></div><pre>Shop Now</pre></div>
+
+<h2 id="link">5 · The link + tracking (so you know WHICH ad sold)</h2>
+<div class="step"><ul>
+<li><b>Website URL</b> = your DragonFlame tracking link from <b>Blitz</b> (ask Carmen if you don't have it). Paste it exactly as Blitz gives it.</li>
+<li><b>URL parameters</b> box (under "Tracking" at the bottom of the ad), paste:</li></ul>
+<div class="c"><div class="l">URL parameters (paste into Facebook&#x27;s &#x27;URL parameters&#x27; box) <button onclick="cp(this)">Copy</button></div><pre>sub2=fb&amp;sub3={{ad.name}}</pre></div>
+<ul><li>Facebook replaces <code>{{ad.name}}</code> with the ad's name automatically. <b>Name each ad clearly</b>, e.g. <code>V1-fire-textA</code>, <code>IMG2-daynight-textB</code>. Blitz then shows sales per ad in sub3.</li>
+<li>If your Blitz link already uses sub2 or sub3, tell me and I'll pick free slots.</li>
+<li>Use the Facebook Preview button only. Don't click your own live link over and over: every click counts as traffic in Blitz.</li></ul></div>
+
+<h2 id="buyers">6 · Who the best buyers are, and how to find them</h2>
+<table><tr><th>Who buys this</th><th>Why</th></tr>
+<tr><td><b>US homeowners with a garden/yard, 40–65+</b></td><td>The advertorial is written for them: patio, flower bed, "grandkids". The $59.99 price is in USD.</td></tr>
+<tr><td><b>Women 45–65+</b></td><td>They buy most garden décor. All 3 reviews on the page are women.</td></tr>
+<tr><td><b>Dragon / fantasy fans</b> (men and women)</td><td>The product IS a dragon. Interest audiences make this easy to target.</td></tr>
+<tr><td><b>Gift buyers, mid-Nov to mid-Dec</b></td><td>Christmas. Text D and Image 5 are made for this.</td></tr></table>
+<h3>The method (simple version)</h3>
+<div class="step"><ul>
+<li><b>Test the AD first, the audience second.</b> The creative (video/picture + first line) decides 80% of results on Facebook. Run 3 ads side by side and let the numbers pick.</li>
+<li><b>Start with 2 ad sets</b> (same 3 ads in each):<br>
+<b>Ad set 1 · BROAD</b>: United States, age 35–65+, all genders, no interests. Facebook finds the people.<br>
+<b>Ad set 2 · INTERESTS</b>: United States, age 35–65+, interests: <i>Gardening, Landscaping, Garden furniture/décor, Home and garden, Dragons, Fantasy, House of the Dragon / Game of Thrones</i>.</li>
+<li><b>Important limitation:</b> we can't put a Facebook pixel on the merchant's checkout, so Facebook doesn't know who BOUGHT. It only knows who CLICKED. That's why sales are tracked in Blitz (sub3) and the kill/scale rules below run off Blitz.</li>
+<li><b>Ask Carmen one question:</b> "Can Blitz fire my Facebook pixel / Conversions API on a sale for this offer?" If YES → we switch to a <b>Sales</b> campaign later and Facebook starts finding buyers itself (much stronger).</li>
+<li><b>Day 4+ (step up):</b> build a <b>Custom Audience</b> of people who watched 75% of the video + people who engaged with the ad. Then build a <b>1% Lookalike (US)</b> of them. Run the winning ad to that lookalike. These people already showed interest.</li></ul></div>
+
+<h2 id="launch">7 · Step-by-step launch (Ads Manager on a computer, not the phone app)</h2>
+<div class="step"><h3>Step 0 · Before you start</h3><ul>
+<li>Carmen confirms <b>Facebook traffic is allowed</b> on this offer + gives you the link.</li>
+<li>You have: a Business Manager (business.facebook.com), a Facebook Page (neutral name + a dragon/garden profile picture), an ad account, a payment card.</li>
+<li>New ad account: set <b>time zone</b> and <b>currency = USD</b> carefully. They can never be changed.</li>
+<li>🛑 Never press the blue <b>"Boost post"</b> button on the Page. Always use Ads Manager.</li></ul></div>
+<div class="step"><h3>Step 1 · Campaign</h3><ul>
+<li>Ads Manager → <b>+ Create</b> → objective <b>Traffic</b> → Continue.</li>
+<li>Name: <code>Dragon | Traffic | US</code>.</li>
+<li><b>Advantage campaign budget: OFF</b> (so each ad set gets its own fixed budget for a fair test).</li>
+<li>Special ad category: none.</li></ul></div>
+<div class="step"><h3>Step 2 · Ad set (do it once, then Duplicate for ad set 2)</h3><ul>
+<li>Name: <code>Broad 35-65</code> (2nd: <code>Interests garden+dragon</code>).</li>
+<li>Conversion location: <b>Website</b> · Performance goal: <b>Maximise number of link clicks</b>.</li>
+<li>Daily budget: <b>$20</b>. Start date: tomorrow 00:00 (gives review time, starts on a full day).</li>
+<li>Audience: Location <b>United States</b> (People living in), Age <b>35–65+</b>. If Facebook shows "Advantage+ audience", for the Broad set leave it ON; for the Interest set add the interests above.</li>
+<li>🛑 <b>Placements → Manual</b>: keep Facebook Feed, Instagram Feed, Facebook Reels, Instagram Reels, Stories. <b>UNTICK Audience Network and Messenger</b>. Those sell junk clicks on Traffic campaigns.</li></ul></div>
+<div class="step"><h3>Step 3 · Ads (3 per ad set)</h3><ul>
+<li>Ad 1 <code>V1-video-textA</code>: video (9:16 for Reels/Stories, 1:1 for Feed), Text A, Headline 1.</li>
+<li>Ad 2 <code>IMG1-fire-textB</code>: Image 1 (4:5), Text B, Headline 2.</li>
+<li>Ad 3 <code>IMG2-daynight-textC</code>: Image 2 (4:5), Text C, Headline 3.</li>
+<li>Each: CTA <b>Shop Now</b> · Website URL = Blitz link · URL parameters = <code>sub2=fb&amp;sub3={{ad.name}}</code>.</li>
+<li>🛑 <b>Turn OFF "Advantage+ creative" enhancements</b> (they add music, change the picture, rewrite text). Also turn off "Add site links" / "Add catalogue items".</li>
+<li>Press <b>Preview</b> → check Feed, Reels and Stories look right → <b>Publish</b>. Review takes from minutes up to 24 h.</li></ul></div>
+<div class="step"><h3>Step 4 · Days 1–3: hands OFF</h3><ul>
+<li>Check <b>once a day</b>. Don't edit live ads: any edit restarts Facebook's learning.</li>
+<li>Columns to watch (Columns → Customise): <b>Amount spent, Impressions, CTR (link click-through rate), CPC (cost per link click), Link clicks</b>.</li>
+<li>Compare with Blitz: clicks + sales by <b>sub3</b> (= ad name).</li>
+<li>Reply to genuine questions in the comments. Hide spam.</li></ul></div>
+<div class="step"><h3>Step 5 · Day 4+</h3><ul>
+<li>Turn off losers (rules below). Keep the winner(s).</li>
+<li>Add the new videos V2–V4 (when approved) as new ads in the WINNING ad set.</li>
+<li>Build the 75% video-viewers Lookalike (section 6) → new ad set with the winning ad, $20/day.</li></ul></div>
+
+<h2 id="rules">8 · Kill / scale rules (so we don't burn money)</h2>
+<div class="calc"><label for="po"><b>Your Blitz payout per sale ($):</b></label><input id="po" type="number" min="1" step="1" placeholder="e.g. 25" oninput="calc()"></div>
+<div class="step warn"><h3>Turn an AD off when</h3><ul>
+<li>After ~1,000 impressions: <b>link CTR under 0.8%</b>. People aren't stopping for it.</li>
+<li>After ~1,000 impressions: <b>CPC over $1.00</b>.</li>
+<li>Spent <b id="k1">1.5× your payout</b> with <b>0 sales</b> in Blitz.</li></ul></div>
+<div class="step good"><h3>Scale an ad set when</h3><ul>
+<li>Cost per sale (spend ÷ Blitz sales) is <b id="k2">below your payout</b> for 2 days in a row.</li>
+<li>Raise budget <b>+20% every 2 days</b> at most. Big jumps restart learning and costs spike.</li>
+<li>Or duplicate the winning ad set at the same $20 into a new audience (Lookalike, or the gift angle in December).</li></ul></div>
+<div class="step warn"><h3>Don'ts that get accounts banned or waste money</h3><ul>
+<li>No fake reviews, fake countdowns, "only 3 left", or "as seen on TV". The page says none of that.</li>
+<li>Don't use the brand "Shirem" as your Page name or picture.</li>
+<li>Don't make 5 ad accounts at once or switch cards often. New accounts start with a low spend limit. Let it grow.</li>
+<li>If an ad is rejected: <b>Request review</b> once. Don't re-upload the same ad 10 times.</li></ul></div>
+<script>function cp(b){const t=b.closest('.c').querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1200)})}
+function calc(){const p=parseFloat(document.getElementById('po').value);if(!(p>0)){document.getElementById('k1').textContent='1.5× your payout';document.getElementById('k2').textContent='below your payout';return}
+document.getElementById('k1').textContent='$'+(p*1.5).toFixed(0)+' (1.5× payout)';document.getElementById('k2').textContent='below $'+p.toFixed(0)}</script>
+</main></body></html>
