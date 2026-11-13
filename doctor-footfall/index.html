@@ -1,425 +1,161 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Doctor Footfall Plan</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mukta+Mahee:wght@400;600;800&family=Young+Serif&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Mukta+Mahee:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#fbf5ea; --paper:#fffdf8; --ink:#2b2118; --soft:#6b5b4b; --line:#eadcc6;
-  --saffron:#e8870e; --saffron-bg:#fff0d6;
-  --teal:#0f7a6c; --teal-bg:#dff3ee;
-  --rose:#c2413a; --rose-bg:#fde6e2;
-  --indigo:#3d4a9a; --indigo-bg:#e6e9fb;
-  --leaf:#5b8a1f; --leaf-bg:#eaf4d8;
-  --plum:#8a3d7a; --plum-bg:#f6e3f1;
-}
+:root{--ink:#22201c;--mut:#6b6559;--bg:#fff9f1;--card:#fff;--line:#eee3d3;
+--navy:#163a6e;--navy-bg:#e8eefb;--red:#c8102e;--red-bg:#fdeaec;--gold:#d99a00;--gold-bg:#fff4d1;--teal:#0f7d6e;--teal-bg:#e2f5f1;--plum:#7a3d8c;--plum-bg:#f4e9f7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#f1ece4;--mut:#b5ad9f;--bg:#1a1814;--card:#24211c;--line:#3a352d;--navy-bg:#1f2a40;--red-bg:#3a1d22;--gold-bg:#3a3018;--teal-bg:#173330;--plum-bg:#30223a}}
+:root[data-theme="dark"]{--ink:#f1ece4;--mut:#b5ad9f;--bg:#1a1814;--card:#24211c;--line:#3a352d;--navy-bg:#1f2a40;--red-bg:#3a1d22;--gold-bg:#3a3018;--teal-bg:#173330;--plum-bg:#30223a}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Mukta Mahee","Noto Sans Gurmukhi",system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-wrap:break-word}
-.wrap{max-width:860px;margin:0 auto;padding:0 16px}
-h1,h2{font-family:"Young Serif","Mukta Mahee",serif;font-weight:400;line-height:1.2;margin:0}
-h2{font-size:1.55rem;margin:46px 0 6px}
-h3{font-size:1.08rem;margin:0 0 4px;font-weight:800}
-p{margin:8px 0}
-.lead{color:var(--soft);margin:0 0 16px}
-small,.small{font-size:.88rem;color:var(--soft)}
-.pa{font-weight:800;font-size:1.22rem;line-height:1.4}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 'Mukta Mahee',system-ui,sans-serif}
+.w{max-width:880px;margin:0 auto;padding:0 16px}
+header{background:linear-gradient(135deg,#163a6e,#24508f);color:#fff;padding:44px 0 40px}
+header .k{display:inline-block;background:#f5c518;color:#163a6e;font-weight:800;font-size:.78rem;letter-spacing:.08em;padding:4px 12px;border-radius:30px}
+h1{font-family:'Young Serif',serif;font-weight:400;font-size:clamp(1.7rem,5vw,2.5rem);line-height:1.2;margin:14px 0 10px}
+header p{margin:0;opacity:.9}
+h2{font-family:'Young Serif',serif;font-weight:400;font-size:1.55rem;margin:44px 0 12px}
+.locs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:-22px}
+.loc{background:var(--card);border-radius:18px;padding:18px 20px;border-top:6px solid var(--c);box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.loc h3{margin:0 0 4px;font-size:1.15rem}.loc p{margin:0;color:var(--mut);font-size:.95rem}
+.card{background:var(--cb);border-radius:18px;padding:18px 20px;margin:14px 0}
+.card h3{margin:0 0 6px;font-size:1.2rem;display:flex;gap:10px;align-items:center}
+.n{width:32px;height:32px;border-radius:50%;background:var(--c);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800;flex:none}
+ul,ol{padding-left:22px;margin:6px 0}li{margin:3px 0}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.meta span{background:var(--card);border-radius:30px;padding:3px 12px;font-size:.88rem}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:14px;overflow:hidden;font-size:.95rem}
+td,th{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--navy);color:#fff;font-weight:600}
+.amt{text-align:right;font-weight:800;white-space:nowrap}
+.tot td{font-weight:800;background:var(--gold-bg)}
+.week{display:grid;gap:8px}
+.day{display:flex;gap:12px;background:var(--card);border-radius:14px;padding:10px 14px;align-items:flex-start}
+.d{font-weight:800;min-width:46px;text-align:center;border-radius:10px;padding:2px 0;background:var(--b)}
+.call{background:var(--red-bg);border:2px dashed var(--red);border-radius:18px;padding:18px 20px}
+.call h3{margin:0 0 6px;color:var(--red)}
+.posters{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.pst{background:var(--card);border-radius:16px;padding:10px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.pst img{width:100%;height:auto;border-radius:10px;display:block}
+.pst b{display:block;margin:8px 4px 0}.pst small{display:block;margin:0 4px 4px;color:var(--mut)}
+.pst a{display:inline-block;margin:4px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;padding:5px 14px;border-radius:30px}
+footer{margin:50px 0 30px;color:var(--mut);font-size:.85rem;text-align:center}
+</style></head><body>
 
-/* hero */
-.hero{background:linear-gradient(160deg,#fff0d6 0%,#fde6e2 60%,#f6e3f1 100%);border-bottom:1px solid var(--line);padding:34px 0 30px}
-.tag{display:inline-block;background:var(--ink);color:#fff;border-radius:99px;padding:3px 12px;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;font-weight:600}
-.hero h1{font-size:1.75rem;margin:14px 0 12px}
-.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,#ffd27a 62%)}
-.who{font-size:.95rem;color:var(--soft)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.chip{background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-size:.88rem;font-weight:600}
+<header><div class="w">
+<span class="k">FOOTFALL PLAN · ₹17,000 / MONTH</span>
+<h1>Dr. J.L. Bansal — Skin Specialist</h1>
+<p>Four moves: fix Google Maps, one WhatsApp announcement group, two small Facebook + Instagram ad campaigns, and a paid post on Malout Live every two months. One VA, about an hour a week.</p>
+</div></header>
 
-/* verdict table */
-.judge{display:grid;gap:10px;margin-top:14px}
-.j{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:start}
-.badge{font-size:.76rem;font-weight:800;border-radius:8px;padding:3px 9px;white-space:nowrap;margin-top:3px}
-.keep{background:var(--leaf-bg);color:#3e6410}
-.change{background:var(--saffron-bg);color:#93540a}
-.stop{background:var(--rose-bg);color:#8f2a25}
-.j b{display:block}
-.j span.t{grid-column:2;color:var(--soft);font-size:.95rem}
-
-/* cards */
-.cards{display:grid;gap:14px;margin-top:14px}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;border-top:6px solid var(--c)}
-.card .n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--c);color:#fff;font-weight:800;margin-right:8px}
-.card h3{display:flex;align-items:center;font-size:1.15rem;margin-bottom:8px}
-.meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:12px}
-.meta div{background:var(--cb);border-radius:10px;padding:7px 9px;font-size:.84rem;line-height:1.3}
-.meta b{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;opacity:.7}
-ul,ol{margin:8px 0;padding-left:21px}
-li{margin:5px 0}
-
-/* budget */
-.bar{display:flex;height:22px;border-radius:99px;overflow:hidden;margin:14px 0 6px;border:1px solid var(--line)}
-.bar i{display:block}
-.rows{display:grid;gap:8px;margin-top:12px}
-.row{display:grid;grid-template-columns:14px 1fr auto;gap:10px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
-.dot{width:14px;height:14px;border-radius:4px;margin-top:6px}
-.row .amt{font-weight:800;white-space:nowrap}
-.row small{display:block}
-
-/* week */
-.week{display:grid;gap:8px;margin-top:14px}
-.day{display:grid;grid-template-columns:62px 1fr;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
-.day .d{font-weight:800;border-radius:9px;text-align:center;padding:6px 0;height:max-content;font-size:.95rem}
-.day.off{opacity:.6}
-.mins{font-size:.8rem;font-weight:800;color:var(--teal);white-space:nowrap}
-
-/* boxes */
-.box{border-radius:16px;padding:16px;margin-top:14px}
-.note{background:var(--indigo-bg);border:1px solid #cbd1f3}
-.warn{background:var(--rose-bg);border:1px solid #f3c6c1}
-.two{display:grid;gap:14px;margin-top:14px}
-.do{background:var(--leaf-bg);border:1px solid #cfe2ae}
-.dont{background:var(--rose-bg);border:1px solid #f3c6c1}
-
-/* creatives */
-.cr{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.cr .top{padding:16px;background:var(--cb);border-bottom:1px dashed var(--line)}
-.cr .top .k{font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
-.cr .body{padding:12px 16px}
-.strip{background:var(--ink);color:#fff;border-radius:12px;padding:12px 14px;margin-top:12px;font-weight:600}
-.strip span{color:#ffd27a}
-.ph{background:#fff3b8;border:1px dashed #c9a400;border-radius:6px;padding:0 5px;font-weight:600;color:#5c4a00}
-
-table{border-collapse:collapse;width:100%;font-size:.93rem;background:var(--paper)}
-.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin-top:12px}
-th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
-th{background:var(--saffron-bg);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
-tr:last-child td{border-bottom:0}
-
-footer{margin:50px 0 40px;padding-top:18px;border-top:1px solid var(--line);font-size:.88rem;color:var(--soft)}
-footer a{color:var(--indigo);word-break:break-all}
-
-@media(min-width:720px){
-  body{font-size:18px}
-  .hero h1{font-size:2.35rem}
-  .cards{grid-template-columns:1fr 1fr}
-  .two{grid-template-columns:1fr 1fr}
-  .card.wide{grid-column:1/-1}
-}
-</style>
-</head>
-<body>
-
-<header class="hero">
-  <div class="wrap">
-    <span class="tag">Footfall plan · two locations · Nov 2026</span>
-    <h1>Bob's plan is about half right: keep the Punjabi poster ads, but run <em>two small campaigns</em> — a light always-on one for the 6-day clinic and a <em>Thursday-to-Sunday</em> one for Malout — let people <em>join</em> WhatsApp themselves instead of adding them, and give each location its own free Google Maps listing.</h1>
-    <p class="who">For Dr. J.L. Bansal, skin specialist. Two places, two timings — every poster and post must say which one.</p>
-    <div class="chips">
-      <span class="chip">Budget ₹17,000 / month</span>
-      <span class="chip">₹7,500 clinic · ₹3,000 Malout ads</span>
-      <span class="chip">VA time: about 1 hour a week</span>
-      <span class="chip">4 moves, done twice</span>
-    </div>
-  </div>
-</header>
-
-<main class="wrap">
-
-<h2>Two locations, two jobs</h2>
-<div class="cards">
-  <div class="card" style="--c:var(--indigo);--cb:var(--indigo-bg)">
-    <h3><span class="n">A</span>Bathinda clinic — 6 days</h3>
-    <p><b>Bansal Skin Clinic</b>, Fauji Chowk, near MSD School, Sirki Bazar, Old City, <b>Bathinda</b> 151001<br>Mon–Sat, opens 10 am <span class="ph">[closing time to confirm]</span> · 098552 84685</p>
-    <p>Six times the hours, so this is where extra patients can actually be seen. It gets most of the money. Ads run <b>every day, lightly</b>.</p>
-  </div>
-  <div class="card" style="--c:var(--saffron);--cb:var(--saffron-bg)">
-    <h3><span class="n">B</span>Malout — Sundays only</h3>
-    <p><b>D.A.V. Edwardganj Hospital, Court Road, Malout</b><br><b>Every Sunday, 10 am – 2 pm</b></p>
-    <p>Only 4 hours a week. The job is a weekly reminder: "skin doctor, this Sunday, Court Road". Ads run <b>Thursday evening to Sunday 11 am</b> only.</p>
-  </div>
-</div>
-<div class="box warn">
-  <h3>The one mistake to avoid</h3>
-  <p>A person in Malout who turns up on a Tuesday, or a person from Bathinda who drives to Malout — both are lost patients. <b>Every poster, every WhatsApp post and each Google listing names one place and its timing.</b> Never a poster with no place on it.</p>
+<div class="w">
+<div class="locs">
+  <div class="loc" style="--c:var(--navy)"><h3>🏥 Bathinda — Mon to Sat</h3><p>Bansal Skin Clinic, Fauji Chowk, near MSD School, Sirki Bazar, Old City, Bathinda · from 10 am · 98552-84685</p></div>
+  <div class="loc" style="--c:var(--red)"><h3>📍 Malout — Sundays</h3><p>D.A.V. Edwardganj Hospital, Court Road, Malout · every Sunday 10 am – 2 pm</p></div>
 </div>
 
-<h2>Bob's four ideas, judged</h2>
-<div class="judge">
-  <div class="j"><span class="badge keep">KEEP</span><div><b>1. Meta ads with poster-style images</b></div><span class="t">Right. The simple Punjabi poster already works here (329 likes on Malout Live). Use the same style in his own ads, one version per location. Our ads cost far less per person reached than a ₹5,000 page post.</span></div>
-  <div class="j"><span class="badge stop">CHANGE</span><div><b>2. WhatsApp group, "add everyone"</b></div><span class="t">The group is fine. <b>Adding people is not.</b> People who get added without asking press "Report", and the number gets banned. It also shows every patient's number to the others — bad for a skin clinic. People must join by their own tap (QR or link).</span></div>
-  <div class="j"><span class="badge change">CHANGE</span><div><b>3. Collect a database, send updates</b></div><span class="t">The WhatsApp members <b>are</b> the database. No Excel list of phone numbers, no bulk SMS. Less work, and no consent problem under India's data law (DPDP Act 2023).</span></div>
-  <div class="j"><span class="badge change">CHANGE</span><div><b>4. Day-parting</b></div><span class="t">Hours of the day do not matter. <b>Days of the week</b> do, and only for Malout: Thursday 6 pm → Sunday 11 am. The main clinic ad simply runs all week on a small daily budget.</span></div>
-  <div class="j"><span class="badge stop">MISSING</span><div><b>Google Maps listings, reviews, counting</b></div><span class="t">Not in the draft, and they are free. Someone who types "skin doctor near me" is already looking for him. And without a tally sheet at each reception we will never know what worked, or where.</span></div>
+<h2>📞 Call with the doctor — today</h2>
+<div class="call">
+<h3>Ask</h3>
+<ol>
+  <li>Bathinda closing time, and is Bathinda already busy or does it have empty hours?</li>
+  <li>Where are laser and PRP done — Bathinda, Malout, or both?</li>
+  <li>Is 98552-84685 on WhatsApp, and who answers it during the day?</li>
+  <li>Who made the Google listing "Bansal Skin Clinic"? Any old Gmail login for it?</li>
+</ol>
+<h3 style="margin-top:12px">Get his OK for</h3>
+<ol>
+  <li>The ₹17,000 monthly budget and a card/UPI to pay Meta.</li>
+  <li>Using his number (or a new one) as WhatsApp Business.</li>
+  <li>The 4 posters below, and 10 photos: board, street, reception, waiting room, the doctor.</li>
+  <li>His receptionist asking every new patient one question: "How did you hear about us?"</li>
+</ol>
 </div>
 
-<h2>The plan: 4 moves</h2>
-<p class="lead">In order of importance. If the VA only ever does the first two, that is still a good plan.</p>
+<h2>The plan</h2>
 
-<div class="cards">
-  <div class="card" style="--c:var(--teal);--cb:var(--teal-bg)">
-    <h3><span class="n">1</span>Fix the Bathinda Google listing + add Malout</h3>
-    <p><b>Bathinda already has a listing</b> — "Bansal Skin Clinic", 3.0★ from only 2 reviews, and Google shows <b>"Own this business?"</b> = nobody has claimed it. Redo it:</p>
-    <ul>
-      <li><b>Claim it</b> (Own this business? → video check on the spot, signboard in view).</li>
-      <li>Keep the name exactly as on the board — <b>"Bansal Skin Clinic"</b>. No keywords stuffed into the name (Google suspends for that).</li>
-      <li>Category <b>Dermatologist</b> + Skin care clinic. Real Mon–Sat hours, <b>Sunday "Closed"</b>.</li>
-      <li>Add: description, the services list from the poster, WhatsApp chat button, 10+ real photos (board, street, reception, waiting room, the doctor).</li>
-      <li>Reply politely to both existing reviews.</li>
-      <li><b>Malout</b> — a separate new listing at the hospital, hours <b>Sunday 10:00–14:00 only</b>.</li>
-    </ul>
-    <p><b>Lifting the 3.0 rating:</b> with only 2 reviews, 10–15 new real ones move it fast. Print the listing's <b>review QR</b> on the reception stand; the receptionist asks happy patients before they leave (Punjabi line: "ਜੇ ਤੁਸੀਂ ਖੁਸ਼ ਹੋ, ਗੂਗਲ ਤੇ ਦੋ ਲਾਈਨਾਂ ਲਿਖ ਦਿਓ"). 🛑 Never fake, bought, family or staff reviews and no gifts/discounts for reviews — Google wipes them and can suspend the listing.</p>
-    <div class="meta"><div><b>Who</b>VA, once</div><div><b>How often</b>Set up once. Reviews weekly</div><div><b>Cost</b>₹0</div></div>
-  </div>
-
-  <div class="card" style="--c:var(--saffron);--cb:var(--saffron-bg)">
-    <h3><span class="n">2</span>Two small poster campaigns</h3>
-    <ul>
-      <li><b>Clinic campaign</b> — always on, about ₹250 a day, people living around Bathinda.</li>
-      <li><b>Malout campaign</b> — Thursday evening to Sunday 11 am, about ₹750 a weekend, 15 km around Malout.</li>
-    </ul>
-    <p>Punjabi posters. The button opens WhatsApp. Each poster carries its own place and timing.</p>
-    <div class="meta"><div><b>Who</b>VA sets up once</div><div><b>How often</b>New poster once a month</div><div><b>Cost</b>₹10,500 / month</div></div>
-  </div>
-
-  <div class="card" style="--c:var(--leaf);--cb:var(--leaf-bg)">
-    <h3><span class="n">3</span>One WhatsApp, join-yourself</h3>
-    <p>One number and one announcement group for both locations. People join by QR or link. Two posts a week: a skin tip on Wednesday (ends with both timings), a "tomorrow in Malout, Sunday 10–2" reminder on Saturday.</p>
-    <p>Old patients come back. Skin problems need follow-ups, so this is the cheapest footfall there is.</p>
-    <div class="meta"><div><b>Who</b>VA</div><div><b>How often</b>Wed + Sat</div><div><b>Cost</b>₹0</div></div>
-  </div>
-
-  <div class="card" style="--c:var(--plum);--cb:var(--plum-bg)">
-    <h3><span class="n">4</span>Reception kit × 2</h3>
-    <p>At each location: a tally sheet ("how did you hear about us?"), a QR stand for the WhatsApp group and that location's Google review, and a clear board outside. At the main clinic the board also says "Sundays in Malout"; in Malout it says where he sits on the other days.</p>
-    <p>Visiting cards with <b>both</b> addresses, left with nearby chemists and family doctors.</p>
-    <div class="meta"><div><b>Who</b>VA prints once. Reception uses it</div><div><b>How often</b>Every working day</div><div><b>Cost</b>About ₹4,000 once, then ₹500</div></div>
-  </div>
+<div class="card" style="--c:var(--teal);--cb:var(--teal-bg)">
+<h3><span class="n">1</span>Google Maps — fix Bathinda, add Malout</h3>
+<p>Bathinda already has a listing: "Bansal Skin Clinic", 3.0 ★ from only 2 reviews, and nobody has claimed it.</p>
+<ul>
+  <li><b>Claim it</b> ("Own this business?") — Google asks for a short video at the clinic with the board in view.</li>
+  <li>Name exactly as on the board. Category <b>Dermatologist</b>. Mon–Sat hours, Sunday closed.</li>
+  <li>Add the treatments list, a short description, WhatsApp button and 10 photos.</li>
+  <li>Reply kindly to the 2 old reviews.</li>
+  <li><b>New listing for Malout</b> at the hospital — open Sunday 10 am – 2 pm only.</li>
+</ul>
+<p><b>Rating up:</b> after each visit the receptionist sends happy patients the review link on WhatsApp — "ਜੇ ਤੁਸੀਂ ਖੁਸ਼ ਹੋ, ਗੂਗਲ ਤੇ ਦੋ ਲਾਈਨਾਂ ਲਿਖ ਦਿਓ 🙏". 10–15 real reviews lift a 2-review listing fast.</p>
+<div class="meta"><span>👤 VA, once</span><span>🔁 reviews every week</span><span>💰 free</span></div>
 </div>
 
-<div class="box note">
-  <h3>Keep the local page — but less often</h3>
-  <p>"Malout Live" has local trust, so do not drop it. One post every <b>two months</b>, at the change of season, instead of whenever. The Malout tally sheet will tell us if it is worth ₹5,000. If Bathinda has a page like it, test one post there later from the held-back money.</p>
+<div class="card" style="--c:#1f9d55;--cb:#e5f6ec">
+<h3><span class="n">2</span>WhatsApp announcement group</h3>
+<ul>
+  <li>WhatsApp Business on the clinic number → make a <b>Community</b> (only admins post = announcement group).</li>
+  <li>People join by the invite link: it goes in every ad chat reply, the Google listing, and the receptionist sends it to every patient.</li>
+  <li>Post <b>2–3 times a week</b>: one health tip, one timing reminder, one seasonal poster. Every post names the place + day.</li>
+  <li>The members are the patient list — nothing else to collect.</li>
+</ul>
+<div class="meta"><span>👤 VA</span><span>🔁 2–3 posts / week</span><span>💰 free</span></div>
 </div>
 
-<h2>Budget split</h2>
-<p class="lead">Most goes to the main clinic, because it has six times the hours to fill. Malout needs little: it is one small town and one morning.</p>
-<div class="bar" aria-hidden="true">
-  <i style="width:44%;background:var(--indigo)"></i>
-  <i style="width:18%;background:var(--saffron)"></i>
-  <i style="width:15%;background:var(--rose)"></i>
-  <i style="width:9%;background:var(--plum)"></i>
-  <i style="width:14%;background:#d9cdb8"></i>
-</div>
-<div class="rows">
-  <div class="row"><span class="dot" style="background:var(--indigo)"></span><div><b>Meta ads — main clinic</b><small>About ₹250 a day, every day</small></div><span class="amt">₹7,500</span></div>
-  <div class="row"><span class="dot" style="background:var(--saffron)"></span><div><b>Meta ads — Malout</b><small>About ₹750 a week, Thursday evening to Sunday morning</small></div><span class="amt">₹3,000</span></div>
-  <div class="row"><span class="dot" style="background:var(--rose)"></span><div><b>Malout Live post</b><small>One ₹5,000 post every two months, so ₹2,500 a month on average</small></div><span class="amt">₹2,500</span></div>
-  <div class="row"><span class="dot" style="background:var(--plum)"></span><div><b>Printing, both locations</b><small>Month 1: boards, QR stands, cards (about ₹4,000). After that about ₹500</small></div><span class="amt">₹1,500</span></div>
-  <div class="row"><span class="dot" style="background:var(--teal)"></span><div><b>Google listings + WhatsApp</b><small>Free</small></div><span class="amt">₹0</span></div>
-  <div class="row"><span class="dot" style="background:#d9cdb8"></span><div><b>Held back</b><small>After 8 weeks, add it to whichever location the tally sheets say responds</small></div><span class="amt">₹2,500</span></div>
-</div>
-<div class="box note">
-  <h3>What to expect (my estimates, not promises)</h3>
-  <ul>
-    <li>Ads in small-town Punjab are cheap. I expect roughly ₹20–60 per 1,000 views. So each campaign should show its poster <b>several times a month to most Facebook and Instagram users in its circle</b>.</li>
-    <li>A WhatsApp chat from an ad may cost roughly ₹10–40. Real numbers will show in week 2.</li>
-    <li>Malout goal: <b>5–10 more new patients per Sunday</b> within 2–3 months. Main clinic goal: set it after the baseline week, once we know today's numbers.</li>
-    <li>Judge after 8 weeks, not after 2.</li>
-    <li><b>One question for the doctor first:</b> is the main clinic already busy? If yes, flip the split and give Malout the larger share.</li>
-  </ul>
+<div class="card" style="--c:var(--navy);--cb:var(--navy-bg)">
+<h3><span class="n">3</span>Facebook + Instagram ads — two small campaigns</h3>
+<table>
+<tr><th></th><th>Bathinda</th><th>Malout</th></tr>
+<tr><td>Goal</td><td colspan="2">Messages → opens WhatsApp chat (plus a Call button)</td></tr>
+<tr><td>Area</td><td>10 km around the clinic</td><td>15 km around Malout</td></tr>
+<tr><td>When</td><td>Every day, always on</td><td>Thu 6 pm → Sun 11 am only</td></tr>
+<tr><td>Budget</td><td>₹300 / day</td><td>₹3,500 / month</td></tr>
+<tr><td>Posters</td><td>#1 all treatments · #4 laser</td><td>#2 Sunday · #3 hair</td></tr>
+<tr><td>Placements</td><td colspan="2">Feed + Stories, FB + Insta, age 18+, no interests — just the area</td></tr>
+</table>
+<p>Pre-filled chat text tells us which ad sent them: "Bathinda timing?" / "Malout Sunday timing?"</p>
+<div class="meta"><span>👤 VA sets up once</span><span>🔁 swap a poster monthly</span></div>
 </div>
 
-<h2>The VA's week</h2>
-<p class="lead">About one hour in total. Both campaigns run by themselves.</p>
+<div class="card" style="--c:var(--plum);--cb:var(--plum-bg)">
+<h3><span class="n">4</span>Malout Live — paid post, every 2 months</h3>
+<p>He already buys space there and it gets seen (329 likes on the last one). Keep it, but on a fixed rhythm — one post every two months with poster #2 — instead of now and then.</p>
+<div class="meta"><span>👤 VA books it</span><span>💰 ₹5,000 per post</span></div>
+</div>
+
+<h2>💰 Budget</h2>
+<table>
+<tr><td>Ads — Bathinda (₹300 a day)</td><td class="amt">₹9,000</td></tr>
+<tr><td>Ads — Malout (Thu–Sun only)</td><td class="amt">₹3,500</td></tr>
+<tr><td>Malout Live post (₹5,000 every 2 months)</td><td class="amt">₹2,500</td></tr>
+<tr><td>Kept back — goes to whichever place brings more patients</td><td class="amt">₹2,000</td></tr>
+<tr class="tot"><td>Total a month</td><td class="amt">₹17,000</td></tr>
+</table>
+
+<h2>🗓 The VA's week</h2>
 <div class="week">
-  <div class="day"><span class="d" style="background:var(--indigo-bg)">Mon</span><div><b>Write down last week's numbers</b> <span class="mins">15 min</span><br><span class="small">Two lines in a notebook, one per location: new patients, where they heard of him, ad spend, chats. The main clinic reception sends a photo of its tally sheet.</span></div></div>
-  <div class="day off"><span class="d" style="background:#efe6d6">Tue</span><div><span class="small">Nothing.</span></div></div>
-  <div class="day"><span class="d" style="background:var(--leaf-bg)">Wed</span><div><b>WhatsApp post 1: a skin tip</b> <span class="mins">10 min</span><br><span class="small">Two or three lines in Punjabi, matching the season. Ask the doctor "what should people know this week?" and type his answer. Always end with the two-line footer: clinic place + timing, Malout place + timing. Group + Status.</span></div></div>
-  <div class="day"><span class="d" style="background:var(--saffron-bg)">Thu</span><div><b>Malout ad starts at 6 pm, by itself</b> <span class="mins">2 min</span><br><span class="small">Just look once that both campaigns are running.</span></div></div>
-  <div class="day off"><span class="d" style="background:#efe6d6">Fri</span><div><span class="small">Nothing. Answer chats if any.</span></div></div>
-  <div class="day"><span class="d" style="background:var(--leaf-bg)">Sat</span><div><b>WhatsApp post 2: the Malout reminder</b> <span class="mins">5 min</span><br><span class="small">Around 6 pm: "Tomorrow, Sunday, 10 to 2 — MALOUT, Court Road." Start the post with the word Malout. Same poster every week. Group + Status + the Facebook page.</span></div></div>
-  <div class="day"><span class="d" style="background:var(--rose-bg)">Sun</span><div><b>Malout day</b> <span class="mins">at reception</span><br><span class="small">Tally sheet for every new patient. Point to the QR stand. Ask 2–3 happy patients for a Google review on the Malout listing. The Malout ad stops itself at 11 am.</span></div></div>
-</div>
-<p class="small">Every day: answer WhatsApp chats when they come. The first question back is always "which is nearer to you — Malout or Bathinda?" Once a month: swap the seasonal poster in both campaigns, add one photo to each Google listing.</p>
-
-<h2>WhatsApp setup</h2>
-<p class="lead">My pick: <b>WhatsApp Business app + one Community announcement group that people join themselves.</b> One setup for both locations. Two groups would double the VA's work for no gain.</p>
-<div class="tw"><table>
-  <tr><th>Option</th><th>Problem</th><th>Verdict</th></tr>
-  <tr><td>Normal group, add everyone</td><td>No consent. Reports and bans. Every member sees every other member's number.</td><td><b style="color:var(--rose)">No</b></td></tr>
-  <tr><td>Broadcast list</td><td>Only reaches people who saved his number. 256 people per list. Lists must be built by hand.</td><td>Too much work</td></tr>
-  <tr><td>Channel</td><td>Private and unlimited, but it sits in the "Updates" tab and is muted. Few people open it.</td><td>Second choice</td></tr>
-  <tr><td><b>Community announcement group</b></td><td>Lands in the normal chat list. Only admins can post. Members' numbers are hidden from each other.</td><td><b style="color:var(--teal)">Use this</b></td></tr>
-</table></div>
-<ol>
-  <li>Install <b>WhatsApp Business</b> on one number the VA can answer. Fill the profile: name, "Skin specialist", and <b>both</b> addresses with their timings in the description.</li>
-  <li>Create a <b>Community</b> with a name that fits both places, for example "Skin Care Tips – Dr. J.L. Bansal". Use only its Announcements group.</li>
-  <li>Copy the <b>invite link</b> and make a <b>QR code</b> from it. Print it on both reception stands and on the visiting card.</li>
-  <li>Set a <b>greeting message</b> (automatic reply to a first chat): both places with timings and map pins, then the invite link with "Join for reminders and skin tips".</li>
-  <li>Save 4 <b>quick replies</b>: main clinic place + timing + pin · Malout place + timing + pin · "the doctor will advise after seeing you" · the join link.</li>
-  <li>Post twice a week, as in the rhythm above. Never more than three. <b>Every post names its place and day.</b></li>
-</ol>
-<div class="box warn">
-  <h3>Three WhatsApp rules</h3>
-  <ul>
-    <li><b>Never add a number yourself.</b> People join by scanning or tapping. At reception, ask: "Shall we send you reminders?" and let them scan.</li>
-    <li><b>No medical advice in chat.</b> No photos of skin problems requested or diagnosed over WhatsApp. The answer is always "come and see the doctor", with the right place.</li>
-    <li><b>No patient details in the group.</b> No names, no photos, no "see this case".</li>
-  </ul>
+  <div class="day"><span class="d" style="--b:var(--navy-bg)">Mon</span><div>Note last week's new patients per place and where they heard of us (from the receptionist). WhatsApp post: health tip.</div></div>
+  <div class="day"><span class="d" style="--b:var(--teal-bg)">Wed</span><div>WhatsApp post: Bathinda timing reminder. Send review link to the week's happy patients.</div></div>
+  <div class="day"><span class="d" style="--b:var(--red-bg)">Fri</span><div>WhatsApp post: "This Sunday in Malout, 10–2". Check the Malout ads went live on Thursday.</div></div>
+  <div class="day"><span class="d" style="--b:var(--gold-bg)">Daily</span><div>Answer WhatsApp chats: timing, place, map pin, group link. Quick replies saved, so it takes seconds.</div></div>
 </div>
 
-<h2>Ad setup</h2>
-<p class="lead">First create one Facebook Page for the doctor (ads need one) and link an Instagram account. Then two campaigns, one ad set each, 2 posters each.</p>
-<div class="tw"><table>
-  <tr><th>Setting</th><th>Clinic campaign</th><th>Malout campaign</th></tr>
-  <tr><td>Objective</td><td colspan="2"><b>Engagement → Messaging apps → WhatsApp</b> for both. Each chat gets the greeting and the join link. That is the "database", built with consent.</td></tr>
-  <tr><td>Location</td><td>Pin on Bathinda clinic, <b>10 km</b> (covers the city)</td><td>Pin on Malout, <b>15 km</b></td></tr>
-  <tr><td>Budget</td><td><b>Daily ₹250</b></td><td><b>Lifetime ₹3,000</b> for the month (lifetime budget unlocks the schedule)</td></tr>
-  <tr><td>Schedule</td><td>All week, no schedule</td><td><b>Thu 6 pm–midnight · Fri and Sat 6 am–11 pm · Sun 6 am–11 am</b></td></tr>
-  <tr><td>Pre-filled chat text</td><td>"Clinic timing?"</td><td>"Malout Sunday timing?"</td></tr>
-  <tr><td>Age / gender</td><td colspan="2"><b>18 to 65+</b>, everyone. (18+ is required for laser and cosmetic ads anyway.)</td></tr>
-  <tr><td>Interests</td><td colspan="2"><b>None.</b> The areas are small. Narrowing only raises the cost.</td></tr>
-  <tr><td>Placements</td><td colspan="2">Automatic (Facebook + Instagram feed, Stories, Reels). Make each poster in 4:5 and 9:16.</td></tr>
-  <tr><td>Ads</td><td colspan="2">2 posters each: the announcement (always on) + one seasonal poster (changes monthly). <b>Each campaign uses only its own location's version.</b></td></tr>
-</table></div>
-<div class="box note">
-  <h3>Three small notes</h3>
-  <ul>
-    <li><b>The pre-filled text is our code word.</b> It tells the VA which ad the person came from, and which place to send them to.</li>
-    <li><b>If the two towns are close</b> and the circles overlap, shrink each circle until they just touch. Otherwise the same people see both posters and get confused.</li>
-    <li><b>If chats become a burden</b>, switch the objective to Awareness (Reach) with the phone number printed big. It is the cheapest way to simply tell the whole town.</li>
-  </ul>
+<h2>📊 How we know it works</h2>
+<ul>
+  <li>Receptionist asks every <b>new</b> patient: "How did you hear about us?" — Facebook / WhatsApp / Google / Malout Live / someone told me. One line in the register they already keep.</li>
+  <li>Week 1 = today's count, before ads. After 4 weeks, compare.</li>
+  <li>Move the ₹2,000 kept back to whichever place is filling faster.</li>
+</ul>
+
+<h2>🖼 Four posters — Punjabi + English</h2>
+<p>Ready to use, 1080 × 1350 (best size for Facebook + Instagram feed). Same style as his Malout Live poster, cleaner.</p>
+<div class="posters">
+  <div class="pst"><img src="posters/poster-1.png" alt="Poster 1 Bathinda all treatments" loading="lazy"><b>#1 Bathinda — all treatments</b><small>Main ad, all year</small><a href="posters/poster-1.png" download>Download PNG</a></div>
+  <div class="pst"><img src="posters/poster-2.png" alt="Poster 2 Malout Sunday" loading="lazy"><b>#2 Malout — every Sunday</b><small>Malout ads + Malout Live</small><a href="posters/poster-2.png" download>Download PNG</a></div>
+  <div class="pst"><img src="posters/poster-3.png" alt="Poster 3 hair care" loading="lazy"><b>#3 Hair care — Malout</b><small>Hair fall, dandruff, PRP</small><a href="posters/poster-3.png" download>Download PNG</a></div>
+  <div class="pst"><img src="posters/poster-4.png" alt="Poster 4 laser wedding season" loading="lazy"><b>#4 Laser — wedding season, Bathinda</b><small>Nov–Feb · confirm laser is done in Bathinda</small><a href="posters/poster-4.png" download>Download PNG</a></div>
 </div>
 
-<h2>Four poster ideas</h2>
-<p class="lead">Same simple style as the poster that already works. Big Punjabi headline, plain background, no stock models. Each one is made in <b>two versions</b> — only the headline day and the bottom strip change. The VA should proof-read my Punjabi before printing.</p>
-<div class="cards">
-  <div class="cr" style="--c:var(--saffron);--cb:var(--saffron-bg)">
-    <div class="top"><div class="k">1 · Always on · the announcement</div><div class="pa" lang="pa">ਚਮੜੀ ਰੋਗਾਂ ਦੇ ਮਾਹਿਰ ਡਾ. ਜੇ.ਐਲ. ਬਾਂਸਲ<br>ਮਲੋਟ ਵਿੱਚ — ਹਰ ਐਤਵਾਰ, ਸਵੇਰੇ 10 ਤੋਂ 2 ਵਜੇ ਤੱਕ</div></div>
-    <div class="body"><b>Means:</b> "Skin specialist Dr. J.L. Bansal — in Malout every Sunday, 10 am to 2 pm."<br><span class="small">Clinic version: second line becomes "Bansal Skin Clinic, Fauji Chowk, Bathinda — Mon–Sat from 10 am". Below it: his degree and registration number as on his letterhead, what he treats, the phone. This is the main ad all year.</span></div>
-  </div>
-  <div class="cr" style="--c:var(--teal);--cb:var(--teal-bg)">
-    <div class="top"><div class="k">2 · Seasonal · winter (now)</div><div class="pa" lang="pa">ਸਰਦੀਆਂ ਵਿੱਚ ਚਮੜੀ ਦੀ ਸੰਭਾਲ —<br>3 ਸੌਖੇ ਨੁਕਤੇ</div></div>
-    <div class="body"><b>Means:</b> "Skin care in winter — 3 easy tips."<br><span class="small">Three short tips in the doctor's own words. Pure information. This kind of health education is clearly allowed for doctors.</span></div>
-  </div>
-  <div class="cr" style="--c:var(--rose);--cb:var(--rose-bg)">
-    <div class="top"><div class="k">3 · Seasonal · monsoon</div><div class="pa" lang="pa">ਦਾਦ-ਖਾਰਸ਼ 'ਤੇ ਬਿਨਾਂ ਡਾਕਟਰੀ ਸਲਾਹ<br>ਕੋਈ ਕਰੀਮ ਨਾ ਲਗਾਓ</div></div>
-    <div class="body"><b>Means:</b> "Do not put any cream on ringworm or itching without a doctor's advice."<br><span class="small">A real public-health message, and the strongest hook of the year. Run it July to September.</span></div>
-  </div>
-  <div class="cr" style="--c:var(--plum);--cb:var(--plum-bg)">
-    <div class="top"><div class="k">4 · Seasonal · wedding months</div><div class="pa" lang="pa">ਲੇਜ਼ਰ ਨਾਲ ਅਣਚਾਹੇ ਵਾਲ ਅਤੇ ਟੈਟੂ<br>ਹਟਾਉਣ ਦੀ ਸਹੂਲਤ</div></div>
-    <div class="body"><b>Means:</b> "Laser hair removal and tattoo removal available."<br><span class="small">States that the service exists. No result photos, no promises. <b>Ask the doctor at which location the laser and PRP are done</b> — run this poster only there.</span></div>
-  </div>
+<footer>Footfall plan · Dr. J.L. Bansal, Skin Specialist · Bathinda + Malout</footer>
 </div>
-<div class="strip" lang="pa"><small style="color:#ffd27a;font-size:.72rem;letter-spacing:.06em">MALOUT STRIP</small><br>ਮਲੋਟ: <span>ਹਰ ਐਤਵਾਰ 10 ਤੋਂ 2 ਵਜੇ</span> · ਡੀ.ਏ.ਵੀ. ਐਡਵਰਡਗੰਜ ਹਸਪਤਾਲ, ਕੋਰਟ ਰੋਡ · ਮੋ. 98552-84685</div>
-<div class="strip" style="background:var(--indigo)"><small style="color:#ffd27a;font-size:.72rem;letter-spacing:.06em">CLINIC STRIP</small><br>Bansal Skin Clinic, Fauji Chowk, Bathinda · <span>Mon–Sat from 10 am</span> · 098552 84685</div>
-<p class="small">One strip per poster, never both in the ad. Malout strip means: "Malout: every Sunday 10 to 2 · D.A.V. Edwardganj Hospital, Court Road · M. 98552-84685". Printed cards and boards are the only place where both addresses appear together.</p>
-
-<h3 style="margin-top:22px">Which seasonal poster when</h3>
-<div class="tw"><table>
-  <tr><th>Months</th><th>Theme</th></tr>
-  <tr><td>Nov – Feb</td><td>Winter: dry skin, eczema, psoriasis, dandruff. Also wedding season: laser, pigmentation, pimples.</td></tr>
-  <tr><td>Mar – Jun</td><td>Summer: sun, pigmentation, heat rash, sweat-related fungus.</td></tr>
-  <tr><td>Jul – Sep</td><td>Monsoon: fungus, ringworm, scabies, itching. The busiest skin season.</td></tr>
-  <tr><td>Oct</td><td>Wedding season starts again: laser, PRP for hair, pigmentation.</td></tr>
-</table></div>
-<p class="small">The doctor knows better than this table what walks in each month. Ask him, and follow his answer.</p>
-
-<h2>The rules box</h2>
-<p class="lead">Two rule-books apply: the Indian doctors' ethics code, and Meta's health-ad rules. The same do/don't list satisfies both.</p>
-<div class="two">
-  <div class="box do" style="margin-top:0">
-    <h3>Do</h3>
-    <ul>
-      <li>Announce facts: name, degree, registration number, what he treats, day, time, place, phone.</li>
-      <li>Share health education: tips, "see a doctor early", seasonal care.</li>
-      <li>Announce changes: "not sitting in Malout this Sunday", "clinic closed on…", "back from…".</li>
-      <li>Say a service is available (laser, PRP).</li>
-      <li>Use plain graphics, or a neutral photo of the building or signboard.</li>
-      <li>Ask for Google reviews in person, with no reward.</li>
-    </ul>
-  </div>
-  <div class="box dont" style="margin-top:0">
-    <h3>Don't</h3>
-    <ul>
-      <li>No "best", "No. 1", "most experienced", "famous".</li>
-      <li>No "guaranteed", "100% cure", "permanent", "in 7 days". Above all for white patches, psoriasis and baldness.</li>
-      <li>No patient testimonials or patient photos in ads. Do not paste Google reviews into posters.</li>
-      <li>No before/after pictures. Meta rejects them too.</li>
-      <li>No "Do you have pimples?" / "Losing your hair?" Meta bans ads that speak to the viewer's own condition. Say "Treatment for…" or "Skin care in winter".</li>
-      <li>No close-up photos of diseased skin.</li>
-      <li>No discounts, "free check-up" offers or price comparisons.</li>
-      <li>No commission to chemists or anyone for sending patients. Cards only.</li>
-    </ul>
-  </div>
-</div>
-<div class="box note">
-  <h3>Where the law stands, honestly</h3>
-  <p>The 2023 NMC conduct rules were put on hold on 23 August 2023, and the older <b>2002 ethics code</b> is back in force. Its chapter 6 says a doctor must not solicit patients, and lists what he may announce. Read strictly, <b>any paid ad sits in a grey zone</b> — including the poster he already pays for. In practice, plain "doctor, day, time, place" posters are everywhere and health education is expressly allowed. Our plan stays at that safe end. But it is his registration, so <b>show him this box and let him decide</b>.</p>
-</div>
-
-<h2>How to measure — per location</h2>
-<div class="cards">
-  <div class="card" style="--c:var(--indigo);--cb:var(--indigo-bg)">
-    <h3>One tally sheet at each reception</h3>
-    <p>Print the location name on top. For every <b>new</b> patient, ask one question and make one mark:</p>
-    <p class="pa" lang="pa" style="font-size:1.05rem">ਤੁਹਾਨੂੰ ਡਾਕਟਰ ਸਾਹਿਬ ਬਾਰੇ ਕਿੱਥੋਂ ਪਤਾ ਲੱਗਾ?</p>
-    <p class="small">"Where did you hear about the doctor?"</p>
-    <p>Columns: Facebook / Instagram · WhatsApp · Google · Malout Live · Chemist or another doctor · Family or friend · Board / card.</p>
-    <p class="small">Malout: one sheet per Sunday. Main clinic: one sheet per week.</p>
-  </div>
-  <div class="card" style="--c:var(--indigo);--cb:var(--indigo-bg)">
-    <h3>Four numbers a week, for each location</h3>
-    <ul>
-      <li>New patients (and total patients).</li>
-      <li>The tally by source.</li>
-      <li>That campaign's spend and its chats ("Clinic timing?" vs "Malout Sunday timing?").</li>
-      <li>Reviews on that location's Google listing.</li>
-    </ul>
-    <p><b>Before starting:</b> count one normal week at the clinic and two normal Sundays in Malout. That is the baseline.</p>
-    <p><b>After 8 weeks:</b> move the held-back ₹2,500, and if needed part of the ad money, to the location that responds.</p>
-  </div>
-</div>
-
-<h2>Skip these</h2>
-<div class="box warn" style="margin-top:10px">
-  <ul>
-    <li><b>A website.</b> The two Google listings do the job for free.</li>
-    <li><b>Daily posting, reels, YouTube.</b> Nobody has the time.</li>
-    <li><b>Malout ads from Monday to Wednesday.</b> People forget by Sunday.</li>
-    <li><b>Hour-by-hour day-parting.</b> No gain at this size.</li>
-    <li><b>One poster listing both places inside an ad.</b> It halves the clarity. One ad, one place.</li>
-    <li><b>Two WhatsApp numbers or two groups.</b> Double work for the VA.</li>
-    <li><b>Interest targeting, lookalikes, many ad sets.</b> One town, one ad set.</li>
-    <li><b>Bought phone lists, bulk SMS, bulk WhatsApp tools.</b> Bans and consent trouble.</li>
-    <li><b>Google search ads.</b> Too few searches in small towns. The free listings catch them.</li>
-    <li><b>Fake or paid reviews.</b> Never.</li>
-  </ul>
-</div>
-
-<h2>First week checklist</h2>
-<ol>
-  <li><b>Ask the doctor:</b> Bathinda closing time, where the laser and PRP are done, and whether the Bathinda clinic is already busy.</li>
-  <li>Start both tally sheets and count the baseline.</li>
-  <li>Claim the Bathinda listing and fix it (card 1); create the Malout one. Google usually asks for a short video check — record each one on the spot with the signboard in view.</li>
-  <li>Set up WhatsApp Business, the Community, the QR.</li>
-  <li>Print the QR stands, boards and cards for both places.</li>
-  <li>Make the Facebook Page, the posters in two versions, the two campaigns. Start the Malout one on a Thursday.</li>
-</ol>
-
-<footer>
-  <p><b>Not verified / still needed:</b> Bathinda closing time · whether Bathinda is already busy · where laser and PRP are done (Bathinda listing found by Bob 13 Nov: unclaimed, 3.0★/2 reviews; Bathinda–Malout ≈ 60 km, ad circles don't overlap) · anything NMC published after August 2023 · ad cost figures (my estimates) · whose phone the poster number is. My Punjabi lines need a native proof-read.</p>
-  <p><b>Sources</b><br>
-  NMC puts the 2023 conduct regulations on hold (Medical Dialogues): <a href="https://medicaldialogues.in/health-news/nmc/breaking-news-nmc-puts-its-controversial-registered-medical-practitioner-professional-conduct-regulations-2023-put-on-hold-116314">medicaldialogues.in/…put-on-hold-116314</a><br>
-  NMC keeps the 2023 regulations in abeyance: <a href="https://legalitysimplified.com/?p=36875">legalitysimplified.com/?p=36875</a><br>
-  WhatsApp broadcast vs groups vs channels: <a href="https://www.theconvertway.com/blog/whatsapp-broadcast-vs-groups-vs-channels">theconvertway.com/blog/whatsapp-broadcast-vs-groups-vs-channels</a><br>
-  WhatsApp broadcast list limits: <a href="https://blueticks.co/blog/whatsapp-broadcast-limit">blueticks.co/blog/whatsapp-broadcast-limit</a></p>
-</footer>
-
-</main>
-</body>
-</html>
+</body></html>
