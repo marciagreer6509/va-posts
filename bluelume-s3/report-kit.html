@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Open-bucket alert kit</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--tx:#e6edf3;--mut:#9aa7b4;--acc:#58a6ff;--grn:#3fb950}
+@media(prefers-color-scheme:light){:root:not([data-theme=dark]){--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--tx:#1f2328;--mut:#57606a;--acc:#0969da}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.6 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;padding:24px}
+.w{max-width:820px;margin:0 auto}h1{font-size:22px;margin:0 0 4px}.sub{color:var(--mut);margin:0 0 24px}
+h2{font-size:17px;margin:30px 0 10px;border-bottom:1px solid var(--line);padding-bottom:5px}
+ol,ul{padding-left:20px}li{margin:6px 0}
+code{background:rgba(110,118,129,.25);padding:1px 6px;border-radius:5px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;word-break:break-all}
+.card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:4px 16px;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--mut);font-weight:600}
+.mail{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:0;margin:14px 0;overflow:hidden}
+.mail .hd{display:flex;justify-content:space-between;align-items:center;background:rgba(88,166,255,.1);padding:9px 14px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+.copy{cursor:pointer;background:var(--acc);color:#fff;border:0;border-radius:7px;padding:5px 12px;font-size:12.5px;font-weight:600}
+.mail pre{margin:0;padding:14px;white-space:pre-wrap;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;line-height:1.55}
+.ph{color:#d29922}
+.note{font-size:13px;color:var(--mut)}
+</style></head>
+<body><div class="w">
+<h1>Open-bucket good-samaritan alert kit</h1>
+<p class="sub">Find misconfigured Amazon S3 buckets (read-only, legal), identify the owner, and warn them. Never upload a test file — that write is the one illegal step, and you don't need it.</p>
+
+<h2>Part 1 — Find similar buckets (all read-only)</h2>
+<div class="card"><ol>
+<li><b>Public index — easiest.</b> Go to <code>grayhatwarfare.com</code> (free account). It already indexes <b>millions</b> of open buckets. Search a keyword (a city, a vendor like <code>cms</code>, <code>prod</code>, <code>static-files</code>) and it lists open buckets and their files. Browsing is legal — the files are already public.</li>
+<li><b>Name-pattern scan.</b> Buckets follow patterns: <code>&lt;org&gt;-files</code>, <code>&lt;org&gt;-prod</code>, <code>&lt;org&gt;-static</code>, <code>&lt;vendor&gt;-us-prod-app-&lt;client&gt;</code>. Open-source tools <code>s3scanner</code>, <code>bucket_finder</code>, <code>cloud_enum</code> take a wordlist of org names and test each name. A bucket that answers (not "NoSuchBucket") exists.</li>
+<li><b>Read the default response.</b> Hitting a bucket you don't own returns one of: <code>NoSuchBucket</code> (free/available), <code>AccessDenied</code> (exists, locked), or a file listing (exists, public-read). Reading these is passive and fine.</li>
+<li><b>Spot the already-abused ones.</b> If a bucket is <i>already</i> serving pages the owner clearly didn't make (spam, redirects, foreign-language affiliate pages), that is itself proof the bucket is open — no test upload needed.</li>
+<li><b>🛑 The one line you don't cross:</b> do <b>not</b> upload a file to confirm writability. That write is unauthorized access. Report what you can already see instead.</li>
+</ol></div>
+
+<h2>Part 2 — Find the owner & where to report</h2>
+<p class="note">Fastest route for ALL of them is <b>AWS Abuse</b> — Amazon knows who owns each bucket and can act. Notify the org directly too when they publish a contact.</p>
+<table>
+<tr><th>Bucket (in our evidence)</th><th>Likely owner</th><th>Report to</th></tr>
+<tr><td><code>hdp-us-prod-app-kw-engagenewportbeach-files</code></td><td>City of Newport Beach (via Granicus EngagementHQ)</td><td>AWS Abuse + Granicus support + city IT</td></tr>
+<tr><td><code>unmsm-web-static-files</code></td><td>Univ. Nacional Mayor de San Marcos (Peru)</td><td>AWS Abuse + university contact page</td></tr>
+<tr><td><code>nacro</code></td><td>Nacro (UK charity)</td><td><code>contactus@nacro.org.uk</code> + AWS Abuse</td></tr>
+<tr><td><code>purpose-cms-preprod01</code></td><td>Unknown (a "Purpose" CMS pre-prod)</td><td>AWS Abuse</td></tr>
+<tr><td><code>bucket-irwinwebsite</code></td><td>Unknown ("Irwin" site)</td><td>AWS Abuse</td></tr>
+<tr><td><code>sj-admin</code></td><td>Unknown</td><td>AWS Abuse</td></tr>
+<tr><td><code>acid-kitty</code></td><td>Unknown (may be the spammer's own)</td><td>AWS Abuse</td></tr>
+</table>
+<p class="note"><b>How to find an owner's email in general:</b> (a) the file content often names the org; (b) check <code>https://&lt;org&gt;.com/.well-known/security.txt</code>; (c) the org's website "Contact" / "Contact us" page; (d) a WHOIS on their domain. If none, AWS Abuse alone is enough.</p>
+<p class="note"><b>AWS Abuse:</b> form at <code>support.aws.amazon.com/#/contacts/report-abuse</code> &nbsp;·&nbsp; email <code>abuse@amazonaws.com</code></p>
+
+<h2>Part 3 — Copy-paste emails</h2>
+
+<div class="mail">
+<div class="hd"><span>✉️ A — to the bucket owner</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<pre>Subject: Security notice — your Amazon S3 bucket is publicly writable and hosting third-party pages
+
+Hello,
+
+I'm a member of the public who came across what looks like a
+misconfiguration in your web hosting, and I wanted to flag it to you
+as a courtesy. I have not changed, downloaded in bulk, or interfered
+with anything.
+
+Your Amazon S3 bucket "<span class="ph">BUCKET-NAME-HERE</span>" is publicly readable and
+appears to be publicly writable. It is currently serving web pages
+that I don't believe your organisation created — for example:
+
+  <span class="ph">https://BUCKET-NAME-HERE.s3.REGION.amazonaws.com/path/to/page.html</span>
+
+These pages are keyword-stuffed "review" pages that redirect ordinary
+visitors to unrelated affiliate shopping offers, while showing search
+engines plain text so they get indexed. In other words, someone is
+using your storage to host spam.
+
+Why it matters:
+ • Anyone on the internet can currently upload files into this bucket.
+ • Google may associate this spam (and any future malicious content)
+   with your domain, which can hurt your search reputation.
+ • You are paying Amazon to store and serve someone else's content.
+
+Suggested steps (for your IT/security team):
+ 1. In the S3 console, turn ON "Block all public access" for the bucket,
+    or tighten the bucket policy / ACL so only your accounts can write.
+ 2. Review the object list and remove files your team didn't upload.
+ 3. If any access keys were shared or committed anywhere, rotate them.
+
+I'm not seeking anything in return — just passing this along so you can
+close it. Happy to share the specific URLs I saw if useful.
+
+Kind regards,
+<span class="ph">YOUR NAME</span></pre></div>
+
+<div class="mail">
+<div class="hd"><span>✉️ B — to AWS Abuse (covers every bucket at once)</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<pre>Subject: Abuse report — Amazon S3 buckets hosting cloaked SEO spam / doorway pages
+
+To: abuse@amazonaws.com
+
+Hello AWS Trust & Safety,
+
+I'd like to report several S3 buckets being used to host cloaked SEO
+spam (doorway pages). The pages serve plain review-style text to
+Googlebot so they rank, but redirect human visitors to affiliate
+shopping offers. The buckets appear to belong to third parties and to
+be publicly writable, so I believe the owners are unaware.
+
+Example buckets and URLs:
+ • https://hdp-us-prod-app-kw-engagenewportbeach-files.s3.us-west-2.amazonaws.com/articles/bluelumeglasses/video/prdvntvm.html
+ • https://nacro.s3.amazonaws.com/ (serving /review/bluelumeglasses/... pages)
+ • https://unmsm-web-static-files.s3.amazonaws.com/articles/bluelumeglassesvisionlens/...
+ • https://bucket-irwinwebsite.s3.ap-southeast-2.amazonaws.com/product/bluelumeglassesvisionlens/video/ktarxd93.html
+ • https://purpose-cms-preprod01.s3.amazonaws.com/ , https://sj-admin.s3.amazonaws.com/ , https://acid-kitty.s3.amazonaws.com/
+
+Behaviour: each page loads a script from lumoraavena.shop / cybomint.org
+that redirects non-Googlebot visitors through /recommend/ to an affiliate
+tracker (global-dailyupdates.com, affiliate ID 6DXMWFN). This is cloaking.
+
+Could you please notify the bucket owners and/or remove the abusive
+content? I did not modify any bucket. Happy to provide more detail.
+
+Thank you,
+<span class="ph">YOUR NAME</span></pre></div>
+
+<p class="note">Replace the <span class="ph">yellow</span> placeholders. Email A: send one per owner you can reach. Email B: send once — it covers all seven.</p>
+
+<script>
+function cp(b){var pre=b.closest('.mail').querySelector('pre');var t=pre.innerText;
+navigator.clipboard.writeText(t).then(function(){var o=b.textContent;b.textContent='Copied ✓';setTimeout(function(){b.textContent=o},1400)})}
+</script>
+</div></body></html>
