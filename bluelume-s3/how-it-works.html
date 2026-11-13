@@ -1,0 +1,77 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noindex,nofollow"><title>How the S3 Network Works</title><style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#16181d;--mute:#5d6470;--line:#dfe3e8;--acc:#1a56db}
+@media (prefers-color-scheme:dark){:root{--bg:#111318;--card:#1a1d24;--ink:#e8eaee;--mute:#9aa2ae;--line:#2c313a;--acc:#7aa2ff}}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+.w{max-width:1000px;margin:0 auto;padding:20px 16px 60px} h1{font-size:26px;margin:0 0 6px} .m{color:var(--mute);font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:18px 0}
+.hd{display:flex;gap:10px;align-items:baseline} .hd h2{font-size:18px;margin:0} .num{color:var(--acc);font-weight:700}
+.u{word-break:break-all;font-size:13px} h3,li,a.btn{display:inline-block;margin:2px 6px 2px 0;padding:6px 12px;border-radius:6px;background:var(--acc);color:#fff;text-decoration:none;font-weight:600;font-size:14px} .dl{margin:8px 0} .note{overflow-wrap:anywhere} .w>*{max-width:100%} pre{max-width:100%;box-sizing:border-box} a{color:var(--acc)}
+details{border-top:1px solid var(--line);padding:8px 0} summary{cursor:pointer;font-weight:600}
+pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:70vh;overflow:auto}
+.cp{margin-left:8px;font-size:12px;padding:2px 8px;border:1px solid var(--line);border-radius:5px;background:var(--card);color:var(--ink);cursor:pointer}
+a.btn{display:inline-block;margin:2px 6px 2px 0;padding:6px 12px;border-radius:6px;background:var(--acc);color:#fff;text-decoration:none;font-weight:600;font-size:14px} .dl{margin:8px 0} .note{background:var(--card);border-left:4px solid var(--acc);padding:10px 14px;border-radius:6px}
+
+table{width:100%;border-collapse:collapse;font-size:14px} td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top} th{color:var(--mute);font-weight:600}
+.tw{overflow-x:auto} .flow{display:flex;flex-direction:column;gap:6px} .step{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px} .arrow{text-align:center;color:var(--mute)}
+.v{font-size:20px;font-weight:700;margin:4px 0} code{font:13px ui-monospace,Menlo,Consolas,monospace;background:var(--bg);padding:1px 4px;border-radius:4px;overflow-wrap:anywhere}
+.tag{display:inline-block;font-size:12px;padding:1px 7px;border-radius:10px;border:1px solid var(--line);color:var(--mute)}
+h2{margin-top:34px}</style></head><body><div class=w>
+<p class=m><a href="./">← Page 1: full text + ZIPs of all 50 pages</a></p>
+<h1>How the BlueLume S3 network works</h1>
+<p class=m>Checked 12–13 Nov 2026 from the 42 live pages, their code, DNS/whois, and the first redirect hop of each cloak (never followed further). Facts are marked <b>proven</b>; inferences are marked <b>likely</b>.</p>
+
+<div class=note><b>Short answer:</b> one affiliate account is behind at least 6 of the 7 buckets, possibly all 7. It writes throw-away "video review" pages into other organisations' Amazon S3 storage, shows Google a text page with a video thumbnail, and sends every real visitor to an affiliate link. The 26-minute "video" is one still image. Google ranks it because the brand is new (almost nothing else answers "bluelume glasses review"), because a video result gets a big thumbnail, and because the cloak only runs for humans.</div>
+
+<h2>1. The chain, step by step</h2>
+<div class=flow>
+<div class=step><b>① Someone searches</b> "bluelume glasses review" → Google shows the S3 pages, often in the <b>Videos</b> block with a thumbnail like "TOP PICK – Editor's Choice 2026" and a duration badge (12:58).</div><div class=arrow>↓</div>
+<div class=step><b>② Page on a stranger's bucket</b>: e.g. <code>hdp-us-prod-app-kw-engagenewportbeach-files.s3…/news/bluelumeglasses/video/tqttfrha.html</code>. The bucket belongs to the City of Newport Beach's public-engagement site; the other buckets include a Peruvian university (<code>unmsm-web-static-files</code>), a UK charity-looking name (<code>nacro</code>) and a CMS "preprod" bucket. <span class=tag>proven: the buckets' other files are the owners' PDFs and photos (Wayback)</span></div><div class=arrow>↓</div>
+<div class=step><b>③ What Googlebot gets</b>: ~6–10k characters of spun "review" text, a <code>VideoObject</code> schema, 7–9 images from <code>neurofys.org</code>, an MP4 from <code>lumoraavena.shop</code>, and one script tag. The page's <code>/_next/</code> CSS/JS files don't exist (403), so Google indexes it unstyled.</div><div class=arrow>↓</div>
+<div class=step><b>④ The cloak script</b> (<code>cybomint.org/js/&lt;product&gt;.js</code> or <code>lumoraavena.shop/js/…</code>):<br><code>if (!navigator.userAgent.includes('Googlebot')) location = "…/recommend/&lt;product&gt;"</code><br>Humans leave instantly; Googlebot's renderer stays and reads the text.</div><div class=arrow>↓</div>
+<div class=step><b>⑤ "Please wait…" page</b> on <code>lumoraavena.shop/recommend/bluelumeglasses</code> → 1-second meta refresh to <code>global-dailyupdates.com/6DXMWFN/K7ZTJQX/</code></div><div class=arrow>↓</div>
+<div class=step><b>⑥ Affiliate tracking link → the BlueLume checkout.</b> The sale is credited to affiliate <code>6DXMWFN</code>.</div>
+</div>
+
+<h2>2. Is it one person or many?</h2>
+<p class=v>At least 6 of the 7 buckets are proven to be one operator. The 7th is likely the same kit, possibly a second user of it.</p>
+<div class=tw><table>
+<tr><th>Evidence</th><th>What it shows</th></tr>
+<tr><td><b>Same affiliate link</b> behind both cloak domains: <code>cybomint.org/recommend/bluelumeglasses</code> and <code>lumoraavena.shop/recommend/bluelumeglasses</code> → both <code>global-dailyupdates.com/6DXMWFN/K7ZTJQX/</code></td><td><span class=tag>proven</span> One affiliate account gets the money from both domains.</td></tr>
+<tr><td>Other products, same first code: Qinux ConeMob → <code>primesavingslink.com/6DXMWFN/CLS3ZGW/</code></td><td><span class=tag>proven</span> <code>6DXMWFN</code> is constant, the second code changes per offer. Same affiliate, many offers. Both tracking domains sit on the same Google Cloud IP <code>34.36.244.111</code>, and the <code>/XXXXXXX/XXXXXXX/</code> link format is Everflow's. Our own Everflow tracker hwt9vtrk.com is on Google Cloud too.</td></tr>
+<tr><td><code>cybomint.org</code> (14 Mar 2026) + <code>neurofys.org</code> (13 Mar 2026), both Namecheap, both on Cloudflare nameservers <code>daphne</code> + <code>rob</code></td><td><span class=tag>proven</span> Cloudflare assigns one nameserver pair per account, so these are the same Cloudflare account, registered a day apart. <code>lumoraavena.shop</code> was registered on 13 Mar 2026 too (Namecheap; different CF account).</td></tr>
+<tr><td>Every one of the 42 pages, on all 7 buckets, plays its video from <code>lumoraavena.shop/video/</code>; all 35 file names are the same 104,636,387-byte file</td><td><span class=tag>proven</span> One asset store and one video, renamed per page.</td></tr>
+<tr><td>Same Next.js "watch" template, the same <code>/&lt;section&gt;/&lt;product&gt;/video/&lt;id&gt;.html</code> path scheme, the same VideoObject + WebPage schema</td><td><span class=tag>proven</span> One generator.</td></tr>
+<tr><td>Fake "GTM-" IDs (15 characters; real ones are 7–8), fake build IDs, random <code>[RDGOMY1ZH]</code> tokens in titles, random "ref …" codes: different on every page</td><td><span class=tag>likely</span> Deliberate noise so the pages don't look like copies of each other.</td></tr>
+<tr><td><b>The odd one: <code>acid-kitty</code></b> (8 pages): cloak on <code>healthtrac.xyz</code> (GoDaddy, 2021), images on <code>pic.ijmss.org</code>, a single fixed GTM ID, long keyword file names. Its humans go to a <code>bookshop.org/lists/…</code> page, not straight to an affiliate link. Yet it still plays the <code>lumoraavena.shop</code> video.</td><td><span class=tag>likely</span> Either the same operator's second channel, or a second person renting the same kit. The shared video host makes "one team" more likely than a stranger.</td></tr>
+<tr><td>Same operator seen before: on 05 Oct the Akemi Coffee Boost S3 pages (<code>paperchase-aging-prod</code> bucket) used <code>lumoraavena.shop/js/akemicoffeeboost.js</code> + <code>neurofys.org</code> images</td><td><span class=tag>proven</span> Running since at least early October, across offers. Today its Akemi redirect goes to <code>nubupaths.online/smashredirect/…</code> instead.</td></tr>
+</table></div>
+
+<h2>3. How big the "web" is</h2>
+<p>The Newport bucket alone: <b>47 different products in just the first 2 Google pages</b> of <code>site:</code> results. Pages are dated "9–17 hours ago", so new ones go up every day:</p>
+<p class=m>agelessbodysystemsupercserum, alphadrive, bazopril, brainergy, cardarmor, darkreset, floranew, fsx24, furthrivedogcoolingmat, gumaktiv, honeyfil, hotjakwarmguardcap, ignitra, kizucushion, lipoflow, lipopeak, maxforce, metabodrops, mindhoney60pro, mosquitron, mrboldproheadshaver, musclewavepro, nativegut, nativepathcollagendarkspotsbruising, nativepathliposomalvitaminc1, nativepathmct, noorowholebodymassager, pearlipenteethwhitening, pestdefencecockroachbait, prostalimxr, provadent, qinuxaurysun, qinuxconemob, renew, snowtitanpro, sugarreset, testonax, theframeryeyewear, thegeniussong, therewireprotocol, trumpeagle, varicorin, vitalsmartglasses, voygetravelbackpack, vueezehughugsocks, youthfulbrain, zectomedsupplementfordogs</p>
+<p>These are mostly the big US affiliate-network offers: Native Path, Nooro, Qinux, Zectomed, MetaboDrops, ProstaLim XR, Sugar Reset, and gadgets like Mosquitron and Snow Titan Pro. One bucket × dozens of products × several pages each, times many buckets: the network is at least hundreds of pages, and likely thousands. It is churned: 8 of the 50 BlueLume pages were already deleted (403) by the time I fetched them.</p>
+
+<h2>4. Why Google ranks this junk</h2>
+<div class=tw><table>
+<tr><th>Reason</th><th>Why it works</th></tr>
+<tr><td><b>Empty search results for new brands</b></td><td>BlueLume launched weeks ago. For "bluelume glasses review" Google has very few pages to choose from, so any exact-match page with the full phrase in the title, H1, URL and text gets in. The same reason a fresh brand page of ours can rank in days.</td></tr>
+<tr><td><b>Video result = a big thumbnail</b></td><td>A <code>VideoObject</code> with a real, playable MP4 qualifies the page for video results. Google checks that a video exists and that it is the page's main item; it doesn't judge whether 26 minutes of a still image is a real video. The clickbait thumbnail plus the duration badge pull clicks.</td></tr>
+<tr><td><b>The cloak only fires for humans</b></td><td>The redirect is JavaScript that checks for "Googlebot" in the user agent, so Google's crawler and renderer never see it fire. Google does spot-check with other user agents, but that's after the fact, and the pages are disposable.</td></tr>
+<tr><td><b>Borrowed, clean hosts</b></td><td><code>*.s3.amazonaws.com</code> buckets of real organisations have no spam history. Each bucket is a fresh hostname that hasn't been penalised, and burning one costs the spammer nothing.</td></tr>
+<tr><td><b>Freshness + volume</b></td><td>New pages every few hours win "hours ago" freshness on brand queries. Hundreds of spun variants mean some survive each Google clean-up.</td></tr>
+<tr><td><b>Google is slow, not blind</b></td><td>This breaks 4 Google spam policies at once: cloaking, sneaky redirects, scaled content abuse, and hacked/third-party content. SpamBrain and manual actions remove it, usually days to weeks later. Short-lived offers make those days pay.</td></tr>
+</table></div>
+
+<h2>5. How they write to other people's buckets</h2>
+<p><span class=tag>not tested</span> The buckets refuse public listing, so this can't be checked from outside without trying to write into them, which is illegal and I didn't do it. The usual causes are a bucket left open to public uploads, or AWS keys leaked in a public code repository or app. The owners (a city, a university, charities) almost certainly don't know. AWS has an abuse form for exactly this, and the owner can delete the files in minutes.</p>
+
+<h2>6. What it means for us (clean lessons only)</h2>
+<ul>
+<li><b>The prize is real:</b> brand + "review" searches for a new offer have almost no competition in the first weeks. Exact-match pages on <b>day 0</b> win them (our best-seo / offer-seo rule, confirmed again).</li>
+<li><b>Video results take the top of the page:</b> a genuine video (real footage, real content) on our own pages, with VideoObject schema and a matching thumbnail, can win the same Videos block, legitimately.</li>
+<li><b>Don't copy the cloak:</b> a UA-based redirect and pages on hijacked buckets break Google's spam policies and computer-misuse law. A manual action would hit the whole domain.</li>
+<li><b>If it steals our sales:</b> a Google spam report (cloaking) plus an AWS abuse report per bucket takes the pages down fast. Telling the bucket owners works too (e.g. the City of Newport Beach).</li>
+</ul>
+<p class=m>Sources: the page HTML and scripts on page 1; whois for cybomint.org, neurofys.org, healthtrac.xyz, ijmss.org, global-dailyupdates.com, primesavingslink.com; <code>dig NS</code>; the first hop of each /recommend/ page (read, not followed); Wayback CDX for the Newport bucket; our akemi-s3-cloak notes (05 Oct 2026).</p>
+</div></body></html>
