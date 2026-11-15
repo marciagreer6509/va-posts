@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Trend Desk thumbnails</title>
+<style>:root{--bg:#1D212B;--card:#262B37;--t:#E8EBF2;--m:#A6AEC0;--a:#F5B83D}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font:15px/1.5 system-ui,Segoe UI,Roboto,sans-serif}
+main{max-width:1240px;margin:0 auto;padding:28px 16px}h1{font-size:24px;margin:0 0 6px}p{color:var(--m);margin:0 0 6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px;margin-top:20px}figure{margin:0;background:var(--card);border-radius:12px;overflow:hidden}
+img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}figcaption{padding:12px 14px;display:grid;gap:2px}figcaption span{color:var(--a);font-size:13px}figcaption em{color:var(--m);font-style:normal;font-size:13px}
+code{background:#2E3442;padding:2px 6px;border-radius:5px}</style></head><body><main>
+<h1>Trend Desk: Cloudflare image AI test</h1>
+<p>Same prompt, six Cloudflare Workers AI models, 1280×720, made inside the Trend Desk server (no Gemini key used). Topic: <b>vikings vs packers</b>.</p>
+<p>Prompt: <code>YouTube news thumbnail, 16:9: two American football teams clash at the line of scrimmage under stadium floodlights, Packers green-and-gold vs Vikings purple, dramatic low angle, photorealistic, no text, no logos</code></p>
+<p>⚠ Every model still drew team logos despite "no logos". Text and headline will be added by us on top, not by the AI.</p>
+<div class="grid"><figure><img src="lucid-origin.jpg" alt="Leonardo Lucid Origin" loading="lazy"><figcaption><b>Leonardo Lucid Origin</b><span>1.8 s per image</span><em>Most photo-real; my pick</em></figcaption></figure>
+<figure><img src="flux-2-dev.jpg" alt="FLUX.2 dev" loading="lazy"><figcaption><b>FLUX.2 dev</b><span>12 s per image</span><em>Strong, slower</em></figcaption></figure>
+<figure><img src="flux-2-klein.jpg" alt="FLUX.2 klein 4B" loading="lazy"><figcaption><b>FLUX.2 klein 4B</b><span>6 s per image</span><em>Close-up drama, slight AI look</em></figcaption></figure>
+<figure><img src="phoenix.jpg" alt="Leonardo Phoenix 1.0" loading="lazy"><figcaption><b>Leonardo Phoenix 1.0</b><span>3.5 s per image</span><em>Clean, a bit game-like</em></figcaption></figure>
+<figure><img src="flux-1-schnell.jpg" alt="FLUX.1 schnell" loading="lazy"><figcaption><b>FLUX.1 schnell</b><span>2 s per image</span><em>Cheapest: ~30 free/day; square only</em></figcaption></figure>
+<figure><img src="sdxl.jpg" alt="SDXL Lightning" loading="lazy"><figcaption><b>SDXL Lightning</b><span>3.3 s per image</span><em>Cartoonish, reject</em></figcaption></figure>
+</div></main></body></html>
