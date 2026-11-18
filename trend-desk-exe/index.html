@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Desk EXE mock</title>
+<style>
+:root{--bg:#eef1f6;--surface:#fff;--s2:#f5f7fb;--ink:#17202f;--ink2:#4a5468;--line:#d6dce7;--brand:#1f3c88;--brand2:#2f5bd3;--amber:#f2a516;--ok:#1d7a46;--okbg:#e3f4ea;--err:#b42318;--errbg:#fde7e5;--warn:#8a5a06;--warnbg:#fdf1d6;--run:#0a5c9e;--runbg:#e2eefb}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d212b;--surface:#262b37;--s2:#2e3442;--ink:#eef1f6;--ink2:#b3bccb;--line:#3a4152;--brand:#8fb0ff;--brand2:#8fb0ff;--ok:#7fd8a4;--okbg:#1f3a2b;--err:#ff9b8f;--errbg:#43231f;--warn:#f5c56b;--warnbg:#3d3220;--run:#8cc4ff;--runbg:#1f3248}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+.top{background:#17284f;color:#fff;padding:14px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.logo{width:26px;height:26px;border-radius:6px;background:var(--amber);display:grid;place-items:center;color:#17284f;font-weight:800}
+.top h1{font-size:16px;margin:0}.top .sub{opacity:.75;font-size:13px}
+.states{display:flex;gap:6px;flex-wrap:wrap;padding:12px 16px;background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.states button{border:1px solid var(--line);background:var(--s2);color:var(--ink);border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer;min-height:40px}
+.states button[aria-pressed="true"]{background:var(--brand2);color:#fff;border-color:var(--brand2)}
+.wrap{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
+.note{background:var(--warnbg);color:var(--warn);border-radius:10px;padding:12px 14px;margin:0 0 18px;font-size:14px}
+.win{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 30px rgba(10,20,40,.12);overflow:hidden}
+.titlebar{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--s2);border-bottom:1px solid var(--line);font-size:13px;color:var(--ink2)}
+.dots{display:flex;gap:6px;margin-left:auto}.dots i{width:12px;height:12px;border-radius:2px;background:var(--line);display:block}
+.layout{display:grid;grid-template-columns:200px 1fr;min-height:520px}
+.side{border-right:1px solid var(--line);padding:16px 10px;background:var(--s2)}
+.side div{padding:9px 12px;border-radius:8px;font-size:14px;color:var(--ink2)}.side .on{background:var(--surface);color:var(--ink);font-weight:600;box-shadow:inset 3px 0 0 var(--brand2)}
+.main{padding:20px 22px}
+h2{font-size:18px;margin:0 0 6px}h3{font-size:15px;margin:18px 0 8px}
+.hint{color:var(--ink2);font-size:14px;margin:4px 0 12px}
+.seg{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}
+.opt{flex:1 1 240px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--surface);cursor:pointer}
+.opt.on{border-color:var(--brand2);box-shadow:0 0 0 2px var(--brand2) inset}
+.opt b{display:block}.opt span{font-size:13px;color:var(--ink2)}
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:9px 14px;font:inherit;font-size:14px;cursor:pointer;min-height:40px}
+.btn.primary{background:var(--brand2);border-color:var(--brand2);color:#fff}.btn.danger{color:var(--err)}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+th{text-align:left;color:var(--ink2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:middle}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:13px;font-weight:600;white-space:nowrap}
+.chip.ok{background:var(--okbg);color:var(--ok)}.chip.err{background:var(--errbg);color:var(--err)}.chip.warn{background:var(--warnbg);color:var(--warn)}.chip.run{background:var(--runbg);color:var(--run)}
+.mono{font-family:ui-monospace,Consolas,monospace;font-size:13px}
+select.input,.input{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:9px 10px;font:inherit;font-size:14px;min-height:40px;max-width:100%}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.gwin{max-width:520px;margin:10px auto;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;color:#202124}
+.gbar{background:#f1f3f4;padding:8px 12px;font-size:12px;color:#5f6368;border-bottom:1px solid #dadce0}
+.gbody{padding:28px 30px;text-align:center}.gbody h4{font-size:22px;font-weight:400;margin:10px 0 4px}
+.gfield{border:1px solid #dadce0;border-radius:4px;padding:14px;text-align:left;color:#5f6368;margin:18px 0}
+.gnext{background:#1a73e8;color:#fff;border-radius:4px;padding:9px 22px;display:inline-block;font-size:14px}
+.run tr.w td{background:var(--runbg)}
+.thumb{width:100%;max-width:520px;aspect-ratio:16/9;border-radius:8px;background:linear-gradient(135deg,#1b2a4a,#6b2a2a 60%,#d18b28);position:relative;overflow:hidden;color:#fff}
+.thumb .t1{position:absolute;left:24px;top:30px;font:800 34px/1 Impact,sans-serif}
+.thumb .t2{position:absolute;left:24px;top:74px;font:800 54px/1 Impact,sans-serif;color:#ffe135;text-shadow:0 3px 0 #000}
+.meta{font-size:13px;color:var(--ink2);margin-top:8px}
+.state{display:none}.state.on{display:block}
+@media (max-width:760px){.layout{grid-template-columns:1fr}.side{display:none}.main{padding:16px}td,th{padding:8px 6px}}
+</style>
+</head>
+<body>
+<div class="top"><div class="logo">T</div><div><h1>Trend Desk EXE + Google Flow pictures — mock for sign-off</h1><div class="sub">Clickable. Nothing here is live. Pick a screen below.</div></div></div>
+<div class="states" role="tablist">
+  <button data-s="1" aria-pressed="true">1 · Thumbnails settings</button>
+  <button data-s="2" aria-pressed="false">2 · Add a Google account</button>
+  <button data-s="3" aria-pressed="false">3 · Account pool</button>
+  <button data-s="4" aria-pressed="false">4 · A run with Flow</button>
+  <button data-s="5" aria-pressed="false">5 · Story popup</button>
+  <button data-s="6" aria-pressed="false">6 · What the EXE is</button>
+</div>
+<div class="wrap">
+<p class="note"><b>How it works:</b> the EXE is the same Trend Desk you use now (same sign-in, same licence seats, same stories), in its own window on the PC. What it adds is the <b>Google Flow picture engine from Veo Flow Multi</b>: each Google account is signed in by hand once inside the app, then thumbnails are made with <b>Nano Banana Pro</b> across all accounts, taking turns. Cloudflare stays as the backup.</p>
+
+<section class="state on" data-s="1"><div class="win"><div class="titlebar">Trend Desk — Settings<div class="dots"><i></i><i></i><i></i></div></div>
+<div class="layout"><div class="side"><div>Gemini keys</div><div>Stories and files</div><div class="on">Thumbnails</div><div>Connection</div></div>
+<div class="main"><h2>Thumbnails</h2><p class="hint">Where the thumbnail pictures are made.</p>
+<div class="seg">
+  <div class="opt on"><b>Google Flow on this PC (recommended)</b><span>Nano Banana Pro through your own Google accounts. 6 of 7 accounts ready.</span></div>
+  <div class="opt"><b>Cloudflare</b><span>The current engine: FLUX.2 Klein 4B on 10 Cloudflare accounts (~960 a day).</span></div>
+</div>
+<h3>Picture model (Flow)</h3>
+<select class="input"><option>Nano Banana Pro — best quality (default)</option><option>Nano Banana 2 — faster</option><option>Imagen 4 — oldest, text-only</option></select>
+<h3>If Flow can't make a picture</h3>
+<label class="row"><input type="checkbox" checked> Use Cloudflare instead, so the story still gets a thumbnail</label>
+<h3>Google accounts</h3>
+<p class="hint">7 accounts · 6 ready · 1 needs signing in again. <a href="#" data-go="3">Manage accounts →</a></p>
+<div class="row"><button class="btn primary" data-go="2">+ Add Google account</button><button class="btn" data-go="3">Check all</button></div>
+</div></div></div></section>
+
+<section class="state" data-s="2"><div class="win"><div class="titlebar">Trend Desk — Add Google account (account 8)<div class="dots"><i></i><i></i><i></i></div></div>
+<div class="main"><h2>Sign in once</h2><p class="hint">A Google window opens inside Trend Desk. Sign in to the account <b>yourself</b> (Trend Desk never types passwords). When Flow opens, this window closes on its own and the account shows <b>Ready</b>. You never sign in again on this PC.</p>
+<div class="gwin"><div class="gbar">🔒 accounts.google.com — Trend Desk account 8 (its own separate browser storage)</div>
+<div class="gbody"><div style="font-size:24px;color:#4285f4;font-weight:700">Google</div><h4>Sign in</h4><div>to continue to Flow</div><div class="gfield">Email or phone</div><span class="gnext">Next</span></div></div>
+<p class="hint" style="text-align:center">Waiting for you to sign in… <button class="btn">Cancel</button></p>
+</div></div></section>
+
+<section class="state" data-s="3"><div class="win"><div class="titlebar">Trend Desk — Settings › Thumbnails › Google accounts<div class="dots"><i></i><i></i><i></i></div></div>
+<div class="main"><h2>Google accounts</h2><p class="hint">Pictures rotate across every Ready account. An account that hits a limit rests and the next one is used.</p>
+<div style="overflow-x:auto"><table><thead><tr><th>#</th><th>Account</th><th>Status</th><th>Pictures today</th><th>Last used</th><th></th></tr></thead><tbody>
+<tr><td>1</td><td>news.desk.one@gmail.com</td><td><span class="chip ok">✓ Ready</span></td><td>41</td><td>2 min ago</td><td><button class="btn danger">Remove</button></td></tr>
+<tr><td>2</td><td>news.desk.two@gmail.com</td><td><span class="chip ok">✓ Ready</span></td><td>39</td><td>just now</td><td><button class="btn danger">Remove</button></td></tr>
+<tr><td>3</td><td>trend.pics.3@gmail.com</td><td><span class="chip run">● Making a picture</span></td><td>40</td><td>now</td><td><button class="btn danger">Remove</button></td></tr>
+<tr><td>4</td><td>trend.pics.4@gmail.com</td><td><span class="chip warn">⏸ Resting — Google limit, back by itself</span></td><td>62</td><td>18 min ago</td><td><button class="btn danger">Remove</button></td></tr>
+<tr><td>5</td><td>trend.pics.5@gmail.com</td><td><span class="chip err">! Signed out — sign in again</span></td><td>0</td><td>yesterday</td><td><button class="btn primary" data-go="2">Sign in</button></td></tr>
+<tr><td>6</td><td>trend.pics.6@gmail.com</td><td><span class="chip ok">✓ Ready</span></td><td>38</td><td>4 min ago</td><td><button class="btn danger">Remove</button></td></tr>
+<tr><td>7</td><td>trend.pics.7@gmail.com</td><td><span class="chip ok">✓ Ready</span></td><td>37</td><td>6 min ago</td><td><button class="btn danger">Remove</button></td></tr>
+</tbody></table></div>
+<p class="hint">Counted by Trend Desk on this PC. Google publishes no picture limit for Flow, so the app shows what it measured, never a guessed "left today".</p>
+<div class="row"><button class="btn primary" data-go="2">+ Add Google account</button><button class="btn">Check all</button></div>
+</div></div></section>
+
+<section class="state" data-s="4"><div class="win"><div class="titlebar">Trend Desk — main screen during a run<div class="dots"><i></i><i></i><i></i></div></div>
+<div class="main"><div class="row" style="justify-content:space-between"><b>Writing 2/5</b><span class="chip run">Pictures: Google Flow · 6 accounts</span></div>
+<div style="overflow-x:auto"><table class="run"><thead><tr><th>ID</th><th>Thumbnail</th><th>Topic</th><th>Source</th><th>Status</th></tr></thead><tbody>
+<tr><td class="mono">20261118-004</td><td>🖼</td><td>knicks vs raptors</td><td>apnews.com</td><td><span class="chip ok">✓ Done</span></td></tr>
+<tr class="w"><td class="mono">20261118-005</td><td><span class="chip run">Flow · account 3</span></td><td>illinois vs duke</td><td>apnews.com</td><td><span class="chip run">Making the thumbnail</span></td></tr>
+<tr class="w"><td class="mono">—</td><td></td><td>pistons vs spurs</td><td>dispatch.com</td><td><span class="chip run">Writing</span></td></tr>
+<tr><td></td><td></td><td>wales vs portugal</td><td>—</td><td><span class="chip">Waiting</span></td></tr>
+</tbody></table></div>
+<p class="hint">Activity log: <span class="mono">12:04:11 Thumbnail for knicks vs raptors made with Nano Banana Pro (Flow account 2, 7 s).</span></p>
+</div></div></section>
+
+<section class="state" data-s="5"><div class="win"><div class="titlebar">Trend Desk — story popup<div class="dots"><i></i><i></i><i></i></div></div>
+<div class="main"><h2>knicks vs raptors</h2><h3>Thumbnail</h3>
+<div class="thumb"><div class="t1">KNICKS vs RAPTORS</div><div class="t2">15 STRAIGHT!</div></div>
+<p class="meta">Made with <b>Nano Banana Pro</b> on Google Flow (account 2) · 1376×768 · AI-generated picture.</p>
+<div class="row"><button class="btn">Open in new tab</button><button class="btn">Copy link</button><button class="btn primary">Replace thumbnail</button>
+<select class="input"><option>Replace with: Flow — Nano Banana Pro</option><option>Replace with: Cloudflare — FLUX.2 Klein</option></select></div>
+</div></div></section>
+
+<section class="state" data-s="6"><div class="win"><div class="titlebar">What gets built<div class="dots"><i></i><i></i><i></i></div></div>
+<div class="main"><h2>The EXE</h2>
+<table><tbody>
+<tr><td><b>File</b></td><td>TrendDesk-v1.0-win64.zip → unzip → <span class="mono">Trend Desk.exe</span> (no installer, Windows 10/11).</td></tr>
+<tr><td><b>Sign-in</b></td><td>The same logins and seats as the web app. The EXE gives the server a proper computer ID, so a licence is tied to the PC, not the browser.</td></tr>
+<tr><td><b>Updates</b></td><td>The app screens load from the Trend Desk server, so fixes arrive without a new EXE. Only engine changes need a new download.</td></tr>
+<tr><td><b>Pictures</b></td><td>Veo Flow Multi's proven engine: one separate, saved Google session per account, a hidden Flow window per account for Google's security check, images through Flow's own API.</td></tr>
+<tr><td><b>Files</b></td><td>The CSVs save straight to a folder you pick (<span class="mono">Documents\Trend Desk\&lt;date&gt;</span>) instead of Downloads.</td></tr>
+<tr><td><b>Built on</b></td><td>Electron (like Veo Flow Multi). First run tested on the Beast before it goes to the client.</td></tr>
+</tbody></table></div></div></section>
+</div>
+<script>
+document.addEventListener("click",function(e){var b=e.target.closest("[data-s],[data-go]");if(!b)return;e.preventDefault();var s=b.dataset.s||b.dataset.go;
+document.querySelectorAll(".state").forEach(function(x){x.classList.toggle("on",x.dataset.s===s)});
+document.querySelectorAll(".states button").forEach(function(x){x.setAttribute("aria-pressed",String(x.dataset.s===s))});window.scrollTo(0,0);});
+</script>
+</body>
+</html>
