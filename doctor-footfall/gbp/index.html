@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Business Profile Changes</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f2546'/%3E%3Cpath d='M32 12c-8 0-14 6-14 14 0 10 14 26 14 26s14-16 14-26c0-8-6-14-14-14z' fill='%23ffc928'/%3E%3Ccircle cx='32' cy='26' r='5' fill='%230f2546'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&family=Baloo+Paaji+2:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f2546;--gold:#ffc928;--ink:#1f1d1a;--mut:#5f5a52;--cream:#f8f4ea;--line:#e6dfcf;--ok:#137333;--warn:#b3261e;--gblue:#1a73e8;--ggrey:#5f6368;--gline:#dadce0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:16px/1.6 'DM Sans',sans-serif;color:var(--ink);background:var(--cream)}
+.page{max-width:900px;margin:0 auto;background:#fff;min-height:100vh}
+.cover{background:var(--navy);color:#fff;padding:44px 40px 36px}
+.kick{display:inline-block;border:2px solid var(--gold);color:var(--gold);font-weight:700;font-size:.75rem;letter-spacing:.18em;padding:3px 12px;border-radius:6px}
+h1{font-family:'DM Serif Display',serif;font-weight:400;font-size:2.4rem;line-height:1.1;margin:16px 0 8px}
+h1 em{color:var(--gold);font-style:normal}
+.cover p{opacity:.9;max-width:620px}
+main{padding:8px 40px 60px}
+section{padding:34px 0 8px;border-bottom:1px solid var(--line)}
+section:last-child{border:0}
+h2{font-family:'DM Serif Display',serif;font-weight:400;font-size:1.65rem;line-height:1.2;display:flex;gap:12px;align-items:baseline}
+h2 .n{flex:none;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:var(--gold);font:700 .95rem 'DM Sans'}
+h3{font-size:1.02rem;margin:18px 0 6px}
+p,li{margin:8px 0}
+ul,ol{padding-left:22px}
+.where{font-size:.88rem;color:var(--mut);background:#f3efe4;border-radius:8px;padding:6px 12px;display:inline-block;margin:10px 0 4px}
+.where b{color:var(--ink)}
+.box{border:2px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0;position:relative}
+.box .lab{font-size:.72rem;font-weight:700;letter-spacing:.12em;color:var(--mut);text-transform:uppercase}
+.box .val{font-size:1.08rem;font-weight:700;margin-top:2px;white-space:pre-wrap}
+.box .val.long{font-weight:400;font-size:.98rem}
+.copy{position:absolute;top:10px;right:10px;border:0;background:var(--navy);color:#fff;font:700 .75rem 'DM Sans';padding:6px 12px;border-radius:6px;cursor:pointer}
+.copy.done{background:var(--ok)}
+.old{color:var(--warn);text-decoration:line-through;font-weight:500}
+.tick{color:var(--ok);font-weight:700}
+.note{border-left:5px solid var(--gold);background:#fffbea;padding:10px 14px;border-radius:0 10px 10px 0;margin:14px 0;font-size:.95rem}
+.order{counter-reset:o;list-style:none;padding:0}
+.order li{counter-increment:o;display:flex;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.order li:before{content:"Day " counter(o);flex:none;width:62px;font-weight:700;color:var(--navy)}
+.order li:nth-child(1):before{content:"Day 1"}.order li:nth-child(2):before{content:"Day 1"}.order li:nth-child(3):before{content:"Day 2"}.order li:nth-child(4):before{content:"Day 4"}.order li:nth-child(5):before{content:"Day 7"}.order li:nth-child(6):before{content:"Weekly"}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.95rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+
+/* ===== Google-style mockups ===== */
+.mock-wrap{display:flex;gap:26px;flex-wrap:wrap;justify-content:center;margin:20px 0}
+.mock-wrap>div{max-width:100%;min-width:0}
+.cap{text-align:center;font-size:.82rem;color:var(--mut);margin-top:8px;font-weight:700}
+.phone{width:330px;max-width:100%;border:10px solid #202124;border-radius:34px;background:#fff;overflow:hidden;font-family:Roboto,sans-serif;color:#202124;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.ph-bar{height:22px;background:#202124}
+.ph-photos{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:80px 80px;gap:2px}
+.ph-photos div{display:grid;place-items:center;text-align:center;font-size:.66rem;font-weight:500;color:#fff;padding:4px;line-height:1.25}
+.ph1{grid-row:1/3;background:linear-gradient(160deg,#d8c84a,#b9a520);color:#2b2470!important;font-family:'Baloo Paaji 2';font-size:.78rem!important;font-weight:700!important}
+.ph2{background:#4b6a88}.ph3{background:#7a5a46}
+.ph-body{padding:12px 14px 6px}
+.ph-name{font-size:1.25rem;line-height:1.25;font-weight:400}
+.ph-rate{font-size:.85rem;color:var(--ggrey);margin-top:3px}
+.ph-rate b{color:#202124;font-weight:500}.stars{color:#fbbc04;letter-spacing:-1px}
+.ph-cat{font-size:.85rem;color:var(--ggrey)}
+.ph-open{font-size:.85rem;margin-top:2px}.ph-open b{color:var(--ok);font-weight:500}
+.ph-btns{display:flex;gap:6px;overflow:hidden;padding:10px 0 12px;border-bottom:1px solid var(--gline)}
+.ph-btns span{flex:none;font-size:.72rem;font-weight:500;padding:6px 11px;border-radius:18px;border:1px solid var(--gline);color:#0b57d0}
+.ph-btns span.pri{background:#0b57d0;color:#fff;border-color:#0b57d0}
+.ph-tabs{display:flex;gap:16px;font-size:.8rem;font-weight:500;color:var(--ggrey);padding:9px 0 0;border-bottom:1px solid var(--gline)}
+.ph-tabs span{padding-bottom:7px}.ph-tabs span.on{color:#0b57d0;border-bottom:3px solid #0b57d0}
+.ph-row{display:flex;gap:12px;padding:9px 0;font-size:.8rem;border-bottom:1px solid #f1f3f4;line-height:1.35}
+.ph-row i{flex:none;width:18px;color:#0b57d0;font-style:normal;text-align:center}
+.ph-desc{font-size:.78rem;color:#3c4043;padding:10px 0;line-height:1.45;border-bottom:1px solid #f1f3f4}
+.ph-svc{display:flex;flex-wrap:wrap;gap:5px;padding:10px 0}
+.ph-svc span{font-size:.7rem;background:#f1f3f4;border-radius:12px;padding:4px 9px}
+
+.panel{width:400px;max-width:100%;border:1px solid var(--gline);border-radius:12px;background:#fff;font-family:Roboto,sans-serif;color:#202124;box-shadow:0 4px 14px rgba(0,0,0,.08);overflow:hidden}
+.panel-h{padding:14px 18px;border-bottom:1px solid var(--gline);font-size:1.05rem;font-weight:500;display:flex;justify-content:space-between}
+.panel-h small{color:var(--ggrey);font-weight:400;font-size:.8rem}
+.panel-b{padding:14px 18px}
+.fld{border:1px solid #747775;border-radius:6px;padding:16px 12px 8px;position:relative;margin:12px 0;font-size:.92rem}
+.fld .fl{position:absolute;top:-9px;left:9px;background:#fff;padding:0 4px;font-size:.72rem;color:var(--ggrey)}
+.fld.focus{border:2px solid var(--gblue)}.fld.focus .fl{color:var(--gblue)}
+.chip{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--gline);border-radius:8px;padding:5px 10px;font-size:.82rem;margin:4px 4px 0 0}
+.chip.pri{background:#e8f0fe;border-color:#d2e3fc;color:#174ea6}
+.hrs{width:100%;font-size:.86rem}.hrs td{border:0;padding:6px 0}
+.tog{display:inline-block;width:30px;height:16px;border-radius:9px;background:var(--gblue);position:relative;vertical-align:middle;margin-right:8px}
+.tog:after{content:"";position:absolute;right:2px;top:2px;width:12px;height:12px;border-radius:50%;background:#fff}
+.tog.off{background:#bdc1c6}.tog.off:after{left:2px;right:auto}
+.panel-f{padding:10px 18px 14px;display:flex;justify-content:flex-end;gap:8px}
+.panel-f span{font-size:.85rem;font-weight:500;padding:8px 18px;border-radius:18px;color:#0b57d0}
+.panel-f span.sv{background:#0b57d0;color:#fff}
+.map{height:200px;position:relative;background:
+ linear-gradient(90deg,transparent 47%,#fff 47%,#fff 53%,transparent 53%),
+ linear-gradient(0deg,transparent 58%,#fff 58%,#fff 64%,transparent 64%),
+ linear-gradient(28deg,transparent 30%,#fde293 30%,#fde293 34%,transparent 34%),#e8eaed}
+.map .bl{position:absolute;background:#d7dbe0;border-radius:3px}
+.pin{position:absolute;left:calc(53% + 14px);top:30%;width:30px;height:42px}
+.pin.bad{left:18%;top:68%;opacity:.55}
+.map .lbl{position:absolute;font:500 .66rem Roboto;color:#5f6368}
+.map .tag{position:absolute;font:700 .66rem Roboto;padding:2px 6px;border-radius:4px;color:#fff}
+.photos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.photos div{aspect-ratio:1;border-radius:10px;display:flex;flex-direction:column;justify-content:flex-end;padding:8px;color:#fff;font-size:.74rem;font-weight:700;line-height:1.25;position:relative}
+.photos div em{position:absolute;top:8px;left:8px;font-style:normal;font-size:.62rem;background:rgba(0,0,0,.45);padding:2px 6px;border-radius:4px}
+.posts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0}
+.post{border:1px solid var(--gline);border-radius:12px;overflow:hidden;font-family:Roboto,sans-serif}
+.post img{width:100%;display:block}
+.post .pt{padding:10px 12px;font-size:.84rem;line-height:1.45;color:#3c4043}
+.post .pb{margin:0 12px 12px;display:inline-block;border:1px solid var(--gline);border-radius:16px;padding:5px 12px;font-size:.78rem;color:#0b57d0;font-weight:500}
+@media(max-width:720px){main{padding:4px 16px 40px}.cover{padding:32px 16px 26px}h1{font-size:1.9rem}.two,.posts{grid-template-columns:1fr}.photos{grid-template-columns:repeat(2,1fr)}.phone{width:100%;max-width:330px}}
+</style></head>
+<body><div class="page">
+<div class="cover">
+<span class="kick">GOOGLE BUSINESS PROFILE · BATHINDA</span>
+<h1>Every change, field by field — and <em>how it must look</em></h1>
+<p>Dr. Bansal Skin, Allergy &amp; Hair Hospital · Fauji Chowk, Bathinda. Open the profile at <b>business.google.com</b> (or search the name on Google while logged in) → <b>Edit profile</b>. Each section below says where to click, what to type, and shows the finished result.</p>
+</div>
+<main>
+
+<section>
+<h2><span class="n">0</span>The order to do it in</h2>
+<p>Google re-checks a profile when big fields change. Doing them in this order keeps it live and verified:</p>
+<ol class="order">
+<li><span><b>Security</b> — clean the owners list (section 1).</span></li>
+<li><span><b>Safe fields</b> — phone, hours, description, services, booking link, Facebook link, opening date (sections 4–9).</span></li>
+<li><span><b>Category</b> (section 3).</span></li>
+<li><span><b>Map pin</b> (section 10). Keep someone at the clinic ready in case Google asks for a short verification video.</span></li>
+<li><span><b>Name</b> (section 2) — only after the pin edit shows as approved.</span></li>
+<li><span><b>Photos + one Update + reply to reviews</b> (sections 11–13), every week from now on.</span></li>
+</ol>
+<div class="note">After every save, the edit shows as “Under review” for a few minutes to a few days. Wait for it to clear before the next big one (category → pin → name).</div>
+</section>
+
+<section>
+<h2><span class="n">1</span>Owners &amp; managers</h2>
+<span class="where">Profile menu (⋮) → <b>Business Profile settings</b> → <b>People and access</b></span>
+<ul>
+<li>Remove every name/email nobody on our side recognises (the old Facebook was hacked — assume old logins are not safe).</li>
+<li>Keep <b>two</b> owners we control: the main Google account + one backup (the VA or a family member). Then one person losing a login never loses the listing.</li>
+<li>On the main Google account: new password + <b>2-Step Verification</b> on (myaccount.google.com → Security).</li>
+</ul>
+</section>
+
+<section>
+<h2><span class="n">2</span>Business name</h2>
+<span class="where">Edit profile → <b>About</b> → <b>Business name</b></span>
+<p>Google wants the name exactly as on the board outside. The board reads <span style="font-family:'Baloo Paaji 2'">ਡਾ. ਬਾਂਸਲ ਚਮੜੀ, ਅਲਰਜੀ ਅਤੇ ਵਾਲਾਂ ਦੇ ਰੋਗਾਂ ਦਾ ਹਸਪਤਾਲ</span> — in English:</p>
+<div class="box"><div class="lab">Business name</div><div class="val" id="v-name">Dr. Bansal Skin, Allergy &amp; Hair Hospital</div><button class="copy" data-t="v-name">Copy</button></div>
+<p>The words <b>skin, allergy, hair</b> are on the real board, so they are allowed in the name — and they help the listing show for “skin doctor” searches. Nothing else gets added (no “best”, no “Bathinda”, no phone number).</p>
+</section>
+
+<section>
+<h2><span class="n">3</span>Categories</h2>
+<span class="where">Edit profile → <b>About</b> → <b>Business category</b></span>
+<div class="two">
+<div>
+<div class="box"><div class="lab">Primary category</div><div class="val">Dermatologist</div></div>
+<div class="box"><div class="lab">Additional categories</div><div class="val">Skin care clinic<br>Hair removal service<br>Allergist</div></div>
+</div>
+<div>
+<p>The <b>primary</b> category decides most of the ranking for “skin doctor”, “skin specialist”, “dermatologist near me”.</p>
+<p><b>Allergist</b> matches “Allergy” on the board. <b>Hair removal service</b> matches the laser hair removal on the board. Delete any other category that is there now.</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2><span class="n">4</span>Phone</h2>
+<span class="where">Edit profile → <b>Contact</b> → <b>Phone number</b></span>
+<div class="box"><div class="lab">Primary phone</div><div class="val" id="v-ph">098552 84685</div><button class="copy" data-t="v-ph">Copy</button></div>
+<p>Remove any additional phone number. Only this one, everywhere (Google, Facebook, posters).</p>
+</section>
+
+<section>
+<h2><span class="n">5</span>Hours — winter &amp; summer</h2>
+<span class="where">Edit profile → <b>Hours</b> → <b>Opening hours</b></span>
+<table>
+<tr><th>Season</th><th>Mon – Sat</th><th>Sunday</th><th>When to switch</th></tr>
+<tr><td><b>Winter (now)</b></td><td>10:00 AM – 6:00 PM</td><td>Closed</td><td>Set today</td></tr>
+<tr><td><b>Summer</b></td><td>10:00 AM – 7:00 PM</td><td>Closed</td><td>The day the clinic moves to summer timing — edit the closing time to 7:00 PM</td></tr>
+</table>
+<p>Sunday shows <b>Closed</b> in Bathinda because Doctor sits in Malout that day (Malout gets its own listing, section 14).</p>
+<p><b>Holidays</b> (Diwali, Gurpurab, Lohri…): Edit profile → Hours → <b>Special hours</b> → add the date as Closed. If Google shows “Open” on a day the shutter is down, patients leave a 1-star review.</p>
+</section>
+
+<section>
+<h2><span class="n">6</span>Description</h2>
+<span class="where">Edit profile → <b>About</b> → <b>Description</b> (588 of 750 characters)</span>
+<div class="box"><div class="lab">Description</div><div class="val long" id="v-desc">Dr. Bansal Skin, Allergy &amp; Hair Hospital, Fauji Chowk, near MSD School, Sirki Bazar, Bathinda. Dr. J.L. Bansal brings 30+ years of clinical practice in skin, hair and allergy care. Treatment for pimples and acne scars, fungal infection and ringworm, eczema, psoriasis, white patches (leucoderma), skin allergy and itching, warts, dark circles, stretch marks, wrinkles, nail problems, hair fall, baldness, dandruff and early white hair. Laser hair removal available. Open Monday to Saturday from 10 am. On Sundays Dr. Bansal sees patients at D.A.V. Edwardganj Hospital, Court Road, Malout.</div><button class="copy" data-t="v-desc">Copy</button></div>
+</section>
+
+<section>
+<h2><span class="n">7</span>Services</h2>
+<span class="where">Edit profile → <b>Services</b> → tick the ones Google suggests, then <b>Add custom service</b> for the rest</span>
+<p>Each service is a separate search people type. Add all of these, each with its one-line description:</p>
+<table id="svc">
+<tr><th>Service</th><th>Description (paste)</th></tr>
+<tr><td><b>Acne &amp; pimples treatment</b></td><td>Treatment for pimples, acne and acne scars for teens and adults.</td></tr>
+<tr><td><b>Fungal infection &amp; ringworm treatment</b></td><td>Treatment for ringworm, fungal infection of skin, groin and nails, and itching.</td></tr>
+<tr><td><b>Eczema treatment</b></td><td>Treatment for eczema, dry itchy skin and rashes.</td></tr>
+<tr><td><b>Psoriasis treatment</b></td><td>Long-term care for psoriasis of the skin and scalp.</td></tr>
+<tr><td><b>White patches (leucoderma) treatment</b></td><td>Treatment for white patches on the skin (leucoderma / vitiligo).</td></tr>
+<tr><td><b>Skin allergy treatment</b></td><td>Treatment for skin allergy, hives, itching and rashes.</td></tr>
+<tr><td><b>Hair fall &amp; baldness treatment</b></td><td>Treatment for hair fall, thinning hair and baldness.</td></tr>
+<tr><td><b>Dandruff treatment</b></td><td>Treatment for dandruff and itchy scalp.</td></tr>
+<tr><td><b>Early white hair</b></td><td>Consultation and treatment for premature white hair.</td></tr>
+<tr><td><b>Wart removal</b></td><td>Removal of warts and skin growths.</td></tr>
+<tr><td><b>Dark circles treatment</b></td><td>Treatment for dark circles under the eyes.</td></tr>
+<tr><td><b>Stretch marks treatment</b></td><td>Treatment to reduce stretch marks.</td></tr>
+<tr><td><b>Wrinkle treatment</b></td><td>Treatment for face wrinkles and fine lines.</td></tr>
+<tr><td><b>Nail disease treatment</b></td><td>Treatment for nail infections and nail problems.</td></tr>
+<tr><td><b>Laser hair removal</b></td><td>Laser removal of unwanted hair.</td></tr>
+</table>
+<button class="copy" style="position:static" data-t="svc">Copy the whole list</button>
+</section>
+
+<section>
+<h2><span class="n">8</span>Booking link + Facebook</h2>
+<span class="where">Edit profile → <b>Contact</b> → <b>Appointment links</b> &nbsp;·&nbsp; Edit profile → <b>About</b> → <b>Social profiles</b></span>
+<div class="box"><div class="lab">Appointment link</div><div class="val" id="v-wa">https://wa.me/919855284685</div><button class="copy" data-t="v-wa">Copy</button></div>
+<p>This puts a <b>Book</b> button on the listing that opens WhatsApp chat with the clinic number. The phone with WhatsApp Business on 98552 84685 must be answered in clinic hours.</p>
+<div class="box"><div class="lab">Social profiles → Facebook</div><div class="val">the new Facebook Page link (once the Page is made)</div></div>
+<p><b>Website</b> field: leave empty.</p>
+</section>
+
+<section>
+<h2><span class="n">9</span>Opening date</h2>
+<span class="where">Edit profile → <b>About</b> → <b>Opening date</b></span>
+<p>Enter the year the clinic opened (ask Doctor the year — 30+ years ago). Google shows established businesses as such; leave it empty if nobody is sure of the year.</p>
+</section>
+
+<section>
+<h2><span class="n">10</span>Address &amp; map pin</h2>
+<span class="where">Edit profile → <b>Location</b> → <b>Business location</b></span>
+<div class="box"><div class="lab">Address</div><div class="val" id="v-addr">Fauji Chowk, Near MSD School, Sirki Bazar, Old City
+Bathinda, Punjab 151001</div><button class="copy" data-t="v-addr">Copy</button></div>
+<p>Then <b>Adjust</b> the pin: zoom all the way in and drag the red pin onto the clinic shutter itself — the yellow board building (in Street View: the shop with the big yellow Punjabi board and the shutter under it). Save.</p>
+<div class="mock-wrap">
+<div><div class="panel"><div class="panel-h">Business location <small>drag the pin</small></div>
+<div class="map">
+<div class="bl" style="left:6%;top:8%;width:36%;height:44%"></div>
+<div class="bl" style="left:60%;top:8%;width:34%;height:44%"></div>
+<div class="bl" style="left:6%;top:70%;width:36%;height:24%"></div>
+<div class="bl" style="left:60%;top:70%;width:34%;height:24%"></div>
+<div class="lbl" style="left:8%;top:54%">Sirki Bazar</div>
+<div class="lbl" style="left:62%;top:2%">MSD School</div>
+<div class="lbl" style="left:48%;top:66%;font-weight:700;color:#202124">Fauji Chowk</div>
+<svg class="pin bad" viewBox="0 0 30 42"><path d="M15 0C7 0 1 6 1 14c0 10 14 28 14 28s14-18 14-28C29 6 23 0 15 0z" fill="#9aa0a6"/><circle cx="15" cy="14" r="5" fill="#fff"/></svg>
+<div class="tag" style="left:9%;top:88%;background:#9aa0a6">old pin</div>
+<svg class="pin" viewBox="0 0 30 42"><path d="M15 0C7 0 1 6 1 14c0 10 14 28 14 28s14-18 14-28C29 6 23 0 15 0z" fill="#ea4335"/><circle cx="15" cy="14" r="5" fill="#a50e0e"/></svg>
+<div class="tag" style="left:calc(53% + 46px);top:34%;background:#ea4335">on the clinic door</div>
+</div>
+<div class="panel-f"><span>Cancel</span><span class="sv">Save</span></div></div>
+<div class="cap">The pin sits on the shutter, not on the street or a neighbour (drawing — not the real map)</div></div>
+</div>
+<div class="note">If Google asks to verify after this edit: record one continuous video — the street sign / Fauji Chowk, walk to the yellow board, open the shutter or show the inside, then the prescription pad / something with the clinic name. Upload it from the same Google account.</div>
+</section>
+
+<section>
+<h2><span class="n">11</span>Photos</h2>
+<span class="where">Edit profile → <b>Photos</b> → <b>Add photos</b> (or the Photos tab on the listing)</span>
+<p>Real phone photos, daylight, horizontal, no filters, no text added. Upload these first, then 3–5 new ones every week:</p>
+<div class="photos">
+<div style="background:linear-gradient(160deg,#d8c84a,#9d8c12)"><em>COVER</em>Front: yellow board + shutter, from across the road</div>
+<div style="background:#0f2546"><em>LOGO</em>Square: “Dr. Bansal” in the board's blue on yellow</div>
+<div style="background:#4b6a88"><em>TEAM</em>Doctor at his desk, white coat, looking at camera</div>
+<div style="background:#5b4a7a">Doctor with a patient (patient's back to camera)</div>
+<div style="background:#7a5a46">Waiting area / reception</div>
+<div style="background:#3d6b55">Treatment room</div>
+<div style="background:#8a3a4a">Laser machine</div>
+<div style="background:#58606a">Street view: Fauji Chowk, clinic in frame — helps people find it</div>
+</div>
+<p><b>Cover</b> = the shop front (people recognise it when they arrive). <b>Logo</b> = we make it from the board colours. Posters do <b>not</b> go in Photos — they go in Updates (next section). No patient faces without their OK.</p>
+</section>
+
+<section>
+<h2><span class="n">12</span>Updates (posts) — one every week</h2>
+<span class="where">Listing → <b>Add update</b> → photo + text + button <b>Call now</b></span>
+<div class="posts">
+<div class="post"><img src="../posters/poster1-en-1x1.png" alt="Poster"><div class="pt">Skin, allergy and hair problems — Dr. J.L. Bansal, 30+ years of practice. Pimples, fungal infection, eczema, psoriasis, white patches, hair fall. Fauji Chowk, Bathinda · Mon–Sat from 10 am.</div><span class="pb">Call now</span></div>
+<div class="post"><img src="../posters/poster3-en-1x1.png" alt="Poster"><div class="pt">Hair fall, dandruff and thinning hair — consult Dr. J.L. Bansal at Fauji Chowk, Bathinda (Mon–Sat) or at D.A.V. Edwardganj Hospital, Malout (Sundays 10–2).</div><span class="pb">Call now</span></div>
+</div>
+<p>Rotate the posters (Punjabi one week, English the next) and photos of the clinic. Each post: one problem, the place, the timing, <b>Call now</b>.</p>
+</section>
+
+<section>
+<h2><span class="n">13</span>Reviews — the biggest ranking lever</h2>
+<span class="where">Home → <b>Ask for reviews</b> → copy the review link · Listing → <b>Reviews</b> → Reply</span>
+<ul>
+<li>Print the review QR code (from <b>Ask for reviews</b>) on a small card at reception.</li>
+<li>After each visit, the reception sends this on WhatsApp:</li>
+</ul>
+<div class="box"><div class="lab">WhatsApp message (Punjabi)</div><div class="val long" id="v-rev" style="font-family:'Baloo Paaji 2'">ਸਤ ਸ੍ਰੀ ਅਕਾਲ ਜੀ, ਡਾ. ਬਾਂਸਲ ਹਸਪਤਾਲ ਆਉਣ ਲਈ ਧੰਨਵਾਦ। ਜੇ ਤੁਹਾਨੂੰ ਸਾਡੀ ਸੇਵਾ ਚੰਗੀ ਲੱਗੀ ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ ਗੂਗਲ 'ਤੇ ਦੋ ਲਾਈਨਾਂ ਲਿਖ ਦਿਓ: [review link]</div><button class="copy" data-t="v-rev">Copy</button></div>
+<ul>
+<li>Reply to <b>every</b> review within a day: thank them by name — never mention their illness or medicine in the reply.</li>
+<li>Goal: 30+ real reviews in 60 days. Reviews only from real patients; no gift or discount in return.</li>
+</ul>
+</section>
+
+<section>
+<h2><span class="n">14</span>Malout — a second listing</h2>
+<span class="where">business.google.com → <b>Add business</b></span>
+<table>
+<tr><td><b>Name</b></td><td>Dr. J.L. Bansal – Skin Specialist</td></tr>
+<tr><td><b>Category</b></td><td>Dermatologist</td></tr>
+<tr><td><b>Address</b></td><td>D.A.V. Edwardganj Hospital, Court Road, Malout, Punjab</td></tr>
+<tr><td><b>Hours</b></td><td>Sunday 10:00 AM – 2:00 PM · all other days Closed</td></tr>
+<tr><td><b>Phone / booking</b></td><td>098552 84685 · https://wa.me/919855284685</td></tr>
+</table>
+<p>Verification will be by video at the hospital on a Sunday.</p>
+</section>
+
+<section>
+<h2><span class="n">★</span>How the finished listing must look</h2>
+<div class="mock-wrap">
+<div><div class="phone"><div class="ph-bar"></div>
+<div class="ph-photos"><div class="ph1">ਡਾ. ਬਾਂਸਲ<br>ਚਮੜੀ, ਅਲਰਜੀ<br>ਹਸਪਤਾਲ</div><div class="ph2">Doctor at desk</div><div class="ph3">Clinic inside</div></div>
+<div class="ph-body">
+<div class="ph-name">Dr. Bansal Skin, Allergy &amp; Hair Hospital</div>
+<div class="ph-rate"><b>4.8</b> <span class="stars">★★★★★</span> (32) · Dermatologist</div>
+<div class="ph-open"><b>Open</b> · Closes 6 pm</div>
+<div class="ph-btns"><span class="pri">Directions</span><span>Call</span><span>Book</span><span>Save</span><span>Share</span></div>
+<div class="ph-tabs"><span class="on">Overview</span><span>Reviews</span><span>Photos</span><span>Updates</span></div>
+<div class="ph-row"><i>📍</i>Fauji Chowk, Near MSD School, Sirki Bazar, Old City, Bathinda, Punjab 151001</div>
+<div class="ph-row"><i>🕘</i><span><b style="color:var(--ok);font-weight:500">Open</b> · Mon–Sat 10 am – 6 pm · Sun closed</span></div>
+<div class="ph-row"><i>📞</i>098552 84685</div>
+<div class="ph-row"><i>📅</i>wa.me/919855284685</div>
+<div class="ph-row"><i>f</i>Facebook</div>
+<div class="ph-desc">Dr. Bansal Skin, Allergy &amp; Hair Hospital, Fauji Chowk… Dr. J.L. Bansal brings 30+ years of clinical practice in skin, hair and allergy care…</div>
+<div class="ph-svc"><span>Acne &amp; pimples</span><span>Fungal infection</span><span>Eczema</span><span>Psoriasis</span><span>White patches</span><span>Hair fall</span><span>Laser hair removal</span><span>+8</span></div>
+</div></div><div class="cap">Google Maps on a phone — after all changes<br>(rating shown = the 60-day goal, not today)</div></div>
+
+<div><div class="panel"><div class="panel-h">Edit profile <small>About · Hours</small></div><div class="panel-b">
+<div class="fld"><span class="fl">Business name</span>Dr. Bansal Skin, Allergy &amp; Hair Hospital</div>
+<div style="font-size:.78rem;color:var(--ggrey)">Business category</div>
+<span class="chip pri">Dermatologist · Primary</span><span class="chip">Skin care clinic</span><span class="chip">Hair removal service</span><span class="chip">Allergist</span>
+<div class="fld" style="margin-top:16px"><span class="fl">Phone number</span>098552 84685</div>
+<div class="fld"><span class="fl">Appointment links</span>https://wa.me/919855284685</div>
+<div style="font-size:.78rem;color:var(--ggrey);margin-top:8px">Opening hours</div>
+<table class="hrs">
+<tr><td><span class="tog"></span>Monday</td><td>10:00 AM – 6:00 PM</td></tr>
+<tr><td><span class="tog"></span>Tuesday</td><td>10:00 AM – 6:00 PM</td></tr>
+<tr><td><span class="tog"></span>Wednesday</td><td>10:00 AM – 6:00 PM</td></tr>
+<tr><td><span class="tog"></span>Thursday</td><td>10:00 AM – 6:00 PM</td></tr>
+<tr><td><span class="tog"></span>Friday</td><td>10:00 AM – 6:00 PM</td></tr>
+<tr><td><span class="tog"></span>Saturday</td><td>10:00 AM – 6:00 PM</td></tr>
+<tr><td><span class="tog off"></span>Sunday</td><td style="color:var(--ggrey)">Closed</td></tr>
+</table>
+</div><div class="panel-f"><span>Cancel</span><span class="sv">Save</span></div></div>
+<div class="cap">The edit screens — filled in (winter hours)</div></div>
+</div>
+</section>
+
+</main></div>
+<script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
+ const el=document.getElementById(b.dataset.t);let t;
+ if(el.tagName==='TABLE'){t=[...el.querySelectorAll('tr')].slice(1).map(r=>[...r.cells].map(c=>c.innerText.trim()).join(' — ')).join('\n')}else t=el.innerText.trim();
+ const done=()=>{const o=b.textContent;b.textContent='Copied';b.classList.add('done');setTimeout(()=>{b.textContent=o;b.classList.remove('done')},1400)};
+ if(navigator.clipboard)navigator.clipboard.writeText(t).then(done,()=>{fallback(t);done()});else{fallback(t);done()}
+}));
+function fallback(t){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove()}
+</script>
+</body></html>
