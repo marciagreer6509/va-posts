@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Trend Desk row buttons</title>
+<style>
+:root{--navy:#0F1F5C;--cobalt:#1F4FD8;--amber:#FFB21A;--bg:#EEF1F8;--line:#D7DCE8;--ink:#141A2E;--mut:#5B6478;--teal:#0E8C7A;--mag:#B3195E;--red:#C62828;--green:#1E7B34}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.35 "Segoe UI",system-ui,sans-serif}
+header{background:var(--navy);color:#fff;display:flex;align-items:center;gap:12px;padding:12px 20px}
+header .logo{width:30px;height:30px;border-radius:7px;background:var(--amber)}header b{font-size:19px}
+.note{background:#fff7e0;border:1px solid #f1d58a;margin:14px 20px;padding:10px 14px;border-radius:8px}
+.wrap{overflow-x:auto;padding:0 20px 30px}
+table{width:100%;min-width:1080px;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:8px}
+th{font-weight:600;text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);color:var(--mut);font-size:13px}
+td{padding:9px 10px;border-bottom:1px solid #EDF0F6;vertical-align:middle}
+tr.now td{background:#E8EEFF}tr.off td{color:#8A93A6}
+.chip{display:inline-flex;gap:6px;align-items:center;font-size:12.5px;padding:2px 8px;border-radius:6px;background:#EEF0F4}
+.chip.sp{background:#E2F5F1;color:var(--teal)}.chip.en{background:#FBE6EF;color:var(--mag)}
+.st{display:inline-flex;align-items:center;gap:6px;font-size:13px;white-space:nowrap}
+.st.w{background:var(--cobalt);color:#fff;border-radius:999px;padding:3px 10px}.st.d{color:var(--green);font-weight:600}
+.act{display:flex;gap:6px;justify-content:flex-end;white-space:nowrap}
+.b{font:600 13px "Segoe UI",system-ui;border-radius:7px;border:1px solid var(--line);background:#fff;padding:6px 11px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.b.play{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}.b.stop{background:#fff;color:var(--red);border-color:#E9B4B4}
+.b.scr{color:var(--navy)}.b:disabled{opacity:.45;cursor:default}
+.spin{width:11px;height:11px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:s .8s linear infinite}@keyframes s{to{transform:rotate(1turn)}}
+.sec td{background:#F6F8FC;font-weight:600;color:var(--navy)}
+.pop{position:fixed;inset:0;background:rgba(15,31,92,.45);display:none;align-items:center;justify-content:center;padding:16px}
+.pop.on{display:flex}.card{background:#fff;border-radius:12px;max-width:640px;width:100%;padding:20px 22px;max-height:85vh;overflow:auto}
+.card h3{margin:0 0 4px}.card .src{color:var(--cobalt);font-size:13px}.card p{white-space:pre-wrap}
+.x{float:right}
+</style></head><body>
+<header><div class="logo"></div><b>Trend Desk</b><span style="opacity:.7">row buttons: mock for sign-off</span></header>
+<div class="note"><b>What changes:</b> a new column on the far right with buttons on <b>every</b> trend.
+<b>▶ Write</b> writes that one story now (no need to tick and press Run now). <b>■ Stop</b> stops only that story.
+<b>Script</b> opens the story popup (live while it is being written). The other trends <b>stay on screen</b> during a run.
+Run now / Automatic / Pause stay as they are. Click the buttons, they work in this mock.</div>
+<div class="wrap"><table>
+<thead><tr><th>ID</th><th>Topic</th><th>Category</th><th>Searches</th><th>Trend</th><th>Source</th><th>Status</th><th style="text-align:right">Actions</th></tr></thead>
+<tbody id="t"></tbody></table></div>
+<div class="pop" id="pop"><div class="card"><button class="b x" onclick="pop.classList.remove('on')">Close</button><h3 id="ph"></h3><div class="src" id="ps"></div><p id="pb"></p></div></div>
+<script>
+var rows=[
+ {id:"20261119-001",t:"twitch",c:"Games",v:"500K+",tr:"● Active",s:"done",src:"beebom.com"},
+ {id:"",t:"jazz vs lakers",c:"Sports",cc:"sp",v:"100K+",tr:"▲ Rising",s:"writing",src:"espn.com"},
+ {id:"",t:"ella langley",c:"Entertainment",cc:"en",v:"200K+",tr:"● Active",s:"waiting"},
+ {sec:"Not in this run"},
+ {id:"",t:"taylor swift cmas",c:"Entertainment",cc:"en",v:"200K+",tr:"● Active",s:"idle"},
+ {id:"",t:"glastonbury 2027",c:"Entertainment",cc:"en",v:"200K+",tr:"● Active",s:"idle"},
+ {id:"",t:"warriors vs mavericks",c:"Sports",cc:"sp",v:"100K+",tr:"● Active",s:"idle"}];
+var SCRIPT="The Utah Jazz and the Los Angeles Lakers met on Tuesday night… (the full script appears here, with the video title, YouTube title, description, tags and Copy buttons, exactly like today's popup).";
+function stTxt(r){return r.s==="done"?'<span class="st d">✓ Done</span>':r.s==="writing"?'<span class="st w"><span class="spin"></span>Writing</span>':r.s==="waiting"?'<span class="st">○ Waiting</span>':'<span class="st" style="color:#8A93A6">Not started</span>'}
+function act(r,i){
+ if(r.s==="done")return '<button class="b play" onclick="go('+i+')" title="Write it again">▶ Rewrite</button><button class="b scr" onclick="sh('+i+')">Script</button>';
+ if(r.s==="writing")return '<button class="b stop" onclick="stp('+i+')">■ Stop</button><button class="b scr" onclick="sh('+i+')">Script</button>';
+ if(r.s==="waiting")return '<button class="b stop" onclick="stp('+i+')">■ Stop</button><button class="b scr" disabled>Script</button>';
+ return '<button class="b play" onclick="go('+i+')">▶ Write</button><button class="b scr" disabled>Script</button>'}
+function draw(){t.innerHTML=rows.map(function(r,i){if(r.sec)return '<tr class="sec"><td colspan="8">'+r.sec+'</td></tr>';
+ return '<tr class="'+(r.s==="writing"?"now":"")+'"><td>'+r.id+'</td><td><b>'+r.t+'</b></td><td><span class="chip '+(r.cc||"")+'">'+r.c+'</span></td><td>'+r.v+'</td><td>'+r.tr+'</td><td>'+(r.src?'<a href="#">'+r.src+'</a>':'—')+'</td><td>'+stTxt(r)+'</td><td><div class="act">'+act(r,i)+'</div></td></tr>'}).join("")}
+function go(i){rows[i].s="writing";rows[i].src=rows[i].src||"apnews.com";draw();setTimeout(function(){if(rows[i].s==="writing"){rows[i].s="done";rows[i].id="20261119-00"+(i+2);draw()}},4000)}
+function stp(i){rows[i].s="idle";draw()}
+function sh(i){ph.textContent=rows[i].t;ps.textContent="Source: "+(rows[i].src||"");pb.textContent=rows[i].s==="writing"?"Writing… the script fills in here live.":SCRIPT;pop.classList.add("on")}
+draw();
+</script></body></html>
