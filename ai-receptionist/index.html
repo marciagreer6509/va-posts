@@ -12,9 +12,35 @@ th{background:#eef2ee}.tag{display:inline-block;font-size:12px;padding:1px 7px;b
 .card{background:#fff;border:1px solid #e3e6e3;border-radius:10px;padding:14px 16px;margin:10px 0}
 </style></head><body><main>
 <h1>AI Receptionist for Bookings — US Traction</h1>
-<p class="sub">Appointments in general, with a focus on doctors · research date 21 Nov 2026 · desk research only, nothing built</p>
+<p class="sub">Appointments in general, with a focus on doctors · research + Google Keyword Planner, 21 Nov 2026 · nothing built</p>
 
 <div class="verdict"><b>Verdict: the demand is real, the money is pouring in, and it's crowded.</b> Medical AI receptionists already have a $1.2 B startup, a16z-backed rivals and Zocdoc/Phreesia selling their own. The opening for a newcomer is <b>small independent practices</b> (dental, chiro, PT, med-spa, derm, vet): enterprise tools skip them because they're too small, and $29 generic bots don't connect to their scheduling software or sign a HIPAA BAA.</div>
+
+<h2>0. Google Keyword Planner — how big is the search demand? (pulled 21 Nov 2026)</h2>
+<div class="verdict" style="background:#1b3a5c"><b>Yes, this is a real market that people pay for, and demand jumped this summer.</b> In the US, "ai receptionist" grew from about <b>5,400 searches a month</b> (Nov 2025–Jun 2026) to <b>450,000 in Aug</b> and <b>49,500 in Oct</b>. "ai voice agent(s)" went from about 1,600 to 201,000 and then 14,800. Advertisers bid <b>$14–$67 per click</b> at the top of the page, which only makes sense because these clicks turn into paying customers.</div>
+<p class="src warn">⚠ The Jul–Sep spike (×80) has no explanation I could find: no TV or Super Bowl campaign, only viral "replace your receptionist with AI" videos. Treat it as a hype wave. <b>The October figure (~10× the old baseline) is the safer guide.</b></p>
+<table>
+<tr><th>Keyword (US, English)</th><th>Oct 2026</th><th>A year ago</th><th>12-mo avg</th><th>Top-of-page CPC</th><th>UK / CA / AU avg</th></tr>
+<tr><td><b>ai receptionist</b></td><td>49,500</td><td>5,400</td><td>74,000</td><td>$14–38</td><td>1,300 / 1,000 / 1,000</td></tr>
+<tr><td><b>ai voice agent(s)</b></td><td>14,800</td><td>1,300</td><td>40,500</td><td>$14–41</td><td>320 / 260 / 210</td></tr>
+<tr><td>voice ai</td><td>12,100</td><td>—</td><td>18,100</td><td>$2–6</td><td>2,900 / 2,400 / 1,300</td></tr>
+<tr><td>ai receptionist for small business</td><td>5,400</td><td>1,000</td><td>3,600</td><td><b>$14–67</b></td><td>140 / 210 / 110</td></tr>
+<tr><td>ai answering service</td><td>4,400</td><td>1,600</td><td>5,400</td><td>$14–39</td><td>90 / 110 / 390</td></tr>
+<tr><td>ai phone answering service</td><td>1,900</td><td>—</td><td>3,600</td><td>$15–56</td><td>low</td></tr>
+<tr><td>ai phone agent</td><td>1,300</td><td>—</td><td>2,400</td><td>$17–68</td><td>low</td></tr>
+<tr><td>best ai receptionist · ai receptionist cost</td><td>2,400 · 1,600</td><td>—</td><td>590 · 210</td><td>$7–28</td><td>low</td></tr>
+<tr><td>medical answering service (the old human version)</td><td>6,600</td><td>5,400</td><td>5,400</td><td>$6–31</td><td>~20 each</td></tr>
+<tr><td><b>Medical/dental AI wording</b> (ai medical receptionist · dental ai receptionist · ai receptionist for medical office)</td><td>210 · 170 · 1,000</td><td>70 · 140 · —</td><td>140 · 170 · 170</td><td><b>$22–151</b></td><td>tiny</td></tr>
+<tr><td>Builder platforms: retell ai · vapi · bland ai · synthflow</td><td>22,200 · 12,100 · 9,900 · 880</td><td>18,100 · 18,100 · 4,400 · —</td><td>22,200 · 14,800 · 6,600 · 1,900</td><td>$1–47</td><td>UK/CA 2–3k each</td></tr>
+<tr><td>Competitor brands: smith ai · goodcall · ruby receptionist · my ai front desk · assort health</td><td>4,400 · 2,900 · 1,300 · 320 · 6,600</td><td></td><td></td><td>$6–58</td><td></td></tr>
+</table>
+<div class="card"><b>What the numbers say</b>
+<ul>
+<li><b>Buyers search the generic phrase, not by niche.</b> "ai receptionist" draws 49k a month, while "…for doctors" gets only 10–210 searches. Doctors searching for this are few, but each click is the most expensive (up to $151). So: <b>generic product, niche landing pages</b>.</li>
+<li><b>Builders are a second market.</b> Retell, Vapi and Bland get about 45k searches a month combined. These are agencies building receptionists for clients, so a white-label/reseller plan could sell to them too.</li>
+<li><b>Outside the US, demand is ~2% of US demand</b> (UK/CA/AU ~1k each for "ai receptionist"). Start in the US. Other countries are the later stage, as you said.</li>
+<li><b>Can a NEW product sell right now? Yes.</b> In 2026 alone ElevenLabs ($29/mo), Pie, Newo and Phonely all launched or raised money and are winning customers in this already-old niche. Competitive pricing works if we stay above the cost floor: voice platforms charge roughly <b>$0.07–0.15 per minute</b> (list prices, to confirm before we set ours).</li>
+</ul></div>
 
 <h2>1. Proof of traction (money &amp; launches)</h2>
 <table>
