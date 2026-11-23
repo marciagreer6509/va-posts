@@ -1,0 +1,22 @@
+subject_definitions:
+<Subject 1> is the man in <Picture 1>: a white man of about thirty, six feet tall, with a strong athletic muscular build: broad rounded shoulders, big arms with defined biceps and veins along the forearms, a solid chest and a flat stomach. He has long dark-blond hair past his shoulders, pulled back into a loose low ponytail with a few strands falling by his temples, a short full beard, light tanned skin and light eyes. He is the only person in the video and must look exactly like <Picture 1> in face, hair, beard and build.
+
+summary:
+[reference generation] One locked high-wide camera watches <Subject 1> build a new build project in a US suburban back yard as a single continuous time-lapse take, ending with him standing side-on in the foreground looking at the finished work.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - face, long dark-blond ponytail, short full beard, skin tone, height and muscular build are retained; the clothing is the outfit written in the description, not the clothing in <Picture 1>.
+
+detailed_description:
+The target video is realistic smartphone-style live action with natural daylight, no colour grade and no music.
+[Shot 1] Live-action, realistic, one continuous time-lapse take under a high clear midday sky. One locked camera that never moves, high and wide, as if from an upstairs window about four metres up and eight metres back, looking down at the yard at an angle. The whole build area, the lawn, the fence and the back of the house are in the picture, with open sky at the top.
+00:00.000-00:02.000: The back yard of a white vinyl-sided colonial house with black shutters, a grey board fence and two birch trees. The ground where the work happens is a flat, freshly mown green lawn with string lines and wooden stakes marking out where the build goes. In the middle of the yard stands <Subject 1>, the long-haired muscular man from <Picture 1>. He wears a plain fitted black sleeveless tank top with deep armholes that leaves his whole shoulders and arms bare, khaki canvas work shorts ending just above the knee, tan leather work boots with grey socks, and brown leather work gloves. Nothing is printed on his clothes. He starts the job, working fast and sure.
+00:02.000-00:10.500: Time-lapse. The whole build happens in one sped-up take from the same fixed camera: he moves around the work in quick jumps, the shadows of the fence and trees slide across the grass, and the work grows stage by stage. He lays three square bays of blocks side by side along the back fence. He stacks them waist high. He fixes wooden slat fronts that slide into grooves. He forks garden waste and leaves into the first bay.
+00:10.500-00:12.500: Back to normal speed. He slides the last front board into place.
+00:12.500-00:15.083: He walks a few steps toward the camera into the lower part of the picture and stops side-on to us, close enough that his arms, shoulders and build are clear. He pulls off one glove, wipes his forearm across his forehead, rests his hands on his hips and looks over the finished build. He stays there to the last frame. He is the only person in the yard the whole time, and there is only one of him. No lettering, signs, logos or house numbers anywhere.
+
+overall_soundscape:
+Real yard sound only: the scrape and thud of cinder blocks being set down, a rubber mallet tapping, a cordless drill in short bursts, a shovel in gravel, birds in the trees, a light breeze, a dog barking far away, and at the end running water or quiet. No talking.
+
+non_diegetic_music:
+N/A
