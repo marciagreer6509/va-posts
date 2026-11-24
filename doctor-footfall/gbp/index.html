@@ -9,7 +9,7 @@
 :root{--navy:#0f2546;--gold:#ffc928;--ink:#1f1d1a;--mut:#5f5a52;--cream:#f8f4ea;--line:#e6dfcf;--ok:#137333;--warn:#b3261e;--gblue:#1a73e8;--ggrey:#5f6368;--gline:#dadce0}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font:16px/1.6 'DM Sans',sans-serif;color:var(--ink);background:var(--cream)}
-.page{max-width:900px;margin:0 auto;background:#fff;min-height:100vh}
+.page{overflow-x:clip;max-width:900px;margin:0 auto;background:#fff;min-height:100vh}
 .cover{background:var(--navy);color:#fff;padding:44px 40px 36px}
 .kick{display:inline-block;border:2px solid var(--gold);color:var(--gold);font-weight:700;font-size:.75rem;letter-spacing:.18em;padding:3px 12px;border-radius:6px}
 h1{font-family:'DM Serif Display',serif;font-weight:400;font-size:2.4rem;line-height:1.1;margin:16px 0 8px}
@@ -86,7 +86,7 @@ th{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut
 .panel-f{padding:10px 18px 14px;display:flex;justify-content:flex-end;gap:8px}
 .panel-f span{font-size:.85rem;font-weight:500;padding:8px 18px;border-radius:18px;color:#0b57d0}
 .panel-f span.sv{background:#0b57d0;color:#fff}
-.map{height:200px;position:relative;background:
+.map{height:200px;position:relative;overflow:hidden;background:
  linear-gradient(90deg,transparent 47%,#fff 47%,#fff 53%,transparent 53%),
  linear-gradient(0deg,transparent 58%,#fff 58%,#fff 64%,transparent 64%),
  linear-gradient(28deg,transparent 30%,#fde293 30%,#fde293 34%,transparent 34%),#e8eaed}
@@ -109,22 +109,27 @@ th{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut
 <div class="cover">
 <span class="kick">GOOGLE BUSINESS PROFILE · BATHINDA</span>
 <h1>Every change, field by field — and <em>how it must look</em></h1>
-<p>Bansal Skin Clinic · near Fauji Chowk, Bathinda. Open the profile at <b>business.google.com</b> (or search the name on Google while logged in) → <b>Edit profile</b>. Each section below says where to click, what to type, and shows the finished result.</p>
+<p><b style="color:var(--gold)">Updated 24 Nov</b> from your 3 screenshots of the profile. Section 0 lists exactly what is left.</p><p>Bansal Skin Clinic · Fauji Chowk, Bathinda. Open the profile at <b>business.google.com</b> (or search the name on Google while logged in) → <b>Edit profile</b>. Each section below says where to click, what to type, and shows the finished result.</p>
 </div>
 <main>
 
 <section>
-<h2><span class="n">0</span>The order to do it in</h2>
-<p>Google re-checks a profile when big fields change. Doing them in this order keeps it live and verified:</p>
-<ol class="order">
-<li><span><b>Security</b> — clean the owners list (section 1).</span></li>
-<li><span><b>Safe fields</b> — phone, hours, description, services, booking link, Facebook link, opening date (sections 4–9).</span></li>
-<li><span><b>Category</b> (section 3).</span></li>
-<li><span><b>Map pin</b> (section 10). Keep someone at the clinic ready in case Google asks for a short verification video.</span></li>
-<li><span><b>Name</b> — DONE ✓ (accepted 19 Nov). Never edit again.</span></li>
-<li><span><b>Photos + one Update + reply to reviews</b> (sections 11–13), every week from now on.</span></li>
-</ol>
-<div class="note">After every save, the edit shows as “Under review” for a few minutes to a few days. Wait for it to clear before the next big one (category → pin → name).</div>
+<h2><span class="n">0</span>What is left — 24 Nov</h2>
+<p>Checked against your 3 screenshots. Do them top to bottom. Every text has a <b>Copy</b> button further down.</p>
+<table>
+<tr><th>#</th><th>Field</th><th>Now on Google</th><th>Do this</th></tr>
+<tr><td>1</td><td><b>Hours</b> (§5)</td><td class="old">10:00–19:00</td><td>Mon–Sat <b>10:00–18:00</b>, Sun Closed</td></tr>
+<tr><td>2</td><td><b>Website</b> (§8)</td><td class="old">empty</td><td>Paste the site link</td></tr>
+<tr><td>3</td><td><b>“More” attributes</b> (§8b)</td><td class="old">all empty</td><td>Tick the ones listed — only if true</td></tr>
+<tr><td>4</td><td><b>Logo + doctor photo</b> (§11)</td><td class="old">—</td><td>Upload the 2 ready files</td></tr>
+<tr><td>5</td><td><b>Shop-front + clinic photos</b> (§11)</td><td class="old">none</td><td>Send the WhatsApp message to the clinic, upload what comes back</td></tr>
+<tr><td>6</td><td><b>Address + pin</b> (§10)</td><td class="old">Near MSD School, Fauji Chowk, Bathnida · pin in the city centre</td><td>Paste the address + drag the pin onto the shop, in ONE save — do this a few days after 1–5 are approved</td></tr>
+<tr><td>7</td><td><b>Opening date</b> (§9)</td><td class="old">empty</td><td>Ask the doctor the year</td></tr>
+<tr><td>8</td><td><b>Facebook link</b> (§8)</td><td class="old">—</td><td>Once the Facebook Page exists</td></tr>
+<tr><td>9</td><td><b>Update + reviews</b> (§12–13)</td><td class="old">—</td><td>Every week</td></tr>
+</table>
+<p class="tick">✓ Already done: name · categories · description · phone · Chat (WhatsApp) · services link · service area empty · Google Search Console (§15)</p>
+<div class="note">After every save the edit shows “Under review” for a few minutes to a few days. Do 1–5 together (small, safe fields), wait until they are approved, then the address + pin (it can trigger a re-verification video).</div>
 </section>
 
 <section>
@@ -173,14 +178,14 @@ th{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut
 <tr><td><b>Winter (now)</b></td><td>10:00 AM – 6:00 PM</td><td>Closed</td><td>Set today</td></tr>
 <tr><td><b>Summer</b></td><td>10:00 AM – 7:00 PM</td><td>Closed</td><td>The day the clinic moves to summer timing — edit the closing time to 7:00 PM</td></tr>
 </table>
-<div class="note"><b>19 Nov:</b> Google changed the hours itself to 10:00–19:00 (“Your hours were updated by Google”). That is the summer timing — set Mon–Sat back to <b>10:00–18:00</b> now.</div>
+<div class="note"><b>Still 10:00–19:00 in your 24 Nov screenshot.</b> Hours tab → for Monday set close to <b>6:00 PM</b>, then use “Copy to all” / repeat for Tue–Sat. Sunday stays Closed.<br><b>19 Nov:</b> Google changed the hours itself to 10:00–19:00 (“Your hours were updated by Google”). That is the summer timing — set Mon–Sat back to <b>10:00–18:00</b> now.</div>
 <p>Sunday shows <b>Closed</b> in Bathinda because Doctor sits in Malout that day (Malout gets its own listing, section 14).</p>
 <p><b>Holidays</b> (Diwali, Gurpurab, Lohri…): Edit profile → Hours → <b>Special hours</b> → add the date as Closed. If Google shows “Open” on a day the shutter is down, patients leave a 1-star review.</p>
 </section>
 
 <section>
-<h2><span class="n">6</span>Description</h2>
-<p>This is Google's own suggested text, tidied: the “Bathnida” typo fixed, “premier” and “your destination” removed (Google treats sales words as low quality — the same reason the name was refused), and the white patches, hours and Malout Sunday line added.</p>
+<h2><span class="n">6</span>Description — DONE ✓</h2>
+<p class="tick">Your screenshot shows this exact text saved. Nothing to do.</p><p>This is Google's own suggested text, tidied: the “Bathnida” typo fixed, “premier” and “your destination” removed (Google treats sales words as low quality — the same reason the name was refused), and the white patches, hours and Malout Sunday line added.</p>
 <span class="where">Edit profile → <b>About</b> → <b>Description</b> (504 of 750 characters)</span>
 <div class="box"><div class="lab">Description</div><div class="val long" id="v-desc">Bansal Skin Clinic, led by the experienced Dr. J.L. Bansal, offers dermatological and allergy care with over 30 years of clinical expertise. The clinic treats a wide range of skin, hair and allergy concerns, from acne, eczema and psoriasis to white patches, fungal infections, skin allergy and hair loss. It also offers laser hair removal. Located near Fauji Chowk and MSD School in Bathinda, open Monday to Saturday from 10 am. On Sundays, Dr. Bansal sees patients at D.A.V. Edwardganj Hospital, Malout.</div><button class="copy" data-t="v-desc">Copy</button></div>
 </section>
@@ -211,29 +216,54 @@ th{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut
 </section>
 
 <section>
-<h2><span class="n">8</span>Website, services link, Chat, service area</h2>
+<h2><span class="n">8</span>Website, services link, Chat, Facebook</h2>
 <span class="where">Edit profile → <b>Contact</b></span>
-<div class="box"><div class="lab">Website</div><div class="val" id="v-web">https://drjlbansalskin.pages.dev/</div><button class="copy" data-t="v-web">Copy</button></div>
-<div class="box"><div class="lab">Menu or services link</div><div class="val" id="v-svc">https://drjlbansalskin.pages.dev/services/</div><button class="copy" data-t="v-svc">Copy</button></div>
+<div class="box"><div class="lab">Website — STILL EMPTY, add now</div><div class="val" id="v-web">https://drjlbansalskin.pages.dev/</div><button class="copy" data-t="v-web">Copy</button></div>
+<div class="box"><div class="lab">Menu or services link — DONE ✓ (leave as is)</div><div class="val" id="v-svc">https://drjlbansalskin.pages.dev/services/</div><button class="copy" data-t="v-svc">Copy</button></div>
 <div class="box"><div class="lab">Chat — DONE ✓</div><div class="val">https://wa.me/919855284685</div></div>
-<div class="box"><div class="lab">Service area</div><div class="val">Leave EMPTY — press Cancel</div></div>
+<div class="box"><div class="lab">Service area — DONE ✓</div><div class="val">Leave EMPTY</div></div>
 <p>Service area is for businesses that travel to customers. Patients come to this clinic, so it adds nothing to ranking — distance, reviews and categories do that.</p>
 <p><b>Facebook</b> (About → Social profiles): add the Page link once the Page exists.</p>
 </section>
 
 <section>
-<h2><span class="n">9</span>Opening date</h2>
-<span class="where">Edit profile → <b>About</b> → <b>Opening date</b></span>
-<p>Enter the year the clinic opened (ask Doctor the year — 30+ years ago). Google shows established businesses as such; leave it empty if nobody is sure of the year.</p>
+<h2><span class="n">8b</span>“More” tab — attributes</h2>
+<span class="where">Edit profile → <b>More</b> → tap each heading → tick → Save</span>
+<p>These show as small lines on the listing (“Accepts UPI”, “Wheelchair-accessible entrance”). <b>Tick only what is true</b> — a patient who finds a wrong one leaves a bad review. Ask the clinic once (message below), then tick.</p>
+<table>
+<tr><th>Heading</th><th>Tick</th></tr>
+<tr><td><b>Payments</b></td><td>Cash · Google Pay / UPI · NFC mobile payments / debit cards — only those the counter takes</td></tr>
+<tr><td><b>Planning</b></td><td>“Appointment recommended” <b>or</b> “Accepts walk-ins” — whichever is true (most patients walk in → walk-ins)</td></tr>
+<tr><td><b>Accessibility</b></td><td>“Wheelchair-accessible entrance” only if there is no step at the shutter. Otherwise leave empty.</td></tr>
+<tr><td><b>Amenities</b></td><td>Toilet — only if patients can use one</td></tr>
+<tr><td><b>Children</b></td><td>Leave empty unless asked</td></tr>
+<tr><td><b>Crowd / From the business</b></td><td>Leave as is</td></tr>
+<tr><td><b>Parking</b></td><td>“Free street parking” if people park in the market</td></tr>
+<tr><td><b>Service options</b></td><td>“Onsite services” → Yes</td></tr>
+<tr><td><b>Add more hours</b></td><td>Leave all empty (Breakfast, Delivery… are for restaurants)</td></tr>
+</table>
+<div class="box"><div class="lab">WhatsApp to the clinic — attributes (English)</div><div class="val long" id="v-attr">Namaste ji, for the Google listing please answer yes/no:
+1. Do you take Cash? Google Pay / UPI / PhonePe? Card?
+2. Do patients mostly walk in, or book an appointment first?
+3. Is there a step at the shop entrance, or can a wheelchair come in?
+4. Is there a toilet patients can use?
+5. Where do patients park — on the market road?
+6. Which year did the clinic open?</div><button class="copy" data-t="v-attr">Copy</button></div>
 </section>
 
 <section>
-<h2><span class="n">10</span>Address &amp; map pin — address CONFIRMED</h2>
+<h2><span class="n">9</span>Opening date</h2>
+<span class="where">Edit profile → <b>About</b> → <b>Opening date</b></span>
+<p>Still empty in your screenshot. The year is question 6 in the WhatsApp message above. Enter only the year Doctor confirms (ask Doctor the year — 30+ years ago). Google shows established businesses as such; leave it empty if nobody is sure of the year.</p>
+</section>
+
+<section>
+<h2><span class="n">10</span>Address &amp; map pin — TO FIX</h2>
 <span class="where">Edit profile → <b>Location</b> → <b>Business location</b></span>
 <div class="box"><div class="lab">Address</div><div class="val" id="v-addr">A-14, MSD School Market, Fauji Chowk
 Bathinda, Punjab 151001</div><button class="copy" data-t="v-addr">Copy</button></div>
-<p><b>Confirmed by Dr. Bansal (19 Nov): A-14, MSD School Market, Fauji Chowk, Bathinda.</b> Type it exactly like the box above — this also fixes the “Bathnida” spelling. Do the address and the pin in ONE save.</p>
-<p>Then <b>Adjust</b> the pin: zoom all the way in and drag the red pin onto the clinic shutter itself — the yellow board building (in Street View: the shop with the big yellow Punjabi board and the shutter under it). Save.</p>
+<div class="note"><b>Your 24 Nov screenshot:</b> address reads “Near MSD School, Fauji Chowk, <span class="old">Bathnida</span>” and the pin sits in the middle of Bathinda city, on the main road — not on the clinic. Both get fixed in the one save below.</div><p><b>Confirmed by Dr. Bansal (19 Nov): A-14, MSD School Market, Fauji Chowk, Bathinda.</b> Type it exactly like the box above — this also fixes the “Bathnida” spelling. Do the address and the pin in ONE save.</p>
+<p>Then <b>Adjust</b> the pin: switch the map to <b>Satellite</b> (layers button), type “MSD School Bathinda” in Google Maps in another tab to see where the school and Fauji Chowk are, zoom all the way in and drag the red pin onto the clinic shutter itself — the yellow board building (in Street View: the shop with the big yellow Punjabi board and the shutter under it). Save.</p>
 <div class="mock-wrap">
 <div><div class="panel"><div class="panel-h">Business location <small>drag the pin</small></div>
 <div class="map">
@@ -256,8 +286,30 @@ Bathinda, Punjab 151001</div><button class="copy" data-t="v-addr">Copy</button><
 </section>
 
 <section>
-<h2><span class="n">11</span>Photos</h2>
+<h2><span class="n">11</span>Photos — logo, doctor, shop front</h2>
 <span class="where">Edit profile → <b>Photos</b> → <b>Add photos</b> (or the Photos tab on the listing)</span>
+<div class="note"><b>About the shop-front pictures you sent:</b> the Street View screenshot is Google's own picture, so it can't be uploaded as ours, and the AI-redone shop front (glass doors, marble) shows a front that isn't there. Google removes edited pictures, and a patient who arrives at a shutter after seeing glass doors leaves a bad review. <b>The shop front has to be a real phone photo.</b> Anyone at the clinic can take it in 2 minutes. Send them the message below.</div>
+<div class="box"><div class="lab">WhatsApp to the clinic — photos (English)</div><div class="val long" id="v-shoot">Namaste ji, please take these photos for the Google listing, on a phone, in daylight, phone held sideways, no filter:
+1. Shop front from across the road: the full yellow board and the open shutter
+2. Same, a bit closer: board + entrance
+3. The market / Fauji Chowk road with the clinic in the picture
+4. Waiting area / reception
+5. Doctor's consultation room
+6. Treatment room and the laser machine
+7. Doctor at his desk in a white coat
+8. Doctor with a patient, patient's back to the camera (no patient faces)
+Please send them on WhatsApp as Document (not as photo) so they stay sharp. Thank you!</div><button class="copy" data-t="v-shoot">Copy</button></div>
+<h3>Where each photo goes when it comes back</h3>
+<table>
+<tr><th>Photo</th><th>Upload as</th></tr>
+<tr><td>Logo — ready now: <a href="https://drjlbansalskin.pages.dev/logo-720.png">logo-720.png</a></td><td>Photos → <b>Logo</b></td></tr>
+<tr><td>Doctor — ready now: <a href="https://drjlbansalskin.pages.dev/img/dr-bansal-900.jpg">dr-bansal-900.jpg</a></td><td>Photos → Add → <b>Team</b></td></tr>
+<tr><td>1 shop front from across the road</td><td>Photos → <b>Cover photo</b> + also <b>Exterior</b></td></tr>
+<tr><td>2 board + entrance, 3 market road</td><td><b>Exterior</b></td></tr>
+<tr><td>4 waiting, 5 consult room, 6 treatment + laser</td><td><b>Interior</b></td></tr>
+<tr><td>7 doctor at desk, 8 doctor with patient</td><td><b>Team</b> / <b>At work</b></td></tr>
+</table>
+<p>Upload the photos from the clinic's own phone <b>at the clinic</b> if you can — Google trusts photos taken at the address more. If they are sent to you, upload them from the profile; that is fine too.</p>
 <p>Real phone photos, daylight, horizontal, no filters, no text added. Upload these first, then 3–5 new ones every week:</p>
 <div class="photos">
 <div style="background:linear-gradient(160deg,#d8c84a,#9d8c12)"><em>COVER</em>Front: yellow board + shutter, from across the road</div>
@@ -269,7 +321,7 @@ Bathinda, Punjab 151001</div><button class="copy" data-t="v-addr">Copy</button><
 <div style="background:#8a3a4a">Laser machine</div>
 <div style="background:#58606a">Street view: Fauji Chowk, clinic in frame — helps people find it</div>
 </div>
-<div class="note"><b>Ready to upload now (19 Nov):</b> Logo → <a href="https://drjlbansalskin.pages.dev/logo-720.png">logo-720.png</a> (Edit profile → Photos → Logo) · Doctor photo → <a href="https://drjlbansalskin.pages.dev/img/dr-bansal-900.jpg">dr-bansal-900.jpg</a> (Photos → Add → “Team”). Long-press / right-click → Save, then upload.</div>
+<div class="note" style="display:none"><b>Ready to upload now (19 Nov):</b> Logo → <a href="https://drjlbansalskin.pages.dev/logo-720.png">logo-720.png</a> (Edit profile → Photos → Logo) · Doctor photo → <a href="https://drjlbansalskin.pages.dev/img/dr-bansal-900.jpg">dr-bansal-900.jpg</a> (Photos → Add → “Team”). Long-press / right-click → Save, then upload.</div>
 <p><b>Cover</b> = the shop front (people recognise it when they arrive). <b>Logo</b> = we make it from the board colours. Posters do <b>not</b> go in Photos — they go in Updates (next section). No patient faces without their OK.</p>
 </section>
 
@@ -280,6 +332,8 @@ Bathinda, Punjab 151001</div><button class="copy" data-t="v-addr">Copy</button><
 <div class="post"><img src="../posters/poster1-en-1x1.png" alt="Poster"><div class="pt">Skin, allergy and hair problems — Dr. J.L. Bansal, 30+ years of practice. Pimples, fungal infection, eczema, psoriasis, white patches, hair fall. Fauji Chowk, Bathinda · Mon–Sat from 10 am.</div><span class="pb">Call now</span></div>
 <div class="post"><img src="../posters/poster3-en-1x1.png" alt="Poster"><div class="pt">Hair fall, dandruff and thinning hair — consult Dr. J.L. Bansal at Fauji Chowk, Bathinda (Mon–Sat) or at D.A.V. Edwardganj Hospital, Malout (Sundays 10–2).</div><span class="pb">Call now</span></div>
 </div>
+<div class="box"><div class="lab">Update text 1</div><div class="val long" id="v-up1">Skin, allergy and hair problems — Dr. J.L. Bansal, 30+ years of practice. Pimples, fungal infection, eczema, psoriasis, white patches, hair fall. A-14, MSD School Market, Fauji Chowk, Bathinda · Mon–Sat 10 am – 6 pm.</div><button class="copy" data-t="v-up1">Copy</button></div>
+<div class="box"><div class="lab">Update text 2</div><div class="val long" id="v-up2">Hair fall, dandruff and thinning hair — consult Dr. J.L. Bansal at Fauji Chowk, Bathinda (Mon–Sat 10 am – 6 pm) or at D.A.V. Edwardganj Hospital, Malout (Sundays 10 am – 2 pm). Book on WhatsApp: wa.me/919855284685</div><button class="copy" data-t="v-up2">Copy</button></div>
 <p>Rotate the posters (Punjabi one week, English the next) and photos of the clinic. Each post: one problem, the place, the timing, <b>Call now</b>.</p>
 </section>
 
@@ -308,6 +362,16 @@ Bathinda, Punjab 151001</div><button class="copy" data-t="v-addr">Copy</button><
 <tr><td><b>Phone / booking</b></td><td>098552 84685 · https://wa.me/919855284685</td></tr>
 </table>
 <p>Verification will be by video at the hospital on a Sunday.</p>
+</section>
+
+<section>
+<h2><span class="n">15</span>Google Search Console — DONE ✓ (24 Nov)</h2>
+<p>The website <b>drjlbansalskin.pages.dev</b> is verified in Search Console and its sitemap (24 pages) is submitted. Nothing to do on your side.</p>
+<ul>
+<li><b>Owners:</b> the doctor's Google account (drjlbansal51@gmail.com) and our main account. Open <b>search.google.com/search-console</b> with either login to see it.</li>
+<li>Google usually starts showing pages within a few days to 2 weeks. A new site on a free address ranks first for its <b>name</b> searches (“Dr Bansal skin Bathinda”); the Google listing above does most of the work for “skin doctor near me”.</li>
+<li>The <b>Website</b> field on the listing (§8) links the two — fill it in.</li>
+</ul>
 </section>
 
 <section>
