@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Turnstile test</title>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<style>
+body{margin:0;font-family:system-ui,Arial,sans-serif;background:#f4f5f7;color:#1d1d1f}
+#gate{position:fixed;inset:0;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;z-index:9}
+#gate h1{font-size:26px;margin:0}#gate p{margin:0;color:#555}
+main{max-width:720px;margin:40px auto;padding:0 20px}
+.box{background:#fff;border-radius:10px;padding:22px;margin:18px 0;box-shadow:0 1px 4px #0001}
+code{background:#eee;padding:1px 5px;border-radius:4px}
+</style></head><body>
+<div id="gate">
+  <h1>Checking you are human…</h1>
+  <p>This page is locked until Cloudflare Turnstile lets you in.</p>
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAAGRHsq_xzXq1fFKZ" data-callback="pass" data-theme="light"></div>
+</div>
+<main>
+  <div class="box"><h2>✅ You passed Turnstile</h2>
+  <p>The white screen you saw on entry was a <b>real</b> Cloudflare Turnstile widget (our own key, managed mode). Cloudflare decides per visitor: most real people only see "Verifying… → Success!", suspicious visitors get the checkbox.</p></div>
+  <div class="box"><h2>Version 2 — always shows the checkbox</h2>
+  <p>Same widget with Cloudflare's "force interactive" key, so you always get "Verify you are human" to click:</p>
+  <div class="cf-turnstile" data-sitekey="3x00000000000000000000FF"></div></div>
+</main>
+<script>function pass(){document.getElementById('gate').style.display='none'}</script>
+</body></html>
