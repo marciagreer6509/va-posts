@@ -202,14 +202,14 @@ function pass(r){
  return true}
 function row(r){var key=r.id;
  return '<tr class="row'+(open[key]?' open':'')+'" data-id="'+key+'" tabindex="0">'+
- '<td><span class="src s-'+r.src+'">'+esc(r.page)+'</span></td><td>#'+r.rk+'</td><td class="views">'+esc(r.views)+'</td>'+
+ '<td><span class="src s-'+r.src+'">'+esc(r.page)+'</span></td><td class="views">'+esc(r.views)+'</td>'+
  '<td><img class="strip" loading="lazy" src="'+esc(r.img)+'" alt="Six frames from the reel"><small>⏱ '+r.secs.toFixed(1)+' s</small></td>'+
  '<td>'+esc(r.why)+'</td><td><span class="pill p-'+r.type+'">'+r.type+'</span></td>'+
  '<td class="w-cap"><div class="clamp">'+esc(r.cap||'—')+'</div></td>'+
  '<td style="white-space:nowrap">'+esc(r.voice)+(r.words?'<small>'+r.words+' words</small>':'')+'</td>'+
  '<td class="w-tx">'+(r.tx?'<div class="clamp">'+esc(r.tx)+'</div>':'<span class="mut">—</span>')+'</td>'+
  '<td style="white-space:nowrap">'+nice(r.date)+'<small>'+r.day+'</small></td><td>'+r.age+'</td><td>'+r.et+'</td><td>'+r.ist+'</td>'+
- '<td class="w-fmt"><div class="clamp">'+esc(r.fmt)+'</div></td><td class="w-cap"><div class="clamp">'+esc(r.audio||'—')+'</div></td>'+
+ '<td class="w-fmt"><div class="clamp">'+esc(r.fmt)+'</div></td>'+
  '<td><a href="'+esc(r.link)+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch ↗</a></td></tr>'+
  (open[key]?'<tr class="detail"><td colspan="'+COLS.length+'"><div class="det"><img src="'+esc(r.img)+'" alt="Frames"><div class="txt"><h4>Caption</h4><p>'+esc(r.cap||'—')+'</p><h4>Voiceover ('+esc(r.voice)+')</h4><p>'+esc(r.tx||'—')+'</p><h4>Format</h4><p>'+esc(r.fmt)+'</p><h4>Link</h4><p><a href="'+esc(r.link)+'" target="_blank" rel="noopener">'+esc(r.link)+'</a></p></div></div></td></tr>':'')}
 function draw(){var L=ROWS.filter(pass),c=CB[sort.k];
