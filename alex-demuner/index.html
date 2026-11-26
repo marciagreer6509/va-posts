@@ -106,7 +106,7 @@ th[data-k=rank]{min-width:124px}th[data-k=views]{min-width:134px}th[data-k=type]
 .c-rank .chev{display:inline-block;font-size:9px;margin-right:4px;color:#b0b4bc;transition:transform .15s}
 tr.open .chev{transform:rotate(90deg);color:var(--accent)}
 .c-thumb{width:216px}
-.c-thumb img{display:block;width:200px;height:71px;border-radius:6px;background:#e9e7df;object-fit:cover}
+.c-thumb img{display:block;width:200px;height:71px;border-radius:6px;background:#e9e7df;object-fit:cover}.dur{margin-top:5px;font-size:13px;font-weight:600;color:var(--ink,#1f2937);font-variant-numeric:tabular-nums}
 .c-views{font-weight:750;font-size:15px;white-space:nowrap}
 .pill{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.03em;padding:2px 9px;border-radius:99px;white-space:nowrap}
 .p-AI{background:var(--ai-bg);color:var(--ai-ink)}.p-REAL{background:var(--real-bg);color:var(--real-ink)}.p-unclear{background:var(--unc-bg);color:var(--unc-ink)}
@@ -174,16 +174,16 @@ footer{margin-top:26px;color:var(--muted);font-size:12.5px;border-top:1px solid 
   .sb{padding-bottom:4px}
   tbody{display:block}
   tr.row{display:grid;grid-template-columns:auto auto auto 1fr;gap:6px 10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px;margin-bottom:10px;
-    grid-template-areas:"th th th th" "rk vw ty lk" "wh wh wh wh" "dt dt et sc" "dg dg dg dg"}
+    grid-template-areas:"th th th th" "rk vw ty lk" "wh wh wh wh" "dt dt et et" "dg dg dg dg"}
   tr.row.open{margin-bottom:0;border-radius:var(--r) var(--r) 0 0;border-bottom:0}
   tr.row td,tr.row:hover td,tr.row.open td{display:block;padding:0;border:0;background:none;min-width:0;max-width:none;width:auto}
   .c-thumb{grid-area:th}.c-thumb img{width:100%;height:auto;aspect-ratio:550/196}
   .c-rank{grid-area:rk}.c-views{grid-area:vw}.c-type{grid-area:ty}.c-link{grid-area:lk;text-align:right}
   .c-what{grid-area:wh}.c-date{grid-area:dt;font-size:13px}.c-date small{display:inline;margin-left:4px}
-  .c-et{grid-area:et;font-size:13px}.c-secs{grid-area:sc;font-size:13px;text-align:right}
+  .c-et{grid-area:et;font-size:13px}
   .c-et::before{content:"US ET ";color:var(--muted)}
   .c-dlg{grid-area:dg}.clamp{-webkit-line-clamp:2}
-  tr.row td.c-cat,tr.row td.c-br,tr.row td.c-ist,tr.row td.c-loc,tr.row td.c-hook{display:none}
+  tr.row td.c-cat,tr.row td.c-ist,tr.row td.c-loc,tr.row td.c-hook{display:none}
   tr.detail{display:block;margin-bottom:10px;border:1px solid var(--line);border-top:0;border-radius:0 0 var(--r) var(--r);overflow:hidden;background:#f7f6f0}
   tr.detail td{display:block;border:0}
   .dw{position:static;width:auto;padding:4px 12px 16px}
@@ -225,7 +225,7 @@ footer{margin-top:26px;color:var(--muted);font-size:12.5px;border-top:1px solid 
       <li><b>Since Feb 2026 almost every reel is AI,</b> and posting went from ~10/month to 2–4 a day (76 posts in Oct 2026, all reels counted).</li>
       <li><b>AI reels: 243 of 345,</b> 7.6B of 9.0B views, 42 of the top 50.</li>
       <li><b>Voice-over in the AI era:</b> fast third-person storyteller (~86 words in ~20 s) opening “Guy had a genius idea…” / “Did you know…” / “You know that…”, ends on a payoff line. Real-era reels have no speech.</li>
-      <li><b>Posting time:</b> most posts go up 6–10 PM Brazil time (4–8 PM US ET).</li>
+      <li><b>Posting time:</b> most posts go up 4–8 PM US ET (2:30–6:30 AM India time, next day).</li>
       <li><b>Money:</b> he also sells PDF build guides via Linktree.</li>
       <li><b>Video notes:</b> Qwen video notes are filled for 60 of 345 so far (rest pending).</li>
     </ul>
@@ -272,16 +272,14 @@ var ROWS=[],state={},sort={k:'rank',d:1},page=1,per=50,open={};
 /* ---------- columns ---------- */
 var COLS=[
  {k:'rank',label:'#',cls:'c-rank',val:function(r){return r.rank},f:'range',ph:['min','max']},
- {k:'thumb',label:'Frames',cls:'c-thumb',val:function(r){return r._has?0:1},f:'notes'},
+ {k:'thumb',label:'Video · duration',cls:'c-thumb',val:function(r){return r.secs},f:'range',ph:['min s','max s']},
  {k:'views',label:'Views',cls:'c-views',val:function(r){return r.views_n},f:'range',ph:['min M','max M']},
  {k:'type',label:'Real / AI',cls:'c-type',val:function(r){return r.real_ai},f:'multi',opts:TYPES},
  {k:'what',label:'What he makes',cls:'c-what',val:function(r){return r._what.toLowerCase()},f:'text',txt:function(r){return r.project+' '+r.caption}},
  {k:'cat',label:'Category',cls:'c-cat',val:function(r){return r.category.toLowerCase()},f:'multi'},
- {k:'date',label:'Posted',cls:'c-date',val:function(r){return r.date+' '+r.t_br},f:'date'},
+ {k:'date',label:'Posted',cls:'c-date',val:function(r){return r.date+' '+r.t_et},f:'date'},
  {k:'et',label:'Time US ET',cls:'c-t c-et',val:function(r){return mins(r.t_et)},f:'hour',fld:'t_et'},
- {k:'br',label:'Time Brazil',cls:'c-t c-br',val:function(r){return mins(r.t_br)},f:'hour',fld:'t_br'},
  {k:'ist',label:'Time India',cls:'c-t c-ist',val:function(r){return mins(r.t_ist)},f:'hour',fld:'t_ist'},
- {k:'secs',label:'Length (s)',cls:'c-secs',val:function(r){return r.secs},f:'range',ph:['min s','max s']},
  {k:'loc',label:'Location / setting',cls:'c-loc',val:function(r){return (r.place||'').toLowerCase()},f:'text',txt:function(r){return [r.place,r.start,r.country,r.climate].join(' ')}},
  {k:'hook',label:'Hook (first 3 s)',cls:'c-hook',val:function(r){return (r.hook||'').toLowerCase()},f:'text',txt:function(r){return r.hook}},
  {k:'dlg',label:'Dialogue',cls:'c-dlg',val:function(r){return r.dialogue===NOSUB?'':r.dialogue.toLowerCase()},f:'text',txt:function(r){return r.dialogue}},
@@ -321,8 +319,8 @@ function passes(r){
   if((a=num('rank_max'))!==null&&r.rank>a)return false;
   if((a=num('views_min'))!==null&&r.views_n<a*1e6)return false;
   if((a=num('views_max'))!==null&&r.views_n>a*1e6)return false;
-  if((a=num('secs_min'))!==null&&r.secs<a)return false;
-  if((a=num('secs_max'))!==null&&r.secs>a)return false;
+  if((a=num('thumb_min'))!==null&&r.secs<a)return false;
+  if((a=num('thumb_max'))!==null&&r.secs>a)return false;
   if(state.notes==='y'&&!r._has)return false;
   if(state.notes==='n'&&r._has)return false;
   if((s=state.ms_type)&&s.length&&s.indexOf(r.real_ai)<0)return false;
@@ -365,14 +363,13 @@ function rowHTML(r){
   var t=function(v){return v?esc(v):DASH};
   return '<tr class="row'+(open[r.rank]?' open':'')+'" data-r="'+r.rank+'" tabindex="0" aria-expanded="'+(open[r.rank]?'true':'false')+'">'+
   '<td class="c-rank"><span class="chev">▶</span>'+r.rank+'</td>'+
-  '<td class="c-thumb"><img loading="lazy" decoding="async" width="200" height="71" src="img/s'+pad3(r.rank)+'.jpg" alt="Five frames from reel #'+r.rank+', start to end"></td>'+
+  '<td class="c-thumb"><img loading="lazy" decoding="async" width="200" height="71" src="img/s'+pad3(r.rank)+'.jpg" alt="Five frames from reel #'+r.rank+', start to end"><div class="dur">⏱ '+r.secs.toFixed(1)+' s</div></td>'+
   '<td class="c-views">'+esc(r.views)+'</td>'+
   '<td class="c-type"><span class="pill p-'+esc(r.real_ai)+'">'+esc(r.real_ai==='unclear'?'Unclear':r.real_ai)+'</span></td>'+
   '<td class="c-what">'+hl(r._what,'what')+(r.project&&r.caption?'<small>'+hl(r.caption,'what')+'</small>':'')+'</td>'+
   '<td class="c-cat">'+(r.category?'<span class="tag">'+esc(r.category)+'</span>':DASH)+'</td>'+
   '<td class="c-date">'+niceDate(r.date)+'<small>'+esc(r.day)+'</small></td>'+
-  '<td class="c-t c-et">'+t(r.t_et)+'</td><td class="c-t c-br">'+t(r.t_br)+'</td><td class="c-t c-ist">'+t(r.t_ist)+'</td>'+
-  '<td class="c-secs">'+r.secs.toFixed(1)+' s</td>'+
+  '<td class="c-t c-et">'+t(r.t_et)+'</td><td class="c-t c-ist">'+t(r.t_ist)+'</td>'+
   '<td class="c-loc">'+(r.place?hl(r.place,'loc')+(r.start?'<small>Starts: '+hl(r.start,'loc')+'</small>':''):DASH)+'</td>'+
   '<td class="c-hook">'+(r.hook?'<div class="clamp">'+hl(r.hook,'hook')+'</div>':DASH)+'</td>'+
   '<td class="c-dlg">'+(r.dialogue===NOSUB||!r.dialogue?'<span class="mut">'+esc(r.dialogue||'—')+'</span>':'<div class="clamp">'+snippet(r.dialogue,'dlg',170)+'</div>')+'</td>'+
@@ -392,7 +389,7 @@ function detailHTML(r){
   var left='<img class="big" loading="lazy" width="550" height="196" src="img/s'+pad3(r.rank)+'.jpg" alt="Five frames from reel #'+r.rank+'">'+
     '<div class="frames"><span>◀ start of reel</span><span>end of reel ▶</span></div><div class="facts">'+
     f('Views',esc(r.views))+f('Real or AI','<span class="pill p-'+esc(r.real_ai)+'">'+esc(r.real_ai==='unclear'?'Unclear':r.real_ai)+'</span>')+f('Length',r.secs.toFixed(1)+' s')+
-    f('Posted (Brazil date)',niceDate(r.date)+' · '+esc(r.day))+f('Time US ET',esc(r.t_et))+f('Time Brazil',esc(r.t_br))+
+    f('Posted',niceDate(r.date)+' · '+esc(r.day))+f('Time US ET',esc(r.t_et))+
     f('Time India',esc(r.t_ist))+f('Cuts',r._has&&r.cuts!==''?esc(r.cuts):'—')+f('Link','<a href="'+esc(r.link)+'" target="_blank" rel="noopener">Watch on Facebook ↗</a>')+'</div>';
   var right='<h3>#'+r.rank+' · '+esc(r._what)+'</h3>'+sec('Caption',r.caption)+
     sec('Dialogue (voice-over, Facebook auto-subtitles)',r.dialogue);
