@@ -1,0 +1,200 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Wedding Guest List Spreadsheet, RSVP Tracker Google Sheets &amp; Excel, Ho</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f1641e'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='white' font-family='Georgia'%3EC%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#222;--mut:#595959;--line:#e1e3df;--bg:#fff;--soft:#f6f5f2;--acc:#f1641e;--good:#1c7a46;--warn:#a85d00;--bad:#b3261e}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 "Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:inherit}.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
+.top .wrap{display:flex;gap:16px;align-items:center;height:60px}.brand{font:700 20px Georgia,serif;letter-spacing:-.3px}
+.pill{font-size:12px;background:#fdf0e6;color:#8a3b00;border-radius:99px;padding:3px 10px}
+.search{flex:1;border:2px solid #222;border-radius:99px;padding:8px 16px;color:var(--mut);font-size:14px}
+h1{font:400 28px/1.25 Georgia,serif;margin:28px 0 6px}h2{font:600 20px/1.3 inherit;margin:34px 0 12px}
+.sub{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px 16px}
+.card{text-decoration:none;display:block}.card .ph{aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:var(--soft);position:relative}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}.card:hover img{transform:scale(1.03)}
+.card .t{font-size:13.5px;line-height:1.35;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .pr{font-weight:700;margin-top:3px}.card .sh{font-size:12px;color:var(--mut)}
+.badge{position:absolute;left:8px;top:8px;background:#fff;border-radius:99px;font-size:12px;font-weight:700;padding:2px 9px;box-shadow:0 1px 4px #0002}
+.s10{background:#e6f4ec;color:var(--good)}.s8{background:#fff4e0;color:var(--warn)}.s0{background:#fde8e6;color:var(--bad)}
+.lp{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;margin-top:22px}
+@media(max-width:860px){.lp{grid-template-columns:1fr}}
+.gal{display:grid;grid-template-columns:64px 1fr;gap:12px}.thumbs{display:flex;flex-direction:column;gap:8px;max-height:640px;overflow:auto}
+.thumbs img,.thumbs .vid{width:64px;height:64px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent}
+.thumbs img.on,.thumbs .vid.on{border-color:#222}.thumbs .vid{background:#222;color:#fff;display:grid;place-items:center;font-size:12px}
+.main{aspect-ratio:1/1;background:var(--soft);border-radius:12px;overflow:hidden;display:grid;place-items:center}
+.main img,.main video{width:100%;height:100%;object-fit:contain}
+.alt{font-size:12px;color:var(--mut);margin-top:6px;min-height:2.6em}
+.price{font-size:28px;font-weight:700;margin:6px 0}.ltitle{font-size:19px;line-height:1.4;margin:4px 0 10px;font-weight:400}
+.dl{font-size:13px;background:var(--soft);border-radius:8px;padding:10px 12px;margin:12px 0}
+.btn{display:block;text-align:center;background:#222;color:#fff;border-radius:99px;padding:13px;font-weight:700;margin:8px 0}
+.btn.o{background:#fff;color:#222;border:2px solid #222}
+.desc{white-space:pre-wrap;font-size:14.5px;line-height:1.6;border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tags span{font-size:12.5px;background:var(--soft);border-radius:99px;padding:4px 10px}
+.box{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0}
+.vd{border-left:5px solid var(--acc);background:#fffaf6}
+.sc{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:10px 0}.sc div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center}
+.sc b{display:block;font-size:22px}.sc small{color:var(--mut);font-size:11.5px}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}@media(max-width:700px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+.sgrid .card.ours.reveal .ph{outline:4px solid var(--acc);outline-offset:2px}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.small{font-size:12.5px;color:var(--mut)}code{background:var(--soft);padding:1px 5px;border-radius:4px;font-size:12.5px}
+details summary{cursor:pointer;font-weight:600}
+</style></head><body><div class="top"><div class="wrap"><a class="brand" href="../index.html" style="text-decoration:none">TheCoolShopCo</a>
+<span class="pill">Draft preview · not live on Etsy</span><div class="search">Etsy-style preview of 20 draft listings</div></div></div><div class="wrap"><p class="small" style="margin-top:16px"><a href="../index.html">← all 20 listings</a> · Wedding Planning</p>
+<div class="lp"><div><div class="gal"><div class="thumbs"><img src="../img/w07-01-t.jpg" data-big="../img/w07-01.jpg" data-alt="Wedding guest list and RSVP tracker spreadsheet for Google Sheets and Excel: guest list with household, side, RSVP and meal columns, beside three sealed envelopes in sage, ivory and blue." class="on" alt=""><img src="../img/w07-02-t.jpg" data-big="../img/w07-02.jpg" data-alt="Three steps to use the wedding guest list spreadsheet: add households with addresses, add guests one per line, and watch the summary count replies." class="" alt=""><img src="../img/w07-03-t.jpg" data-big="../img/w07-03.jpg" data-alt="Guest list summary: guests invited, households, attending, no reply yet, replies in, invitations sent, counts by side and group, and a find-a-guest search box." class="" alt=""><img src="../img/w07-04-t.jpg" data-big="../img/w07-04.jpg" data-alt="Guests tab: one line per guest with household, side, group, guest type, RSVP, meal, dietary needs and table number, all with dropdowns." class="" alt=""><img src="../img/w07-05-t.jpg" data-big="../img/w07-05.jpg" data-alt="Households tab: one line per invitation with envelope name, street address, city, region, postcode and country, next to the text one invitation, several guests." class="" alt=""><img src="../img/w07-06-t.jpg" data-big="../img/w07-06.jpg" data-alt="A-Z List tab: wedding guests sorted alphabetically by last name with table number, meal and dietary needs, with sort by and show dropdowns." class="" alt=""><img src="../img/w07-07-t.jpg" data-big="../img/w07-07.jpg" data-alt="Printable address list: every household from A to Z with street address, city, region, postcode and country, shown with two sealed envelopes." class="" alt=""><img src="../img/w07-08-t.jpg" data-big="../img/w07-08.jpg" data-alt="What you get: six tabs - Start Here, Summary, Households, Guests, A-Z List, Address List - as 4 spreadsheets in two colours plus a PDF guide." class="" alt=""><img src="../img/w07-09-t.jpg" data-big="../img/w07-09.jpg" data-alt="The wedding guest list spreadsheet summary in the two included colours: sage green and blush pink." class="" alt=""><img src="../img/w07-10-t.jpg" data-big="../img/w07-10.jpg" data-alt="Questions and answers about the wedding guest list spreadsheet: Google Sheets and Excel, number of guests, RSVPs, printing the lists, meal choices, files included." class="" alt=""><div class="vid" data-video="../img/w07.mp4">▶ video</div></div><div><div class="main" id="main"><img id="mi" src="../img/w07-01.jpg" alt=""></div><div class="alt" id="alt">Wedding guest list and RSVP tracker spreadsheet for Google Sheets and Excel: guest list with household, side, RSVP and meal columns, beside three sealed envelopes in sage, ivory and blue.</div></div></div></div>
+<div><div class="small">TheCoolShopCo</div><h1 class="ltitle">Wedding Guest List Spreadsheet, RSVP Tracker Google Sheets &amp; Excel, Households, Meal Choices, Tables, Printable Address List</h1><div class="price">$5.99</div>
+<div class="dl"><b>Digital download</b> — 5 file(s) · Designed by TheCoolShopCo</div>
+<span class="btn">Buy it now</span><span class="btn o">Add to basket</span>
+<div class="box"><b>Files you get</b><ul style="margin:.4em 0 0;padding-left:18px"><li>Sage theme, empty - the buyer&#x27;s working copy <span class="small">(Wedding-Guest-List_Sage_BLANK.xlsx)</span></li><li>Sage theme filled with a fictional sample wedding <span class="small">(Wedding-Guest-List_Sage_SAMPLE.xlsx)</span></li><li>Blush theme, empty <span class="small">(Wedding-Guest-List_Blush_BLANK.xlsx)</span></li><li>Blush theme with the sample wedding <span class="small">(Wedding-Guest-List_Blush_SAMPLE.xlsx)</span></li><li>5-page PDF guide; the last page holds the Google Sheets copy-link line (placeholder until Bob adds the link) <span class="small">(Wedding-Guest-List_Quick-Start-Guide.pdf)</span></li></ul></div>
+<div class="desc">Wedding guest list spreadsheet for Google Sheets &amp; Excel: every household, every guest and every RSVP in one easy file.
+Pick Yes or No as replies come in and it counts for you - by side, by group, with meal choices, table numbers, an A-Z list and a printable address list.
+
+MADE TO BE EASY
+Three steps: add your households, add your guests, pick Yes or No. Gold cells are the only ones you type in. Everything else fills itself in. No formulas to touch.
+
+WHAT YOU GET (instant download)
+- Wedding Guest List spreadsheet in sage - a blank copy for your own guests
+- The same file filled with sample guests, so you can see how it works
+- The tracker in blush - blank + sample
+- PDF quick-start guide (5 pages, with pictures)
+4 .xlsx files + 1 PDF. Nothing is shipped.
+
+6 TABS
+- START HERE - your names, wedding date, reply-by date, your meal choices and groups
+- Households - one line per invitation: envelope name, address, save-the-date sent, invitation sent, gift received, thank-you sent. Guests and attending are counted per household
+- Guests - one line per person: household, side, group, adult / child / plus-one, RSVP, meal choice, dietary needs, table number, notes
+- Summary - invited, attending, declined and no reply yet; counts by side, by group and by guest type; meal counts for your caterer; days left to reply; a list of who still has to reply; and a search box to find any guest
+- A-Z List - your guests in alphabetical order with their table number. Sort by last name or first name, show everyone or attending only. Made for a seating sign, escort cards or the door
+- Address List - every household from A to Z with its address, ready to print or to copy into a label template
+
+HOW IT WORKS
+1. Add households - the name for each envelope and the address.
+2. Add guests - one line per person, linked to their household with a dropdown.
+3. Watch it count - pick Yes or No for each reply. Counts, meals and lists update themselves.
+
+WORKS WITH
+- Google Sheets (free Google account): upload the file, or use the copy link in the PDF guide
+- Microsoft Excel 2016 or newer, and Microsoft 365
+No macros, no add-ons. Amounts show a $ sign; you can switch to your own currency in one click (the guide shows how).
+
+FAQ
+How many guests fit? Up to 300 guests in up to 150 households.
+Does it collect RSVPs for me? No. It is a spreadsheet: you type each reply in (Yes or No), and it does all the counting.
+What is a household? One invitation: a couple, a family living together or a single guest. The file counts both invitations and individual people.
+Can I print the lists? Yes. The A-Z List and the Address List are laid out for printing, with the header on every page.
+Is there a seating plan? You give each guest a table number and the A-Z List shows it. A visual seating plan is part of our Wedding Planner Spreadsheet.
+Can I get help? Yes. Message us here on Etsy and a real person answers.
+
+DELIVERY
+This is a digital download. After payment, Etsy shows the files under Purchases and Reviews (and emails you a link). Because digital files cannot be returned, all sales are final - but if anything is not working, message us and we will fix it.
+
+For personal use. Sample names, addresses and figures are fictional.
+
+Designed by TheCoolShopCo. Some design elements were created with the help of AI tools and finished by hand.</div>
+<h2 style="font-size:16px">Tags (13)</h2><div class="tags"><span>wedding guest list</span><span>rsvp tracker</span><span>guest list template</span><span>wedding spreadsheet</span><span>guest list tracker</span><span>wedding rsvp tracker</span><span>wedding address list</span><span>meal choice tracker</span><span>thank you tracker</span><span>wedding google sheet</span><span>wedding excel</span><span>invitation tracker</span><span>wedding planning</span></div>
+<p class="small">Title 124/140 chars · main keyword: <code>wedding guest list spreadsheet</code> · materials: Google Sheets, Excel</p>
+<details class="box"><summary>FR translation (shown to French shoppers)</summary><p><b>Liste invités mariage Google Sheets &amp; Excel, suivi des réponses RSVP, foyers, repas, tables, liste d&#x27;adresses à imprimer (en anglais)</b></p><div class="desc">Liste d&#x27;invités de mariage pour Google Sheets &amp; Excel : chaque foyer, chaque invité et chaque réponse dans un seul fichier facile.
+Choisissez Yes ou No à chaque réponse reçue et tout se compte seul : par côté, par groupe, avec les repas, les numéros de table, une liste alphabétique et une liste d&#x27;adresses à imprimer.
+
+À SAVOIR : le fichier et le guide PDF sont en anglais (mots simples : Households, Guests, Summary). Vos listes de repas et de groupes peuvent être saisies en français.
+
+PENSÉ POUR ÊTRE FACILE
+Trois étapes : ajoutez vos foyers, ajoutez vos invités, choisissez Yes ou No. Vous ne tapez que dans les cellules dorées, tout le reste se calcule seul.
+
+CE QUE VOUS RECEVEZ (téléchargement immédiat)
+- Le tableur en vert sauge : une version vierge pour vos invités
+- Le même fichier rempli avec des invités d&#x27;exemple
+- Le tableur en rose poudré : vierge + exemple
+- Un guide de démarrage PDF (5 pages, avec images)
+4 fichiers .xlsx + 1 PDF. Rien n&#x27;est expédié.
+
+6 ONGLETS
+- START HERE : vos prénoms, la date, la date limite de réponse, vos menus et vos groupes
+- Households : une ligne par invitation : nom sur l&#x27;enveloppe, adresse, save-the-date envoyé, faire-part envoyé, cadeau reçu, remerciement envoyé
+- Guests : une ligne par personne : foyer, côté, groupe, adulte / enfant / accompagnant, réponse, repas, régime alimentaire, table
+- Summary : invités, présents, absents, sans réponse ; par côté, par groupe et par type ; nombre de repas pour le traiteur ; jours restants pour répondre ; qui relancer ; recherche d&#x27;un invité
+- A-Z List : vos invités par ordre alphabétique avec leur table, tri par nom ou prénom
+- Address List : tous les foyers de A à Z avec leur adresse, prête à imprimer ou à copier pour vos étiquettes
+
+COMMENT ÇA MARCHE
+1. Ajoutez les foyers : le nom pour l&#x27;enveloppe et l&#x27;adresse.
+2. Ajoutez les invités : une ligne par personne, reliée à son foyer par une liste déroulante.
+3. Regardez le compte se faire : Yes ou No pour chaque réponse.
+
+Jusqu&#x27;à 300 invités et 150 foyers. Le fichier ne collecte pas les réponses : vous les saisissez, il compte.
+
+COMPATIBLE AVEC
+- Google Sheets (compte Google gratuit)
+- Microsoft Excel 2016 ou plus récent, et Microsoft 365
+Sans macros.
+
+LIVRAISON
+Produit numérique : après le paiement, les fichiers sont disponibles dans vos achats Etsy. Les fichiers numériques ne sont ni repris ni échangés, mais écrivez-nous si quelque chose ne fonctionne pas : nous corrigeons.
+
+Usage personnel. Les noms et adresses des images sont fictifs.
+
+Conçu par TheCoolShopCo. Certains éléments de design ont été créés à l&#x27;aide d&#x27;outils d&#x27;IA et finalisés à la main.</div><div class="tags"><span>liste invités</span><span>suivi rsvp</span><span>invités mariage</span><span>tableur mariage</span><span>organisation mariage</span><span>plan de table</span><span>liste d&#x27;adresses</span><span>mariage excel</span><span>mariage google sheet</span><span>faire-part mariage</span><span>futurs mariés</span><span>remerciements</span><span>planning mariage</span></div></details><details class="box"><summary>DE translation (shown to German shoppers)</summary><p><b>Gästeliste Hochzeit Google Sheets &amp; Excel Vorlage, Zusagen (RSVP), Haushalte, Essen, Tische, Adressliste zum Drucken (auf Englisch)</b></p><div class="desc">Gästeliste für die Hochzeit als Tabelle für Google Sheets &amp; Excel: jeder Haushalt, jeder Gast und jede Antwort in einer einfachen Datei.
+Bei jeder Antwort Yes oder No wählen, und alles zählt sich selbst: nach Seite, nach Gruppe, mit Essenswahl, Tischnummern, einer A-Z-Liste und einer Adressliste zum Drucken.
+
+WICHTIG: Datei und PDF-Anleitung sind auf Englisch (einfache Wörter: Households, Guests, Summary). Eure Essens- und Gruppenlisten könnt ihr auf Deutsch eintragen.
+
+EINFACH GEMACHT
+Drei Schritte: Haushalte eintragen, Gäste eintragen, Yes oder No wählen. Ihr tippt nur in goldene Zellen, alles andere rechnet sich selbst.
+
+DAS BEKOMMT IHR (Sofort-Download)
+- Gästeliste in Salbeigrün: leere Datei für eure Gäste
+- Dieselbe Datei mit Beispiel-Gästen ausgefüllt
+- Die Liste in Rosé: leer + Beispiel
+- PDF-Kurzanleitung (5 Seiten, mit Bildern)
+4 .xlsx-Dateien + 1 PDF. Es wird nichts verschickt.
+
+6 TABELLENBLÄTTER
+- START HERE: eure Namen, Hochzeitsdatum, Antwortfrist, eure Menüs und Gruppen
+- Households: eine Zeile pro Einladung: Name auf dem Umschlag, Adresse, Save-the-Date verschickt, Einladung verschickt, Geschenk, Dankeskarte
+- Guests: eine Zeile pro Person: Haushalt, Seite, Gruppe, Erwachsener / Kind / Begleitung, Antwort, Essen, Unverträglichkeiten, Tisch
+- Summary: eingeladen, Zusagen, Absagen, offen; nach Seite, Gruppe und Gästeart; Essenszahlen für den Caterer; Tage bis zur Antwortfrist; wen ihr erinnern müsst; Gast suchen
+- A-Z List: eure Gäste alphabetisch mit Tischnummer, sortiert nach Nachname oder Vorname
+- Address List: alle Haushalte von A bis Z mit Adresse, zum Drucken oder Kopieren für Etiketten
+
+SO GEHT&#x27;S
+1. Haushalte eintragen: Name für den Umschlag und Adresse.
+2. Gäste eintragen: eine Zeile pro Person, per Dropdown mit dem Haushalt verbunden.
+3. Zusehen, wie es zählt: Yes oder No bei jeder Antwort.
+
+Bis zu 300 Gäste in 150 Haushalten. Die Datei sammelt keine Antworten ein: ihr tragt sie ein, sie zählt.
+
+FUNKTIONIERT MIT
+- Google Sheets (kostenloses Google-Konto)
+- Microsoft Excel 2016 oder neuer und Microsoft 365
+Ohne Makros.
+
+LIEFERUNG
+Digitaler Download: Nach der Zahlung findet ihr die Dateien bei Etsy unter Käufe. Digitale Dateien können nicht zurückgegeben werden, aber schreibt uns, wenn etwas nicht funktioniert: wir beheben es.
+
+Für den privaten Gebrauch. Namen und Adressen in den Bildern sind erfunden.
+
+Gestaltet von TheCoolShopCo. Einige Designelemente wurden mit Hilfe von KI-Tools erstellt und von Hand fertiggestellt.</div><div class="tags"><span>gästeliste hochzeit</span><span>zusagen liste</span><span>hochzeit gästeliste</span><span>hochzeit excel</span><span>hochzeit vorlage</span><span>hochzeit planen</span><span>sitzplan hochzeit</span><span>adressliste</span><span>hochzeitsplaner</span><span>einladung hochzeit</span><span>brautpaar geschenk</span><span>danksagung hochzeit</span><span>google sheets planer</span></div></details></div></div><div class="box vd"><b>Honest verdict (round 1): 8/10</b>
+<div class="sc"><div><b>9</b><small>Thumbnail</small></div><div><b>8</b><small>Gallery</small></div><div><b>8</b><small>Product</small></div><div><b>8</b><small>Title+tags+text</small></div><div><b>8</b><small>In search grid</small></div></div>
+<p style="margin:.3em 0">Households + guests split is what real couples need for addresses vs headcount.</p><p class="small"><b>Still holding it back:</b> Not yet tested in real Google Sheets/Excel; PDF still has the Google Sheets copy-link placeholder. &#x27;van der Berg&#x27; sorts under B; address list is a table, not labels.</p></div>
+<h2>In Etsy search for “wedding guest list spreadsheet” (10,388 results) — can you spot ours?</h2>
+<p class="small">Ours is placed at position 3 among the real top results (sort = relevance). <button onclick="document.querySelector('.card.ours').classList.toggle('reveal')">Show ours</button></p>
+<div class="sgrid"><a class="card" href="https://www.etsy.com/listing/4626675047/wedding-guest-list-spreadsheet-for-excel" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/67795446/r/il/c5dc01/8935726612/il_570xN.8935726612_ihxw.jpg" alt=""></div>
+<div class="t">Wedding Guest List Spreadsheet for Excel, RSVP Status, Table Assignments and Catering Estimate</div><div class="pr">2.49 USD</div><div class="sh">Etsy result #1</div></a><a class="card" href="https://www.etsy.com/listing/4623178575/wedding-guest-list-spreadsheet-rsvp" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69164903/r/il/7d82e5/8906966206/il_570xN.8906966206_al4f.jpg" alt=""></div>
+<div class="t">Wedding Guest List Spreadsheet, RSVP Tracker Google Sheets Excel, Seating Chart, Meal Choices, Address List &amp; Thank You Notes</div><div class="pr">9.99 USD</div><div class="sh">Etsy result #2</div></a><a class="card ours" href="#"><div class="ph"><img loading="lazy" src="../img/w07-01-t.jpg" alt=""></div>
+<div class="t">Wedding Guest List Spreadsheet, RSVP Tracker Google Sheets &amp; Excel, Households, Meal Choices, Tables, Printable Address List</div><div class="pr">$5.99</div><div class="sh">TheCoolShopCo · Digital download</div></a><a class="card" href="https://www.etsy.com/listing/1368485645/wedding-guest-list-spreadsheet-wedding" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/37559324/r/il/b9624f/4427980320/il_570xN.4427980320_dzzv.jpg" alt=""></div>
+<div class="t">Wedding Guest List Spreadsheet Wedding Seating Chart Template Excel Google Sheets Wedding Invitation Tracker Guest List Template Tracker</div><div class="pr">4.99 USD</div><div class="sh">Etsy result #3</div></a><a class="card" href="https://www.etsy.com/listing/4619756561/wedding-guest-list-spreadsheet-seating" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/68748928/r/il/c4418e/8927008033/il_570xN.8927008033_kbjj.jpg" alt=""></div>
+<div class="t">Wedding Guest List Spreadsheet, Seating Chart Template, 1000 Guests 200 Tables, Visual Seating Plan, RSVP Tracker, 6 Colors</div><div class="pr">6.99 USD</div><div class="sh">Etsy result #4</div></a><a class="card" href="https://www.etsy.com/listing/4593952628/wedding-guest-list-spreadsheet-rsvp" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/31135684/r/il/3a4e2a/8781945537/il_570xN.8781945537_xg5a.jpg" alt=""></div>
+<div class="t">Wedding Guest List Spreadsheet, RSVP Tracker, Seating Chart Template, Google Sheets Excel Wedding Planner</div><div class="pr">9.00 USD</div><div class="sh">Etsy result #5</div></a><a class="card" href="https://www.etsy.com/listing/4601413554/wedding-guest-list-spreadsheet-for" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/31600078/r/il/c96ad3/8774240163/il_570xN.8774240163_2nks.jpg" alt=""></div>
+<div class="t">Wedding Guest List Spreadsheet, Google Sheets RSVP Checklist Tracker, Wedding Guest List Template, Wedding Planning Spreadsheet</div><div class="pr">5.98 USD</div><div class="sh">Etsy result #6</div></a><a class="card" href="https://www.etsy.com/listing/4603056939/wedding-guest-list-spreadsheet-and" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/66142407/r/il/b26aef/8794372473/il_570xN.8794372473_11ku.jpg" alt=""></div>
+<div class="t">Wedding Guest List Spreadsheet and Template, Google Sheets &amp; Excel, RSVP and Invitation Tracker</div><div class="pr">4.99 USD</div><div class="sh">Etsy result #7</div></a><a class="card" href="https://www.etsy.com/listing/4593082885/wedding-guest-list-spreadsheet-google" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/67336588/r/il/f8b3ac/8691194360/il_570xN.8691194360_he81.jpg" alt=""></div>
+<div class="t">Wedding Guest List Spreadsheet, Google Sheets RSVP Tracker, Meal Choice &amp; Seating Planner, Guest Count Tracker</div><div class="pr">4.90 EUR</div><div class="sh">Etsy result #8</div></a><a class="card" href="https://www.etsy.com/listing/4587324464/wedding-guest-list-spreadsheet-with-rsvp" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/68380420/r/il/7d4ba0/8614149376/il_570xN.8614149376_953o.jpg" alt=""></div>
+<div class="t">Wedding Guest List Spreadsheet with RSVP Tracker | Wedding Guest List Template Excel, Numbered RSVP System with Meal Choices</div><div class="pr">14.00 USD</div><div class="sh">Etsy result #9</div></a><a class="card" href="https://www.etsy.com/listing/4591796700/wedding-guest-list-tracker-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/68459103/r/il/9424f6/8714395830/il_570xN.8714395830_mupg.jpg" alt=""></div>
+<div class="t">Wedding Guest List Spreadsheet, Excel RSVP Tracker, Seating Chart Planner, Meal Count, Thank You Note Tracker</div><div class="pr">12.00 USD</div><div class="sh">Etsy result #10</div></a><a class="card" href="https://www.etsy.com/listing/889664654/wedding-budget-spreadsheet-wedding-guest" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/24648413/r/il/cc8328/3036910584/il_570xN.3036910584_b7ks.jpg" alt=""></div>
+<div class="t">Wedding Budget Spreadsheet | Wedding Guest List Spreadsheet | Wedding Registry Checklist | Bundle</div><div class="pr">7.00 USD</div><div class="sh">Etsy result #11</div></a></div><p style="margin:50px 0"></p></div>
+<script>
+const mi=document.getElementById('main'),al=document.getElementById('alt');
+document.querySelectorAll('.thumbs img,.thumbs .vid').forEach(t=>t.onclick=()=>{document.querySelectorAll('.thumbs .on').forEach(x=>x.classList.remove('on'));t.classList.add('on');
+if(t.dataset.video){mi.innerHTML='<video src="'+t.dataset.video+'" autoplay muted loop playsinline controls></video>';al.textContent='Listing video (Etsy plays it muted)';}
+else{mi.innerHTML='<img src="'+t.dataset.big+'" alt="">';al.textContent=t.dataset.alt;}});
+</script></body></html>

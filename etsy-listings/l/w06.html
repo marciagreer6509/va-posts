@@ -1,0 +1,198 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Wedding Budget Spreadsheet, Google Sheets &amp; Excel, Wedding Budget Plan</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f1641e'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='white' font-family='Georgia'%3EC%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#222;--mut:#595959;--line:#e1e3df;--bg:#fff;--soft:#f6f5f2;--acc:#f1641e;--good:#1c7a46;--warn:#a85d00;--bad:#b3261e}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 "Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:inherit}.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
+.top .wrap{display:flex;gap:16px;align-items:center;height:60px}.brand{font:700 20px Georgia,serif;letter-spacing:-.3px}
+.pill{font-size:12px;background:#fdf0e6;color:#8a3b00;border-radius:99px;padding:3px 10px}
+.search{flex:1;border:2px solid #222;border-radius:99px;padding:8px 16px;color:var(--mut);font-size:14px}
+h1{font:400 28px/1.25 Georgia,serif;margin:28px 0 6px}h2{font:600 20px/1.3 inherit;margin:34px 0 12px}
+.sub{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px 16px}
+.card{text-decoration:none;display:block}.card .ph{aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:var(--soft);position:relative}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}.card:hover img{transform:scale(1.03)}
+.card .t{font-size:13.5px;line-height:1.35;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .pr{font-weight:700;margin-top:3px}.card .sh{font-size:12px;color:var(--mut)}
+.badge{position:absolute;left:8px;top:8px;background:#fff;border-radius:99px;font-size:12px;font-weight:700;padding:2px 9px;box-shadow:0 1px 4px #0002}
+.s10{background:#e6f4ec;color:var(--good)}.s8{background:#fff4e0;color:var(--warn)}.s0{background:#fde8e6;color:var(--bad)}
+.lp{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;margin-top:22px}
+@media(max-width:860px){.lp{grid-template-columns:1fr}}
+.gal{display:grid;grid-template-columns:64px 1fr;gap:12px}.thumbs{display:flex;flex-direction:column;gap:8px;max-height:640px;overflow:auto}
+.thumbs img,.thumbs .vid{width:64px;height:64px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent}
+.thumbs img.on,.thumbs .vid.on{border-color:#222}.thumbs .vid{background:#222;color:#fff;display:grid;place-items:center;font-size:12px}
+.main{aspect-ratio:1/1;background:var(--soft);border-radius:12px;overflow:hidden;display:grid;place-items:center}
+.main img,.main video{width:100%;height:100%;object-fit:contain}
+.alt{font-size:12px;color:var(--mut);margin-top:6px;min-height:2.6em}
+.price{font-size:28px;font-weight:700;margin:6px 0}.ltitle{font-size:19px;line-height:1.4;margin:4px 0 10px;font-weight:400}
+.dl{font-size:13px;background:var(--soft);border-radius:8px;padding:10px 12px;margin:12px 0}
+.btn{display:block;text-align:center;background:#222;color:#fff;border-radius:99px;padding:13px;font-weight:700;margin:8px 0}
+.btn.o{background:#fff;color:#222;border:2px solid #222}
+.desc{white-space:pre-wrap;font-size:14.5px;line-height:1.6;border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tags span{font-size:12.5px;background:var(--soft);border-radius:99px;padding:4px 10px}
+.box{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0}
+.vd{border-left:5px solid var(--acc);background:#fffaf6}
+.sc{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:10px 0}.sc div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center}
+.sc b{display:block;font-size:22px}.sc small{color:var(--mut);font-size:11.5px}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}@media(max-width:700px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+.sgrid .card.ours.reveal .ph{outline:4px solid var(--acc);outline-offset:2px}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.small{font-size:12.5px;color:var(--mut)}code{background:var(--soft);padding:1px 5px;border-radius:4px;font-size:12.5px}
+details summary{cursor:pointer;font-weight:600}
+</style></head><body><div class="top"><div class="wrap"><a class="brand" href="../index.html" style="text-decoration:none">TheCoolShopCo</a>
+<span class="pill">Draft preview · not live on Etsy</span><div class="search">Etsy-style preview of 20 draft listings</div></div></div><div class="wrap"><p class="small" style="margin-top:16px"><a href="../index.html">← all 20 listings</a> · Wedding Planning</p>
+<div class="lp"><div><div class="gal"><div class="thumbs"><img src="../img/w06-01-t.jpg" data-big="../img/w06-01.jpg" data-alt="Wedding budget spreadsheet for Google Sheets and Excel shown on a tablet: total budget, expected cost, paid, still to pay, next payments and who pays. Deep green design with a wedding invitation." class="on" alt=""><img src="../img/w06-02-t.jpg" data-big="../img/w06-02.jpg" data-alt="Three steps to use the wedding budget spreadsheet: type who is paying, list your costs with estimates, log each payment with its due date." class="" alt=""><img src="../img/w06-03-t.jpg" data-big="../img/w06-03.jpg" data-alt="Wedding budget dashboard: total budget, expected cost, left in the budget, cost per guest, paid so far, still to pay, due in 30 days, overdue and next payments." class="" alt=""><img src="../img/w06-04-t.jpg" data-big="../img/w06-04.jpg" data-alt="Plan tab: wedding budget by category with a rough guide percentage, your own percentage, target, estimated, expected cost, paid and target left." class="" alt=""><img src="../img/w06-05-t.jpg" data-big="../img/w06-05.jpg" data-alt="Payments tab: wedding payment schedule with due date, budget item, amount, paid tick and a status of Paid, Overdue, Due soon or Scheduled." class="" alt=""><img src="../img/w06-06-t.jpg" data-big="../img/w06-06.jpg" data-alt="Who Pays tab: the couple and both sets of parents with what each puts in, their costs, paid so far, still to pay and what is left, plus two charts." class="" alt=""><img src="../img/w06-07-t.jpg" data-big="../img/w06-07.jpg" data-alt="Budget tab: each wedding cost on one line with category, estimated, actual, paid, still due and who pays. Actual prices over the estimate are red." class="" alt=""><img src="../img/w06-08-t.jpg" data-big="../img/w06-08.jpg" data-alt="What you get: six tabs - Start Here, Dashboard, Plan, Budget, Payments, Who Pays - as 4 spreadsheets in two colours plus a PDF guide." class="" alt=""><img src="../img/w06-09-t.jpg" data-big="../img/w06-09.jpg" data-alt="The wedding budget spreadsheet dashboard in the two included colours: sage green and blush pink." class="" alt=""><img src="../img/w06-10-t.jpg" data-big="../img/w06-10.jpg" data-alt="Questions and answers about the wedding budget spreadsheet: Google Sheets and Excel, the guide percentages, paying yourselves, number of lines, currency, files." class="" alt=""><div class="vid" data-video="../img/w06.mp4">▶ video</div></div><div><div class="main" id="main"><img id="mi" src="../img/w06-01.jpg" alt=""></div><div class="alt" id="alt">Wedding budget spreadsheet for Google Sheets and Excel shown on a tablet: total budget, expected cost, paid, still to pay, next payments and who pays. Deep green design with a wedding invitation.</div></div></div></div>
+<div><div class="small">TheCoolShopCo</div><h1 class="ltitle">Wedding Budget Spreadsheet, Google Sheets &amp; Excel, Wedding Budget Planner, Payment Schedule Tracker, Who Pays Split, Cost Dashboard</h1><div class="price">$9.99</div>
+<div class="dl"><b>Digital download</b> — 5 file(s) · Designed by TheCoolShopCo</div>
+<span class="btn">Buy it now</span><span class="btn o">Add to basket</span>
+<div class="box"><b>Files you get</b><ul style="margin:.4em 0 0;padding-left:18px"><li>Sage theme, empty - the buyer&#x27;s working copy <span class="small">(Wedding-Budget_Sage_BLANK.xlsx)</span></li><li>Sage theme filled with a fictional sample wedding <span class="small">(Wedding-Budget_Sage_SAMPLE.xlsx)</span></li><li>Blush theme, empty <span class="small">(Wedding-Budget_Blush_BLANK.xlsx)</span></li><li>Blush theme with the sample wedding <span class="small">(Wedding-Budget_Blush_SAMPLE.xlsx)</span></li><li>6-page PDF guide; the last page holds the Google Sheets copy-link line (placeholder until Bob adds the link) <span class="small">(Wedding-Budget_Quick-Start-Guide.pdf)</span></li></ul></div>
+<div class="desc">Wedding budget spreadsheet for Google Sheets &amp; Excel: see what your wedding costs, what is paid, what is still due and who pays for what.
+List your costs, log each deposit and balance once, and the budget adds itself up - with a payment schedule, due-date alerts and a dashboard.
+
+MADE TO BE EASY
+Three steps: say who is paying, list your costs, add a line for each payment. Gold cells are the only ones you type in. Everything else fills itself in. No formulas to touch.
+
+WHAT YOU GET (instant download)
+- Wedding Budget spreadsheet in sage - a blank copy for your own wedding
+- The same file filled with a sample wedding, so you can see how it works
+- The budget in blush - blank + sample
+- PDF quick-start guide (6 pages, with pictures)
+4 .xlsx files + 1 PDF. Nothing is shipped.
+
+6 TABS
+- START HERE - who is paying and how much (that adds up to your total budget), wedding date, number of guests
+- Plan - your budget split over 13 categories. A rough guide % is filled in as a starting point (it is a guide, not a rule - change every number to suit your wedding) and each category gets a target
+- Budget - one line per cost: estimated, actual, paid and still due, with a category and who pays. A real price above your estimate turns red
+- Payments - one line per deposit or balance with its due date. Tick it when it is paid. Overdue turns red, due within 30 days turns gold
+- Who Pays - for the couple and each family: what they put in, what their costs come to, what they have paid and what is left
+- Dashboard - total budget, expected cost, left in the budget, cost per guest, paid so far, still to pay, due in the next 30 days, overdue, the next six payments and what is due each month
+
+HOW IT WORKS
+1. Who is paying - type each person and their amount on START HERE. Paying for it yourselves? Just one line.
+2. List your costs - open Budget and add one line per cost with your estimate.
+3. Log each payment - open Payments and add deposits and balances with their due dates.
+Paid, Still due, the who-pays split and the Dashboard update themselves.
+
+WORKS WITH
+- Google Sheets (free Google account): upload the file, or use the copy link in the PDF guide
+- Microsoft Excel 2016 or newer, and Microsoft 365
+No macros, no add-ons. Amounts show a $ sign; you can switch to your own currency in one click (the guide shows how).
+
+FAQ
+Are the category percentages a rule? No. They are a rough starting point only. Every wedding is different, so change them freely or type 0 to skip a category.
+We are paying for everything ourselves. Is it still useful? Yes. Fill in one line under Who is paying and ignore the split.
+How many lines are there? 50 budget lines, 80 payments, 13 categories you can rename and up to 4 people or families paying.
+Does it track guests and seating too? No. This is the budget only. Our Wedding Planner Spreadsheet has the checklist, guest list and seating plan.
+I am not good with spreadsheets. Is this for me? Yes. Plain words, three steps, and a guide with pictures.
+Can I get help? Yes. Message us here on Etsy and a real person answers.
+
+DELIVERY
+This is a digital download. After payment, Etsy shows the files under Purchases and Reviews (and emails you a link). Because digital files cannot be returned, all sales are final - but if anything is not working, message us and we will fix it.
+
+For personal use. Sample names, addresses and figures are fictional.
+This is a budgeting tool, not financial advice.
+
+Designed by TheCoolShopCo. Some design elements were created with the help of AI tools and finished by hand.</div>
+<h2 style="font-size:16px">Tags (13)</h2><div class="tags"><span>wedding budget</span><span>wedding spreadsheet</span><span>wedding budget sheet</span><span>budget spreadsheet</span><span>wedding cost tracker</span><span>payment schedule</span><span>wedding expenses</span><span>wedding google sheet</span><span>wedding excel</span><span>wedding planner</span><span>vendor payments</span><span>engagement gift</span><span>wedding finance</span></div>
+<p class="small">Title 131/140 chars · main keyword: <code>wedding budget spreadsheet</code> · materials: Google Sheets, Excel</p>
+<details class="box"><summary>FR translation (shown to French shoppers)</summary><p><b>Budget mariage Google Sheets &amp; Excel, tableur budget de mariage : dépenses, échéancier des paiements, qui paie quoi (en anglais)</b></p><div class="desc">Tableur de budget de mariage pour Google Sheets &amp; Excel : voyez ce que coûte votre mariage, ce qui est payé, ce qui reste à payer et qui paie quoi.
+Listez vos dépenses, notez chaque acompte et chaque solde une seule fois : le budget se calcule tout seul, avec un échéancier, des alertes de date et un tableau de bord.
+
+À SAVOIR : le fichier et le guide PDF sont en anglais (mots simples : Budget, Payments, Who Pays). Vous pouvez renommer chaque catégorie et chaque ligne en français.
+
+PENSÉ POUR ÊTRE FACILE
+Trois étapes : indiquez qui paie, listez vos dépenses, ajoutez une ligne par paiement. Vous ne tapez que dans les cellules dorées, tout le reste se calcule seul.
+
+CE QUE VOUS RECEVEZ (téléchargement immédiat)
+- Le tableur en vert sauge : une version vierge pour votre mariage
+- Le même fichier rempli avec un mariage d&#x27;exemple
+- Le tableur en rose poudré : vierge + exemple
+- Un guide de démarrage PDF (6 pages, avec images)
+4 fichiers .xlsx + 1 PDF. Rien n&#x27;est expédié.
+
+6 ONGLETS
+- START HERE : qui paie et combien (le total devient votre budget), date du mariage, nombre d&#x27;invités
+- Plan : votre budget réparti sur 13 catégories. Un pourcentage indicatif est prérempli comme point de départ (c&#x27;est un repère, pas une règle : modifiez tout librement)
+- Budget : une ligne par dépense : estimé, réel, payé, reste à payer, catégorie et qui paie
+- Payments : une ligne par acompte ou solde avec sa date d&#x27;échéance ; en retard = rouge, sous 30 jours = doré
+- Who Pays : pour le couple et chaque famille : apport, dépenses, déjà payé, reste
+- Dashboard : budget total, coût prévu, reste du budget, coût par invité, payé, reste à payer, échéances des 30 prochains jours, retards, 6 prochains paiements, montant dû chaque mois
+
+COMMENT ÇA MARCHE
+1. Qui paie : saisissez chaque personne et son montant dans START HERE.
+2. Vos dépenses : une ligne par dépense dans Budget, avec votre estimation.
+3. Vos paiements : acomptes et soldes avec leur date dans Payments.
+
+COMPATIBLE AVEC
+- Google Sheets (compte Google gratuit)
+- Microsoft Excel 2016 ou plus récent, et Microsoft 365
+Sans macros. Les montants s&#x27;affichent en $ ; vous passez à l&#x27;euro en un clic (Format &gt; Nombre &gt; Devise).
+
+LIVRAISON
+Produit numérique : après le paiement, les fichiers sont disponibles dans vos achats Etsy. Les fichiers numériques ne sont ni repris ni échangés, mais écrivez-nous si quelque chose ne fonctionne pas : nous corrigeons.
+
+Usage personnel. Outil de budget, pas un conseil financier. Les noms et montants des images sont fictifs.
+
+Conçu par TheCoolShopCo. Certains éléments de design ont été créés à l&#x27;aide d&#x27;outils d&#x27;IA et finalisés à la main.</div><div class="tags"><span>budget mariage</span><span>tableur mariage</span><span>organisation mariage</span><span>dépenses mariage</span><span>planning mariage</span><span>mariage excel</span><span>mariage google sheet</span><span>échéancier paiement</span><span>suivi budget</span><span>futurs mariés</span><span>cadeau fiançailles</span><span>budget prévisionnel</span><span>prestataires mariage</span></div></details><details class="box"><summary>DE translation (shown to German shoppers)</summary><p><b>Hochzeitsbudget Google Sheets &amp; Excel Vorlage, Budgetplaner Hochzeit: Kosten, Zahlungsplan mit Terminen, wer zahlt was (auf Englisch)</b></p><div class="desc">Hochzeitsbudget als Tabelle für Google Sheets &amp; Excel: Ihr seht, was eure Hochzeit kostet, was bezahlt ist, was noch offen ist und wer was zahlt.
+Kosten auflisten, jede Anzahlung und Restzahlung einmal eintragen, und das Budget rechnet sich selbst, mit Zahlungsplan, Terminwarnungen und Übersicht.
+
+WICHTIG: Datei und PDF-Anleitung sind auf Englisch (einfache Wörter: Budget, Payments, Who Pays). Jede Kategorie und jede Zeile lässt sich auf Deutsch umbenennen.
+
+EINFACH GEMACHT
+Drei Schritte: eintragen, wer zahlt, Kosten auflisten, pro Zahlung eine Zeile. Ihr tippt nur in goldene Zellen, alles andere rechnet sich selbst.
+
+DAS BEKOMMT IHR (Sofort-Download)
+- Hochzeitsbudget in Salbeigrün: leere Datei für eure Hochzeit
+- Dieselbe Datei mit einer Beispiel-Hochzeit ausgefüllt
+- Das Budget in Rosé: leer + Beispiel
+- PDF-Kurzanleitung (6 Seiten, mit Bildern)
+4 .xlsx-Dateien + 1 PDF. Es wird nichts verschickt.
+
+6 TABELLENBLÄTTER
+- START HERE: wer zahlt wie viel (die Summe ist euer Gesamtbudget), Hochzeitsdatum, Gästezahl
+- Plan: euer Budget auf 13 Kategorien verteilt. Ein grober Richtwert in % ist als Startpunkt eingetragen (nur ein Anhaltspunkt, keine Regel: alles frei änderbar)
+- Budget: eine Zeile pro Posten: geschätzt, tatsächlich, bezahlt, noch offen, Kategorie und wer zahlt
+- Payments: eine Zeile pro Anzahlung oder Restzahlung mit Fälligkeit; überfällig = rot, fällig in 30 Tagen = gold
+- Who Pays: für das Paar und jede Familie: Beitrag, Kosten, bezahlt, Rest
+- Dashboard: Gesamtbudget, erwartete Kosten, Restbudget, Kosten pro Gast, bezahlt, noch offen, fällig in 30 Tagen, überfällig, die nächsten 6 Zahlungen, fällige Beträge pro Monat
+
+SO GEHT&#x27;S
+1. Wer zahlt: jede Person mit Betrag auf START HERE eintragen.
+2. Kosten: im Blatt Budget eine Zeile pro Posten mit eurer Schätzung.
+3. Zahlungen: Anzahlungen und Restbeträge mit Termin im Blatt Payments.
+
+FUNKTIONIERT MIT
+- Google Sheets (kostenloses Google-Konto)
+- Microsoft Excel 2016 oder neuer und Microsoft 365
+Ohne Makros. Beträge werden mit $ angezeigt; mit einem Klick stellt ihr auf Euro um (Format &gt; Zahl &gt; Währung).
+
+LIEFERUNG
+Digitaler Download: Nach der Zahlung findet ihr die Dateien bei Etsy unter Käufe. Digitale Dateien können nicht zurückgegeben werden, aber schreibt uns, wenn etwas nicht funktioniert: wir beheben es.
+
+Für den privaten Gebrauch. Ein Planungswerkzeug, keine Finanzberatung. Namen und Beträge in den Bildern sind erfunden.
+
+Gestaltet von TheCoolShopCo. Einige Designelemente wurden mit Hilfe von KI-Tools erstellt und von Hand fertiggestellt.</div><div class="tags"><span>hochzeitsbudget</span><span>budgetplaner</span><span>hochzeit kosten</span><span>hochzeit planen</span><span>hochzeitsplaner</span><span>hochzeit excel</span><span>hochzeit vorlage</span><span>zahlungsplan</span><span>kostenübersicht</span><span>hochzeitsplanung</span><span>geschenk verlobung</span><span>brautpaar geschenk</span><span>google sheets planer</span></div></details></div></div><div class="box vd"><b>Honest verdict (round 1): 8/10</b>
+<div class="sc"><div><b>9</b><small>Thumbnail</small></div><div><b>8</b><small>Gallery</small></div><div><b>8</b><small>Product</small></div><div><b>8</b><small>Title+tags+text</small></div><div><b>8</b><small>In search grid</small></div></div>
+<p style="margin:.3em 0">&#x27;Adds itself up&#x27; + live &#x27;$1,204 left&#x27; callout from the real file.</p><p class="small"><b>Still holding it back:</b> Not yet tested in real Google Sheets/Excel; PDF still has the Google Sheets copy-link placeholder. Payments match budget items by name (weakest joint).</p></div>
+<h2>In Etsy search for “wedding budget spreadsheet” (13,764 results) — can you spot ours?</h2>
+<p class="small">Ours is placed at position 3 among the real top results (sort = relevance). <button onclick="document.querySelector('.card.ours').classList.toggle('reveal')">Show ours</button></p>
+<div class="sgrid"><a class="card" href="https://www.etsy.com/listing/4616623128/indian-wedding-budget-spreadsheet-google" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/39188749/r/il/b5db2c/8920090341/il_570xN.8920090341_g6o0.jpg" alt=""></div>
+<div class="t">Indian Wedding Budget Spreadsheet Google Sheets, Desi Wedding Guest List Tracker, Hindu Wedding Planner, RSVP and Vendor Payments</div><div class="pr">14.99 CAD</div><div class="sh">Etsy result #1</div></a><a class="card" href="https://www.etsy.com/listing/4582548492/wedding-budget-spreadsheet-wedding" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/63453820/r/il/9acef4/8577707242/il_570xN.8577707242_p1zz.jpg" alt=""></div>
+<div class="t">Wedding Budget Spreadsheet | Wedding Planning &amp; Payment Tracker | Excel Wedding Budget Planner</div><div class="pr">6.39 EUR</div><div class="sh">Etsy result #2</div></a><a class="card ours" href="#"><div class="ph"><img loading="lazy" src="../img/w06-01-t.jpg" alt=""></div>
+<div class="t">Wedding Budget Spreadsheet, Google Sheets &amp; Excel, Wedding Budget Planner, Payment Schedule Tracker, Who Pays Split, Cost Dashboard</div><div class="pr">$9.99</div><div class="sh">TheCoolShopCo · Digital download</div></a><a class="card" href="https://www.etsy.com/listing/4567561729/wedding-budget-spreadsheet-excel-google" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/54384374/r/il/aac75d/8468305608/il_570xN.8468305608_9eop.jpg" alt=""></div>
+<div class="t">Wedding Budget Spreadsheet Excel Google Sheets, Wedding Planner Template, Guest List RSVP Tracker, Vendor Payment Tracker, Wedding Checklist</div><div class="pr">109.00 MAD</div><div class="sh">Etsy result #3</div></a><a class="card" href="https://www.etsy.com/listing/4475034220/wedding-budget-planner-excel-template" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/64748699/r/il/ff1cbc/7830780050/il_570xN.7830780050_t922.jpg" alt=""></div>
+<div class="t">Wedding Budget Planner Excel Template | Wedding Budget Tracker | Wedding Budget Spreadsheet | Wedding Budget Template | Wedding Finance Tool</div><div class="pr">3.50 EUR</div><div class="sh">Etsy result #4</div></a><a class="card" href="https://www.etsy.com/listing/4544261949/wedding-budget-planner-excel-template" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/65505511/r/il/19908f/8350482404/il_570xN.8350482404_90x6.jpg" alt=""></div>
+<div class="t">Wedding Budget Planner Excel Template | Wedding Budget Spreadsheet | Guest List Tracker | Wedding Timeline | Financial Dashboard</div><div class="pr">6.55 EUR</div><div class="sh">Etsy result #5</div></a><a class="card" href="https://www.etsy.com/listing/4625357186/us-and-canada-wedding-budget-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69325707/r/il/33db43/8972480331/il_570xN.8972480331_61od.jpg" alt=""></div>
+<div class="t">US and Canada Wedding Budget Spreadsheet | Compare Vendor Quotes, Deposits and Balances in USD or CAD</div><div class="pr">17.99 CAD</div><div class="sh">Etsy result #6</div></a><a class="card" href="https://www.etsy.com/listing/4623681312/wedding-budget-spreadsheet-for-excel" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/68635080/r/il/0592ef/8958967595/il_570xN.8958967595_kost.jpg" alt=""></div>
+<div class="t">Wedding Budget Spreadsheet for Excel &amp; Google Sheets, 11 Tabs: Dashboard, Expenses, Payment Schedule, Savings</div><div class="pr">1.99 USD</div><div class="sh">Etsy result #7</div></a><a class="card" href="https://www.etsy.com/listing/4621872193/wedding-budget-spreadsheet-wedding" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69105575/r/il/55fd52/8896085936/il_570xN.8896085936_d0y4.jpg" alt=""></div>
+<div class="t">Wedding Budget Spreadsheet, Wedding Planner Template, Vendor Tracker, Payment Schedule, Guest Cost Calculator, Excel &amp; Google Sheets</div><div class="pr">9.99 USD</div><div class="sh">Etsy result #8</div></a><a class="card" href="https://www.etsy.com/listing/4619661368/wedding-budget-spreadsheet-expense" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/43498994/r/il/1d4211/8925770585/il_570xN.8925770585_e7gf.jpg" alt=""></div>
+<div class="t">Wedding Budget Spreadsheet, Expense Tracker Template, Payment Schedule, Printable Planner Pages, Dusty Blue</div><div class="pr">11.99 USD</div><div class="sh">Etsy result #9</div></a><a class="card" href="https://www.etsy.com/listing/4620881279/wedding-budget-spreadsheet-google-sheets" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69215904/r/il/a6da53/8895660946/il_570xN.8895660946_6mtv.jpg" alt=""></div>
+<div class="t">Wedding Budget Spreadsheet, Google Sheets &amp; Excel Template, Wedding Budget Planner, Expense  Payment Tracker, Instant Download</div><div class="pr">5.99 EUR</div><div class="sh">Etsy result #10</div></a><a class="card" href="https://www.etsy.com/listing/4620602469/wedding-budget-spreadsheet-google-sheets" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/65710609/r/il/7b92a9/8933222995/il_570xN.8933222995_7zfl.jpg" alt=""></div>
+<div class="t">Wedding Budget Spreadsheet, Google Sheets and Excel, Expense Tracker with Payment Schedule and Savings Plan</div><div class="pr">34.99 USD</div><div class="sh">Etsy result #11</div></a></div><p style="margin:50px 0"></p></div>
+<script>
+const mi=document.getElementById('main'),al=document.getElementById('alt');
+document.querySelectorAll('.thumbs img,.thumbs .vid').forEach(t=>t.onclick=()=>{document.querySelectorAll('.thumbs .on').forEach(x=>x.classList.remove('on'));t.classList.add('on');
+if(t.dataset.video){mi.innerHTML='<video src="'+t.dataset.video+'" autoplay muted loop playsinline controls></video>';al.textContent='Listing video (Etsy plays it muted)';}
+else{mi.innerHTML='<img src="'+t.dataset.big+'" alt="">';al.textContent=t.dataset.alt;}});
+</script></body></html>

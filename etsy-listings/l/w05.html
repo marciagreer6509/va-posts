@@ -1,0 +1,202 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Wedding Planner Spreadsheet, Google Sheets &amp; Excel, Wedding Checklist </title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f1641e'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='white' font-family='Georgia'%3EC%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#222;--mut:#595959;--line:#e1e3df;--bg:#fff;--soft:#f6f5f2;--acc:#f1641e;--good:#1c7a46;--warn:#a85d00;--bad:#b3261e}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 "Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:inherit}.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
+.top .wrap{display:flex;gap:16px;align-items:center;height:60px}.brand{font:700 20px Georgia,serif;letter-spacing:-.3px}
+.pill{font-size:12px;background:#fdf0e6;color:#8a3b00;border-radius:99px;padding:3px 10px}
+.search{flex:1;border:2px solid #222;border-radius:99px;padding:8px 16px;color:var(--mut);font-size:14px}
+h1{font:400 28px/1.25 Georgia,serif;margin:28px 0 6px}h2{font:600 20px/1.3 inherit;margin:34px 0 12px}
+.sub{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px 16px}
+.card{text-decoration:none;display:block}.card .ph{aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:var(--soft);position:relative}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}.card:hover img{transform:scale(1.03)}
+.card .t{font-size:13.5px;line-height:1.35;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .pr{font-weight:700;margin-top:3px}.card .sh{font-size:12px;color:var(--mut)}
+.badge{position:absolute;left:8px;top:8px;background:#fff;border-radius:99px;font-size:12px;font-weight:700;padding:2px 9px;box-shadow:0 1px 4px #0002}
+.s10{background:#e6f4ec;color:var(--good)}.s8{background:#fff4e0;color:var(--warn)}.s0{background:#fde8e6;color:var(--bad)}
+.lp{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;margin-top:22px}
+@media(max-width:860px){.lp{grid-template-columns:1fr}}
+.gal{display:grid;grid-template-columns:64px 1fr;gap:12px}.thumbs{display:flex;flex-direction:column;gap:8px;max-height:640px;overflow:auto}
+.thumbs img,.thumbs .vid{width:64px;height:64px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent}
+.thumbs img.on,.thumbs .vid.on{border-color:#222}.thumbs .vid{background:#222;color:#fff;display:grid;place-items:center;font-size:12px}
+.main{aspect-ratio:1/1;background:var(--soft);border-radius:12px;overflow:hidden;display:grid;place-items:center}
+.main img,.main video{width:100%;height:100%;object-fit:contain}
+.alt{font-size:12px;color:var(--mut);margin-top:6px;min-height:2.6em}
+.price{font-size:28px;font-weight:700;margin:6px 0}.ltitle{font-size:19px;line-height:1.4;margin:4px 0 10px;font-weight:400}
+.dl{font-size:13px;background:var(--soft);border-radius:8px;padding:10px 12px;margin:12px 0}
+.btn{display:block;text-align:center;background:#222;color:#fff;border-radius:99px;padding:13px;font-weight:700;margin:8px 0}
+.btn.o{background:#fff;color:#222;border:2px solid #222}
+.desc{white-space:pre-wrap;font-size:14.5px;line-height:1.6;border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tags span{font-size:12.5px;background:var(--soft);border-radius:99px;padding:4px 10px}
+.box{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0}
+.vd{border-left:5px solid var(--acc);background:#fffaf6}
+.sc{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:10px 0}.sc div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center}
+.sc b{display:block;font-size:22px}.sc small{color:var(--mut);font-size:11.5px}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}@media(max-width:700px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+.sgrid .card.ours.reveal .ph{outline:4px solid var(--acc);outline-offset:2px}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.small{font-size:12.5px;color:var(--mut)}code{background:var(--soft);padding:1px 5px;border-radius:4px;font-size:12.5px}
+details summary{cursor:pointer;font-weight:600}
+</style></head><body><div class="top"><div class="wrap"><a class="brand" href="../index.html" style="text-decoration:none">TheCoolShopCo</a>
+<span class="pill">Draft preview · not live on Etsy</span><div class="search">Etsy-style preview of 20 draft listings</div></div></div><div class="wrap"><p class="small" style="margin-top:16px"><a href="../index.html">← all 20 listings</a> · Wedding Planning</p>
+<div class="lp"><div><div class="gal"><div class="thumbs"><img src="../img/w05-01-t.jpg" data-big="../img/w05-01.jpg" data-alt="The Easy Wedding Planner spreadsheet for Google Sheets and Excel on a laptop and phone, with a sage green envelope and gold wax seal. Dashboard shows days to go, guests, checklist and budget." class="on" alt=""><img src="../img/w05-02-t.jpg" data-big="../img/w05-02.jpg" data-alt="Three steps to set up the wedding planner spreadsheet: type your wedding date in the gold cells, every checklist task gets a due date, see it all on the dashboard." class="" alt=""><img src="../img/w05-03-t.jpg" data-big="../img/w05-03.jpg" data-alt="Wedding planner dashboard: days to go, guests attending, checklist progress, budget left, total budget, paid so far, still to pay, next tasks and next payments." class="" alt=""><img src="../img/w05-04-t.jpg" data-big="../img/w05-04.jpg" data-alt="Wedding checklist tab with a 12-month timeline: each task has a due date counted back from the wedding date, with Done, Overdue and Due soon status." class="" alt=""><img src="../img/w05-05-t.jpg" data-big="../img/w05-05.jpg" data-alt="Wedding budget tab listing each cost with category, estimated, actual, paid so far and still due amounts. Actual amounts over the estimate are shown in red." class="" alt=""><img src="../img/w05-06-t.jpg" data-big="../img/w05-06.jpg" data-alt="Wedding guest list tab with side, invite sent, RSVP, meal and table columns, next to the seating plan tab where tables fill themselves with guest names." class="" alt=""><img src="../img/w05-07-t.jpg" data-big="../img/w05-07.jpg" data-alt="Vendors tab with company, contact, phone, email and ticks for booked, contract signed and deposit paid, and the wedding day schedule tab with times." class="" alt=""><img src="../img/w05-08-t.jpg" data-big="../img/w05-08.jpg" data-alt="What you get: eight tabs - Start Here, Dashboard, Checklist, Budget, Guests, Seating, Vendors, Wedding Day - as 4 spreadsheets in two colours plus a PDF guide." class="" alt=""><img src="../img/w05-09-t.jpg" data-big="../img/w05-09.jpg" data-alt="The wedding planner spreadsheet dashboard in the two included colours: sage green and blush pink." class="" alt=""><img src="../img/w05-10-t.jpg" data-big="../img/w05-10.jpg" data-alt="Questions and answers about the wedding planner spreadsheet: Google Sheets and Excel, setup, number of guests and tables, changing tasks, currency, files included." class="" alt=""><div class="vid" data-video="../img/w05.mp4">▶ video</div></div><div><div class="main" id="main"><img id="mi" src="../img/w05-01.jpg" alt=""></div><div class="alt" id="alt">The Easy Wedding Planner spreadsheet for Google Sheets and Excel on a laptop and phone, with a sage green envelope and gold wax seal. Dashboard shows days to go, guests, checklist and budget.</div></div></div></div>
+<div><div class="small">TheCoolShopCo</div><h1 class="ltitle">Wedding Planner Spreadsheet, Google Sheets &amp; Excel, Wedding Checklist Timeline, Budget, Guest List RSVP, Seating Chart, Vendors</h1><div class="price">$14.99</div>
+<div class="dl"><b>Digital download</b> — 5 file(s) · Designed by TheCoolShopCo</div>
+<span class="btn">Buy it now</span><span class="btn o">Add to basket</span>
+<div class="box"><b>Files you get</b><ul style="margin:.4em 0 0;padding-left:18px"><li>Sage theme, empty - the buyer&#x27;s working copy <span class="small">(Wedding-Planner_Sage_BLANK.xlsx)</span></li><li>Sage theme filled with a fictional sample wedding <span class="small">(Wedding-Planner_Sage_SAMPLE.xlsx)</span></li><li>Blush theme, empty <span class="small">(Wedding-Planner_Blush_BLANK.xlsx)</span></li><li>Blush theme with the sample wedding <span class="small">(Wedding-Planner_Blush_SAMPLE.xlsx)</span></li><li>6-page PDF guide; the last page holds the Google Sheets copy-link line (placeholder until Bob adds the link) <span class="small">(Wedding-Planner_Quick-Start-Guide.pdf)</span></li></ul></div>
+<div class="desc">Wedding planner spreadsheet for Google Sheets &amp; Excel: type your wedding date and the 12-month checklist dates itself.
+Budget, guest list with RSVPs, seating plan, vendors and the wedding day schedule in one easy file - with a dashboard that counts down to the day.
+
+MADE TO BE EASY
+Six gold cells set it up: your names, the date, your budget and your guest number. Gold cells are the only ones you type in. Everything else fills itself in. No formulas to touch.
+
+WHAT YOU GET (instant download)
+- Wedding Planner spreadsheet in sage - a blank copy for your own wedding
+- The same file filled with a sample wedding, so you can see how it works
+- The planner in blush - blank + sample
+- PDF quick-start guide (6 pages, with pictures)
+4 .xlsx files + 1 PDF. Nothing is shipped.
+
+8 TABS
+- START HERE - names, wedding date, budget, guest number, your menu
+- Dashboard - days to go, guests attending, checklist progress, budget left, the next 5 tasks and the next 5 payments, RSVPs, meal counts
+- Checklist - 47 tasks over 12 months, each with a due date counted back from your wedding day. Overdue turns red, due within 30 days turns gold. Reword any task or add your own
+- Budget - estimated, actual, paid so far and still due for every cost, with pay-by dates, totals by category and what is left in your budget
+- Guests - up to 200 guests: side, invite sent, RSVP, meal choice, dietary needs, table number, gift received and thank-you sent
+- Seating - 20 tables that fill themselves from the guest list. Name your tables, set the seats, and a table with too many guests turns red
+- Vendors - company, contact, phone and email with ticks for booked, contract signed and deposit paid
+- Wedding Day - the schedule for the day, hour by hour, to share with your vendors and wedding party
+
+HOW IT WORKS
+1. Type your date - fill in the six gold cells on START HERE.
+2. Open the Checklist - every task now has its own due date. Tick tasks off as you go.
+3. Add guests and costs when you are ready - the Dashboard keeps count for you.
+
+WORKS WITH
+- Google Sheets (free Google account): upload the file, or use the copy link in the PDF guide
+- Microsoft Excel 2016 or newer, and Microsoft 365
+No macros, no add-ons. Amounts show a $ sign; you can switch to your own currency in one click (the guide shows how).
+
+FAQ
+We are getting married in less than 12 months. Does it still work? Yes. Earlier tasks simply show as overdue: tick the ones you have done and work down the list.
+Can I change the checklist? Yes. Reword any task, change how many months before the wedding it is due, or add your own tasks at the bottom.
+How many guests and tables? Up to 200 guests, 20 tables with up to 10 seats each, 40 budget lines and 20 vendors.
+Does it send RSVPs or invitations? No. It is a spreadsheet: you type each reply in, and it does the counting.
+I am not good with spreadsheets. Is this for me? Yes. Plain words, three steps, and a guide with pictures.
+Can I get help? Yes. Message us here on Etsy and a real person answers.
+
+DELIVERY
+This is a digital download. After payment, Etsy shows the files under Purchases and Reviews (and emails you a link). Because digital files cannot be returned, all sales are final - but if anything is not working, message us and we will fix it.
+
+For personal use. Sample names, addresses and figures are fictional.
+
+Designed by TheCoolShopCo. Some design elements were created with the help of AI tools and finished by hand.</div>
+<h2 style="font-size:16px">Tags (13)</h2><div class="tags"><span>wedding planner</span><span>wedding spreadsheet</span><span>wedding checklist</span><span>wedding budget</span><span>wedding guest list</span><span>rsvp tracker</span><span>seating chart</span><span>wedding timeline</span><span>wedding google sheet</span><span>wedding excel</span><span>vendor tracker</span><span>engagement gift</span><span>wedding organizer</span></div>
+<p class="small">Title 127/140 chars · main keyword: <code>wedding planner spreadsheet</code> · materials: Google Sheets, Excel</p>
+<details class="box"><summary>FR translation (shown to French shoppers)</summary><p><b>Planning mariage Google Sheets &amp; Excel, tableur organisation mariage : checklist, budget, liste invités RSVP, plan de table (en anglais)</b></p><div class="desc">Tableur d&#x27;organisation de mariage pour Google Sheets &amp; Excel : saisissez la date du mariage et la checklist sur 12 mois se date toute seule.
+Budget, liste d&#x27;invités avec réponses (RSVP), plan de table, prestataires et déroulé du jour J dans un seul fichier facile, avec un tableau de bord et un compte à rebours.
+
+À SAVOIR : le fichier et le guide PDF sont en anglais (mots simples : Checklist, Budget, Guests, Seating, Vendors). Vous pouvez renommer chaque tâche et chaque catégorie en français.
+
+PENSÉ POUR ÊTRE FACILE
+Six cellules dorées suffisent : vos prénoms, la date, votre budget et le nombre d&#x27;invités. Vous ne tapez que dans les cellules dorées, tout le reste se calcule seul. Aucune formule à toucher.
+
+CE QUE VOUS RECEVEZ (téléchargement immédiat)
+- Le tableur en vert sauge : une version vierge pour votre mariage
+- Le même fichier rempli avec un mariage d&#x27;exemple
+- Le tableur en rose poudré : vierge + exemple
+- Un guide de démarrage PDF (6 pages, avec images)
+4 fichiers .xlsx + 1 PDF. Rien n&#x27;est expédié.
+
+8 ONGLETS
+- START HERE : prénoms, date, budget, nombre d&#x27;invités, vos menus
+- Dashboard : jours restants, invités présents, avancement, budget restant, 5 prochaines tâches, 5 prochains paiements, réponses, nombre de repas
+- Checklist : 47 tâches sur 12 mois, chacune avec une échéance calculée à partir de la date du mariage ; retard en rouge, échéance sous 30 jours en doré
+- Budget : estimé, réel, déjà payé et reste à payer pour chaque dépense, dates d&#x27;échéance, totaux par catégorie
+- Guests : jusqu&#x27;à 200 invités : côté, invitation envoyée, réponse, repas, régime alimentaire, table, cadeau reçu, remerciement envoyé
+- Seating : 20 tables qui se remplissent seules à partir de la liste d&#x27;invités
+- Vendors : prestataires avec contact, téléphone, e-mail et cases réservé, contrat signé, acompte versé
+- Wedding Day : le déroulé de la journée, heure par heure
+
+COMMENT ÇA MARCHE
+1. Saisissez votre date dans les cellules dorées de START HERE.
+2. Ouvrez la Checklist : chaque tâche a maintenant son échéance. Cochez au fur et à mesure.
+3. Ajoutez invités et dépenses quand vous voulez : le tableau de bord compte pour vous.
+
+COMPATIBLE AVEC
+- Google Sheets (compte Google gratuit)
+- Microsoft Excel 2016 ou plus récent, et Microsoft 365
+Sans macros. Les montants s&#x27;affichent en $ ; vous passez à l&#x27;euro en un clic (Format &gt; Nombre &gt; Devise).
+
+LIVRAISON
+Produit numérique : après le paiement, les fichiers sont disponibles dans vos achats Etsy. Les fichiers numériques ne sont ni repris ni échangés, mais écrivez-nous si quelque chose ne fonctionne pas : nous corrigeons.
+
+Usage personnel. Les noms et montants des images sont fictifs.
+
+Conçu par TheCoolShopCo. Certains éléments de design ont été créés à l&#x27;aide d&#x27;outils d&#x27;IA et finalisés à la main.</div><div class="tags"><span>planning mariage</span><span>organisation mariage</span><span>budget mariage</span><span>liste invités</span><span>plan de table</span><span>checklist mariage</span><span>tableur mariage</span><span>mariage excel</span><span>mariage google sheet</span><span>futurs mariés</span><span>cadeau fiançailles</span><span>rétroplanning</span><span>suivi rsvp</span></div></details><details class="box"><summary>DE translation (shown to German shoppers)</summary><p><b>Hochzeitsplaner Google Sheets &amp; Excel Vorlage, Hochzeit Checkliste, Budget, Gästeliste mit Zusagen, Sitzplan, Dienstleister (auf Englisch)</b></p><div class="desc">Hochzeitsplaner als Tabelle für Google Sheets &amp; Excel: Hochzeitsdatum eintragen, und die 12-Monats-Checkliste bekommt von selbst ihre Termine.
+Budget, Gästeliste mit Zu- und Absagen, Sitzplan, Dienstleister und Tagesablauf in einer einfachen Datei, mit Übersicht und Countdown.
+
+WICHTIG: Datei und PDF-Anleitung sind auf Englisch (einfache Wörter: Checklist, Budget, Guests, Seating, Vendors). Jede Aufgabe und jede Kategorie lässt sich auf Deutsch umbenennen.
+
+EINFACH GEMACHT
+Sechs goldene Zellen genügen: eure Namen, das Datum, euer Budget und die Gästezahl. Ihr tippt nur in goldene Zellen, alles andere rechnet sich selbst. Keine Formeln anfassen.
+
+DAS BEKOMMT IHR (Sofort-Download)
+- Hochzeitsplaner in Salbeigrün: leere Datei für eure Hochzeit
+- Dieselbe Datei mit einer Beispiel-Hochzeit ausgefüllt
+- Der Planer in Rosé: leer + Beispiel
+- PDF-Kurzanleitung (6 Seiten, mit Bildern)
+4 .xlsx-Dateien + 1 PDF. Es wird nichts verschickt.
+
+8 TABELLENBLÄTTER
+- START HERE: Namen, Hochzeitsdatum, Budget, Gästezahl, eure Menüs
+- Dashboard: Tage bis zur Hochzeit, Zusagen, Fortschritt, Restbudget, die nächsten 5 Aufgaben und 5 Zahlungen, Antworten, Anzahl der Essen
+- Checklist: 47 Aufgaben über 12 Monate, jede mit einem Termin, der vom Hochzeitsdatum zurückgerechnet wird; überfällig wird rot, fällig in 30 Tagen gold
+- Budget: geschätzt, tatsächlich, bezahlt und noch offen für jeden Posten, mit Zahlungsterminen und Summen je Kategorie
+- Guests: bis zu 200 Gäste: Seite, Einladung verschickt, Antwort, Essen, Unverträglichkeiten, Tisch, Geschenk, Dankeskarte
+- Seating: 20 Tische, die sich aus der Gästeliste selbst füllen
+- Vendors: Dienstleister mit Kontakt, Telefon, E-Mail und Häkchen für gebucht, Vertrag, Anzahlung
+- Wedding Day: der Ablauf des Tages, Stunde für Stunde
+
+SO GEHT&#x27;S
+1. Datum in die goldenen Zellen auf START HERE eintragen.
+2. Checklist öffnen: jede Aufgabe hat jetzt ihren Termin. Abhaken, was erledigt ist.
+3. Gäste und Kosten ergänzen, wann ihr wollt: das Dashboard zählt mit.
+
+FUNKTIONIERT MIT
+- Google Sheets (kostenloses Google-Konto)
+- Microsoft Excel 2016 oder neuer und Microsoft 365
+Ohne Makros. Beträge werden mit $ angezeigt; mit einem Klick stellt ihr auf Euro um (Format &gt; Zahl &gt; Währung).
+
+LIEFERUNG
+Digitaler Download: Nach der Zahlung findet ihr die Dateien bei Etsy unter Käufe. Digitale Dateien können nicht zurückgegeben werden, aber schreibt uns, wenn etwas nicht funktioniert: wir beheben es.
+
+Für den privaten Gebrauch. Namen und Beträge in den Bildern sind erfunden.
+
+Gestaltet von TheCoolShopCo. Einige Designelemente wurden mit Hilfe von KI-Tools erstellt und von Hand fertiggestellt.</div><div class="tags"><span>hochzeitsplaner</span><span>hochzeit planen</span><span>hochzeit checkliste</span><span>hochzeitsbudget</span><span>gästeliste hochzeit</span><span>sitzplan hochzeit</span><span>hochzeit excel</span><span>hochzeit vorlage</span><span>google sheets planer</span><span>hochzeitsplanung</span><span>geschenk verlobung</span><span>brautpaar geschenk</span><span>zusagen liste</span></div></details></div></div><div class="box vd"><b>Honest verdict (round 1): 8/10</b>
+<div class="sc"><div><b>9</b><small>Thumbnail</small></div><div><b>8</b><small>Gallery</small></div><div><b>8</b><small>Product</small></div><div><b>8</b><small>Title+tags+text</small></div><div><b>8</b><small>In search grid</small></div></div>
+<p style="margin:.3em 0">Same family as the 3D invitations (real 3D envelope props) - a couple who buys the invite sees the planner next to it. &#x27;Type your wedding date. The checklist dates itself.&#x27; is the clearest promise in its grid.</p><p class="small"><b>Still holding it back:</b> Not yet tested in real Google Sheets/Excel; PDF still has the Google Sheets copy-link placeholder. Video shows every task as &#x27;Overdue&#x27; for 1.5 s; no phone/lifestyle image; sample dates tied to today.</p></div>
+<h2>In Etsy search for “wedding planner spreadsheet” (16,975 results) — can you spot ours?</h2>
+<p class="small">Ours is placed at position 3 among the real top results (sort = relevance). <button onclick="document.querySelector('.card.ours').classList.toggle('reveal')">Show ours</button></p>
+<div class="sgrid"><a class="card" href="https://www.etsy.com/listing/4526676707/wedding-planner-spreadsheet-ultimate" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/39863599/r/il/20666a/8912609196/il_570xN.8912609196_mxdr.jpg" alt=""></div>
+<div class="t">Wedding Planner Spreadsheet / Ultimate Wedding Planning Template / Budget Tracker Guest List Seating Chart / Excel Google Sheets</div><div class="pr">50.00 MAD</div><div class="sh">Etsy result #1</div></a><a class="card" href="https://www.etsy.com/listing/4612956729/wedding-planner-spreadsheet-google" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/38985385/r/il/b9fa65/8822560774/il_570xN.8822560774_rrqy.jpg" alt=""></div>
+<div class="t">Wedding Planner Spreadsheet Google Sheets Excel Template, Wedding Budget Tracker, Guest List RSVP Seating Chart, Digital Wedding Organizer</div><div class="pr">14.99 CAD</div><div class="sh">Etsy result #2</div></a><a class="card ours" href="#"><div class="ph"><img loading="lazy" src="../img/w05-01-t.jpg" alt=""></div>
+<div class="t">Wedding Planner Spreadsheet, Google Sheets &amp; Excel, Wedding Checklist Timeline, Budget, Guest List RSVP, Seating Chart, Vendors</div><div class="pr">$14.99</div><div class="sh">TheCoolShopCo · Digital download</div></a><a class="card" href="https://www.etsy.com/listing/4599002538/wedding-planner-spreadsheet-2027-wedding" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/14819843/r/il/887ce2/8755323671/il_570xN.8755323671_pfk2.jpg" alt=""></div>
+<div class="t">Wedding Planner Spreadsheet 2027, Wedding Budget &amp; Guest List Tracker for Excel, Google Sheets Seating Chart, Wedding Checklist</div><div class="pr">120.00 MAD</div><div class="sh">Etsy result #3</div></a><a class="card" href="https://www.etsy.com/listing/4597760558/wedding-planner-spreadsheet-bundle" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/66253418/r/il/172111/8755836017/il_570xN.8755836017_7em9.jpg" alt=""></div>
+<div class="t">Wedding Planner Spreadsheet Bundle, Wedding Budget Tracker Google Sheets Excel, Guest List RSVP, Desktop Wallpaper, Folder Icons</div><div class="pr">430.00 MXN</div><div class="sh">Etsy result #4</div></a><a class="card" href="https://www.etsy.com/listing/4585552944/wedding-planner-spreadsheet-google" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/61781209/r/il/6ed3a1/8786227411/il_570xN.8786227411_9vqz.jpg" alt=""></div>
+<div class="t">Wedding Planner Spreadsheet, Google Sheets &amp; Excel Budget Tracker, Guest List, RSVP, Checklist Template</div><div class="pr">3.95 CHF</div><div class="sh">Etsy result #5</div></a><a class="card" href="https://www.etsy.com/listing/4506019604/wedding-planner-spreadsheet-printable" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/62533066/r/il/5140ac/8178779679/il_570xN.8178779679_28sw.jpg" alt=""></div>
+<div class="t">Wedding Planner Spreadsheet &amp; Printable | Google Sheets Excel | Wedding Binder PDF | Budget Tracker | Instant Download</div><div class="pr">8.46 USD</div><div class="sh">Etsy result #6</div></a><a class="card" href="https://www.etsy.com/listing/4541311638/digital-wedding-planner-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/35772310/r/il/c313f9/8326060043/il_570xN.8326060043_85x9.jpg" alt=""></div>
+<div class="t">Digital Wedding Planner Spreadsheet: Budget, Timeline, Guest List (Google Sheets)</div><div class="pr">8.50 EUR</div><div class="sh">Etsy result #7</div></a><a class="card" href="https://www.etsy.com/listing/4544204021/wedding-planner-spreadsheet-wedding" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/57806226/r/il/23daa3/8313914860/il_570xN.8313914860_trww.jpg" alt=""></div>
+<div class="t">Wedding Planner Spreadsheet Wedding Budget Tracker Wedding Checklist Guest List Seating Chart Wedding Timeline Itinerary Engagement Gift</div><div class="pr">19.00 USD</div><div class="sh">Etsy result #8</div></a><a class="card" href="https://www.etsy.com/listing/4544135376/wedding-planner-spreadsheet-budget" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/66943320/r/il/20909c/8346124075/il_570xN.8346124075_pq47.jpg" alt=""></div>
+<div class="t">Wedding Planner Spreadsheet | Budget Tracker, Guest List, Seating Chart &amp; Checklist</div><div class="pr">15.99 USD</div><div class="sh">Etsy result #9</div></a><a class="card" href="https://www.etsy.com/listing/1865054904/wedding-planner-spreadsheet-wedding" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/57881129/r/il/af8304/6856366524/il_570xN.6856366524_220g.jpg" alt=""></div>
+<div class="t">Wedding Planner Spreadsheet Wedding Budget Tracker Wedding Timeline Checklist Wedding Guest List Tracker Wedding Seating Chart Wedding Gift</div><div class="pr">12.99 GBP</div><div class="sh">Etsy result #10</div></a><a class="card" href="https://www.etsy.com/listing/4626211837/wedding-planner-spreadsheet-wedding" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69310471/r/il/82349d/8979531855/il_570xN.8979531855_inei.jpg" alt=""></div>
+<div class="t">Wedding Planner Spreadsheet, Wedding Budget Tracker, Guest List &amp; RSVP, Seating Chart, Wedding Checklist, Excel Google Sheets Template</div><div class="pr">8.99 USD</div><div class="sh">Etsy result #11</div></a></div><p style="margin:50px 0"></p></div>
+<script>
+const mi=document.getElementById('main'),al=document.getElementById('alt');
+document.querySelectorAll('.thumbs img,.thumbs .vid').forEach(t=>t.onclick=()=>{document.querySelectorAll('.thumbs .on').forEach(x=>x.classList.remove('on'));t.classList.add('on');
+if(t.dataset.video){mi.innerHTML='<video src="'+t.dataset.video+'" autoplay muted loop playsinline controls></video>';al.textContent='Listing video (Etsy plays it muted)';}
+else{mi.innerHTML='<img src="'+t.dataset.big+'" alt="">';al.textContent=t.dataset.alt;}});
+</script></body></html>
