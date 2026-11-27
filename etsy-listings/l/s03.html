@@ -1,0 +1,125 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Couples Budget Spreadsheet for Google Sheets &amp; Excel, Split Bills by I</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f1641e'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='white' font-family='Georgia'%3EC%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#222;--mut:#595959;--line:#e1e3df;--bg:#fff;--soft:#f6f5f2;--acc:#f1641e;--good:#1c7a46;--warn:#a85d00;--bad:#b3261e}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 "Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:inherit}.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
+.top .wrap{display:flex;gap:16px;align-items:center;height:60px}.brand{font:700 20px Georgia,serif;letter-spacing:-.3px}
+.pill{font-size:12px;background:#fdf0e6;color:#8a3b00;border-radius:99px;padding:3px 10px}
+.search{flex:1;border:2px solid #222;border-radius:99px;padding:8px 16px;color:var(--mut);font-size:14px}
+h1{font:400 28px/1.25 Georgia,serif;margin:28px 0 6px}h2{font:600 20px/1.3 inherit;margin:34px 0 12px}
+.sub{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px 16px}
+.card{text-decoration:none;display:block}.card .ph{aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:var(--soft);position:relative}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}.card:hover img{transform:scale(1.03)}
+.card .t{font-size:13.5px;line-height:1.35;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .pr{font-weight:700;margin-top:3px}.card .sh{font-size:12px;color:var(--mut)}
+.badge{position:absolute;left:8px;top:8px;background:#fff;border-radius:99px;font-size:12px;font-weight:700;padding:2px 9px;box-shadow:0 1px 4px #0002}
+.s10{background:#e6f4ec;color:var(--good)}.s8{background:#fff4e0;color:var(--warn)}.s0{background:#fde8e6;color:var(--bad)}
+.lp{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;margin-top:22px}
+@media(max-width:860px){.lp{grid-template-columns:1fr}}
+.gal{display:grid;grid-template-columns:64px 1fr;gap:12px}.thumbs{display:flex;flex-direction:column;gap:8px;max-height:640px;overflow:auto}
+.thumbs img,.thumbs .vid{width:64px;height:64px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent}
+.thumbs img.on,.thumbs .vid.on{border-color:#222}.thumbs .vid{background:#222;color:#fff;display:grid;place-items:center;font-size:12px}
+.main{aspect-ratio:1/1;background:var(--soft);border-radius:12px;overflow:hidden;display:grid;place-items:center}
+.main img,.main video{width:100%;height:100%;object-fit:contain}
+.alt{font-size:12px;color:var(--mut);margin-top:6px;min-height:2.6em}
+.price{font-size:28px;font-weight:700;margin:6px 0}.ltitle{font-size:19px;line-height:1.4;margin:4px 0 10px;font-weight:400}
+.dl{font-size:13px;background:var(--soft);border-radius:8px;padding:10px 12px;margin:12px 0}
+.btn{display:block;text-align:center;background:#222;color:#fff;border-radius:99px;padding:13px;font-weight:700;margin:8px 0}
+.btn.o{background:#fff;color:#222;border:2px solid #222}
+.desc{white-space:pre-wrap;font-size:14.5px;line-height:1.6;border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tags span{font-size:12.5px;background:var(--soft);border-radius:99px;padding:4px 10px}
+.box{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0}
+.vd{border-left:5px solid var(--acc);background:#fffaf6}
+.sc{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:10px 0}.sc div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center}
+.sc b{display:block;font-size:22px}.sc small{color:var(--mut);font-size:11.5px}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}@media(max-width:700px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+.sgrid .card.ours.reveal .ph{outline:4px solid var(--acc);outline-offset:2px}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.small{font-size:12.5px;color:var(--mut)}code{background:var(--soft);padding:1px 5px;border-radius:4px;font-size:12.5px}
+details summary{cursor:pointer;font-weight:600}
+</style></head><body><div class="top"><div class="wrap"><a class="brand" href="../index.html" style="text-decoration:none">TheCoolShopCo</a>
+<span class="pill">Draft preview · not live on Etsy</span><div class="search">Etsy-style preview of 20 draft listings</div></div></div><div class="wrap"><p class="small" style="margin-top:16px"><a href="../index.html">← all 20 listings</a> · Budget Spreadsheets</p>
+<div class="lp"><div><div class="gal"><div class="thumbs"><img src="../img/s03-01-t.jpg" data-big="../img/s03-01.jpg" data-alt="Couples budget spreadsheet for Google Sheets and Excel in a window and on a phone: dashboard showing who owes who, shared costs and a shared expense list. Yellow and black design." class="on" alt=""><img src="../img/s03-02-t.jpg" data-big="../img/s03-02.jpg" data-alt="Three steps to use the couples budget: enter your names, pay and split method, add expenses, then settle up." class="" alt=""><img src="../img/s03-03-t.jpg" data-big="../img/s03-03.jpg" data-alt="Settle Up tab: a banner showing who owes who and the amount, the steps of the calculation and a month-by-month table." class="" alt=""><img src="../img/s03-04-t.jpg" data-big="../img/s03-04.jpg" data-alt="Expenses tab: a shared list with date, what, category, amount, who paid and who it is for, plus each partner&#x27;s part of every line." class="" alt=""><img src="../img/s03-05-t.jpg" data-big="../img/s03-05.jpg" data-alt="The Two of Us tab: names, take-home pay, the split method dropdown set to by income and cards showing a 58 percent and 42 percent fair split." class="" alt=""><img src="../img/s03-06-t.jpg" data-big="../img/s03-06.jpg" data-alt="Couples budget dashboard: who owes who, take-home pay together, shared costs this month, each partner&#x27;s own money left, a category chart and a who-paid chart." class="" alt=""><img src="../img/s03-07-t.jpg" data-big="../img/s03-07.jpg" data-alt="Our Budget tab with planned shared costs per category and what each partner puts in, and the Goals tab with joint savings goals split fairly." class="" alt=""><img src="../img/s03-08-t.jpg" data-big="../img/s03-08.jpg" data-alt="What you get: seven tabs - Start Here, Us, Expenses, Settle Up, Our Budget, Goals, Dashboard - in light and dark, 4 spreadsheets and a PDF guide." class="" alt=""><img src="../img/s03-09-t.jpg" data-big="../img/s03-09.jpg" data-alt="The couples budget spreadsheet in light theme and dark theme, both included." class="" alt=""><img src="../img/s03-10-t.jpg" data-big="../img/s03-10.jpg" data-alt="Frequently asked questions about the couples budget: Google Sheets and Excel, splitting by income, personal purchases, joint account, files included." class="" alt=""><div class="vid" data-video="../img/s03.mp4">▶ video</div></div><div><div class="main" id="main"><img id="mi" src="../img/s03-01.jpg" alt=""></div><div class="alt" id="alt">Couples budget spreadsheet for Google Sheets and Excel in a window and on a phone: dashboard showing who owes who, shared costs and a shared expense list. Yellow and black design.</div></div></div></div>
+<div><div class="small">TheCoolShopCo</div><h1 class="ltitle">Couples Budget Spreadsheet for Google Sheets &amp; Excel, Split Bills by Income or 50/50, Who Owes Who, Shared Expense Tracker, Joint Budget</h1><div class="price">$9.99</div>
+<div class="dl"><b>Digital download</b> — 5 file(s) · Designed by TheCoolShopCo</div>
+<span class="btn">Buy it now</span><span class="btn o">Add to basket</span>
+<div class="box"><b>Files you get</b><ul style="margin:.4em 0 0;padding-left:18px"><li>Light theme, empty - the buyer&#x27;s working copy <span class="small">(Couples-Budget_Light_BLANK.xlsx)</span></li><li>Light theme filled with fictional sample data <span class="small">(Couples-Budget_Light_SAMPLE.xlsx)</span></li><li>Dark theme, empty <span class="small">(Couples-Budget_Dark_BLANK.xlsx)</span></li><li>Dark theme with sample data <span class="small">(Couples-Budget_Dark_SAMPLE.xlsx)</span></li><li>5-page PDF guide; the last page holds the Google Sheets copy-link line (placeholder until Bob adds the link) <span class="small">(Couples-Budget_Quick-Start-Guide.pdf)</span></li></ul></div>
+<div class="desc">Couples budget spreadsheet for Google Sheets &amp; Excel: two incomes, shared and personal spending, and one clear answer to &quot;who owes who?&quot;.
+Split shared costs fairly - by income, 50/50 or your own % - log what each of you pays, and the budget does the maths for both of you.
+
+MADE TO BE EASY
+Three steps: type your names and pay, add your expenses, settle up. Yellow cells are the only ones you type in. Dropdowns do most of the typing.
+
+WHAT YOU GET (instant download)
+- Couples Budget spreadsheet, light theme - blank copy for the two of you
+- The same file filled with a sample couple, so you can see how it works
+- Dark theme - blank + sample
+- PDF quick-start guide (5 pages, with pictures)
+4 .xlsx files + 1 PDF. Nothing is shipped.
+
+FEATURES
+- Fair split switch: by income (whoever earns more pays more), 50/50, or your own % - change it any time
+- One shared expense list: date, what, amount, who paid, who it was for
+- Personal purchases are never split; if your partner paid for yours, it is added to what you owe
+- Any line can be forced to 50/50, whatever your main split is
+- Joint account option: counts in the budget, creates no debt between you
+- Settle Up: who owes who right now, with every step of the maths shown
+- Month-by-month settle-up table, with the payments you have already made to each other
+- Our Budget: plan shared costs per category and see what each of you puts in every month
+- Own spending money for each of you, and what is left of it this month
+- Joint goals: the monthly amount for each goal, split fairly too
+- Dashboard: pick a month and see shared costs by category, who paid what, and your goals
+- Light + dark theme
+
+HOW IT WORKS
+1. About you two - names, take-home pay and how you split: by income, 50/50 or your own %.
+2. Add expenses - one line each: amount, who paid, who it was for.
+3. Settle up - see who owes who and how much. Paid it back? Add a settle-up line and you are even.
+
+WORKS WITH
+- Google Sheets (free Google account): upload the file, or use the copy link in the PDF guide
+- Microsoft Excel 2016 or newer, and Microsoft 365
+No macros, no add-ons. The file uses US dollar formatting; you can switch to your own currency in one click (the guide shows how).
+
+FAQ
+We earn different amounts. Is &quot;by income&quot; fair? It means each of you pays the same share of your pay. Earn 58% of the money, pay 58% of the shared costs. You can also type any split you agree on.
+Do we need a joint account? No. It works with separate accounts, a joint account, or both.
+Can we both use it at the same time? In Google Sheets, yes - share the sheet with your partner and both add expenses.
+Is it for one month or the whole year? One file covers a year. You pick the month you want to look at.
+Can I get help? Yes. Message us here on Etsy and a real person answers.
+
+DELIVERY
+This is a digital download. After payment, Etsy shows the files under Purchases and Reviews (and emails you a link). Because digital files cannot be returned, all sales are final - but if anything is not working, message us and we will fix it.
+
+For personal use. This is a budgeting tool, not financial advice. Sample figures are fictional.
+
+Designed by TheCoolShopCo. Some design elements were created with the help of AI tools and finished by hand.</div>
+<h2 style="font-size:16px">Tags (13)</h2><div class="tags"><span>couples budget</span><span>budget spreadsheet</span><span>joint budget</span><span>shared expenses</span><span>bill splitter</span><span>split expenses</span><span>google sheets budget</span><span>excel budget</span><span>newlywed budget</span><span>budget for two</span><span>household budget</span><span>who owes who</span><span>couple finances</span></div>
+<p class="small">Title 136/140 chars · main keyword: <code>couples budget spreadsheet</code> · materials: Google Sheets, Excel</p>
+</div></div><div class="box vd"><b>Honest verdict (round 1): 8/10</b>
+<div class="sc"><div><b>9</b><small>Thumbnail</small></div><div><b>8</b><small>Gallery</small></div><div><b>8</b><small>Product</small></div><div><b>9</b><small>Title+tags+text</small></div><div><b>9</b><small>In search grid</small></div></div>
+<p style="margin:.3em 0">&#x27;Sam owes Alex $708.20&#x27; (read from the real file) is the best hook in the couples grid.</p><p class="small"><b>Still holding it back:</b> Not yet tested in real Google Sheets/Excel (only LibreOffice here); the PDF still has a placeholder where the Google Sheets copy-link goes. Two people only, one split rule per year.</p></div>
+<h2>In Etsy search for “couples budget spreadsheet” (4,729 results) — can you spot ours?</h2>
+<p class="small">Ours is placed at position 3 among the real top results (sort = relevance). <button onclick="document.querySelector('.card.ours').classList.toggle('reveal')">Show ours</button></p>
+<div class="sgrid"><a class="card" href="https://www.etsy.com/listing/1862908276/finance-template-google-sheet-couples" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/30255479/r/il/85cbe5/6561944296/il_570xN.6561944296_alyh.jpg" alt=""></div>
+<div class="t">Finance Template Google Sheet, Couples Budget Spreadsheet, Monthly Income, Biweekly Budget Spreadsheet, Weekly Budget planner, Cash Flow.</div><div class="pr">3.29 EUR</div><div class="sh">Etsy result #1</div></a><a class="card" href="https://www.etsy.com/listing/4429673755/couples-budget-spreadsheet-google-sheets" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/63091023/r/il/dbedde/7537570212/il_570xN.7537570212_kf5r.jpg" alt=""></div>
+<div class="t">Couples Budget Spreadsheet Google Sheets Template Monthly Budget Template Couple Budget Planner Joint Finances Shared Budget Expense Tracker</div><div class="pr">5.18 CHF</div><div class="sh">Etsy result #2</div></a><a class="card ours" href="#"><div class="ph"><img loading="lazy" src="../img/s03-01-t.jpg" alt=""></div>
+<div class="t">Couples Budget Spreadsheet for Google Sheets &amp; Excel, Split Bills by Income or 50/50, Who Owes Who, Shared Expense Tracker, Joint Budget</div><div class="pr">$9.99</div><div class="sh">TheCoolShopCo · Digital download</div></a><a class="card" href="https://www.etsy.com/listing/4626692712/couples-budget-spreadsheet-google-sheets" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69290754/r/il/274557/8983577719/il_570xN.8983577719_2hrl.jpg" alt=""></div>
+<div class="t">Couples Budget Spreadsheet Google Sheets &amp; Excel, Shared Expense Tracker, Split Bills 50/50 or by Income, Joint Budget Planner, Who Owes Who</div><div class="pr">10.99 USD</div><div class="sh">Etsy result #3</div></a><a class="card" href="https://www.etsy.com/listing/4611931878/couples-budget-spreadsheet-2027-family" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/28614712/r/il/91dd72/8861994425/il_570xN.8861994425_7cno.jpg" alt=""></div>
+<div class="t">Couples Budget Spreadsheet 2027, Family Budget Planner for Google Sheets &amp; Excel, Shared Expenses Split Tracker</div><div class="pr">11.99 USD</div><div class="sh">Etsy result #4</div></a><a class="card" href="https://www.etsy.com/listing/4626652205/couples-budget-spreadsheet-google-sheets" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/31741040/r/il/4481a7/8935513680/il_570xN.8935513680_1w38.jpg" alt=""></div>
+<div class="t">Couples Budget Spreadsheet Google Sheets Excel, Monthly Shared Budget Planner for Two, Bill Split Tracker, Joint Account, Household Finances</div><div class="pr">13.32 EUR</div><div class="sh">Etsy result #5</div></a><a class="card" href="https://www.etsy.com/listing/4626473726/couples-budget-spreadsheet-2027-family" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/66036072/r/il/d95946/8933858524/il_570xN.8933858524_88ii.jpg" alt=""></div>
+<div class="t">Couples Budget Spreadsheet 2027, Family Budget Planner, Shared Expenses Bill Split, Sinking Funds, Google Sheets Excel + FREE Kids Bonus</div><div class="pr">29.99 USD</div><div class="sh">Etsy result #6</div></a><a class="card" href="https://www.etsy.com/listing/1723115188/personal-finance-planner-for-couple" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/47844254/r/il/a90ac1/6063660637/il_570xN.6063660637_s3vp.jpg" alt=""></div>
+<div class="t">Personal Finance Planner For Couple, Couples Budget Spreadsheet, Joint Finances, Monthly Weekly Budget Google Sheets Template, Bill Calendar</div><div class="pr">14.50 USD</div><div class="sh">Etsy result #7</div></a><a class="card" href="https://www.etsy.com/listing/4625449607/newlywed-guide-to-combining-finances" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/68154437/r/il/dfcf2e/8973225419/il_570xN.8973225419_kpvd.jpg" alt=""></div>
+<div class="t">Newlywed Guide to Combining Finances | Couples Budget Spreadsheet | Excel + Google Sheets |</div><div class="pr">24.00 USD</div><div class="sh">Etsy result #8</div></a><a class="card" href="https://www.etsy.com/listing/4626604214/couples-budget-spreadsheet-fair-split-by" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69371422/r/il/87198d/8982779989/il_570xN.8982779989_luqr.jpg" alt=""></div>
+<div class="t">Couples Budget Spreadsheet: Fair Split by Income, Shared Bills, Who Owes Whom, Excel &amp; Google Sheets</div><div class="pr">9.99 USD</div><div class="sh">Etsy result #9</div></a><a class="card" href="https://www.etsy.com/listing/4446612495/family-couple-budget-spreadsheet-for" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/61432074/r/il/bb018a/7685219759/il_570xN.7685219759_3219.jpg" alt=""></div>
+<div class="t">Family &amp; Couple Budget Spreadsheet for Household Expenses Kids Family Monthly Annual Budget Google Sheets Excel Bill Debt Tracker Dark Mode</div><div class="pr">24.00 CAD</div><div class="sh">Etsy result #10</div></a><a class="card" href="https://www.etsy.com/listing/4626531894/couples-budget-spreadsheet-for-excel" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69369602/r/il/6f7654/8982147051/il_570xN.8982147051_fcd5.jpg" alt=""></div>
+<div class="t">Couples Budget Spreadsheet for Excel, Bill Splitter and Settle Up Tracker, Shared Expenses, Digital Download</div><div class="pr">14.00 USD</div><div class="sh">Etsy result #11</div></a></div><p style="margin:50px 0"></p></div>
+<script>
+const mi=document.getElementById('main'),al=document.getElementById('alt');
+document.querySelectorAll('.thumbs img,.thumbs .vid').forEach(t=>t.onclick=()=>{document.querySelectorAll('.thumbs .on').forEach(x=>x.classList.remove('on'));t.classList.add('on');
+if(t.dataset.video){mi.innerHTML='<video src="'+t.dataset.video+'" autoplay muted loop playsinline controls></video>';al.textContent='Listing video (Etsy plays it muted)';}
+else{mi.innerHTML='<img src="'+t.dataset.big+'" alt="">';al.textContent=t.dataset.alt;}});
+</script></body></html>

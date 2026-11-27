@@ -1,0 +1,127 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Bill Tracker Spreadsheet for Google Sheets &amp; Excel, Monthly Bill Calen</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f1641e'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='white' font-family='Georgia'%3EC%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#222;--mut:#595959;--line:#e1e3df;--bg:#fff;--soft:#f6f5f2;--acc:#f1641e;--good:#1c7a46;--warn:#a85d00;--bad:#b3261e}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 "Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:inherit}.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
+.top .wrap{display:flex;gap:16px;align-items:center;height:60px}.brand{font:700 20px Georgia,serif;letter-spacing:-.3px}
+.pill{font-size:12px;background:#fdf0e6;color:#8a3b00;border-radius:99px;padding:3px 10px}
+.search{flex:1;border:2px solid #222;border-radius:99px;padding:8px 16px;color:var(--mut);font-size:14px}
+h1{font:400 28px/1.25 Georgia,serif;margin:28px 0 6px}h2{font:600 20px/1.3 inherit;margin:34px 0 12px}
+.sub{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px 16px}
+.card{text-decoration:none;display:block}.card .ph{aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:var(--soft);position:relative}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}.card:hover img{transform:scale(1.03)}
+.card .t{font-size:13.5px;line-height:1.35;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .pr{font-weight:700;margin-top:3px}.card .sh{font-size:12px;color:var(--mut)}
+.badge{position:absolute;left:8px;top:8px;background:#fff;border-radius:99px;font-size:12px;font-weight:700;padding:2px 9px;box-shadow:0 1px 4px #0002}
+.s10{background:#e6f4ec;color:var(--good)}.s8{background:#fff4e0;color:var(--warn)}.s0{background:#fde8e6;color:var(--bad)}
+.lp{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;margin-top:22px}
+@media(max-width:860px){.lp{grid-template-columns:1fr}}
+.gal{display:grid;grid-template-columns:64px 1fr;gap:12px}.thumbs{display:flex;flex-direction:column;gap:8px;max-height:640px;overflow:auto}
+.thumbs img,.thumbs .vid{width:64px;height:64px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent}
+.thumbs img.on,.thumbs .vid.on{border-color:#222}.thumbs .vid{background:#222;color:#fff;display:grid;place-items:center;font-size:12px}
+.main{aspect-ratio:1/1;background:var(--soft);border-radius:12px;overflow:hidden;display:grid;place-items:center}
+.main img,.main video{width:100%;height:100%;object-fit:contain}
+.alt{font-size:12px;color:var(--mut);margin-top:6px;min-height:2.6em}
+.price{font-size:28px;font-weight:700;margin:6px 0}.ltitle{font-size:19px;line-height:1.4;margin:4px 0 10px;font-weight:400}
+.dl{font-size:13px;background:var(--soft);border-radius:8px;padding:10px 12px;margin:12px 0}
+.btn{display:block;text-align:center;background:#222;color:#fff;border-radius:99px;padding:13px;font-weight:700;margin:8px 0}
+.btn.o{background:#fff;color:#222;border:2px solid #222}
+.desc{white-space:pre-wrap;font-size:14.5px;line-height:1.6;border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tags span{font-size:12.5px;background:var(--soft);border-radius:99px;padding:4px 10px}
+.box{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0}
+.vd{border-left:5px solid var(--acc);background:#fffaf6}
+.sc{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:10px 0}.sc div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center}
+.sc b{display:block;font-size:22px}.sc small{color:var(--mut);font-size:11.5px}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}@media(max-width:700px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+.sgrid .card.ours.reveal .ph{outline:4px solid var(--acc);outline-offset:2px}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.small{font-size:12.5px;color:var(--mut)}code{background:var(--soft);padding:1px 5px;border-radius:4px;font-size:12.5px}
+details summary{cursor:pointer;font-weight:600}
+</style></head><body><div class="top"><div class="wrap"><a class="brand" href="../index.html" style="text-decoration:none">TheCoolShopCo</a>
+<span class="pill">Draft preview · not live on Etsy</span><div class="search">Etsy-style preview of 20 draft listings</div></div></div><div class="wrap"><p class="small" style="margin-top:16px"><a href="../index.html">← all 20 listings</a> · Budget Spreadsheets</p>
+<div class="lp"><div><div class="gal"><div class="thumbs"><img src="../img/s07-01-t.jpg" data-big="../img/s07-01.jpg" data-alt="Bill tracker spreadsheet for Google Sheets and Excel: monthly bill calendar for March with due dates and a coming up list of bills due in the next 7 days. Yellow and black design." class="on" alt=""><img src="../img/s07-02-t.jpg" data-big="../img/s07-02.jpg" data-alt="Three steps to set up the bill tracker: list bills, add subscriptions, tick a month when a bill is paid. Yellow cells are for typing." class="" alt=""><img src="../img/s07-03-t.jpg" data-big="../img/s07-03.jpg" data-alt="Automatic bill calendar for March 2027 showing each bill on its due day, with paid bills checked, an overdue water bill in red and today highlighted in yellow." class="" alt=""><img src="../img/s07-04-t.jpg" data-big="../img/s07-04.jpg" data-alt="Bill tracker dashboard: due this month, paid, left to pay and overdue, a coming up list for the next 7 days and a month by month table." class="" alt=""><img src="../img/s07-05-t.jpg" data-big="../img/s07-05.jpg" data-alt="Bill payment checklist with one tick per bill per month: green for paid, red for overdue, grey when nothing is due." class="" alt=""><img src="../img/s07-06-t.jpg" data-big="../img/s07-06.jpg" data-alt="Subscription tracker listing streaming, apps and memberships with cost per month and per year, keep or cancel choice, and a ranking of the most expensive subscriptions." class="" alt=""><img src="../img/s07-07-t.jpg" data-big="../img/s07-07.jpg" data-alt="What is included: six tabs - Start Here, Bills, Subscriptions, Checklist, Calendar, Dashboard - plus dark theme, 4 spreadsheets and a PDF guide." class="" alt=""><img src="../img/s07-08-t.jpg" data-big="../img/s07-08.jpg" data-alt="The bill calendar spreadsheet in light theme and dark theme, both included." class="" alt=""><img src="../img/s07-09-t.jpg" data-big="../img/s07-09.jpg" data-alt="What you get: 4 spreadsheet files and a PDF guide; works with Google Sheets and Microsoft Excel 2016 or newer; instant digital download." class="" alt=""><img src="../img/s07-10-t.jpg" data-big="../img/s07-10.jpg" data-alt="Frequently asked questions about the bill tracker spreadsheet: Google Sheets and Excel, quarterly and yearly bills, reuse next year, reminders, files included." class="" alt=""></div><div><div class="main" id="main"><img id="mi" src="../img/s07-01.jpg" alt=""></div><div class="alt" id="alt">Bill tracker spreadsheet for Google Sheets and Excel: monthly bill calendar for March with due dates and a coming up list of bills due in the next 7 days. Yellow and black design.</div></div></div></div>
+<div><div class="small">TheCoolShopCo</div><h1 class="ltitle">Bill Tracker Spreadsheet for Google Sheets &amp; Excel, Monthly Bill Calendar, Subscription Tracker, Bill Payment Checklist, Due Date Organizer</h1><div class="price">$4.99</div>
+<div class="dl"><b>Digital download</b> — 5 file(s) · Designed by TheCoolShopCo</div>
+<span class="btn">Buy it now</span><span class="btn o">Add to basket</span>
+<div class="box"><b>Files you get</b><ul style="margin:.4em 0 0;padding-left:18px"><li>The tracker, light theme, empty - the buyer&#x27;s working copy <span class="small">(Bill-Subscription-Tracker_Light_BLANK.xlsx)</span></li><li>Light theme filled with fictional sample bills <span class="small">(Bill-Subscription-Tracker_Light_SAMPLE.xlsx)</span></li><li>Dark theme, empty <span class="small">(Bill-Subscription-Tracker_Dark_BLANK.xlsx)</span></li><li>Dark theme with sample bills <span class="small">(Bill-Subscription-Tracker_Dark_SAMPLE.xlsx)</span></li><li>6-page PDF guide; last page holds the Google Sheets copy-link line (placeholder until Bob adds the link) <span class="small">(Bill-Subscription-Tracker_Quick-Start-Guide.pdf)</span></li></ul></div>
+<div class="desc">Bill tracker spreadsheet for Google Sheets &amp; Excel with an automatic bill calendar, a paid checklist and a subscription tracker - so you never miss a due date again.
+Type each bill once. The calendar, the reminders for the next 7 days and the yearly totals fill themselves in.
+
+EASY BY DESIGN
+Three steps: 1) list your bills, 2) add your subscriptions, 3) tick a bill when it is paid. You only ever type in the yellow cells. A START HERE tab and a PDF quick-start guide with pictures walk you through it.
+
+WHAT YOU GET (instant download)
+- Bill &amp; Subscription Tracker spreadsheet, light theme - blank copy for your own bills
+- The same file filled with sample bills, so you can see how everything works
+- Dark theme - blank + sample
+- PDF quick-start guide (6 pages)
+4 .xlsx files + 1 PDF. Nothing is shipped.
+
+FEATURES
+- Bill calendar: every bill and subscription on the day it is due, for any month of any year
+- Today is highlighted, paid bills get a check mark, overdue bills turn red
+- Paid checklist: one tick per bill per month - green = paid, red = overdue
+- Autopay bills tick themselves on the due date
+- Coming up: what is overdue and what is due in the next 7 days (you choose the number of days)
+- Monthly, every 2 / 3 / 6 months and yearly bills land on the right months by themselves
+- Subscription tracker: cost per month and per year, sorted most expensive first
+- Keep or cancel? Mark each subscription and see what you could save in a year
+- Dashboard: due, paid and left to pay this month, the year month by month, spending by category, 2 charts
+- Week starts on Sunday or Monday - your choice
+- Room for 30 bills and 20 subscriptions
+- Works for any year - change one cell and reuse it
+- 6 tabs, light + dark theme, no macros, no add-ons
+
+HOW IT WORKS
+1. Bills - type each bill once: name, amount, due day.
+2. Subscriptions - add streaming, apps and memberships the same way.
+3. Checklist - tick the month when a bill is paid. Calendar and Dashboard update by themselves.
+
+WORKS WITH
+- Google Sheets (free Google account): upload the file, or use the copy link in the PDF guide
+- Microsoft Excel 2016 or newer, and Microsoft 365
+The file uses US dollar formatting; you can switch to your own currency in one click (the guide shows how).
+
+FAQ
+Is it hard to set up? No. List your bills and you are done - about ten minutes.
+Does it remind me on my phone? No, it is a spreadsheet. Open the Dashboard and it shows what is overdue and what is due in the next 7 days.
+My bills change every month. Type your usual amount and update it when the bill arrives.
+Weekly bills? The tracker works month by month - type what a weekly bill costs per month.
+Can I use it next year? Yes. Change the year in one cell and clear the ticks.
+Can I get help? Yes. Message us here on Etsy and a real person answers.
+
+DELIVERY
+This is a digital download. After payment, Etsy shows the files under Purchases and Reviews (and emails you a link). Because digital files cannot be returned, all sales are final - but if anything is not working, message us and we will fix it.
+
+For personal use. This is an organising tool, not financial advice. Sample figures are fictional.
+
+Designed by TheCoolShopCo. Some design elements were created with the help of AI tools and finished by hand.</div>
+<h2 style="font-size:16px">Tags (13)</h2><div class="tags"><span>bill tracker</span><span>bill calendar</span><span>subscription tracker</span><span>bill organizer</span><span>bill payment tracker</span><span>monthly bills</span><span>due date tracker</span><span>bill checklist</span><span>bill planner</span><span>google sheets budget</span><span>excel template</span><span>bill spreadsheet</span><span>budget spreadsheet</span></div>
+<p class="small">Title 139/140 chars · main keyword: <code>bill tracker spreadsheet</code> · materials: Google Sheets, Excel</p>
+</div></div><div class="box vd"><b>Honest verdict (round 1): 7/10</b>
+<div class="sc"><div><b>9</b><small>Thumbnail</small></div><div><b>8</b><small>Gallery</small></div><div><b>8</b><small>Product</small></div><div><b>8</b><small>Title+tags+text</small></div><div><b>9</b><small>In search grid</small></div></div>
+<p style="margin:.3em 0">Calendar-view thumbnail is clear and different from the others.</p><p class="small"><b>Still holding it back:</b> Not yet tested in real Google Sheets/Excel (only LibreOffice here); the PDF still has a placeholder where the Google Sheets copy-link goes. No video; monthly bills only (no weekly), no partial payments.</p></div>
+<h2>In Etsy search for “bill tracker spreadsheet” (26,688 results) — can you spot ours?</h2>
+<p class="small">Ours is placed at position 3 among the real top results (sort = relevance). <button onclick="document.querySelector('.card.ours').classList.toggle('reveal')">Show ours</button></p>
+<div class="sgrid"><a class="card" href="https://www.etsy.com/listing/1861845486/family-budget-template-with-dashboards" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/30255479/r/il/e59613/6539109207/il_570xN.6539109207_nxns.jpg" alt=""></div>
+<div class="t">Family Budget Template With Dashboards Excel, Income And Expense Budget, Bill Tracker Spreadsheet, Debt And Budget, Savings Planner.</div><div class="pr">2.80 EUR</div><div class="sh">Etsy result #1</div></a><a class="card" href="https://www.etsy.com/listing/4604950408/bill-tracker-spreadsheet-for-excel-and" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/66581594/r/il/70cbc6/8965503509/il_570xN.8965503509_7ivl.jpg" alt=""></div>
+<div class="t">Bill Tracker Spreadsheet for Excel and Google Sheets, Monthly Calendar, 10 Tabs</div><div class="pr">11.50 EUR</div><div class="sh">Etsy result #2</div></a><a class="card ours" href="#"><div class="ph"><img loading="lazy" src="../img/s07-01-t.jpg" alt=""></div>
+<div class="t">Bill Tracker Spreadsheet for Google Sheets &amp; Excel, Monthly Bill Calendar, Subscription Tracker, Bill Payment Checklist, Due Date Organizer</div><div class="pr">$4.99</div><div class="sh">TheCoolShopCo · Digital download</div></a><a class="card" href="https://www.etsy.com/listing/4626673275/bill-tracker-spreadsheet-for-excel" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/67795446/r/il/6efe1b/8983490849/il_570xN.8983490849_h9gs.jpg" alt=""></div>
+<div class="t">Bill Tracker Spreadsheet for Excel, Monthly Payment Due Dates and Outstanding Balance</div><div class="pr">1.99 USD</div><div class="sh">Etsy result #3</div></a><a class="card" href="https://www.etsy.com/listing/4611916759/bill-tracker-spreadsheet-2027-monthly" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/28614712/r/il/cfb155/8862012933/il_570xN.8862012933_qyj9.jpg" alt=""></div>
+<div class="t">Bill Tracker Spreadsheet 2027, Monthly Bill Calendar &amp; Payment Checklist, Google Sheets Excel Budget Template</div><div class="pr">4.99 USD</div><div class="sh">Etsy result #4</div></a><a class="card" href="https://www.etsy.com/listing/4626607129/bill-tracker-spreadsheet-monthly-bill" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69370142/r/il/6635a7/8982897289/il_570xN.8982897289_4zb7.jpg" alt=""></div>
+<div class="t">Bill Tracker Spreadsheet | Monthly Bill Payment Checklist &amp; Due Date Organizer for Google Sheets and Excel</div><div class="pr">16.49 CAD</div><div class="sh">Etsy result #5</div></a><a class="card" href="https://www.etsy.com/listing/4626605041/bill-tracker-spreadsheet-for-excel-and" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69362300/r/il/09fbec/8935095526/il_570xN.8935095526_2bvx.jpg" alt=""></div>
+<div class="t">Bill Tracker Spreadsheet for Excel and Google Sheets, Monthly Bill Payment Tracker with Dashboard, Bill Organizer, Due Date Checklist</div><div class="pr">3.99 USD</div><div class="sh">Etsy result #6</div></a><a class="card" href="https://www.etsy.com/listing/4551101881/bill-tracker-spreadsheet-monthly-bill" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/60189968/r/il/5369b0/8347993314/il_570xN.8347993314_krix.jpg" alt=""></div>
+<div class="t">Bill Tracker Spreadsheet, Monthly Bill Payment Tracker, Bill Calendar Excel &amp; Google Sheets, Budget Planner, Subscription Organizer Bundle</div><div class="pr">17.00 EUR</div><div class="sh">Etsy result #7</div></a><a class="card" href="https://www.etsy.com/listing/4298333423/budget-planner-monthly-paycheck-budget" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/54356815/r/il/cab36e/7192348078/il_570xN.7192348078_gkjx.jpg" alt=""></div>
+<div class="t">Budget Planner, Monthly Paycheck Budget, Bill Tracker Spreadsheet, Google Sheets Bundle, Debt Payoff Tracker, Debt Snowball, Savings Tracker</div><div class="pr">9.63 EUR</div><div class="sh">Etsy result #8</div></a><a class="card" href="https://www.etsy.com/listing/4626510182/bill-tracker-spreadsheet-and-printable" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69351111/r/il/80669a/8934187682/il_570xN.8934187682_thi1.jpg" alt=""></div>
+<div class="t">Bill Tracker Spreadsheet and Printable, Monthly Bill Organizer, Bill Payment Checklist, Due Date Calendar, Excel Google Sheets, 2027</div><div class="pr">7.00 USD</div><div class="sh">Etsy result #9</div></a><a class="card" href="https://www.etsy.com/listing/4626485383/bill-tracker-spreadsheet-2027-bill" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/68874130/r/il/a1e252/8934055752/il_570xN.8934055752_ezuf.jpg" alt=""></div>
+<div class="t">Bill Tracker Spreadsheet 2027, Bill Calendar, Monthly Bill Tracker Excel, Debt Payoff Tracker, Paycheck Budget, Google Sheets Budget</div><div class="pr">11.99 GBP</div><div class="sh">Etsy result #10</div></a><a class="card" href="https://www.etsy.com/listing/4626481927/bill-tracker-spreadsheet-bill-calendar" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69369592/r/il/a852e7/8934020984/il_570xN.8934020984_tf7h.jpg" alt=""></div>
+<div class="t">Bill Tracker Spreadsheet | Bill Calendar &amp; Subscription Tracker Excel | Due Date Helper + Annual Cost Audit Tool</div><div class="pr">14.00 USD</div><div class="sh">Etsy result #11</div></a></div><p style="margin:50px 0"></p></div>
+<script>
+const mi=document.getElementById('main'),al=document.getElementById('alt');
+document.querySelectorAll('.thumbs img,.thumbs .vid').forEach(t=>t.onclick=()=>{document.querySelectorAll('.thumbs .on').forEach(x=>x.classList.remove('on'));t.classList.add('on');
+if(t.dataset.video){mi.innerHTML='<video src="'+t.dataset.video+'" autoplay muted loop playsinline controls></video>';al.textContent='Listing video (Etsy plays it muted)';}
+else{mi.innerHTML='<img src="'+t.dataset.big+'" alt="">';al.textContent=t.dataset.alt;}});
+</script></body></html>

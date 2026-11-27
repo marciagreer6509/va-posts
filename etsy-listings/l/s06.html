@@ -1,0 +1,123 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Savings Tracker Spreadsheet for Google Sheets &amp; Excel, Sinking Funds T</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f1641e'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='white' font-family='Georgia'%3EC%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#222;--mut:#595959;--line:#e1e3df;--bg:#fff;--soft:#f6f5f2;--acc:#f1641e;--good:#1c7a46;--warn:#a85d00;--bad:#b3261e}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 "Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:inherit}.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
+.top .wrap{display:flex;gap:16px;align-items:center;height:60px}.brand{font:700 20px Georgia,serif;letter-spacing:-.3px}
+.pill{font-size:12px;background:#fdf0e6;color:#8a3b00;border-radius:99px;padding:3px 10px}
+.search{flex:1;border:2px solid #222;border-radius:99px;padding:8px 16px;color:var(--mut);font-size:14px}
+h1{font:400 28px/1.25 Georgia,serif;margin:28px 0 6px}h2{font:600 20px/1.3 inherit;margin:34px 0 12px}
+.sub{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px 16px}
+.card{text-decoration:none;display:block}.card .ph{aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:var(--soft);position:relative}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}.card:hover img{transform:scale(1.03)}
+.card .t{font-size:13.5px;line-height:1.35;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .pr{font-weight:700;margin-top:3px}.card .sh{font-size:12px;color:var(--mut)}
+.badge{position:absolute;left:8px;top:8px;background:#fff;border-radius:99px;font-size:12px;font-weight:700;padding:2px 9px;box-shadow:0 1px 4px #0002}
+.s10{background:#e6f4ec;color:var(--good)}.s8{background:#fff4e0;color:var(--warn)}.s0{background:#fde8e6;color:var(--bad)}
+.lp{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;margin-top:22px}
+@media(max-width:860px){.lp{grid-template-columns:1fr}}
+.gal{display:grid;grid-template-columns:64px 1fr;gap:12px}.thumbs{display:flex;flex-direction:column;gap:8px;max-height:640px;overflow:auto}
+.thumbs img,.thumbs .vid{width:64px;height:64px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent}
+.thumbs img.on,.thumbs .vid.on{border-color:#222}.thumbs .vid{background:#222;color:#fff;display:grid;place-items:center;font-size:12px}
+.main{aspect-ratio:1/1;background:var(--soft);border-radius:12px;overflow:hidden;display:grid;place-items:center}
+.main img,.main video{width:100%;height:100%;object-fit:contain}
+.alt{font-size:12px;color:var(--mut);margin-top:6px;min-height:2.6em}
+.price{font-size:28px;font-weight:700;margin:6px 0}.ltitle{font-size:19px;line-height:1.4;margin:4px 0 10px;font-weight:400}
+.dl{font-size:13px;background:var(--soft);border-radius:8px;padding:10px 12px;margin:12px 0}
+.btn{display:block;text-align:center;background:#222;color:#fff;border-radius:99px;padding:13px;font-weight:700;margin:8px 0}
+.btn.o{background:#fff;color:#222;border:2px solid #222}
+.desc{white-space:pre-wrap;font-size:14.5px;line-height:1.6;border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tags span{font-size:12.5px;background:var(--soft);border-radius:99px;padding:4px 10px}
+.box{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0}
+.vd{border-left:5px solid var(--acc);background:#fffaf6}
+.sc{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:10px 0}.sc div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center}
+.sc b{display:block;font-size:22px}.sc small{color:var(--mut);font-size:11.5px}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}@media(max-width:700px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+.sgrid .card.ours.reveal .ph{outline:4px solid var(--acc);outline-offset:2px}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.small{font-size:12.5px;color:var(--mut)}code{background:var(--soft);padding:1px 5px;border-radius:4px;font-size:12.5px}
+details summary{cursor:pointer;font-weight:600}
+</style></head><body><div class="top"><div class="wrap"><a class="brand" href="../index.html" style="text-decoration:none">TheCoolShopCo</a>
+<span class="pill">Draft preview · not live on Etsy</span><div class="search">Etsy-style preview of 20 draft listings</div></div></div><div class="wrap"><p class="small" style="margin-top:16px"><a href="../index.html">← all 20 listings</a> · Budget Spreadsheets</p>
+<div class="lp"><div><div class="gal"><div class="thumbs"><img src="../img/s06-01-t.jpg" data-big="../img/s06-01.jpg" data-alt="Savings tracker spreadsheet for Google Sheets and Excel on a tablet and phone: savings dashboard and a list of sinking funds. It shows what to save this month. Yellow and black design." class="on" alt=""><img src="../img/s06-02-t.jpg" data-big="../img/s06-02.jpg" data-alt="Three steps to use the savings tracker: name your funds, log deposits, see what to save each month." class="" alt=""><img src="../img/s06-03-t.jpg" data-big="../img/s06-03.jpg" data-alt="Funds tab with ten sample sinking funds: goal amount, target date, saved so far, months left, amount to save per month, progress bars and a this-month status." class="" alt=""><img src="../img/s06-04-t.jpg" data-big="../img/s06-04.jpg" data-alt="Savings dashboard: total saved, percent of all goals, amount to save this month, emergency fund months covered, goal versus saved chart and upcoming goals." class="" alt=""><img src="../img/s06-05-t.jpg" data-big="../img/s06-05.jpg" data-alt="Deposits tab: a log with date, fund dropdown and amount for each deposit." class="" alt=""><img src="../img/s06-06-t.jpg" data-big="../img/s06-06.jpg" data-alt="Emergency fund tab: saved amount, months of must-pay costs covered, goal for six months and a row of month boxes showing how much is covered." class="" alt=""><img src="../img/s06-07-t.jpg" data-big="../img/s06-07.jpg" data-alt="52-week savings challenge tab with weekly dates, the amount to save each week, tick boxes and a running total." class="" alt=""><img src="../img/s06-08-t.jpg" data-big="../img/s06-08.jpg" data-alt="What you get: six tabs - Start Here, Funds, Deposits, Emergency Fund, 52-Week Challenge, Dashboard - in light and dark, 4 spreadsheets and a PDF guide." class="" alt=""><img src="../img/s06-09-t.jpg" data-big="../img/s06-09.jpg" data-alt="The savings and sinking funds tracker in light theme and dark theme, both included." class="" alt=""><img src="../img/s06-10-t.jpg" data-big="../img/s06-10.jpg" data-alt="Frequently asked questions about the savings tracker: Google Sheets and Excel, what a sinking fund is, how the monthly amount is worked out, taking money out, files included." class="" alt=""><div class="vid" data-video="../img/s06.mp4">▶ video</div></div><div><div class="main" id="main"><img id="mi" src="../img/s06-01.jpg" alt=""></div><div class="alt" id="alt">Savings tracker spreadsheet for Google Sheets and Excel on a tablet and phone: savings dashboard and a list of sinking funds. It shows what to save this month. Yellow and black design.</div></div></div></div>
+<div><div class="small">TheCoolShopCo</div><h1 class="ltitle">Savings Tracker Spreadsheet for Google Sheets &amp; Excel, Sinking Funds Tracker, Savings Goal Planner, Emergency Fund, 52 Week Challenge</h1><div class="price">$5.99</div>
+<div class="dl"><b>Digital download</b> — 5 file(s) · Designed by TheCoolShopCo</div>
+<span class="btn">Buy it now</span><span class="btn o">Add to basket</span>
+<div class="box"><b>Files you get</b><ul style="margin:.4em 0 0;padding-left:18px"><li>Light theme, empty - the buyer&#x27;s working copy <span class="small">(Savings-Sinking-Funds-Tracker_Light_BLANK.xlsx)</span></li><li>Light theme filled with fictional sample data <span class="small">(Savings-Sinking-Funds-Tracker_Light_SAMPLE.xlsx)</span></li><li>Dark theme, empty <span class="small">(Savings-Sinking-Funds-Tracker_Dark_BLANK.xlsx)</span></li><li>Dark theme with sample data <span class="small">(Savings-Sinking-Funds-Tracker_Dark_SAMPLE.xlsx)</span></li><li>5-page PDF guide; the last page holds the Google Sheets copy-link line (placeholder until Bob adds the link) <span class="small">(Savings-Sinking-Funds-Tracker_Quick-Start-Guide.pdf)</span></li></ul></div>
+<div class="desc">Savings tracker spreadsheet for Google Sheets &amp; Excel: name your savings goals and sinking funds, log each deposit, and see exactly what to save this month to reach every goal on time.
+A sinking funds tracker, savings goal planner, emergency fund calculator and 52 week savings challenge in one easy file.
+
+MADE TO BE EASY
+Three steps: name your funds, log your deposits, read your plan. Yellow cells are the only ones you type in. No formulas to touch.
+
+WHAT YOU GET (instant download)
+- Savings + Sinking Funds Tracker spreadsheet, light theme - blank copy for your own goals
+- The same file filled with sample funds, so you can see how it works
+- Dark theme - blank + sample
+- PDF quick-start guide (5 pages, with pictures)
+4 .xlsx files + 1 PDF. Nothing is shipped.
+
+FEATURES
+- Up to 12 funds or goals: emergency fund, vacation, car repairs, Christmas gifts, yearly insurance ...
+- Goal amount + target date = the amount to save per month, worked out for you
+- The monthly amount re-plans itself after every deposit, so you still arrive on the date
+- &quot;This month&quot; check for every fund: a green tick when it has had its money, or how much is still to go
+- Deposit log with a fund dropdown; type a minus amount when you take money out
+- Progress bar and % for every fund, and for all goals together
+- Emergency fund tab: type your must-pay monthly costs and see how many months you are covered
+- 52-week savings challenge tab with your own start amount and weekly step
+- Dashboard: total saved, what to save this month, goals sorted by date, savings per month chart
+- Light + dark theme
+
+HOW IT WORKS
+1. Name funds - what are you saving for? Type the goal amount and, if you like, a target date.
+2. Log deposits - each time you put money aside: date, fund, amount.
+3. See your plan - what to save this month for every fund, and how close each goal is.
+
+WORKS WITH
+- Google Sheets (free Google account): upload the file, or use the copy link in the PDF guide
+- Microsoft Excel 2016 or newer, and Microsoft 365
+No macros, no add-ons. The file uses US dollar formatting; you can switch to your own currency in one click (the guide shows how).
+
+FAQ
+What is a sinking fund? Money you put aside a little at a time for a cost you know is coming, so it never hits your budget all at once.
+Do I need a target date for every fund? No. Without a date the fund simply adds up; with a date you also get a monthly amount.
+Can I use it for one big goal, like a house deposit? Yes - one fund or twelve, it works the same.
+Is the 52-week challenge linked to my funds? It is a separate tab. If you want the money counted in a fund too, add a line on Deposits.
+Can I get help? Yes. Message us here on Etsy and a real person answers.
+
+DELIVERY
+This is a digital download. After payment, Etsy shows the files under Purchases and Reviews (and emails you a link). Because digital files cannot be returned, all sales are final - but if anything is not working, message us and we will fix it.
+
+For personal use. This is a savings planning tool, not financial advice. Sample figures are fictional.
+
+Designed by TheCoolShopCo. Some design elements were created with the help of AI tools and finished by hand.</div>
+<h2 style="font-size:16px">Tags (13)</h2><div class="tags"><span>savings tracker</span><span>sinking funds</span><span>savings spreadsheet</span><span>sinking fund tracker</span><span>savings goal tracker</span><span>emergency fund</span><span>52 week challenge</span><span>savings planner</span><span>savings challenge</span><span>money saving</span><span>budget spreadsheet</span><span>financial goals</span><span>google sheets budget</span></div>
+<p class="small">Title 133/140 chars · main keyword: <code>savings tracker spreadsheet</code> · materials: Google Sheets, Excel</p>
+</div></div><div class="box vd"><b>Honest verdict (round 1): 7/10</b>
+<div class="sc"><div><b>8</b><small>Thumbnail</small></div><div><b>8</b><small>Gallery</small></div><div><b>8</b><small>Product</small></div><div><b>8</b><small>Title+tags+text</small></div><div><b>8</b><small>In search grid</small></div></div>
+<p style="margin:.3em 0">Solid, honest product.</p><p class="small"><b>Still holding it back:</b> Not yet tested in real Google Sheets/Excel (only LibreOffice here); the PDF still has a placeholder where the Google Sheets copy-link goes. Weakest thumbnail of the finance line; 12 funds vs competitors&#x27; 20; 52-week challenge not linked to the funds.</p></div>
+<h2>In Etsy search for “savings tracker spreadsheet” (32,507 results) — can you spot ours?</h2>
+<p class="small">Ours is placed at position 3 among the real top results (sort = relevance). <button onclick="document.querySelector('.card.ours').classList.toggle('reveal')">Show ours</button></p>
+<div class="sgrid"><a class="card" href="https://www.etsy.com/listing/4598087100/52-week-savings-challenge-google-sheets" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/68544568/r/il/db6b29/8747532447/il_570xN.8747532447_hzdh.jpg" alt=""></div>
+<div class="t">52 Week Savings Challenge Google Sheets Excel, Money Saving Challenge Tracker, 100 Envelope Challenge, Savings Tracker Spreadsheet</div><div class="pr">3.20 EUR</div><div class="sh">Etsy result #1</div></a><a class="card" href="https://www.etsy.com/listing/1839601917/family-budget-template-with-dashboards" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/30255479/r/il/bad594/6538897667/il_570xN.6538897667_ea22.jpg" alt=""></div>
+<div class="t">Family Budget Template With Dashboards, Income Expense Tracker Excel, Debt And Bill Tracker, Savings Tracker Spreadsheet, Budgeting.</div><div class="pr">2.80 EUR</div><div class="sh">Etsy result #2</div></a><a class="card ours" href="#"><div class="ph"><img loading="lazy" src="../img/s06-01-t.jpg" alt=""></div>
+<div class="t">Savings Tracker Spreadsheet for Google Sheets &amp; Excel, Sinking Funds Tracker, Savings Goal Planner, Emergency Fund, 52 Week Challenge</div><div class="pr">$5.99</div><div class="sh">TheCoolShopCo · Digital download</div></a><a class="card" href="https://www.etsy.com/listing/4466689683/savings-tracker-spreadsheet-control-de" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/64717146/r/il/0ca920/7936702559/il_570xN.7936702559_i732.jpg" alt=""></div>
+<div class="t">Savings Tracker Spreadsheet | Control de Ahorros | Bilingual Spanish English | Excel Google Sheets | Financial Planner | Savings Goals</div><div class="pr">4.99 USD</div><div class="sh">Etsy result #3</div></a><a class="card" href="https://www.etsy.com/listing/4342771910/savings-tracker-spreadsheet-sinking" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/56182056/r/il/de3e4f/7060204804/il_570xN.7060204804_i9t4.jpg" alt=""></div>
+<div class="t">savings tracker spreadsheet, sinking funds, savings goal tracker, investment tracker, personal finances, profit and loss, budget template</div><div class="pr">3.00 EUR</div><div class="sh">Etsy result #4</div></a><a class="card" href="https://www.etsy.com/listing/4626638885/sinking-funds-tracker-savings-tracker" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/59058258/r/il/4993f0/8983190037/il_570xN.8983190037_cknb.jpg" alt=""></div>
+<div class="t">Sinking Funds Tracker | Savings Tracker Spreadsheet Google Sheets &amp; Excel | Sinking Fund Planner, Savings Goals, Monthly Budget 2027</div><div class="pr">6.99 USD</div><div class="sh">Etsy result #5</div></a><a class="card" href="https://www.etsy.com/listing/4625651450/savings-tracker-spreadsheet-sinking" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69184823/r/il/8252e8/8983032801/il_570xN.8983032801_pyzx.jpg" alt=""></div>
+<div class="t">Savings Tracker Spreadsheet, Sinking Funds Tracker, Savings Goal Planner, 52 Week Savings Challenge, Emergency Fund, Google Sheets Excel</div><div class="pr">8.99 USD</div><div class="sh">Etsy result #6</div></a><a class="card" href="https://www.etsy.com/listing/4626600823/savings-tracker-spreadsheet-for-excel" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69362300/r/il/ccb896/8982837723/il_570xN.8982837723_6lt5.jpg" alt=""></div>
+<div class="t">Savings Tracker Spreadsheet for Excel and Google Sheets, Savings Goal Tracker with Dashboard, Deposit Log, 52 Week Savings Challenge</div><div class="pr">3.99 USD</div><div class="sh">Etsy result #7</div></a><a class="card" href="https://www.etsy.com/listing/4626600266/adhd-debt-payoff-tracker-excel-google" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/68870619/r/il/a382f5/8934954672/il_570xN.8934954672_1dz7.jpg" alt=""></div>
+<div class="t">ADHD Debt Payoff Tracker Excel &amp; Google Sheets, Debt Snowball, Debt Avalanche, 52 Week Savings Challenge, Savings Tracker Spreadsheet</div><div class="pr">89.00 MXN</div><div class="sh">Etsy result #8</div></a><a class="card" href="https://www.etsy.com/listing/4626589690/52-week-savings-challenge-2027-savings" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69340743/r/il/647ba9/8982647619/il_570xN.8982647619_ebm6.jpg" alt=""></div>
+<div class="t">52 Week Savings Challenge 2027, Savings Tracker Spreadsheet Google Sheets &amp; Excel, Money Saving Challenge, Savings Goal Tracker Template</div><div class="pr">5.99 USD</div><div class="sh">Etsy result #9</div></a><a class="card" href="https://www.etsy.com/listing/1627681094/savings-tracker-spreadsheet-sinking" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/26362134/r/il/931f00/5985184973/il_570xN.5985184973_lnkz.jpg" alt=""></div>
+<div class="t">Savings Tracker Spreadsheet | Sinking Funds GoogleSheets Template | Dark Mode Digital Savings Goals Planner | Personal Finance Budget</div><div class="pr">12.00 GBP</div><div class="sh">Etsy result #10</div></a><a class="card" href="https://www.etsy.com/listing/4625620538/savings-tracker-spreadsheet-sinking" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/68680208/r/il/65011a/8926845292/il_570xN.8926845292_bcwk.jpg" alt=""></div>
+<div class="t">Savings Tracker Spreadsheet, Sinking Funds Tracker for Excel and Google Sheets, Monthly Savings Goals and Progress</div><div class="pr">1.99 EUR</div><div class="sh">Etsy result #11</div></a></div><p style="margin:50px 0"></p></div>
+<script>
+const mi=document.getElementById('main'),al=document.getElementById('alt');
+document.querySelectorAll('.thumbs img,.thumbs .vid').forEach(t=>t.onclick=()=>{document.querySelectorAll('.thumbs .on').forEach(x=>x.classList.remove('on'));t.classList.add('on');
+if(t.dataset.video){mi.innerHTML='<video src="'+t.dataset.video+'" autoplay muted loop playsinline controls></video>';al.textContent='Listing video (Etsy plays it muted)';}
+else{mi.innerHTML='<img src="'+t.dataset.big+'" alt="">';al.textContent=t.dataset.alt;}});
+</script></body></html>

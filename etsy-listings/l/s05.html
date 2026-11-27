@@ -1,0 +1,126 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Debt Payoff Tracker Spreadsheet for Google Sheets &amp; Excel, Debt Snowba</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f1641e'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='white' font-family='Georgia'%3EC%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#222;--mut:#595959;--line:#e1e3df;--bg:#fff;--soft:#f6f5f2;--acc:#f1641e;--good:#1c7a46;--warn:#a85d00;--bad:#b3261e}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 "Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:inherit}.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
+.top .wrap{display:flex;gap:16px;align-items:center;height:60px}.brand{font:700 20px Georgia,serif;letter-spacing:-.3px}
+.pill{font-size:12px;background:#fdf0e6;color:#8a3b00;border-radius:99px;padding:3px 10px}
+.search{flex:1;border:2px solid #222;border-radius:99px;padding:8px 16px;color:var(--mut);font-size:14px}
+h1{font:400 28px/1.25 Georgia,serif;margin:28px 0 6px}h2{font:600 20px/1.3 inherit;margin:34px 0 12px}
+.sub{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px 16px}
+.card{text-decoration:none;display:block}.card .ph{aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:var(--soft);position:relative}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}.card:hover img{transform:scale(1.03)}
+.card .t{font-size:13.5px;line-height:1.35;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .pr{font-weight:700;margin-top:3px}.card .sh{font-size:12px;color:var(--mut)}
+.badge{position:absolute;left:8px;top:8px;background:#fff;border-radius:99px;font-size:12px;font-weight:700;padding:2px 9px;box-shadow:0 1px 4px #0002}
+.s10{background:#e6f4ec;color:var(--good)}.s8{background:#fff4e0;color:var(--warn)}.s0{background:#fde8e6;color:var(--bad)}
+.lp{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;margin-top:22px}
+@media(max-width:860px){.lp{grid-template-columns:1fr}}
+.gal{display:grid;grid-template-columns:64px 1fr;gap:12px}.thumbs{display:flex;flex-direction:column;gap:8px;max-height:640px;overflow:auto}
+.thumbs img,.thumbs .vid{width:64px;height:64px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent}
+.thumbs img.on,.thumbs .vid.on{border-color:#222}.thumbs .vid{background:#222;color:#fff;display:grid;place-items:center;font-size:12px}
+.main{aspect-ratio:1/1;background:var(--soft);border-radius:12px;overflow:hidden;display:grid;place-items:center}
+.main img,.main video{width:100%;height:100%;object-fit:contain}
+.alt{font-size:12px;color:var(--mut);margin-top:6px;min-height:2.6em}
+.price{font-size:28px;font-weight:700;margin:6px 0}.ltitle{font-size:19px;line-height:1.4;margin:4px 0 10px;font-weight:400}
+.dl{font-size:13px;background:var(--soft);border-radius:8px;padding:10px 12px;margin:12px 0}
+.btn{display:block;text-align:center;background:#222;color:#fff;border-radius:99px;padding:13px;font-weight:700;margin:8px 0}
+.btn.o{background:#fff;color:#222;border:2px solid #222}
+.desc{white-space:pre-wrap;font-size:14.5px;line-height:1.6;border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tags span{font-size:12.5px;background:var(--soft);border-radius:99px;padding:4px 10px}
+.box{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0}
+.vd{border-left:5px solid var(--acc);background:#fffaf6}
+.sc{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:10px 0}.sc div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center}
+.sc b{display:block;font-size:22px}.sc small{color:var(--mut);font-size:11.5px}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}@media(max-width:700px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+.sgrid .card.ours.reveal .ph{outline:4px solid var(--acc);outline-offset:2px}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.small{font-size:12.5px;color:var(--mut)}code{background:var(--soft);padding:1px 5px;border-radius:4px;font-size:12.5px}
+details summary{cursor:pointer;font-weight:600}
+</style></head><body><div class="top"><div class="wrap"><a class="brand" href="../index.html" style="text-decoration:none">TheCoolShopCo</a>
+<span class="pill">Draft preview · not live on Etsy</span><div class="search">Etsy-style preview of 20 draft listings</div></div></div><div class="wrap"><p class="small" style="margin-top:16px"><a href="../index.html">← all 20 listings</a> · Budget Spreadsheets</p>
+<div class="lp"><div><div class="gal"><div class="thumbs"><img src="../img/s05-01-t.jpg" data-big="../img/s05-01.jpg" data-alt="Debt payoff tracker spreadsheet for Google Sheets and Excel shown in a window and on a phone: snowball vs avalanche comparison and a month-by-month payoff plan. Yellow and black design." class="on" alt=""><img src="../img/s05-02-t.jpg" data-big="../img/s05-02.jpg" data-alt="Three steps to use the debt payoff tracker: list debts, add an extra payment and pick snowball or avalanche, then see the debt-free date." class="" alt=""><img src="../img/s05-03-t.jpg" data-big="../img/s05-03.jpg" data-alt="Snowball vs avalanche tab: both methods side by side with debt-free date, total interest, payoff order and a verdict on which is cheaper and faster." class="" alt=""><img src="../img/s05-04-t.jpg" data-big="../img/s05-04.jpg" data-alt="Payoff Plan tab: month-by-month payments for six debts with green cells marking the last payment on each debt and the balance left." class="" alt=""><img src="../img/s05-05-t.jpg" data-big="../img/s05-05.jpg" data-alt="Debt payoff dashboard: total debt, debt-free date, interest saved, percent paid off, focus debt for this month and a payoff chart." class="" alt=""><img src="../img/s05-06-t.jpg" data-big="../img/s05-06.jpg" data-alt="My Debts tab with an extra payment of 250 dollars, the avalanche method chosen and a list of six sample debts with balances, rates and minimum payments." class="" alt=""><img src="../img/s05-07-t.jpg" data-big="../img/s05-07.jpg" data-alt="Payment log with one line per payment and totals paid per debt, plus progress bars showing how much of each debt is already paid off." class="" alt=""><img src="../img/s05-08-t.jpg" data-big="../img/s05-08.jpg" data-alt="What you get: six tabs - Start Here, My Debts, Snowball vs Avalanche, Payoff Plan, Payment Log, Dashboard - in light and dark, 4 spreadsheets and a PDF guide." class="" alt=""><img src="../img/s05-09-t.jpg" data-big="../img/s05-09.jpg" data-alt="The debt payoff tracker spreadsheet in light theme and dark theme, both included." class="" alt=""><img src="../img/s05-10-t.jpg" data-big="../img/s05-10.jpg" data-alt="Frequently asked questions about the debt payoff tracker: Google Sheets and Excel, snowball or avalanche, how the payoff date is calculated, number of debts, files included." class="" alt=""><div class="vid" data-video="../img/s05.mp4">▶ video</div></div><div><div class="main" id="main"><img id="mi" src="../img/s05-01.jpg" alt=""></div><div class="alt" id="alt">Debt payoff tracker spreadsheet for Google Sheets and Excel shown in a window and on a phone: snowball vs avalanche comparison and a month-by-month payoff plan. Yellow and black design.</div></div></div></div>
+<div><div class="small">TheCoolShopCo</div><h1 class="ltitle">Debt Payoff Tracker Spreadsheet for Google Sheets &amp; Excel, Debt Snowball &amp; Avalanche Calculator, Debt Free Date, Interest Saved, Payoff Plan</h1><div class="price">$6.99</div>
+<div class="dl"><b>Digital download</b> — 5 file(s) · Designed by TheCoolShopCo</div>
+<span class="btn">Buy it now</span><span class="btn o">Add to basket</span>
+<div class="box"><b>Files you get</b><ul style="margin:.4em 0 0;padding-left:18px"><li>Light theme, empty - the buyer&#x27;s working copy <span class="small">(Debt-Payoff-Tracker_Light_BLANK.xlsx)</span></li><li>Light theme filled with fictional sample data <span class="small">(Debt-Payoff-Tracker_Light_SAMPLE.xlsx)</span></li><li>Dark theme, empty <span class="small">(Debt-Payoff-Tracker_Dark_BLANK.xlsx)</span></li><li>Dark theme with sample data <span class="small">(Debt-Payoff-Tracker_Dark_SAMPLE.xlsx)</span></li><li>5-page PDF guide; the last page holds the Google Sheets copy-link line (placeholder until Bob adds the link) <span class="small">(Debt-Payoff-Tracker_Quick-Start-Guide.pdf)</span></li></ul></div>
+<div class="desc">Debt payoff tracker spreadsheet for Google Sheets &amp; Excel: list your debts, add what you can pay extra, and see the exact month you will be debt-free.
+Debt snowball and debt avalanche are worked out side by side with your own numbers, so you can see which one is cheaper and which one is faster before you choose.
+
+MADE TO BE EASY
+Three steps: list your debts, type your extra payment, read your debt-free date. Yellow cells are the only ones you type in. No formulas to touch.
+
+WHAT YOU GET (instant download)
+- Debt Payoff Tracker spreadsheet, light theme - blank copy for your own debts
+- The same file filled with sample debts, so you can see how it works
+- Dark theme - blank + sample
+- PDF quick-start guide (5 pages, with pictures)
+4 .xlsx files + 1 PDF. Nothing is shipped.
+
+FEATURES
+- Up to 10 debts: credit cards, car loan, student loan, personal loan, medical bills
+- Snowball vs avalanche side by side: debt-free date, months, total interest and total paid for both
+- &quot;The verdict&quot;: which method is cheaper, which is faster, which gives the first win
+- Compared with paying minimums only: the interest you save and how many months sooner you finish
+- Payoff date and interest for every single debt, and the order to pay them in
+- Payoff Plan: a month-by-month list of what to pay on each debt until the last one is gone (up to 30 years)
+- A real month-by-month calculation for every debt - not a rough estimate formula
+- Change the extra payment and watch your debt-free date move
+- Payment log: add a line when you pay, see what you have paid per debt and per month
+- Progress bars: how much of each debt is already gone
+- Dashboard with your debt-free date, a payoff chart and the debt to focus on this month
+- Light + dark theme
+
+HOW IT WORKS
+1. List debts - name, balance today, interest rate and minimum payment. One line per debt.
+2. Add extra - type what you can pay on top each month and pick Snowball or Avalanche.
+3. See your date - your debt-free date, the payoff order and the interest you save appear by themselves.
+Once a month, update the balances from your statements and the plan re-plans itself.
+
+WORKS WITH
+- Google Sheets (free Google account): upload the file, or use the copy link in the PDF guide
+- Microsoft Excel 2016 or newer, and Microsoft 365
+No macros, no add-ons. The file uses US dollar formatting; you can switch to your own currency in one click (the guide shows how).
+
+FAQ
+Snowball or avalanche - which should I pick? The tracker shows both with your numbers. Snowball clears the smallest balance first (quick wins); avalanche clears the highest interest first (lowest cost). Switch any time with one dropdown.
+Is the payoff date an estimate? It is calculated month by month: interest is added to each balance (yearly rate / 12) and your payments are taken off. Your lender may round or count days slightly differently, so small differences of a few dollars are normal.
+Does it handle 0% debts? Yes, type 0% as the rate.
+I am a beginner. Is this for me? Yes. Plain words, three steps, and a guide with pictures.
+Can I get help? Yes. Message us here on Etsy and a real person answers.
+
+DELIVERY
+This is a digital download. After payment, Etsy shows the files under Purchases and Reviews (and emails you a link). Because digital files cannot be returned, all sales are final - but if anything is not working, message us and we will fix it.
+
+For personal use. This is a debt planning tool, not financial advice. Sample figures are fictional.
+
+Designed by TheCoolShopCo. Some design elements were created with the help of AI tools and finished by hand.</div>
+<h2 style="font-size:16px">Tags (13)</h2><div class="tags"><span>debt payoff tracker</span><span>debt snowball</span><span>debt avalanche</span><span>debt tracker</span><span>debt free planner</span><span>credit card payoff</span><span>loan payoff tracker</span><span>debt calculator</span><span>debt spreadsheet</span><span>debt payoff planner</span><span>pay off debt</span><span>budget spreadsheet</span><span>google sheets budget</span></div>
+<p class="small">Title 140/140 chars · main keyword: <code>debt payoff tracker spreadsheet</code> · materials: Google Sheets, Excel</p>
+</div></div><div class="box vd"><b>Honest verdict (round 1): 8/10</b>
+<div class="sc"><div><b>9</b><small>Thumbnail</small></div><div><b>8</b><small>Gallery</small></div><div><b>9</b><small>Product</small></div><div><b>9</b><small>Title+tags+text</small></div><div><b>9</b><small>In search grid</small></div></div>
+<p style="margin:.3em 0">Real month-by-month payoff maths, checked to the cent by an independent script. &#x27;Debt-free: Nov 2029&#x27; callout sells it.</p><p class="small"><b>Still holding it back:</b> Not yet tested in real Google Sheets/Excel (only LibreOffice here); the PDF still has a placeholder where the Google Sheets copy-link goes. Payoff close-up image is dense.</p></div>
+<h2>In Etsy search for “debt payoff tracker spreadsheet” (19,406 results) — can you spot ours?</h2>
+<p class="small">Ours is placed at position 3 among the real top results (sort = relevance). <button onclick="document.querySelector('.card.ours').classList.toggle('reveal')">Show ours</button></p>
+<div class="sgrid"><a class="card" href="https://www.etsy.com/listing/4626328627/debt-payoff-tracker-spreadsheet-google" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69188725/r/il/037a4f/8980520351/il_570xN.8980520351_s73x.jpg" alt=""></div>
+<div class="t">Debt Payoff Tracker Spreadsheet, Google Sheets Excel Debt Snowball and Avalanche Tracker, Debt Free Planner, Payment Log, 5 Colours</div><div class="pr">2.99 GBP</div><div class="sh">Etsy result #1</div></a><a class="card" href="https://www.etsy.com/listing/4626674721/debt-payoff-tracker-spreadsheet-interest" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69149654/r/il/26dff5/8983498689/il_570xN.8983498689_e4md.jpg" alt=""></div>
+<div class="t">Debt Payoff Tracker Spreadsheet, Interest Free Debt Snowball, Halal Finance, Excel &amp; Google Sheets, Qard Hasan and Family Loan Tracker</div><div class="pr">14.50 AUD</div><div class="sh">Etsy result #2</div></a><a class="card ours" href="#"><div class="ph"><img loading="lazy" src="../img/s05-01-t.jpg" alt=""></div>
+<div class="t">Debt Payoff Tracker Spreadsheet for Google Sheets &amp; Excel, Debt Snowball &amp; Avalanche Calculator, Debt Free Date, Interest Saved, Payoff Plan</div><div class="pr">$6.99</div><div class="sh">TheCoolShopCo · Digital download</div></a><a class="card" href="https://www.etsy.com/listing/4626665413/debt-payoff-tracker-spreadsheet-snowball" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69033751/r/il/3db6bf/8919443275/il_570xN.8919443275_317y.jpg" alt=""></div>
+<div class="t">Debt Payoff Tracker Spreadsheet — Snowball &amp; Avalanche Calculator for up to 10 Debts, Debt-Free Date, Google Sheets and Excel</div><div class="pr">19.98 USD</div><div class="sh">Etsy result #3</div></a><a class="card" href="https://www.etsy.com/listing/4522018140/debt-payoff-tracker-spreadsheet-google" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/14711774/r/il/76fa5b/8185075871/il_570xN.8185075871_73mm.jpg" alt=""></div>
+<div class="t">Debt Payoff Tracker Spreadsheet | Google Sheets Finance Template (Instant Download)</div><div class="pr">3.95 USD</div><div class="sh">Etsy result #4</div></a><a class="card" href="https://www.etsy.com/listing/4626630610/debt-payoff-tracker-spreadsheet-and" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/68832533/r/il/24a8d3/8935245976/il_570xN.8935245976_5051.jpg" alt=""></div>
+<div class="t">Debt Payoff Tracker Spreadsheet and Printable PDF, Debt Snowball and Avalanche Planner, Monthly Budget, Payoff Progress Charts, XLSX</div><div class="pr">8.99 USD</div><div class="sh">Etsy result #5</div></a><a class="card" href="https://www.etsy.com/listing/4626553501/2027-debt-payoff-tracker-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/66684909/r/il/dc1afd/8982419647/il_570xN.8982419647_6wli.jpg" alt=""></div>
+<div class="t">2027 Debt Payoff Tracker Spreadsheet, Snowball and Avalanche Planner, Excel Google Sheets</div><div class="pr">2.99 GBP</div><div class="sh">Etsy result #6</div></a><a class="card" href="https://www.etsy.com/listing/4626165356/debt-payoff-tracker-spreadsheet-for" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/65496003/r/il/9df908/8979063017/il_570xN.8979063017_3vl7.jpg" alt=""></div>
+<div class="t">Debt Payoff Tracker Spreadsheet for Google Sheets &amp; Excel 365 | Debt Snowball and Avalanche Planner with Fresh Start</div><div class="pr">8.95 AUD</div><div class="sh">Etsy result #7</div></a><a class="card" href="https://www.etsy.com/listing/4626518868/debt-payoff-tracker-spreadsheet-debt" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69370142/r/il/038818/8934284676/il_570xN.8934284676_12qw.jpg" alt=""></div>
+<div class="t">Debt Payoff Tracker Spreadsheet | Debt Snowball and Avalanche Tracker | Google Sheets Excel Template | Debt Free Planner</div><div class="pr">16.99 CAD</div><div class="sh">Etsy result #8</div></a><a class="card" href="https://www.etsy.com/listing/4544105671/debt-payoff-tracker-spreadsheet-snowball" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/67152883/r/il/988eb2/8298185266/il_570xN.8298185266_nkq3.jpg" alt=""></div>
+<div class="t">Debt Payoff Tracker Spreadsheet | Snowball, Avalanche Planner (Google Sheets, Excel)</div><div class="pr">12.00 USD</div><div class="sh">Etsy result #9</div></a><a class="card" href="https://www.etsy.com/listing/4626479068/debt-payoff-tracker-spreadsheet-debt" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/29297601/r/il/4b4f51/8933912630/il_570xN.8933912630_oqb0.jpg" alt=""></div>
+<div class="t">Debt Payoff Tracker Spreadsheet, Debt Snowball &amp; Avalanche Calculator, Google Sheets Budget, Excel Budget Planner, Printable Debt Tracker</div><div class="pr">79.00 MAD</div><div class="sh">Etsy result #10</div></a><a class="card" href="https://www.etsy.com/listing/4626412299/debt-payoff-tracker-spreadsheet-snowball" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69148644/r/il/7dff1b/8933414868/il_570xN.8933414868_mdqg.jpg" alt=""></div>
+<div class="t">Debt Payoff Tracker Spreadsheet | Snowball &amp; Avalanche Calculator | Excel Google Sheets | Debt Free Planner</div><div class="pr">8.99 USD</div><div class="sh">Etsy result #11</div></a></div><p style="margin:50px 0"></p></div>
+<script>
+const mi=document.getElementById('main'),al=document.getElementById('alt');
+document.querySelectorAll('.thumbs img,.thumbs .vid').forEach(t=>t.onclick=()=>{document.querySelectorAll('.thumbs .on').forEach(x=>x.classList.remove('on'));t.classList.add('on');
+if(t.dataset.video){mi.innerHTML='<video src="'+t.dataset.video+'" autoplay muted loop playsinline controls></video>';al.textContent='Listing video (Etsy plays it muted)';}
+else{mi.innerHTML='<img src="'+t.dataset.big+'" alt="">';al.textContent=t.dataset.alt;}});
+</script></body></html>

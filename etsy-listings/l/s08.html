@@ -1,0 +1,126 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Small Business Bookkeeping Spreadsheet for Google Sheets &amp; Excel, Inco</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f1641e'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='white' font-family='Georgia'%3EC%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#222;--mut:#595959;--line:#e1e3df;--bg:#fff;--soft:#f6f5f2;--acc:#f1641e;--good:#1c7a46;--warn:#a85d00;--bad:#b3261e}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 "Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:inherit}.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
+.top .wrap{display:flex;gap:16px;align-items:center;height:60px}.brand{font:700 20px Georgia,serif;letter-spacing:-.3px}
+.pill{font-size:12px;background:#fdf0e6;color:#8a3b00;border-radius:99px;padding:3px 10px}
+.search{flex:1;border:2px solid #222;border-radius:99px;padding:8px 16px;color:var(--mut);font-size:14px}
+h1{font:400 28px/1.25 Georgia,serif;margin:28px 0 6px}h2{font:600 20px/1.3 inherit;margin:34px 0 12px}
+.sub{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px 16px}
+.card{text-decoration:none;display:block}.card .ph{aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:var(--soft);position:relative}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}.card:hover img{transform:scale(1.03)}
+.card .t{font-size:13.5px;line-height:1.35;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .pr{font-weight:700;margin-top:3px}.card .sh{font-size:12px;color:var(--mut)}
+.badge{position:absolute;left:8px;top:8px;background:#fff;border-radius:99px;font-size:12px;font-weight:700;padding:2px 9px;box-shadow:0 1px 4px #0002}
+.s10{background:#e6f4ec;color:var(--good)}.s8{background:#fff4e0;color:var(--warn)}.s0{background:#fde8e6;color:var(--bad)}
+.lp{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;margin-top:22px}
+@media(max-width:860px){.lp{grid-template-columns:1fr}}
+.gal{display:grid;grid-template-columns:64px 1fr;gap:12px}.thumbs{display:flex;flex-direction:column;gap:8px;max-height:640px;overflow:auto}
+.thumbs img,.thumbs .vid{width:64px;height:64px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent}
+.thumbs img.on,.thumbs .vid.on{border-color:#222}.thumbs .vid{background:#222;color:#fff;display:grid;place-items:center;font-size:12px}
+.main{aspect-ratio:1/1;background:var(--soft);border-radius:12px;overflow:hidden;display:grid;place-items:center}
+.main img,.main video{width:100%;height:100%;object-fit:contain}
+.alt{font-size:12px;color:var(--mut);margin-top:6px;min-height:2.6em}
+.price{font-size:28px;font-weight:700;margin:6px 0}.ltitle{font-size:19px;line-height:1.4;margin:4px 0 10px;font-weight:400}
+.dl{font-size:13px;background:var(--soft);border-radius:8px;padding:10px 12px;margin:12px 0}
+.btn{display:block;text-align:center;background:#222;color:#fff;border-radius:99px;padding:13px;font-weight:700;margin:8px 0}
+.btn.o{background:#fff;color:#222;border:2px solid #222}
+.desc{white-space:pre-wrap;font-size:14.5px;line-height:1.6;border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tags span{font-size:12.5px;background:var(--soft);border-radius:99px;padding:4px 10px}
+.box{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0}
+.vd{border-left:5px solid var(--acc);background:#fffaf6}
+.sc{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:10px 0}.sc div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center}
+.sc b{display:block;font-size:22px}.sc small{color:var(--mut);font-size:11.5px}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}@media(max-width:700px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+.sgrid .card.ours.reveal .ph{outline:4px solid var(--acc);outline-offset:2px}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.small{font-size:12.5px;color:var(--mut)}code{background:var(--soft);padding:1px 5px;border-radius:4px;font-size:12.5px}
+details summary{cursor:pointer;font-weight:600}
+</style></head><body><div class="top"><div class="wrap"><a class="brand" href="../index.html" style="text-decoration:none">TheCoolShopCo</a>
+<span class="pill">Draft preview · not live on Etsy</span><div class="search">Etsy-style preview of 20 draft listings</div></div></div><div class="wrap"><p class="small" style="margin-top:16px"><a href="../index.html">← all 20 listings</a> · Business Spreadsheets</p>
+<div class="lp"><div><div class="gal"><div class="thumbs"><img src="../img/s08-01-t.jpg" data-big="../img/s08-01.jpg" data-alt="Small business bookkeeping spreadsheet for Google Sheets and Excel: dashboard with income, expenses, net profit and charts, plus a profit and loss card. Yellow and black design." class="on" alt=""><img src="../img/s08-02-t.jpg" data-big="../img/s08-02.jpg" data-alt="Three steps: setup with business name and tax set-aside percent, log income and expenses, look at the dashboard. Yellow cells are for typing." class="" alt=""><img src="../img/s08-03-t.jpg" data-big="../img/s08-03.jpg" data-alt="Bookkeeping dashboard with income, expenses, net profit, set aside for tax and unpaid invoices, a monthly income and expenses chart and a profit line." class="" alt=""><img src="../img/s08-04-t.jpg" data-big="../img/s08-04.jpg" data-alt="Automatic profit and loss statement by month: income categories, expense categories, total income, total expenses and net profit for the year." class="" alt=""><img src="../img/s08-05-t.jpg" data-big="../img/s08-05.jpg" data-alt="Expense log with date, paid to, description, category dropdown, amount and receipt tick; cards show expenses this year and receipts missing." class="" alt=""><img src="../img/s08-06-t.jpg" data-big="../img/s08-06.jpg" data-alt="Invoice tracker showing invoiced, paid, still open and overdue amounts, and a mileage log with distance, amount and trips." class="" alt=""><img src="../img/s08-07-t.jpg" data-big="../img/s08-07.jpg" data-alt="Quarterly summary with income, expenses and net profit per quarter, a tax set-aside row using your own percent, and what is still to set aside." class="" alt=""><img src="../img/s08-08-t.jpg" data-big="../img/s08-08.jpg" data-alt="What is included: nine tabs - Start Here, Setup, Income, Expenses, Invoices, Mileage, P&amp;L, Quarters, Dashboard - plus dark theme, 4 spreadsheets and a PDF guide." class="" alt=""><img src="../img/s08-09-t.jpg" data-big="../img/s08-09.jpg" data-alt="The small business bookkeeping dashboard in light theme and dark theme, both included." class="" alt=""><img src="../img/s08-10-t.jpg" data-big="../img/s08-10.jpg" data-alt="Frequently asked questions: no accounting knowledge needed, works in Google Sheets and Excel, not tax software, rename categories and currency, files included." class="" alt=""><div class="vid" data-video="../img/s08.mp4">▶ video</div></div><div><div class="main" id="main"><img id="mi" src="../img/s08-01.jpg" alt=""></div><div class="alt" id="alt">Small business bookkeeping spreadsheet for Google Sheets and Excel: dashboard with income, expenses, net profit and charts, plus a profit and loss card. Yellow and black design.</div></div></div></div>
+<div><div class="small">TheCoolShopCo</div><h1 class="ltitle">Small Business Bookkeeping Spreadsheet for Google Sheets &amp; Excel, Income Expense Tracker, Profit and Loss, Invoice Tracker, Mileage Log</h1><div class="price">$14.99</div>
+<div class="dl"><b>Digital download</b> — 5 file(s) · Designed by TheCoolShopCo</div>
+<span class="btn">Buy it now</span><span class="btn o">Add to basket</span>
+<div class="box"><b>Files you get</b><ul style="margin:.4em 0 0;padding-left:18px"><li>The workbook, light theme, empty - the buyer&#x27;s working copy <span class="small">(Small-Business-Bookkeeping_Light_BLANK.xlsx)</span></li><li>Light theme filled with a fictional sample year (167 income lines, 262 expenses, 27 invoices, 94 trips) <span class="small">(Small-Business-Bookkeeping_Light_SAMPLE.xlsx)</span></li><li>Dark theme, empty <span class="small">(Small-Business-Bookkeeping_Dark_BLANK.xlsx)</span></li><li>Dark theme with the sample year <span class="small">(Small-Business-Bookkeeping_Dark_SAMPLE.xlsx)</span></li><li>6-page PDF guide; last page holds the Google Sheets copy-link line (placeholder until Bob adds the link) <span class="small">(Small-Business-Bookkeeping_Quick-Start-Guide.pdf)</span></li></ul></div>
+<div class="desc">Small business bookkeeping spreadsheet for Google Sheets &amp; Excel - log income and expenses and get an automatic profit and loss, quarterly summary, invoice tracker, mileage log and dashboard.
+No accounting knowledge needed. Type what came in and what went out; the spreadsheet does the adding up.
+
+EASY BY DESIGN
+Three steps: 1) setup (two minutes), 2) log income and expenses, 3) look at the Dashboard. You only ever type in the yellow cells. A START HERE tab and a PDF quick-start guide with pictures walk you through it.
+
+WHAT YOU GET (instant download)
+- Small Business Bookkeeping spreadsheet, light theme - blank copy for your own business
+- The same file filled with a made-up sample year, so you can see how everything works
+- Dark theme - blank + sample
+- PDF quick-start guide (6 pages)
+4 .xlsx files + 1 PDF. Nothing is shipped.
+
+FEATURES
+- Income log and expense log with category dropdowns (300 + 500 lines per year)
+- Receipt tick for every expense, with a counter of receipts still missing
+- Profit &amp; loss (P&amp;L): every category, every month, year total, profit margin and running profit
+- Quarterly summary: income, expenses and profit for Q1-Q4, expenses by category per quarter
+- Tax set-aside: you choose a % of profit, it shows how much to put aside each quarter and what is still to move
+- Invoice tracker: paid, open, due soon and overdue (red), days late, total still owed
+- Mileage log in miles or km at the rate you set - optionally counted as an expense in the P&amp;L
+- Dashboard: income, expenses, net profit, tax pot, unpaid invoices, biggest expenses, 3 charts
+- 8 income and 16 expense categories - generic, and every one can be renamed
+- Entries without a category still count and are flagged, so nothing goes missing
+- Any year, any currency symbol
+- 9 tabs, light + dark theme, no macros, no add-ons
+
+HOW IT WORKS
+1. Setup - business name, your tax set-aside %, your mileage rate.
+2. Log it - every payment in on the Income tab, every cost on the Expenses tab.
+3. Look - the Dashboard, P&amp;L and Quarters tabs fill themselves in.
+
+WORKS WITH
+- Google Sheets (free Google account): upload the file, or use the copy link in the PDF guide
+- Microsoft Excel 2016 or newer, and Microsoft 365
+The file uses US dollar formatting; you can switch to your own currency in one click (the guide shows how).
+
+FAQ
+Who is it for? Freelancers, side hustles, makers, online sellers and other one-person or small businesses that want simple cash-in, cash-out books.
+Is this tax or accounting software? No. It keeps your numbers tidy so tax time is easier. The categories are generic and the tax set-aside is simply a % of profit that you choose - it is not tax advice. Ask your tax office or accountant what applies to you.
+Does it handle sales tax, VAT or inventory? No - it is kept simple on purpose.
+Can I rename the categories? Yes, on the Setup tab. Everything follows.
+Can I use it every year? Yes. Start each year from the blank file.
+Can I get help? Yes. Message us here on Etsy and a real person answers.
+
+DELIVERY
+This is a digital download. After payment, Etsy shows the files under Purchases and Reviews (and emails you a link). Because digital files cannot be returned, all sales are final - but if anything is not working, message us and we will fix it.
+
+For use in your own business. This is a bookkeeping tool, not tax, legal or financial advice. The sample business and its figures are fictional.
+
+Designed by TheCoolShopCo. Some design elements were created with the help of AI tools and finished by hand.</div>
+<h2 style="font-size:16px">Tags (13)</h2><div class="tags"><span>bookkeeping template</span><span>small business</span><span>expense tracker</span><span>income tracker</span><span>profit and loss</span><span>business spreadsheet</span><span>invoice tracker</span><span>mileage log</span><span>self employed</span><span>tax spreadsheet</span><span>bookkeeping excel</span><span>side hustle tracker</span><span>google sheets</span></div>
+<p class="small">Title 135/140 chars · main keyword: <code>small business bookkeeping spreadsheet</code> · materials: Google Sheets, Excel</p>
+</div></div><div class="box vd"><b>Honest verdict (round 1): 8/10</b>
+<div class="sc"><div><b>9</b><small>Thumbnail</small></div><div><b>9</b><small>Gallery</small></div><div><b>8</b><small>Product</small></div><div><b>8</b><small>Title+tags+text</small></div><div><b>9</b><small>In search grid</small></div></div>
+<p style="margin:.3em 0">Black panel thumbnail pops; P&amp;L, invoices, mileage and tax set-aside cover what freelancers search for.</p><p class="small"><b>Still holding it back:</b> Not yet tested in real Google Sheets/Excel (only LibreOffice here); the PDF still has a placeholder where the Google Sheets copy-link goes. Paid invoice must be typed twice; no sales tax/VAT or inventory.</p></div>
+<h2>In Etsy search for “small business bookkeeping spreadsheet” (31,847 results) — can you spot ours?</h2>
+<p class="small">Ours is placed at position 3 among the real top results (sort = relevance). <button onclick="document.querySelector('.card.ours').classList.toggle('reveal')">Show ours</button></p>
+<div class="sgrid"><a class="card" href="https://www.etsy.com/listing/4626680930/small-business-bookkeeping-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/67795446/r/il/a2a21a/8983475771/il_570xN.8983475771_lgy3.jpg" alt=""></div>
+<div class="t">Small Business Bookkeeping Spreadsheet for Excel, Sales Income, Expenses and Cash Flow Log</div><div class="pr">2.99 USD</div><div class="sh">Etsy result #1</div></a><a class="card" href="https://www.etsy.com/listing/1555391651/small-business-bookkeeping-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/42054447/r/il/29be62/5494658644/il_570xN.5494658644_b45s.jpg" alt=""></div>
+<div class="t">Small Business Bookkeeping Spreadsheet Inventory Tracker Order Tracker Product Handmade Pricing Calculator Client Tracker Google Sheet Excel</div><div class="pr">33.00 CAD</div><div class="sh">Etsy result #2</div></a><a class="card ours" href="#"><div class="ph"><img loading="lazy" src="../img/s08-01-t.jpg" alt=""></div>
+<div class="t">Small Business Bookkeeping Spreadsheet for Google Sheets &amp; Excel, Income Expense Tracker, Profit and Loss, Invoice Tracker, Mileage Log</div><div class="pr">$14.99</div><div class="sh">TheCoolShopCo · Digital download</div></a><a class="card" href="https://www.etsy.com/listing/4626616884/small-business-bookkeeping-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/33125246/r/il/0f4df8/8935116012/il_570xN.8935116012_gjkd.jpg" alt=""></div>
+<div class="t">Small Business Bookkeeping Spreadsheet, Inventory Tracker, Profit and Loss, Etsy Seller Fee Calculator, Excel &amp; Google Sheets Template</div><div class="pr">19.99 USD</div><div class="sh">Etsy result #3</div></a><a class="card" href="https://www.etsy.com/listing/4626534535/small-business-bookkeeping-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69371512/r/il/46b841/8934475952/il_570xN.8934475952_ox8v.jpg" alt=""></div>
+<div class="t">Small Business Bookkeeping Spreadsheet | Income Expense Tracker | Profit and Loss | Schedule C Tax Template | Excel &amp; Google Sheets</div><div class="pr">19.99 USD</div><div class="sh">Etsy result #4</div></a><a class="card" href="https://www.etsy.com/listing/4626529810/small-business-bookkeeping-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/52415712/r/il/5e9a2a/8982134343/il_570xN.8982134343_f1fc.jpg" alt=""></div>
+<div class="t">Small Business Bookkeeping Spreadsheet 2027, Income Expense Tracker, Profit and Loss, Schedule C Tax Template, Excel Google Sheets</div><div class="pr">9.99 USD</div><div class="sh">Etsy result #5</div></a><a class="card" href="https://www.etsy.com/listing/4625805790/small-business-bookkeeping-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/54246780/r/il/8de698/8928152916/il_570xN.8928152916_558s.jpg" alt=""></div>
+<div class="t">Small Business Bookkeeping Spreadsheet, Google Sheets &amp; Excel Template, Income Expense Tracker, Profit and Loss, Sales Tax, Business Budget</div><div class="pr">124279.00 IDR</div><div class="sh">Etsy result #6</div></a><a class="card" href="https://www.etsy.com/listing/4626434822/small-business-bookkeeping-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69349481/r/il/641302/8981200059/il_570xN.8981200059_eezz.jpg" alt=""></div>
+<div class="t">Small Business Bookkeeping Spreadsheet for Excel, Income and Expense Tracker, Profit Dashboard Pro</div><div class="pr">9.99 CAD</div><div class="sh">Etsy result #7</div></a><a class="card" href="https://www.etsy.com/listing/4626397801/small-business-bookkeeping-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/61448484/r/il/20acbf/8981085491/il_570xN.8981085491_lhse.jpg" alt=""></div>
+<div class="t">Small Business Bookkeeping Spreadsheet and Mileage Log | Income Expense Tracker, Profit Summary, Tax Set-Aside, Excel Sheets</div><div class="pr">16.97 USD</div><div class="sh">Etsy result #8</div></a><a class="card" href="https://www.etsy.com/listing/4626388581/small-business-bookkeeping-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69181999/r/il/fcb3fd/8981050543/il_570xN.8981050543_nz17.jpg" alt=""></div>
+<div class="t">Small Business Bookkeeping Spreadsheet | Income Expense Tracker Excel Google Sheets | Profit and Loss Tax Template</div><div class="pr">29.00 USD</div><div class="sh">Etsy result #9</div></a><a class="card" href="https://www.etsy.com/listing/4624335439/2027-small-business-bookkeeping" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/32247347/r/il/184716/8964339663/il_570xN.8964339663_e2ck.jpg" alt=""></div>
+<div class="t">2027 Small Business Bookkeeping Spreadsheet, P&amp;L and GST Tax Dashboard, Income Expense Tracker, Invoice Log, Excel Google Sheets</div><div class="pr">29.99 AUD</div><div class="sh">Etsy result #10</div></a><a class="card" href="https://www.etsy.com/listing/4626308748/small-business-bookkeeping-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69303626/r/il/c4fa82/8980231021/il_570xN.8980231021_b36m.jpg" alt=""></div>
+<div class="t">Small Business Bookkeeping Spreadsheet, Income Expense Tracker, P&amp;L, Cash Flow, Budget and Tax Excel Template</div><div class="pr">59.00 MAD</div><div class="sh">Etsy result #11</div></a></div><p style="margin:50px 0"></p></div>
+<script>
+const mi=document.getElementById('main'),al=document.getElementById('alt');
+document.querySelectorAll('.thumbs img,.thumbs .vid').forEach(t=>t.onclick=()=>{document.querySelectorAll('.thumbs .on').forEach(x=>x.classList.remove('on'));t.classList.add('on');
+if(t.dataset.video){mi.innerHTML='<video src="'+t.dataset.video+'" autoplay muted loop playsinline controls></video>';al.textContent='Listing video (Etsy plays it muted)';}
+else{mi.innerHTML='<img src="'+t.dataset.big+'" alt="">';al.textContent=t.dataset.alt;}});
+</script></body></html>

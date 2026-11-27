@@ -1,0 +1,218 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Haushaltsbuch Excel &amp; Google Sheets, Budgetplaner Deutsch, Monatsbudge</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f1641e'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='white' font-family='Georgia'%3EC%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#222;--mut:#595959;--line:#e1e3df;--bg:#fff;--soft:#f6f5f2;--acc:#f1641e;--good:#1c7a46;--warn:#a85d00;--bad:#b3261e}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 "Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:inherit}.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
+.top .wrap{display:flex;gap:16px;align-items:center;height:60px}.brand{font:700 20px Georgia,serif;letter-spacing:-.3px}
+.pill{font-size:12px;background:#fdf0e6;color:#8a3b00;border-radius:99px;padding:3px 10px}
+.search{flex:1;border:2px solid #222;border-radius:99px;padding:8px 16px;color:var(--mut);font-size:14px}
+h1{font:400 28px/1.25 Georgia,serif;margin:28px 0 6px}h2{font:600 20px/1.3 inherit;margin:34px 0 12px}
+.sub{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px 16px}
+.card{text-decoration:none;display:block}.card .ph{aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:var(--soft);position:relative}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}.card:hover img{transform:scale(1.03)}
+.card .t{font-size:13.5px;line-height:1.35;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .pr{font-weight:700;margin-top:3px}.card .sh{font-size:12px;color:var(--mut)}
+.badge{position:absolute;left:8px;top:8px;background:#fff;border-radius:99px;font-size:12px;font-weight:700;padding:2px 9px;box-shadow:0 1px 4px #0002}
+.s10{background:#e6f4ec;color:var(--good)}.s8{background:#fff4e0;color:var(--warn)}.s0{background:#fde8e6;color:var(--bad)}
+.lp{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;margin-top:22px}
+@media(max-width:860px){.lp{grid-template-columns:1fr}}
+.gal{display:grid;grid-template-columns:64px 1fr;gap:12px}.thumbs{display:flex;flex-direction:column;gap:8px;max-height:640px;overflow:auto}
+.thumbs img,.thumbs .vid{width:64px;height:64px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent}
+.thumbs img.on,.thumbs .vid.on{border-color:#222}.thumbs .vid{background:#222;color:#fff;display:grid;place-items:center;font-size:12px}
+.main{aspect-ratio:1/1;background:var(--soft);border-radius:12px;overflow:hidden;display:grid;place-items:center}
+.main img,.main video{width:100%;height:100%;object-fit:contain}
+.alt{font-size:12px;color:var(--mut);margin-top:6px;min-height:2.6em}
+.price{font-size:28px;font-weight:700;margin:6px 0}.ltitle{font-size:19px;line-height:1.4;margin:4px 0 10px;font-weight:400}
+.dl{font-size:13px;background:var(--soft);border-radius:8px;padding:10px 12px;margin:12px 0}
+.btn{display:block;text-align:center;background:#222;color:#fff;border-radius:99px;padding:13px;font-weight:700;margin:8px 0}
+.btn.o{background:#fff;color:#222;border:2px solid #222}
+.desc{white-space:pre-wrap;font-size:14.5px;line-height:1.6;border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tags span{font-size:12.5px;background:var(--soft);border-radius:99px;padding:4px 10px}
+.box{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0}
+.vd{border-left:5px solid var(--acc);background:#fffaf6}
+.sc{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:10px 0}.sc div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center}
+.sc b{display:block;font-size:22px}.sc small{color:var(--mut);font-size:11.5px}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}@media(max-width:700px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+.sgrid .card.ours.reveal .ph{outline:4px solid var(--acc);outline-offset:2px}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.small{font-size:12.5px;color:var(--mut)}code{background:var(--soft);padding:1px 5px;border-radius:4px;font-size:12.5px}
+details summary{cursor:pointer;font-weight:600}
+</style></head><body><div class="top"><div class="wrap"><a class="brand" href="../index.html" style="text-decoration:none">TheCoolShopCo</a>
+<span class="pill">Draft preview · not live on Etsy</span><div class="search">Etsy-style preview of 20 draft listings</div></div></div><div class="wrap"><p class="small" style="margin-top:16px"><a href="../index.html">← all 20 listings</a> · Budget Spreadsheets</p>
+<div class="lp"><div><div class="gal"><div class="thumbs"><img src="../img/s09-01-t.jpg" data-big="../img/s09-01.jpg" data-alt="Haushaltsbuch für Excel und Google Sheets auf Deutsch: Monatsübersicht mit Einnahmen, Fixkosten, variablen Ausgaben und Übrig auf einem Tablet, daneben die Jahresübersicht als Diagramm. Gelb-schwarzes Design." class="on" alt=""><img src="../img/s09-02-t.jpg" data-big="../img/s09-02.jpg" data-alt="In drei Schritten startklar: Budget mit Einnahmen und Kategorien, Fixkosten einmal eintragen, Buchungen notieren. Gelbe Felder sind zum Ausfüllen." class="" alt=""><img src="../img/s09-03-t.jpg" data-big="../img/s09-03.jpg" data-alt="Monatsübersicht des Haushaltsbuchs für März 2027: Einnahmen, Fixkosten, variable Ausgaben, Sparen, Übrig, Budget je Kategorie und die Fixkosten des Monats." class="" alt=""><img src="../img/s09-04-t.jpg" data-big="../img/s09-04.jpg" data-alt="Jahresübersicht mit allen zwölf Monaten: Einnahmen, Fixkosten, Ausgaben je Kategorie, Sparen, Übrig und Sparquote, mit Summe und Durchschnitt." class="" alt=""><img src="../img/s09-05-t.jpg" data-big="../img/s09-05.jpg" data-alt="Fixkosten-Liste mit Miete, Strom, Versicherungen und Abos, Betrag, Rhythmus von monatlich bis jährlich und Fälligkeitsmonat." class="" alt=""><img src="../img/s09-06-t.jpg" data-big="../img/s09-06.jpg" data-alt="Sparziele mit Zielbetrag, schon gespart, Sparrate pro Monat, Fortschrittsbalken, Fertig in Monaten und Zieldatum." class="" alt=""><img src="../img/s09-07-t.jpg" data-big="../img/s09-07.jpg" data-alt="Buchungen im Haushaltsbuch: Datum im deutschen Format, Beschreibung, Kategorie aus der Auswahlliste und Betrag in Euro." class="" alt=""><img src="../img/s09-08-t.jpg" data-big="../img/s09-08.jpg" data-alt="Enthalten: sieben Blätter - Start hier, Budget, Fixkosten, Buchungen, Monat, Jahresübersicht, Sparziele - dazu dunkles Design, 4 Tabellen und PDF-Anleitung." class="" alt=""><img src="../img/s09-09-t.jpg" data-big="../img/s09-09.jpg" data-alt="Das Haushaltsbuch im hellen und im dunklen Design, beide enthalten." class="" alt=""><img src="../img/s09-10-t.jpg" data-big="../img/s09-10.jpg" data-alt="Fragen und Antworten zum Haushaltsbuch: Excel und Google Sheets, alles auf Deutsch, für Einsteiger, Start mitten im Jahr, enthaltene Dateien." class="" alt=""></div><div><div class="main" id="main"><img id="mi" src="../img/s09-01.jpg" alt=""></div><div class="alt" id="alt">Haushaltsbuch für Excel und Google Sheets auf Deutsch: Monatsübersicht mit Einnahmen, Fixkosten, variablen Ausgaben und Übrig auf einem Tablet, daneben die Jahresübersicht als Diagramm. Gelb-schwarzes Design.</div></div></div></div>
+<div><div class="small">TheCoolShopCo</div><h1 class="ltitle">Haushaltsbuch Excel &amp; Google Sheets, Budgetplaner Deutsch, Monatsbudget Vorlage mit Fixkosten, Sparziele, Jahresübersicht, Finanzplaner</h1><div class="price">$10.99</div>
+<div class="dl"><b>Digital download</b> — 5 file(s) · Designed by TheCoolShopCo</div>
+<span class="btn">Buy it now</span><span class="btn o">Add to basket</span>
+<div class="box"><b>Files you get</b><ul style="margin:.4em 0 0;padding-left:18px"><li>Haushaltsbuch, light theme, empty - the buyer&#x27;s working copy (German) <span class="small">(Haushaltsbuch_Hell_LEER.xlsx)</span></li><li>Light theme with a fictional sample year (288 Buchungen, 18 Fixkosten, 5 Sparziele) <span class="small">(Haushaltsbuch_Hell_BEISPIEL.xlsx)</span></li><li>Dark theme, empty <span class="small">(Haushaltsbuch_Dunkel_LEER.xlsx)</span></li><li>Dark theme with the sample year <span class="small">(Haushaltsbuch_Dunkel_BEISPIEL.xlsx)</span></li><li>6-page German PDF guide; last page holds the Google Sheets copy-link line (placeholder until Bob adds the link) <span class="small">(Haushaltsbuch_Kurzanleitung.pdf)</span></li></ul></div>
+<div class="desc">Haushaltsbuch für Excel &amp; Google Sheets - komplett auf Deutsch, in Euro und in drei Schritten startklar.
+Der Budgetplaner zeigt dir jeden Monat, was reinkommt, was rausgeht und was übrig bleibt: Monatsübersicht, Jahresübersicht, Fixkosten und Sparziele in einer Datei.
+
+BEWUSST EINFACH GEHALTEN
+Drei Schritte: 1) Einnahmen und Budgets eintragen, 2) Fixkosten einmal erfassen, 3) Ausgaben notieren. Du schreibst nur in die gelben Felder - alles andere rechnet sich von selbst. Ein Blatt „START HIER“ und eine PDF-Anleitung mit Bildern führen dich durch.
+
+DAS BEKOMMST DU (Sofort-Download)
+- Haushaltsbuch, helles Design - leere Datei für dein eigenes Budget
+- Dieselbe Datei mit Beispielzahlen, damit du siehst, wie alles funktioniert
+- Dunkles Design - leer + Beispiel
+- PDF-Kurzanleitung (6 Seiten)
+4 .xlsx-Dateien + 1 PDF. Es wird nichts verschickt.
+
+DAS KANN DAS HAUSHALTSBUCH
+- Monatsübersicht: Einnahmen, Fixkosten, variable Ausgaben, Sparen und was übrig bleibt
+- Budget je Kategorie mit Ausgaben, Rest und Balken - Rot zeigt, wo du drüber bist
+- Fixkosten einmal eintragen: monatlich, alle 2 Monate, viertel-, halb- oder jährlich
+- Jahresbeiträge (Kfz-Versicherung, Rundfunkbeitrag ...) landen automatisch im richtigen Monat
+- Monatliche Rücklage: so viel legst du für alles zurück, was nicht monatlich kommt
+- Buchungen: Datum, Beschreibung, Kategorie, Betrag - mit Auswahlliste, Platz für 600 Einträge im Jahr
+- Jahresübersicht: alle 12 Monate nebeneinander, Summe, Durchschnitt, Sparquote
+- Kommende Monate zeigen deinen Plan, vergangene deine echten Zahlen
+- Sparziele mit Fortschrittsbalken, „Fertig in ... Monaten“ und Zieldatum
+- 5 Diagramme, die sich selbst aktualisieren
+- 12 Kategorien, alle umbenennbar; Start in jedem Monat möglich
+- Deutsches Zahlen- und Datumsformat (1.234,56 € und 31.12.2027)
+- 7 Blätter, hell + dunkel, keine Makros, keine Add-ons
+
+SO FUNKTIONIERT ES
+1. Budget - monatliche Einnahmen eintragen und jeder Kategorie ein Budget geben.
+2. Fixkosten - Miete, Strom, Versicherungen: jede feste Ausgabe einmal erfassen.
+3. Buchungen - Einkäufe notieren. Monat, Jahr und Sparziele rechnen automatisch mit.
+
+FUNKTIONIERT MIT
+- Microsoft Excel ab 2016 und Microsoft 365
+- Google Sheets / Google Tabellen (kostenloses Google-Konto): Datei hochladen oder den Kopierlink aus der PDF-Anleitung nutzen
+Die Beträge sind in Euro formatiert; für CHF änderst du das Währungsformat mit einem Klick.
+
+HÄUFIGE FRAGEN
+Ich habe noch nie ein Haushaltsbuch geführt - ist das etwas für mich? Ja. Es ist in klaren Worten erklärt und kommt ohne Vorkenntnisse aus.
+Muss ich jeden Kassenbon eintippen? Nein. Fixkosten laufen automatisch mit; bei den variablen Ausgaben reicht eine Zeile pro Einkauf, einmal pro Woche.
+Kann ich mitten im Jahr starten? Ja, du wählst einfach deinen Startmonat.
+Gilt es nur für 2027? Nein. Das Jahr trägst du selbst ein - jedes Jahr beginnst du wieder mit der leeren Datei.
+Bekomme ich Hilfe? Ja. Schreib uns hier über Etsy, wir antworten persönlich.
+
+LIEFERUNG
+Dies ist ein digitaler Download. Nach der Zahlung findest du die Dateien bei Etsy unter „Käufe und Bewertungen“ (und bekommst einen Link per E-Mail). Digitale Dateien können nicht zurückgegeben werden - sollte etwas nicht funktionieren, melde dich bitte, wir kümmern uns darum.
+
+Nur für den privaten Gebrauch. Das Haushaltsbuch ist ein Planungswerkzeug und keine Finanzberatung. Die Beispielzahlen sind frei erfunden.
+
+Gestaltet von TheCoolShopCo. Einige Designelemente wurden mit Hilfe von KI-Tools erstellt und von Hand fertiggestellt.</div>
+<h2 style="font-size:16px">Tags (13)</h2><div class="tags"><span>haushaltsbuch</span><span>budgetplaner</span><span>haushaltsbuch excel</span><span>budgetplaner deutsch</span><span>finanzplaner</span><span>monatsbudget</span><span>haushaltsplaner</span><span>ausgaben tracker</span><span>budget vorlage</span><span>sparziele</span><span>fixkosten</span><span>einnahmen ausgaben</span><span>google sheets budget</span></div>
+<p class="small">Title 135/140 chars · main keyword: <code>haushaltsbuch</code> · materials: Google Sheets, Excel</p>
+<details class="box"><summary>DE translation (shown to German shoppers)</summary><p><b>Haushaltsbuch Excel &amp; Google Sheets, Budgetplaner Deutsch, Monatsbudget Vorlage mit Fixkosten, Sparziele, Jahresübersicht, Finanzplaner</b></p><div class="desc">Haushaltsbuch für Excel &amp; Google Sheets - komplett auf Deutsch, in Euro und in drei Schritten startklar.
+Der Budgetplaner zeigt dir jeden Monat, was reinkommt, was rausgeht und was übrig bleibt: Monatsübersicht, Jahresübersicht, Fixkosten und Sparziele in einer Datei.
+
+BEWUSST EINFACH GEHALTEN
+Drei Schritte: 1) Einnahmen und Budgets eintragen, 2) Fixkosten einmal erfassen, 3) Ausgaben notieren. Du schreibst nur in die gelben Felder - alles andere rechnet sich von selbst. Ein Blatt „START HIER“ und eine PDF-Anleitung mit Bildern führen dich durch.
+
+DAS BEKOMMST DU (Sofort-Download)
+- Haushaltsbuch, helles Design - leere Datei für dein eigenes Budget
+- Dieselbe Datei mit Beispielzahlen, damit du siehst, wie alles funktioniert
+- Dunkles Design - leer + Beispiel
+- PDF-Kurzanleitung (6 Seiten)
+4 .xlsx-Dateien + 1 PDF. Es wird nichts verschickt.
+
+DAS KANN DAS HAUSHALTSBUCH
+- Monatsübersicht: Einnahmen, Fixkosten, variable Ausgaben, Sparen und was übrig bleibt
+- Budget je Kategorie mit Ausgaben, Rest und Balken - Rot zeigt, wo du drüber bist
+- Fixkosten einmal eintragen: monatlich, alle 2 Monate, viertel-, halb- oder jährlich
+- Jahresbeiträge (Kfz-Versicherung, Rundfunkbeitrag ...) landen automatisch im richtigen Monat
+- Monatliche Rücklage: so viel legst du für alles zurück, was nicht monatlich kommt
+- Buchungen: Datum, Beschreibung, Kategorie, Betrag - mit Auswahlliste, Platz für 600 Einträge im Jahr
+- Jahresübersicht: alle 12 Monate nebeneinander, Summe, Durchschnitt, Sparquote
+- Kommende Monate zeigen deinen Plan, vergangene deine echten Zahlen
+- Sparziele mit Fortschrittsbalken, „Fertig in ... Monaten“ und Zieldatum
+- 5 Diagramme, die sich selbst aktualisieren
+- 12 Kategorien, alle umbenennbar; Start in jedem Monat möglich
+- Deutsches Zahlen- und Datumsformat (1.234,56 € und 31.12.2027)
+- 7 Blätter, hell + dunkel, keine Makros, keine Add-ons
+
+SO FUNKTIONIERT ES
+1. Budget - monatliche Einnahmen eintragen und jeder Kategorie ein Budget geben.
+2. Fixkosten - Miete, Strom, Versicherungen: jede feste Ausgabe einmal erfassen.
+3. Buchungen - Einkäufe notieren. Monat, Jahr und Sparziele rechnen automatisch mit.
+
+FUNKTIONIERT MIT
+- Microsoft Excel ab 2016 und Microsoft 365
+- Google Sheets / Google Tabellen (kostenloses Google-Konto): Datei hochladen oder den Kopierlink aus der PDF-Anleitung nutzen
+Die Beträge sind in Euro formatiert; für CHF änderst du das Währungsformat mit einem Klick.
+
+HÄUFIGE FRAGEN
+Ich habe noch nie ein Haushaltsbuch geführt - ist das etwas für mich? Ja. Es ist in klaren Worten erklärt und kommt ohne Vorkenntnisse aus.
+Muss ich jeden Kassenbon eintippen? Nein. Fixkosten laufen automatisch mit; bei den variablen Ausgaben reicht eine Zeile pro Einkauf, einmal pro Woche.
+Kann ich mitten im Jahr starten? Ja, du wählst einfach deinen Startmonat.
+Gilt es nur für 2027? Nein. Das Jahr trägst du selbst ein - jedes Jahr beginnst du wieder mit der leeren Datei.
+Bekomme ich Hilfe? Ja. Schreib uns hier über Etsy, wir antworten persönlich.
+
+LIEFERUNG
+Dies ist ein digitaler Download. Nach der Zahlung findest du die Dateien bei Etsy unter „Käufe und Bewertungen“ (und bekommst einen Link per E-Mail). Digitale Dateien können nicht zurückgegeben werden - sollte etwas nicht funktionieren, melde dich bitte, wir kümmern uns darum.
+
+Nur für den privaten Gebrauch. Das Haushaltsbuch ist ein Planungswerkzeug und keine Finanzberatung. Die Beispielzahlen sind frei erfunden.
+
+Gestaltet von TheCoolShopCo. Einige Designelemente wurden mit Hilfe von KI-Tools erstellt und von Hand fertiggestellt.</div><div class="tags"><span>haushaltsbuch</span><span>budgetplaner</span><span>haushaltsbuch excel</span><span>budgetplaner deutsch</span><span>finanzplaner</span><span>monatsbudget</span><span>haushaltsplaner</span><span>ausgaben tracker</span><span>budget vorlage</span><span>sparziele</span><span>fixkosten</span><span>einnahmen ausgaben</span><span>google sheets budget</span></div></details><details class="box"><summary>EN translation (shown to en shoppers)</summary><p><b>Haushaltsbuch German Budget Planner for Excel &amp; Google Sheets, Budgetplaner Deutsch, Monthly Household Budget in German, Euro</b></p><div class="desc">Haushaltsbuch (German household budget) for Excel &amp; Google Sheets - every tab, label, category and the PDF guide are in German, amounts in euro.
+A German-language budget planner that shows what comes in, what goes out and what is left each month: monthly view, yearly overview, fixed costs and savings goals in one file.
+
+EASY BY DESIGN
+Three steps: 1) income and budgets, 2) fixed costs once, 3) note your spending. You only type in the yellow cells - everything else adds itself up. A START HIER tab and a PDF guide with pictures (in German) walk you through it.
+
+WHAT YOU GET (instant download)
+- Haushaltsbuch, light theme - blank copy
+- The same file with sample numbers
+- Dark theme - blank + sample
+- PDF quick-start guide in German (6 pages)
+4 .xlsx files + 1 PDF. Nothing is shipped.
+
+FEATURES
+- Monthly view (Monat): income, fixed costs, variable spending, savings and what is left
+- Budget per category with spent, left and a bar - red when you are over
+- Fixed costs (Fixkosten) typed once: monthly, every 2 months, quarterly, half-yearly or yearly
+- Yearly payments land in the right month by themselves, plus a monthly set-aside figure
+- Transactions (Buchungen): date, description, category dropdown, amount - 600 lines per year
+- Yearly overview (Jahresübersicht): 12 months side by side, total, average, savings rate
+- Savings goals (Sparziele) with progress bars, months to go and target month
+- 5 automatic charts, 12 renameable categories, start in any month
+- German number and date formats (1.234,56 € and 31.12.2027) when Excel / Google Sheets is set to a German-speaking region
+- 7 tabs, light + dark, no macros, no add-ons
+
+HOW IT WORKS
+1. Budget - type your monthly income and give each category a budget.
+2. Fixkosten - rent, electricity, insurance: enter each fixed cost once.
+3. Buchungen - note your spending. Month, year and savings goals update by themselves.
+
+WORKS WITH
+- Microsoft Excel 2016 or newer, and Microsoft 365
+- Google Sheets (free Google account)
+
+PLEASE NOTE
+The whole file is in German. Looking for an English budget? See the other budget spreadsheets in our shop.
+
+DELIVERY
+This is a digital download. After payment, Etsy shows the files under Purchases and Reviews. Because digital files cannot be returned, all sales are final - but if anything is not working, message us and we will fix it.
+
+For personal use. This is a budgeting tool, not financial advice. Sample figures are fictional.
+
+Designed by TheCoolShopCo. Some design elements were created with the help of AI tools and finished by hand.</div><div class="tags"><span>german budget</span><span>haushaltsbuch</span><span>budgetplaner</span><span>budget in german</span><span>german planner</span><span>household budget</span><span>monthly budget</span><span>budget spreadsheet</span><span>google sheets budget</span><span>excel budget</span><span>expense tracker</span><span>savings goals</span><span>euro budget</span></div></details></div></div><div class="box vd"><b>Honest verdict (round 1): 7/10</b>
+<div class="sc"><div><b>9</b><small>Thumbnail</small></div><div><b>8</b><small>Gallery</small></div><div><b>8</b><small>Product</small></div><div><b>7</b><small>Title+tags+text</small></div><div><b>9</b><small>In search grid</small></div></div>
+<p style="margin:.3em 0">Only German-native budget file with this finish in a tiny market (765 searches vs 93 listings).</p><p class="small"><b>Still holding it back:</b> Not yet tested in real Google Sheets/Excel (only LibreOffice here); the PDF still has a placeholder where the Google Sheets copy-link goes. German not proof-read by a native speaker; Etsy needs the English text as main language and German as the translation (shop language is English); guide is US Letter, not A4; no video.</p></div>
+<h2>In Etsy search for “haushaltsbuch” (548 results) — can you spot ours?</h2>
+<p class="small">Ours is placed at position 3 among the real top results (sort = relevance). <button onclick="document.querySelector('.card.ours').classList.toggle('reveal')">Show ours</button></p>
+<div class="sgrid"><a class="card" href="https://www.etsy.com/listing/4626440199/budgetplaner-2027-deutsch-google-sheets" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/60174637/r/il/231759/8981435647/il_570xN.8981435647_c1jz.jpg" alt=""></div>
+<div class="t">Budgetplaner 2027 Deutsch Google Sheets | Haushaltsbuch &amp; Jahresbudget | Finanzplaner Excel | Sparziele | Euro CHF</div><div class="pr">15.00 USD</div><div class="sh">Etsy result #1</div></a><a class="card" href="https://www.etsy.com/listing/4317551107/monatsbudget-vorlage-google-sheets-excel" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/39437159/r/il/beff68/8887740137/il_570xN.8887740137_ex0w.jpg" alt=""></div>
+<div class="t">Monatsbudget Vorlage für Google Sheets und Excel, Haushaltsbuch und Budget Planer, 3 Farbthemen</div><div class="pr">4.00 USD</div><div class="sh">Etsy result #2</div></a><a class="card ours" href="#"><div class="ph"><img loading="lazy" src="../img/s09-01-t.jpg" alt=""></div>
+<div class="t">Haushaltsbuch Excel &amp; Google Sheets, Budgetplaner Deutsch, Monatsbudget Vorlage mit Fixkosten, Sparziele, Jahresübersicht, Finanzplaner</div><div class="pr">$10.99</div><div class="sh">TheCoolShopCo · Digital download</div></a><a class="card" href="https://www.etsy.com/listing/4626158327/budgetplaner-2027-deutsch-digitales" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/68374435/r/il/501139/8979078391/il_570xN.8979078391_h69k.jpg" alt=""></div>
+<div class="t">Budgetplaner 2027 Deutsch, Digitales Haushaltsbuch GoodNotes, Finanzplaner, Ausgaben Tracker, Sparen, Schulden, iPad Planer</div><div class="pr">3.00 CHF</div><div class="sh">Etsy result #3</div></a><a class="card" href="https://www.etsy.com/listing/4626278871/premium-haushaltsplaner-excel-google" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69138649/r/il/d44c29/8932285334/il_570xN.8932285334_763e.jpg" alt=""></div>
+<div class="t">premium Haushaltsplaner Excel &amp; Google Sheets | Haushaltsbuch, Budgetplaner Ausgaben Tracker</div><div class="pr">7.13 USD</div><div class="sh">Etsy result #4</div></a><a class="card" href="https://www.etsy.com/listing/4625689662/haushaltsbuch-google-sheets-excel" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69280866/r/il/80be02/8927381458/il_570xN.8927381458_3tyc.jpg" alt=""></div>
+<div class="t">Haushaltsbuch Google Sheets &amp; Excel, Budgetplaner Deutsch 2027, Monatsbudget, Sparziele, Einnahmen Ausgaben Tracker</div><div class="pr">6.99 EUR</div><div class="sh">Etsy result #5</div></a><a class="card" href="https://www.etsy.com/listing/4626208692/haushaltsbuch-zum-ausdrucken" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/64184135/r/il/beb8a6/8979410219/il_570xN.8979410219_5gob.jpg" alt=""></div>
+<div class="t">Haushaltsbuch zum Ausdrucken, Haushaltsplaner PDF, Budget Planer Deutsch, Finanzplaner, Umschlagmethode, A6 Budget Binder Einlagen</div><div class="pr">7.99 USD</div><div class="sh">Etsy result #6</div></a><a class="card" href="https://www.etsy.com/listing/4626078138/budgetplaner-zum-ausdrucken-a4" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/66650005/r/il/6c73d1/8934005580/il_570xN.8934005580_ek0f.jpg" alt=""></div>
+<div class="t">Digitaler Budgetplaner Deutsch, GoodNotes iPad Planer, Haushaltsbuch digital, Finanzplaner verlinkt, 64 Sticker, Salbei</div><div class="pr">6.00 EUR</div><div class="sh">Etsy result #7</div></a><a class="card" href="https://www.etsy.com/listing/4617836047/haushaltsbuch-2027-dark-mode" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/62887201/r/il/c8c5f2/8910853675/il_570xN.8910853675_2inb.jpg" alt=""></div>
+<div class="t">Haushaltsbuch 2027 Dark Mode, Budgetplaner für Excel &amp; Google Sheets mit Dashboard, Kalender und Schuldenplaner</div><div class="pr">12.90 EUR</div><div class="sh">Etsy result #8</div></a><a class="card" href="https://www.etsy.com/listing/4626022974/budgetplaner-2027-excel-google-tabellen" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/68746209/r/il/112d8e/8930054910/il_570xN.8930054910_5flf.jpg" alt=""></div>
+<div class="t">Budgetplaner 2027 Excel &amp; Google Tabellen, Haushaltsbuch Vorlage, Monatsbudget, Sparziele, Schulden abbauen, Steuertermine DE AT CH</div><div class="pr">4.90 EUR</div><div class="sh">Etsy result #9</div></a><a class="card" href="https://www.etsy.com/listing/4626003566/budgetplaner-2027-zum-ausdrucken-pdf" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/43597267/r/il/bfacb3/8929901268/il_570xN.8929901268_4aof.jpg" alt=""></div>
+<div class="t">Budgetplaner 2027 zum Ausdrucken PDF | Haushaltsbuch, Finanzplaner, Ausgaben Tracker, Sparziele, GoodNotes Planer Deutsch A4</div><div class="pr">4.12 EUR</div><div class="sh">Etsy result #10</div></a><a class="card" href="https://www.etsy.com/listing/4617092279/german-budget-planner-2027-haushaltsbuch" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/67790383/r/il/781951/8904710067/il_570xN.8904710067_gqz5.jpg" alt=""></div>
+<div class="t">German Budget Planner 2027, Haushaltsbuch Excel &amp; Google Sheets, Budgetplaner Deutsch, Paycheck Budget App, Bill and Debt Tracker, A4</div><div class="pr">9.99 USD</div><div class="sh">Etsy result #11</div></a></div><p style="margin:50px 0"></p></div>
+<script>
+const mi=document.getElementById('main'),al=document.getElementById('alt');
+document.querySelectorAll('.thumbs img,.thumbs .vid').forEach(t=>t.onclick=()=>{document.querySelectorAll('.thumbs .on').forEach(x=>x.classList.remove('on'));t.classList.add('on');
+if(t.dataset.video){mi.innerHTML='<video src="'+t.dataset.video+'" autoplay muted loop playsinline controls></video>';al.textContent='Listing video (Etsy plays it muted)';}
+else{mi.innerHTML='<img src="'+t.dataset.big+'" alt="">';al.textContent=t.dataset.alt;}});
+</script></body></html>

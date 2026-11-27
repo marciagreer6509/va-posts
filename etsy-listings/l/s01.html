@@ -1,0 +1,127 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Paycheck Budget Spreadsheet for Google Sheets &amp; Excel, Budget by Paych</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f1641e'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='white' font-family='Georgia'%3EC%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#222;--mut:#595959;--line:#e1e3df;--bg:#fff;--soft:#f6f5f2;--acc:#f1641e;--good:#1c7a46;--warn:#a85d00;--bad:#b3261e}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 "Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:inherit}.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
+.top .wrap{display:flex;gap:16px;align-items:center;height:60px}.brand{font:700 20px Georgia,serif;letter-spacing:-.3px}
+.pill{font-size:12px;background:#fdf0e6;color:#8a3b00;border-radius:99px;padding:3px 10px}
+.search{flex:1;border:2px solid #222;border-radius:99px;padding:8px 16px;color:var(--mut);font-size:14px}
+h1{font:400 28px/1.25 Georgia,serif;margin:28px 0 6px}h2{font:600 20px/1.3 inherit;margin:34px 0 12px}
+.sub{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px 16px}
+.card{text-decoration:none;display:block}.card .ph{aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:var(--soft);position:relative}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}.card:hover img{transform:scale(1.03)}
+.card .t{font-size:13.5px;line-height:1.35;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .pr{font-weight:700;margin-top:3px}.card .sh{font-size:12px;color:var(--mut)}
+.badge{position:absolute;left:8px;top:8px;background:#fff;border-radius:99px;font-size:12px;font-weight:700;padding:2px 9px;box-shadow:0 1px 4px #0002}
+.s10{background:#e6f4ec;color:var(--good)}.s8{background:#fff4e0;color:var(--warn)}.s0{background:#fde8e6;color:var(--bad)}
+.lp{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;margin-top:22px}
+@media(max-width:860px){.lp{grid-template-columns:1fr}}
+.gal{display:grid;grid-template-columns:64px 1fr;gap:12px}.thumbs{display:flex;flex-direction:column;gap:8px;max-height:640px;overflow:auto}
+.thumbs img,.thumbs .vid{width:64px;height:64px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent}
+.thumbs img.on,.thumbs .vid.on{border-color:#222}.thumbs .vid{background:#222;color:#fff;display:grid;place-items:center;font-size:12px}
+.main{aspect-ratio:1/1;background:var(--soft);border-radius:12px;overflow:hidden;display:grid;place-items:center}
+.main img,.main video{width:100%;height:100%;object-fit:contain}
+.alt{font-size:12px;color:var(--mut);margin-top:6px;min-height:2.6em}
+.price{font-size:28px;font-weight:700;margin:6px 0}.ltitle{font-size:19px;line-height:1.4;margin:4px 0 10px;font-weight:400}
+.dl{font-size:13px;background:var(--soft);border-radius:8px;padding:10px 12px;margin:12px 0}
+.btn{display:block;text-align:center;background:#222;color:#fff;border-radius:99px;padding:13px;font-weight:700;margin:8px 0}
+.btn.o{background:#fff;color:#222;border:2px solid #222}
+.desc{white-space:pre-wrap;font-size:14.5px;line-height:1.6;border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tags span{font-size:12.5px;background:var(--soft);border-radius:99px;padding:4px 10px}
+.box{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0}
+.vd{border-left:5px solid var(--acc);background:#fffaf6}
+.sc{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:10px 0}.sc div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center}
+.sc b{display:block;font-size:22px}.sc small{color:var(--mut);font-size:11.5px}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}@media(max-width:700px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+.sgrid .card.ours.reveal .ph{outline:4px solid var(--acc);outline-offset:2px}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.small{font-size:12.5px;color:var(--mut)}code{background:var(--soft);padding:1px 5px;border-radius:4px;font-size:12.5px}
+details summary{cursor:pointer;font-weight:600}
+</style></head><body><div class="top"><div class="wrap"><a class="brand" href="../index.html" style="text-decoration:none">TheCoolShopCo</a>
+<span class="pill">Draft preview · not live on Etsy</span><div class="search">Etsy-style preview of 20 draft listings</div></div></div><div class="wrap"><p class="small" style="margin-top:16px"><a href="../index.html">← all 20 listings</a> · Budget Spreadsheets</p>
+<div class="lp"><div><div class="gal"><div class="thumbs"><img src="../img/s01-01-t.jpg" data-big="../img/s01-01.jpg" data-alt="Paycheck budget spreadsheet for Google Sheets and Excel shown on a laptop and phone: dashboard with yearly totals and charts, bills listed for one paycheck. Yellow and black design." class="on" alt=""><img src="../img/s01-02-t.jpg" data-big="../img/s01-02.jpg" data-alt="Three-step setup of the paycheck budget spreadsheet: add paydays, list bills, open This Paycheck. Each step shows the real sheet with yellow input cells." class="" alt=""><img src="../img/s01-03-t.jpg" data-big="../img/s01-03.jpg" data-alt="This Paycheck tab of the budget by paycheck spreadsheet: paycheck amount, bills due before the next payday sorted by date, savings, debt payments and money left over." class="" alt=""><img src="../img/s01-04-t.jpg" data-big="../img/s01-04.jpg" data-alt="Year Plan tab listing all 26 biweekly paychecks with income, bills, debt, savings, spending money and left over; one short paycheck is highlighted in red." class="" alt=""><img src="../img/s01-05-t.jpg" data-big="../img/s01-05.jpg" data-alt="Automatic budget dashboard: take-home pay, bills, debt and savings totals for the year, a month-by-month stacked chart and a donut chart of where the money goes." class="" alt=""><img src="../img/s01-06-t.jpg" data-big="../img/s01-06.jpg" data-alt="Paydays tab with a dropdown for pay frequency - every week, every 2 weeks, twice a month, once a month - plus a second income and first payday." class="" alt=""><img src="../img/s01-07-t.jpg" data-big="../img/s01-07.jpg" data-alt="Debts tab with balances, interest rates, minimum payments and debt-free dates, and Savings tab with goals, amount per paycheck and progress bars." class="" alt=""><img src="../img/s01-08-t.jpg" data-big="../img/s01-08.jpg" data-alt="Overview of the 11 tabs in the paycheck budget spreadsheet - Start Here, Paydays, Bills, This Paycheck, Year Plan, Bill Checklist, Spending, Debts, Savings, Annual, Dashboard - plus files included." class="" alt=""><img src="../img/s01-09-t.jpg" data-big="../img/s01-09.jpg" data-alt="The same paycheck budget spreadsheet in a light theme and a dark theme, both included in the download." class="" alt=""><img src="../img/s01-10-t.jpg" data-big="../img/s01-10.jpg" data-alt="Frequently asked questions: works in Google Sheets and Excel, three-step setup, irregular pay, own currency, and the files you receive." class="" alt=""><div class="vid" data-video="../img/s01.mp4">▶ video</div></div><div><div class="main" id="main"><img id="mi" src="../img/s01-01.jpg" alt=""></div><div class="alt" id="alt">Paycheck budget spreadsheet for Google Sheets and Excel shown on a laptop and phone: dashboard with yearly totals and charts, bills listed for one paycheck. Yellow and black design.</div></div></div></div>
+<div><div class="small">TheCoolShopCo</div><h1 class="ltitle">Paycheck Budget Spreadsheet for Google Sheets &amp; Excel, Budget by Paycheck, Biweekly Weekly Bill Planner, Debt and Savings Tracker, Dashboard</h1><div class="price">$16.99</div>
+<div class="dl"><b>Digital download</b> — 5 file(s) · Designed by TheCoolShopCo</div>
+<span class="btn">Buy it now</span><span class="btn o">Add to basket</span>
+<div class="box"><b>Files you get</b><ul style="margin:.4em 0 0;padding-left:18px"><li>The planner, light theme, empty - the buyer&#x27;s working copy <span class="small">(Budget-by-Paycheck_Light_BLANK.xlsx)</span></li><li>Light theme filled with fictional sample data <span class="small">(Budget-by-Paycheck_Light_SAMPLE.xlsx)</span></li><li>Dark theme, empty <span class="small">(Budget-by-Paycheck_Dark_BLANK.xlsx)</span></li><li>Dark theme with sample data <span class="small">(Budget-by-Paycheck_Dark_SAMPLE.xlsx)</span></li><li>6-page PDF guide; page 6 holds the Google Sheets copy-link line (placeholder until Bob adds the link) <span class="small">(Budget-by-Paycheck_Quick-Start-Guide.pdf)</span></li></ul></div>
+<div class="desc">Paycheck budget spreadsheet for Google Sheets &amp; Excel that puts every bill on the right paycheck for you - weekly, biweekly, twice a month or monthly pay.
+Type your paydays and your bills once. Open it on payday and see exactly which bills this paycheck pays and what is left over.
+
+EASY BY DESIGN
+Three steps: 1) paydays, 2) bills, 3) open &quot;This Paycheck&quot;. You only ever type in the yellow cells - everything else fills itself in. A START HERE tab and a PDF quick-start guide with pictures walk you through it.
+
+WHAT YOU GET (instant download)
+- Budget by Paycheck spreadsheet, light theme - blank copy for your own budget
+- The same file filled with sample data, so you can see how everything works
+- Dark theme - blank + sample
+- PDF quick-start guide (6 pages)
+4 .xlsx files + 1 PDF. Nothing is shipped.
+
+FEATURES
+- Every pay schedule: every week, every 2 weeks, twice a month (any two days) or once a month
+- A second income with its own schedule, added to the paycheck period it arrives in
+- Bills auto-assigned: each bill lands on the paycheck before its due date, all 12 months
+- Monthly, weekly, every 2 weeks, quarterly, half-yearly, yearly and one-time bills
+- Pay bills a few days early if you like (one setting)
+- This Paycheck: bills due, savings, debt, spending money and what is left - one page
+- Year Plan: every paycheck of the year, with a red warning when one cannot cover its bills
+- Bill Checklist: tick each bill when it is paid, month by month
+- Debts: minimum payments join your bills, add an extra amount per paycheck, see your debt-free date
+- Savings goals and sinking funds: an amount per paycheck that stops when the goal is full
+- Spending money per paycheck (groceries, gas, fun) with an optional spending log
+- Annual overview and an automatic Dashboard with charts
+- Overtime, bonus or an odd paycheck? Type the real amount on that paycheck
+- 11 tabs, light + dark theme, no macros, no add-ons
+
+HOW IT WORKS
+1. Paydays - pick how often you are paid, your first payday and your take-home pay.
+2. Bills - list each bill once: name, amount, due day.
+3. This Paycheck - open it on payday. Done.
+
+WORKS WITH
+- Google Sheets (free Google account): upload the file, or use the copy link in the PDF guide
+- Microsoft Excel 2016 or newer, and Microsoft 365
+The file uses US dollar formatting; you can switch to your own currency in one click (the guide shows how).
+
+FAQ
+Is it hard to set up? No. Three steps and about ten minutes. Yellow cells are the only ones you type in.
+My pay changes from paycheck to paycheck. Type the real amount on any paycheck - the plan updates.
+How many bills can I add? 30 bills, 6 debts, 8 savings goals and 10 spending categories.
+Which year does it cover? Any. It plans 12 months from the first payday you type - use it again next year.
+Can I get help? Yes. Message us here on Etsy and a real person answers.
+
+DELIVERY
+This is a digital download. After payment, Etsy shows the files under Purchases and Reviews (and emails you a link). Because digital files cannot be returned, all sales are final - but if anything is not working, message us and we will fix it.
+
+For personal use. This is a budgeting tool, not financial advice. Sample figures are fictional.
+
+Designed by TheCoolShopCo. Some design elements were created with the help of AI tools and finished by hand.</div>
+<h2 style="font-size:16px">Tags (13)</h2><div class="tags"><span>paycheck budget</span><span>budget by paycheck</span><span>biweekly budget</span><span>budget spreadsheet</span><span>google sheets budget</span><span>excel budget</span><span>weekly budget</span><span>semi monthly budget</span><span>bill tracker</span><span>debt payoff tracker</span><span>savings tracker</span><span>zero based budget</span><span>paycheck planner</span></div>
+<p class="small">Title 140/140 chars · main keyword: <code>paycheck budget spreadsheet</code> · materials: Google Sheets, Excel</p>
+</div></div><div class="box vd"><b>Honest verdict (round 1): 8/10</b>
+<div class="sc"><div><b>9</b><small>Thumbnail</small></div><div><b>9</b><small>Gallery</small></div><div><b>8</b><small>Product</small></div><div><b>9</b><small>Title+tags+text</small></div><div><b>9</b><small>In search grid</small></div></div>
+<p style="margin:.3em 0">The strongest listing. The only yellow tile in its real top-12 grid, the headline reads at phone size, and the 10 images explain it in plain words. 18.5k formulas, 0 errors.</p><p class="small"><b>Still holding it back:</b> Not yet tested in real Google Sheets/Excel (only LibreOffice here); the PDF still has a placeholder where the Google Sheets copy-link goes. No &#x27;lifestyle&#x27; photo (desk/coffee) that several top sellers use.</p></div>
+<h2>In Etsy search for “paycheck budget spreadsheet” (18,153 results) — can you spot ours?</h2>
+<p class="small">Ours is placed at position 3 among the real top results (sort = relevance). <button onclick="document.querySelector('.card.ours').classList.toggle('reveal')">Show ours</button></p>
+<div class="sgrid"><a class="card" href="https://www.etsy.com/listing/4623230341/paycheck-budget-spreadsheet-biweekly" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/41844960/r/il/727f09/8907380952/il_570xN.8907380952_4kd0.jpg" alt=""></div>
+<div class="t">Paycheck Budget Spreadsheet Biweekly, Budgeting Paychecks Planner, Budget By Paycheck, Paycheck Budget Tracker, Google Sheets</div><div class="pr">7.99 USD</div><div class="sh">Etsy result #1</div></a><a class="card" href="https://www.etsy.com/listing/4603440223/paycheck-budget-spreadsheet-for-excel" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/66581594/r/il/5d2e4f/8917767268/il_570xN.8917767268_l0of.jpg" alt=""></div>
+<div class="t">Paycheck Budget Spreadsheet for Excel and Google Sheets</div><div class="pr">12.99 EUR</div><div class="sh">Etsy result #2</div></a><a class="card ours" href="#"><div class="ph"><img loading="lazy" src="../img/s01-01-t.jpg" alt=""></div>
+<div class="t">Paycheck Budget Spreadsheet for Google Sheets &amp; Excel, Budget by Paycheck, Biweekly Weekly Bill Planner, Debt and Savings Tracker, Dashboard</div><div class="pr">$16.99</div><div class="sh">TheCoolShopCo · Digital download</div></a><a class="card" href="https://www.etsy.com/listing/1876054493/paycheck-budget-spreadsheet-ultimate" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/30255479/r/il/3994f5/6830430525/il_570xN.6830430525_bkvs.jpg" alt=""></div>
+<div class="t">Paycheck Budget Spreadsheet, Ultimate Weekly Budget, Monthly Budget, Biweekly Bill Debt Tracker, Financial Planner, Excel Template.</div><div class="pr">2.80 EUR</div><div class="sh">Etsy result #3</div></a><a class="card" href="https://www.etsy.com/listing/1790690181/paycheck-budget-spreadsheet-monthly" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/42054447/r/il/1475a9/6292762218/il_570xN.6292762218_aogm.jpg" alt=""></div>
+<div class="t">Paycheck Budget Spreadsheet Monthly Budget Weekly Budget Biweekly Debt Tracker Bill Tracker Financial Planner Excel Template Google Sheets</div><div class="pr">28.00 CAD</div><div class="sh">Etsy result #4</div></a><a class="card" href="https://www.etsy.com/listing/4611915675/paycheck-budget-spreadsheet-biweekly" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/28614712/r/il/146b76/8814188098/il_570xN.8814188098_r8i3.jpg" alt=""></div>
+<div class="t">Paycheck Budget Spreadsheet, Biweekly Weekly Monthly Budget Template for Google Sheets &amp; Excel, Bill Planner</div><div class="pr">11.99 USD</div><div class="sh">Etsy result #5</div></a><a class="card" href="https://www.etsy.com/listing/4626648575/biweekly-paycheck-budget-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69373924/r/il/139fff/8983275749/il_570xN.8983275749_sals.jpg" alt=""></div>
+<div class="t">Biweekly Paycheck Budget Spreadsheet, Budget by Paycheck Google Sheets &amp; Excel, Bill Planner, 26 Pay Periods, Bills Assigned Automatically</div><div class="pr">16.99 USD</div><div class="sh">Etsy result #6</div></a><a class="card" href="https://www.etsy.com/listing/4626628900/paycheck-budget-spreadsheet-google" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/65517084/r/il/2896b3/8983006489/il_570xN.8983006489_rwwv.jpg" alt=""></div>
+<div class="t">Paycheck Budget Spreadsheet Google Sheets | Biweekly Budget Planner &amp; Weekly Expense Tracker | Zero Based Excel Finance Template</div><div class="pr">5.99 USD</div><div class="sh">Etsy result #7</div></a><a class="card" href="https://www.etsy.com/listing/4626626508/biweekly-paycheck-budget-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/68241863/r/il/036221/8982992741/il_570xN.8982992741_gmj5.jpg" alt=""></div>
+<div class="t">Biweekly Paycheck Budget Spreadsheet 2027, Google Sheets &amp; Excel, Weekly Bill Calendar, Monthly Budget Planner, Debt and Savings Tracker</div><div class="pr">19.80 USD</div><div class="sh">Etsy result #8</div></a><a class="card" href="https://www.etsy.com/listing/4626610891/paycheck-budget-spreadsheet-for-excel" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/69362300/r/il/c7009e/8935149014/il_570xN.8935149014_m49e.jpg" alt=""></div>
+<div class="t">Paycheck Budget Spreadsheet for Excel and Google Sheets, Budget by Paycheck Planner, Zero Based Budget, Biweekly Budget, Bill Calendar</div><div class="pr">3.99 USD</div><div class="sh">Etsy result #9</div></a><a class="card" href="https://www.etsy.com/listing/4626600930/paycheck-budget-spreadsheet-irregular" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/33125246/r/il/976524/8934964724/il_570xN.8934964724_sq7x.jpg" alt=""></div>
+<div class="t">Paycheck Budget Spreadsheet, Irregular Income Budget, Debt Snowball Tracker, Excel &amp; Google Sheets Template, Zero Based Budget</div><div class="pr">14.99 USD</div><div class="sh">Etsy result #10</div></a><a class="card" href="https://www.etsy.com/listing/4342518217/budget-by-paycheck-budget-spreadsheet" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" referrerpolicy="no-referrer" src="https://i.etsystatic.com/31051854/r/il/014e5c/7106676553/il_570xN.7106676553_6jkc.jpg" alt=""></div>
+<div class="t">Budget By Paycheck Budget Spreadsheet Financial Planner Template Google Sheets Monthly Tracker Weekly Biweekly Bill Calendar Expense Tracker</div><div class="pr">1.98 USD</div><div class="sh">Etsy result #11</div></a></div><p style="margin:50px 0"></p></div>
+<script>
+const mi=document.getElementById('main'),al=document.getElementById('alt');
+document.querySelectorAll('.thumbs img,.thumbs .vid').forEach(t=>t.onclick=()=>{document.querySelectorAll('.thumbs .on').forEach(x=>x.classList.remove('on'));t.classList.add('on');
+if(t.dataset.video){mi.innerHTML='<video src="'+t.dataset.video+'" autoplay muted loop playsinline controls></video>';al.textContent='Listing video (Etsy plays it muted)';}
+else{mi.innerHTML='<img src="'+t.dataset.big+'" alt="">';al.textContent=t.dataset.alt;}});
+</script></body></html>
